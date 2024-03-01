@@ -1,5 +1,8 @@
 @Product/Items
 @Coursing
+@Product/Items01
+
+
 Feature: Product and Items - Coursing
 I am verify the Product/Items-Coursing module by Add/Edit/Delete/Activate/Duplicate
 
@@ -38,6 +41,8 @@ When I Clear the Name
 And I Enter the Priority
 And I Click the Save button 
 Then Verify whether the Coursing Saved only with Priority or not
+
+
 
 Scenario: Save Coursing without Entering Priority
 Given Click the New Coursing button
@@ -81,13 +86,16 @@ Then I Verify Coursing Update screen Close or not
 Scenario: Verify able to search the Coursing by entering 3 letters of Coursing Name
 And I Verify Searching the Item when entering three letters
 
+
 Scenario: Update Coursing without Entering Coursing name
 Given I Search and Edit the Coursing
 And I Clicking the Update button without entering Coursing Name
 
+
 Scenario: Update Coursing without Entering Priority
 Given I Search and Edit the Coursing
 When I Enter the New Coursing Name
+And I Clear the Priority
 And I Clicking the Update button without entering Priority
 
 Scenario: Verify whether user can able to Update Coursing with Priority as Zero

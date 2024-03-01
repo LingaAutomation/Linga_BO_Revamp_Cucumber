@@ -42,9 +42,9 @@ public class Product_and_Items_Taxes {
 	LoginTest a=new LoginTest();
 	TaxesPage tp=new TaxesPage();
 	
-	String Actual_Percentage;
+	public static String Actual_Percentage;
 	static String Expected_Percentage=null;
-	String Expected_ChangeAmount, Actual_ChangeAmount, Expected_ChangeAmountBef;
+	public static String Expected_ChangeAmount, Actual_ChangeAmount, Expected_ChangeAmountBef;
 	
 	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(150));
 	

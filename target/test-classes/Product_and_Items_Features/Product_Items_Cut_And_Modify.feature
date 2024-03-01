@@ -1,5 +1,5 @@
 #@Product/Items
-#@CutAndModify
+@CutAndModify
 Feature: Product and Items - Cut and Modify
   I am verify the Product/Items-Cut and Modify module by Add/Edit/Delete/Activate/Duplicate
 

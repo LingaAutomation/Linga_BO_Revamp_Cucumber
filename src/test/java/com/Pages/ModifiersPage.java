@@ -35,26 +35,26 @@ public class ModifiersPage extends BasePage {
 	@FindBy(xpath = "//button[contains(.,'NEW MODIFIER')]")
 	WebElement New_ModifierBtn;
 	
-	@FindBy(xpath = "//label[contains(.,'Secondary Name')]/../../input")
-	WebElement Secondary_NameInputBox;
+	@FindBy(xpath = "//label[contains(.,'Prefixary Name')]/../../input")
+	WebElement Prefixary_NameInputBox;
 	
 	@FindBy(xpath = "//label[contains(.,'PLU Code')]/../../input")
 	WebElement PLU_CodeInputBox;
 	
-	@FindBy(xpath = "//label[contains(.,'Maximum No of Times')]/../../input")
-	WebElement Maximum_NoTimesInputBox;
+	@FindBy(xpath = "//input[@aria-label='Maximum No of Times']")
+	public WebElement Maximum_NoTimesInputBox;
 	
-	@FindBy(xpath = "//div[contains(@id,'new-modifier-general')]/div/div/div[contains(.,'Enter valid maximum number of times')]")
+	public @FindBy(xpath = "//div[contains(@id,'new-modifier-general')]/div/div/div[contains(.,'Enter valid maximum number of times')]")
 	WebElement Max_TimesErrorMsg;
 	
 	@FindBy(xpath = "//label[contains(.,'Modify With')]/../../input")
-	WebElement ModifyWith_DropBtn;
+	public WebElement ModifyWith_DropBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'Add Prefix')]")
-	WebElement Add_PrefixBtn;
+	public WebElement Add_PrefixBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'Add Serving Size Level')]")
-	WebElement Add_ServingSizeLevelBtn;
+	public WebElement Add_ServingSizeLevelBtn;
 	
 	@FindBy(xpath = "//span[.='Show Modifier']/../../div//div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
 	public WebElement ShowModifier_YesBtn;
@@ -81,49 +81,58 @@ public class ModifiersPage extends BasePage {
 	public WebElement SetPriceHere_NoBtn;
 
 	@FindBy(xpath = "//mat-step-header[contains(.,'Proceed to Inventory Mapping')]")
-	WebElement ProceedToInventoryMappingTab;
+	public WebElement ProceedToInventoryMappingTab;
 	
 	@FindBy(xpath = "//app-information-content/div/div/div/div/span")
-	WebElement InfoContent;
+	public WebElement InfoContent;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div/div[2]/div/app-radio-box-button/div/div/div/div[.='Item']")
-	WebElement First_ItemTypeBtn;
+	@FindBy(xpath = "(//div[@class='radio-box'][.='Item'])[1]")
+	public WebElement Modifier_ItemType_Item_RadioBtn;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div/div[2]/div/app-radio-box-button/div/div/div/div[.='Menu item']")
-	WebElement First_MenuItemTypeBtn;
+	@FindBy(xpath = "(//div[@class='radio-box'][.='Menu Item'])[1]")
+	public WebElement Modifier_ItemType_MenuItem_RadioBtn;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div/div[2]/div/app-radio-box-button/div/div/div/div[.='Sub Recipe']")
-	WebElement First_SubRecipeTypeBtn;
+	@FindBy(xpath = "(//div[@class='radio-box'][.='Sub Recipe'])[1]")
+	public WebElement Modifier_ItemType_SubRecipe_RadioBtn;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement First_SubRecipeTypeInput;
+	@FindBy(xpath = "(//input[@aria-label='Sub Recipe'])[1]")
+	public WebElement Modifier_SubRecipe_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div[1]/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement First_CategoryInput;
+	@FindBy(xpath = "(//input[@aria-label='Menu Item'])[1]")
+	public WebElement Modifier_MenuItem_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[2]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div[2]/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement First_InventoryItemInput;
+	@FindBy(xpath = "(//input[@aria-label='Category'])[1]")
+	public WebElement Modifier_Category_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[3]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div/div[2]/div/app-radio-box-button/div/div/div/div[.='Item']")
-	WebElement Second_ItemTypeBtn;
+	@FindBy(xpath = "(//input[@aria-label='Inventory Item'])[1]")
+	public WebElement Modifier_InventoryItem_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[3]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div/div[2]/div/app-radio-box-button/div/div/div/label[.='Sub Recipe']")
-	WebElement Second_SubRecipeTypeBtn;
+	@FindBy(xpath = "(//div[@class='radio-box'][.='Item'])[1]")
+	public WebElement Prefix_ItemType_Item_RadioBtn;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[3]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement Second_SubRecipeTypeInput;
+	@FindBy(xpath = "(//div[@class='radio-box'][.='Sub Recipe'])[2]")
+	public WebElement Prefix_ItemType_SubRecipe_RadioBtn;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[3]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div[1]/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement Second_CategoryInput;
+	@FindBy(xpath = "(//input[@aria-label='Sub Recipe'])[2]")
+	public WebElement Prefix_SubRecipe_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//h6[contains(.,'Modifiers and Prefixes')]/../../div[3]/mat-accordion/app-accordion/div/mat-expansion-panel/div/div/div[2]/div[2]/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	WebElement Second_InventoryItemInput;
+	@FindBy(xpath = "(//input[@aria-label='Category'])[2]")
+	public WebElement Prefix_Category_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div/div[1]/app-input/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement PrefixInputColumn;
+	@FindBy(xpath = "(//input[@aria-label='Inventory Item'])[2]")
+	public WebElement Prefix_InventoryItem_ItemTypeInputBx;
 	
-	@FindBy(xpath = "//div[@class='serving-size-prefix-row']/div/div/div/app-selectbox[contains(@id,'servingSize')]/div/mat-form-field/div/div/div[3]/input")
-	WebElement ServingSizeLevelInputColumn;
+	@FindBy(xpath = "//input[@aria-label='Prefix Name']")
+	public WebElement PrefixInputColumn;
+	
+	@FindBy(xpath = "//input[@aria-label='Serving Size - Prefix']")
+	public WebElement ServingSizeLevelInputColumn;
+	
+	@FindBy(xpath = "(//mat-slide-toggle[contains(.,'Is Inventory Item')])[1]")
+	public WebElement Is_InventoryItem_Modifier_ItemType_Toggle;
+	
+	@FindBy(xpath = "(//mat-slide-toggle[contains(.,'Is Inventory Item')])[2]")
+	public WebElement Is_InventoryItem_Prefix_ItemType_Toggle;
 	
 	public WebElement PrefixInputColumn()
 	{
@@ -157,31 +166,32 @@ public class ModifiersPage extends BasePage {
 	
 	//mat-step-header[contains(.,'Proceed to Inventory Mapping')]/div[2]
 	@FindBy(xpath = "//mat-step-header[contains(.,'Basic Details')]")
-	WebElement BasicDetailsTab;
+	public WebElement BasicDetailsTab;
 	
-	@FindBy(xpath = "//mat-step-header[contains(.,'Serving Size and Prefix Levels')]")
-	WebElement ServingSizePrefixTab;
+	@FindBy(xpath = "//mat-step-header[contains(.,'Prefixes and Serving Size Levels')]")
+	public WebElement Prefixs_and_ServingSizePrefixTab;
 	
 	@FindBy(xpath = "//button[contains(.,'SAVE AND PROCEED')]")
-	WebElement SaveAndProceedBtn;
+	public WebElement SaveAndProceedBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'Proceed without saving')]")
-	WebElement ProceedwithoutSavingBtn;
+	public WebElement ProceedwithoutSavingBtn;
 	
 	
 	
 	
-	public void Click_NewModifier()
+	public void Click_NewModifierButton() throws Exception
 	{
+		Thread.sleep(1000);
 		New_ModifierBtn.click();
 	}
 	
 	
-	public void Enter_SecondaryName(String str)
+	public void Enter_PrefixaryName(String str)
 	{
-		Secondary_NameInputBox.clear();
+		Prefixary_NameInputBox.clear();
 		
-		Secondary_NameInputBox.sendKeys(str);
+		Prefixary_NameInputBox.sendKeys(str);
 	}
 	
 	public void Enter_PLUCode(String str)
@@ -394,14 +404,15 @@ public class ModifiersPage extends BasePage {
 		ProceedToInventoryMappingTab.click();
 	}
 	
-	public void Click_BasicDetailsTab()
+	public void Click_BasicDetailsTab() throws Exception
 	{
+		Thread.sleep(2000);
 		BasicDetailsTab.click();
 	}
 	
-	public void Click_ServingSizePrefixTab()
+	public void Click_Prefixs_and_ServingSizesTab()
 	{
-		ServingSizePrefixTab.click();
+		Prefixs_and_ServingSizePrefixTab.click();
 	}
 	
 	public void Disable_ShowMenuItemInModifierPrint()
@@ -438,21 +449,21 @@ public class ModifiersPage extends BasePage {
 		Add_ServingSizeLevelBtn.click();
 	}
 	
-	public void Enter_Prefix(String str, String str2) throws Exception
+	public void Enter_Prefix_with_Override_ModifierPrice(String str, String str2) throws Exception
 	{
 		cmp=new Common_XPaths();
 		
-		
+		cmp.Prefix_Tab_inContents.click();
 		Thread.sleep(500);
 	
 	for(int i=1;i<=3;i++)
 	{
 		Click_AddPrefixbutton();
 	}
-		
+//		
 		List<WebElement> PrefixList=driver.findElements(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div/div[1]/app-input/div/div/mat-form-field/div/div/div[4]/input"));
 	
-		for(int i=2;i<=PrefixList.size()+1;i++)
+		for(int i=2;i<=PrefixList.size();i++)
 		{
 			//Prefix name
 			driver.findElement(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div["+i+"]/div[1]/app-input/div/div/mat-form-field/div/div/div[4]/input")).clear();
@@ -467,18 +478,21 @@ public class ModifiersPage extends BasePage {
 			
 			Thread.sleep(500);
 	
-			if(driver.findElement(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div["+i+"]/div/app-switch/div/section/mat-slide-toggle")).isSelected())
+			if(driver.findElement(By.xpath("(//div[@id='new-modifier-serving-sizes-prefixes']//section/mat-slide-toggle)["+i+"]")).isSelected())
 			{
 				
 			}
 			else
 			{
-				driver.findElement(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div["+i+"]/div/app-switch/div/section/mat-slide-toggle")).click();
+				driver.findElement(By.xpath("(//div[@id='new-modifier-serving-sizes-prefixes']//section/mat-slide-toggle)["+i+"]")).click();
 			}
 			
 		}
 		
-		for(int i=1;i<=2;i++)
+		List<WebElement> PrefixList1=driver.findElements(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div/div[1]/app-input/div/div/mat-form-field/div/div/div[4]/input"));
+		
+		
+		for(int i=2;i<=PrefixList1.size();i++)
 		{
 			Thread.sleep(500);
 			driver.findElement(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div[3]/div/button")).click();
@@ -492,11 +506,12 @@ public class ModifiersPage extends BasePage {
 	public void Remove_Prefix() throws Exception
 	{
 		cmp=new Common_XPaths();
-		Click_AddPrefixbutton();
+		cmp.Prefix_Tab_inContents.click();
+//		Click_AddPrefixbutton();
 		
 		List<WebElement> PrefixList=driver.findElements(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div/div[1]/app-input/div/div/mat-form-field/div/div/div[4]/input"));
 		
-		for(int i=2;i<=PrefixList.size()+1;i++)
+		for(int i=2;i<=PrefixList.size();i++)
 		{
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@id='new-modifier-serving-sizes-prefixes']/div[3]/app-input-table[1]/div/div[2]/div/button")).click();
@@ -509,12 +524,14 @@ public class ModifiersPage extends BasePage {
 	public void Remove_ServingSizeLevel() throws Exception
 	{
 	cmp=new Common_XPaths();
-		Click_AddServingSizeLevelbutton();
+//		Click_AddServingSizeLevelbutton();
+	cmp.Serving_Sizes_Tab_inContents.click();
+	Thread.sleep(2000);
 		
 		
 		List<WebElement> SizeList=driver.findElements(By.xpath("//div[@class='serving-size-prefix-row']/div/div/div/app-selectbox[contains(@id,'servingSize')]/div/mat-form-field/div/div/div[3]/input"));
 		
-		for(int i=2;i<=SizeList.size()+1;i++)
+		for(int i=2;i<=SizeList.size();i++)
 		{
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@class='serving-size-prefix-row']/div[2]/div[2]/button")).click();
@@ -552,7 +569,9 @@ public class ModifiersPage extends BasePage {
 	public void Enter_ServingSizeLevel(String str) throws Exception
 	{
 		cmp=new Common_XPaths();
-		Thread.sleep(500);
+		
+		cmp.Serving_Sizes_Tab_inContents.click();
+		Thread.sleep(2000);
 		for(int i=1;i<=3;i++)
 		{
 			Click_AddServingSizeLevelbutton();
@@ -563,7 +582,7 @@ public class ModifiersPage extends BasePage {
 		Thread.sleep(500);
 
 		List<WebElement> SizeList=driver.findElements(By.xpath("//div[@class='serving-size-prefix-row']/div/div/div/app-selectbox[contains(@id,'servingSize')]/div/mat-form-field/div/div/div[3]/input"));
-		for(int k=2;k<=SizeList.size()+1;k++)
+		for(int k=2;k<=SizeList.size();k++)
 		{
 			Thread.sleep(500);
 			driver.findElement(By.xpath("//div[@class='serving-size-prefix-row']/div["+k+"]/div/div/app-selectbox[contains(@id,'servingSize')]/div/mat-form-field/div/div/div[3]/input")).click();
@@ -636,13 +655,13 @@ public class ModifiersPage extends BasePage {
 		ProceedwithoutSavingBtn.click();
 	}
 	
-	public void Add_ItemInventoryModiferFirst()
+	public void Add_ItemInventoryModiferModifier()
 	{
 		
 		 
-		First_ItemTypeBtn.click();
+		Modifier_ItemType_Item_RadioBtn.click();
 		
-		First_CategoryInput.click();
+		Modifier_Category_ItemTypeInputBx.click();
 		
 	List<WebElement> CatList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -650,7 +669,7 @@ public class ModifiersPage extends BasePage {
 		
 		if(CatSize==0)
 		{
-			First_CategoryInput.click();
+			Modifier_Category_ItemTypeInputBx.click();
 			
 			List<WebElement> CatList1=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 			
@@ -683,7 +702,7 @@ public class ModifiersPage extends BasePage {
 		
 		}
 		
-		First_InventoryItemInput.click();
+		Modifier_InventoryItem_ItemTypeInputBx.click();
 		
 	List<WebElement> ItemList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -691,7 +710,7 @@ public class ModifiersPage extends BasePage {
 		
 	if(ItemSize==0)
 	{
-		First_InventoryItemInput.click();
+		Modifier_InventoryItem_ItemTypeInputBx.click();
 		
 		try
 		{
@@ -721,12 +740,12 @@ public class ModifiersPage extends BasePage {
 	}
 	}
 	
-	public void Add_MenuItemInventoryModiferFirst()
+	public void Add_MenuItemInventoryModiferModifier()
 	{
 	
-		First_MenuItemTypeBtn.click();
+		Modifier_ItemType_MenuItem_RadioBtn.click();
 		
-		First_SubRecipeTypeInput.click();
+		Modifier_MenuItem_ItemTypeInputBx.click();
 		
 	List<WebElement> MenuList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -734,7 +753,7 @@ public class ModifiersPage extends BasePage {
 		
 		if(MenuSize==0)
 		{
-			First_SubRecipeTypeInput.click();
+			Modifier_MenuItem_ItemTypeInputBx.click();
 
 			driver.findElement(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div[1]")).click();
 		
@@ -762,13 +781,13 @@ public class ModifiersPage extends BasePage {
 		
 		
 	}
-	public void Add_SubRecipeInventoryModiferFirst()
+	public void Add_SubRecipeInventoryModiferModifier()
 	{
 	
 	
-		First_SubRecipeTypeBtn.click();
+		Modifier_ItemType_SubRecipe_RadioBtn.click();
 		
-		First_SubRecipeTypeInput.click();
+		Modifier_MenuItem_ItemTypeInputBx.click();
 		
 	List<WebElement> SubRecList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -776,7 +795,7 @@ public class ModifiersPage extends BasePage {
 		
 		if(SubRecSize==0)
 		{
-			First_SubRecipeTypeInput.click();
+			Modifier_MenuItem_ItemTypeInputBx.click();
 
 			driver.findElement(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div[1]")).click();
 
@@ -805,16 +824,16 @@ public class ModifiersPage extends BasePage {
 		
 	
 	}
-	public void Add_ItemInventoryModiferSecond()
+	public void Add_ItemInventoryModiferPrefix()
 	{
 		try 
 		{
-			if(Second_ItemTypeBtn.isDisplayed())
+			if(Prefix_ItemType_Item_RadioBtn.isDisplayed())
 			{
-			Second_ItemTypeBtn.click();
+			Prefix_ItemType_Item_RadioBtn.click();
 		
 		
-		Second_CategoryInput.click();
+		Prefix_Category_ItemTypeInputBx.click();
 		
 		List<WebElement> CatList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -822,7 +841,7 @@ public class ModifiersPage extends BasePage {
 		
 		if(CatSize==0)
 		{
-			Second_CategoryInput.click();
+			Prefix_Category_ItemTypeInputBx.click();
 
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div[1]")).click();
@@ -849,7 +868,7 @@ public class ModifiersPage extends BasePage {
 		
 		}
 		
-		Second_InventoryItemInput.click();
+		Prefix_InventoryItem_ItemTypeInputBx.click();
 		
 	List<WebElement> ItemList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -857,7 +876,7 @@ public class ModifiersPage extends BasePage {
 		
 		if(ItemSize==0)
 		{
-			Second_InventoryItemInput.click();
+			Prefix_InventoryItem_ItemTypeInputBx.click();
 			
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div[1]")).click();
@@ -892,15 +911,15 @@ public class ModifiersPage extends BasePage {
 		
 	}
 	
-	public void Add_SubRecipeInventoryModiferSecond() throws Exception
+	public void Add_SubRecipeInventoryModiferPrefix() throws Exception
 	{
 		try
 		{ 
-		if(Second_SubRecipeTypeBtn.isDisplayed())
+		if(Prefix_ItemType_SubRecipe_RadioBtn.isDisplayed())
 		{
-		Second_SubRecipeTypeBtn.click();
+			Prefix_ItemType_SubRecipe_RadioBtn.click();
 		
-		Second_SubRecipeTypeInput.click();
+		Prefix_SubRecipe_ItemTypeInputBx.click();
 		
 		List<WebElement> SubRecList=driver.findElements(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div"));
 		
@@ -908,7 +927,7 @@ public class ModifiersPage extends BasePage {
 		 
 		if(SubRecSize==0)
 		{
-			Second_SubRecipeTypeInput.click();
+			Prefix_SubRecipe_ItemTypeInputBx.click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@class='options with-height']/cdk-virtual-scroll-viewport/div/div[1]")).click();
 

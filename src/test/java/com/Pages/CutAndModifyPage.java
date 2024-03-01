@@ -34,16 +34,16 @@ public class CutAndModifyPage extends BasePage
 	
 	
 	@FindBy(xpath = "//div[contains(@class,'cut-and-modify')]/div[2]/div[2]/div/div/input")
-	WebElement FirstSliceModify;
+	public WebElement FirstSliceModify;
 	
 	@FindBy(xpath = "//div[contains(@class,'cut-and-modify')]/div[3]/div[2]/div/div/input")
-	WebElement SecondSliceModify;
+	public WebElement SecondSliceModify;
 	
 	@FindBy(xpath = "//div[contains(@class,'cut-and-modify')]/div[4]/div[2]/div/div/input")
-	WebElement ThirdSliceModify;
+	public WebElement ThirdSliceModify;
 	
 	@FindBy(xpath = "//div[@class='ml-auto']/button[contains(.,'SAVE')]")
-	WebElement SaveInCutAndModify;
+	public WebElement SaveInCutAndModify;
 	
 	public void Click_Save_Cut_and_Modify()
 	{

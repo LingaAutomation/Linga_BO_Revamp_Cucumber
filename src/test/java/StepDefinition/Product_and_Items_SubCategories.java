@@ -593,7 +593,7 @@ public void iSearchTheSelectedCategoryInSubCategoryHomePage() throws Exception {
     cmp.Click_DropDown_withSearchText(scp.CategoryDropBtn, SubCat_inMenuPage, "Selected Category is Searched in SubCategory Home Page");
 }
 @Given("I Click the Apply button")
-public void iClickTheApplyButton() {
+public void iClickTheApplyButton() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     rp.Click_ApplyButton();
 }

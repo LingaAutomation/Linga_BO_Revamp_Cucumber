@@ -1,5 +1,7 @@
 @Product/Items
 @Departments
+@Product/Items01
+
 Feature: Product and Items - Departments
 I am verify the Product/Items-Department module by Add/Edit/Delete/Activate/Duplicate
 
@@ -9,9 +11,11 @@ I am verify the Product/Items-Department module by Add/Edit/Delete/Activate/Dupl
 Background: Opening the Department page
 Given Open the Department home page BaseURL and StoreID
 
+@DepartmentsA
 Scenario: Verify whether the Department Header is Displayed
 Given Verifying the Department Header Page
 
+@DepartmentsA
 Scenario: Verify whether we can able to do Pagination
 Given I can do the Pagination
 
@@ -19,30 +23,42 @@ Scenario: Verify the Filter & Ascending and Descending Order
 When User Select the Filter option with Columns
 And Verify the Ascending and Descending Order
 
+@DepartmentsA
 Scenario: Verify the New Department Page header
 Given Click the New Department button
 When Verify the New Department Header
+#And I Click the Cancel button
 
+@DepartmentsA
 Scenario: Verify whether we able to create the New Department without Entering Name/Mandatory Fields
 Given Click the New Department button
 And I Click the Save button without Entering Department Name
+#And I Click the Cancel button
 
+@DepartmentsA
 Scenario: Verify whether we able to Save the Department with Single letter
 Given Click the New Department button
 And I Enter the Single letter in Department Name and Click the Save button
+#And I Click the Cancel button
 
+@DepartmentsA
 Scenario: Verify whether we can able to Save the Department only by Entering Department code
 Given Click the New Department button
 And I Enter the Only Department code and Click the Save button
+#And I Click the Cancel button
 
+@DepartmentsA
  Scenario: Verify whether we can able to Save the Department only by Entering Department Description
  Given Click the New Department button
 And I Enter the Only Description and Click the Save button
 
+
+@DepartmentsA
 Scenario: Verify whether the user can able to Enter the Department Name above the limit
 Given Click the New Department button
 And I Enter the Department Name Exceeding the limit
 
+@DepartmentsA
 Scenario: Verify whether user can able to create a New Department with Enabling Membership
 Given Click the New Department button
 When I Enter the New Department Name
@@ -52,6 +68,7 @@ And I Enable the Include Membership
 And I Click the Save button
 Then Verify whether the Department is Saved or not
 
+@DepartmentsA
 Scenario: Verify the Update header by Editing Saved Department
 Given I Search and Edit the Department
 When Verify the Update Department Header

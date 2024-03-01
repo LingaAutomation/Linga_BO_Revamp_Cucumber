@@ -3,6 +3,7 @@ package StepDefinition;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import com.Pages.Common_XPaths;
@@ -119,6 +120,8 @@ public class Linga_Admin_Dashboard
 	@Given("I Select the Time Period as Date Range")
 	public void iSelectTheTimePeriodAsDateRange() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Date_Range_TimePeriod(Utility.getProperty("Report_Start_Date"), Utility.getProperty("Report_End_Date"));
 	}
 	@Given("I Select the Web Order Sales Tile")
@@ -130,6 +133,8 @@ public class Linga_Admin_Dashboard
 	@Given("I Select the Time Period as Today")
 	public void iSelectTheTimePeriodAsToday() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Today_TimePeriod();
 	}
 	@Then("Verify User Web Order Sales Report generated for Selected Time Period or Not")
@@ -179,55 +184,73 @@ public class Linga_Admin_Dashboard
 	@Given("I Select the Time Period as Yesterday")
 	public void iSelectTheTimePeriodAsYesterday() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Yesterday_TimePeriod();
 	}
 	
 	@Given("I Select the Time Period as Last N Days")
 	public void iSelectTheTimePeriodAsLastNDays() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Last_N_Days_TimePeriod(Utility.getProperty("Last_N_Days"));
 	}
 
 	@Given("I Select the Time Period as This Week")
 	public void iSelectTheTimePeriodAsThisWeek() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_This_Week_TimePeriod();
 	}
 
 	@Given("I Select the Time Period as Last Week")
 	public void iSelectTheTimePeriodAsLastWeek() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Last_Week_TimePeriod();
 	}
 
-	@Given("I Select the Time Period as Last Seven days")
+	@Given("I Select the Time Period as Last Seven Days")
 	public void iSelectTheTimePeriodAsLastSevenDays() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Last_7_Days_TimePeriod();
 	}
 
 	@Given("I Select the Time Period as This Month")
 	public void iSelectTheTimePeriodAsThisMonth() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_This_Month_TimePeriod();
 	}
 
 	@Given("I Select the Time Period as Last Month")
 	public void iSelectTheTimePeriodAsLastMonth() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+		Thread.sleep(1000);
 	    repts.Select_Last_Month_TimePeriod();
 	}
 	
 
-@Given("I Select the Time Period as Last Thirty days")
+@Given("I Select the Time Period as Last Thirty Days")
 public void iSelectTheTimePeriodAsLastThirtyDays() throws Exception {
     // Write code here that turns the phrase above into concrete actions
+	for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+	Thread.sleep(1000);
     repts.Select_Last_30_Days_TimePeriod();
 }
 
 @Given("I Select the Time Period as Specific Date")
 public void iSelectTheTimePeriodAsSpecificDate() throws Exception {
     // Write code here that turns the phrase above into concrete actions
+	for(int i = 1;i<=10;i++){driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);}
+	Thread.sleep(1000);
     repts.Select_Specific_Date_TimePeriod(Utility.getProperty("Report_Specific_Date"));
 }
 

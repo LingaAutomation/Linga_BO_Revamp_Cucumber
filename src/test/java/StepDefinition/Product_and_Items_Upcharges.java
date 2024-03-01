@@ -158,6 +158,13 @@ else
 		
 	    up.Select_LevelType_Category();
 	}
+	
+	@Given("I Select the Level Type in General as Category")
+	public void iSelectTheLevelTypeInGeneralAsCategory() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		
+	    up.Select_LevelType_Category_GeneralTab();
+	}
 	@Given("I Selecting the Categories")
 	public void iSelectingTheCategories() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
@@ -330,7 +337,7 @@ else
 	    cmp.Verify_Search_DropDown_InputSearchBox(up.Category_InputBox, "Category");
 	}
 	
-	
+
 	@Given("I Select the Level Type as Sub-Category")
 	public void iSelectTheLevelTypeAsSubCategory() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions

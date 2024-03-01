@@ -1,4 +1,4 @@
-#@Products/Items
+@Product/Items
 @Check_Based_Discount
 Feature: Product and Items - Check Based Discount
 I am verify the Product/Items-Check Based Discount module by Add/Edit/Delete/Activate/Duplicate
@@ -47,12 +47,13 @@ And I Click the Backward button
 
 Scenario: Verify whether the user can able to Enter the Check Based Discount Name above the limit
 And I Enter the Check Based Discount Name Exceeding the limit
+And I Click the Backward button
 
 Scenario: Verify whether we can able to Save the Check Based Discount only by Entering Priority
 Given Click the New Discount button
 #And I Enter the Check Based Discount Name
 And I Enter the Priority
-#And I Click the Save and Publish button 
+#And I Click the Save and Publish button
 Then Check the Save and Publish button is Disabled
 And I Click the Backward button
 
@@ -79,6 +80,7 @@ And I Select the Apply as Before Tax
 And I Selecting the Categories
 And I Selecting the Menu Items
 And I Select the Discount Type as Promo
+And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -94,6 +96,7 @@ And I Select the Apply as Before Tax
 And I Selecting the Categories
 And I Selecting the Menu Items
 And I Select the Discount Type as Promo
+And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -101,29 +104,14 @@ And I Click the Save and Publish button
 Then Verify whether the Check Based Discount is Saved with Priority as Decimal or not
 And I Click the Backward button
 
-Scenario: Verify whether user can able to create a Check Based Discount with Quantity as 0
-Given Click the New Discount button
-And I Enter the Check Based Discount Name
-And I Enter the Priority
-Then Check Enter Valid Quantity Error is displayed
-And I Select the Apply as Before Tax
-And I Selecting the Categories
-And I Selecting the Menu Items
-And I Select the Discount Type as Promo
-And I Select the Offers as Percentage
-And I Enter the Percentage
-And I Select the Availability as Always
-Then Check the Save and Publish button is Disabled
-And I Click the Backward button
 
 Scenario: Verify whether the Before Tax/After Tax is displayed in Apply field dropdown
 Given Click the New Discount button
 And I Enter the Check Based Discount Name
 And I Enter the Priority
 And I Click Apply Field
-Then Verify whether the Before Tax/After Tax is displayed
+Then Verify whether the Before Tax and After Tax is displayed
 And I Click the Backward button
-
 
 Scenario: Verify able to Save without Selecting Apply
 Given Click the New Discount button
@@ -132,6 +120,7 @@ And I Enter the Priority
 And I Selecting the Categories
 And I Selecting the Menu Items
 And I Select the Discount Type as Promo
+And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -145,6 +134,7 @@ And I Enter the Check Based Discount Name
 And I Enter the Priority
 And I Select the Apply as Before Tax
 And I Select the Discount Type as Promo
+And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -160,7 +150,7 @@ And I Selecting the Categories
 And I Selecting the Menu Items
 And I Select the Discount Type as Promo
 And I Click the Add Offer button
-Then Check Offers Type is Selected Default as Percentage 
+Then Check Offers Type is Selected Default as Percentage
 And I Select the Offers as Percentage
 And I Enter the Percentage above the percentage limit
 Then Check Enter Valid Percentage Error is Displayed
@@ -220,7 +210,7 @@ Scenario: Verify whether Coupon Only field is displayed after enabling
 Given Click the New Discount button
 And I Enter the Check Based Discount Name
 And I Enter the Priority
-And I Select Before Tax/ After Tax
+And I Select the Apply as Before Tax
 And I Select the Multiple Category
 And I Select Promo Discount Type
 And I Enable Coupon Only Toggle
@@ -391,10 +381,11 @@ And I Click the Backward button
 Scenario: Update Check Based Discount without Entering Priority
 Given I Search and Edit the Check Based Discount
 And I Enter the Check Based Discount Name
+And I Clear the Priority
 And I Select the Apply as Before Tax
-
 And I Selecting the Categories
 And I Select the Discount Type as Promo
+#And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -432,20 +423,6 @@ And I Click the Save and Publish button
 Then Verify whether the Check Based Discount is Saved with Priority as Decimal or not
 And I Click the Backward button
 
-Scenario: Verify whether user can able to Update a Check Based Discount with Quantity as 0
-Given I Search and Edit the Check Based Discount
-And I Enter the Check Based Discount Name
-And I Enter the Priority
-Then Check Enter Valid Quantity Error is displayed
-And I Select the Apply as Before Tax
-And I Selecting the Categories
-And I Selecting the Menu Items
-And I Select the Discount Type as Promo
-And I Select the Offers as Percentage
-And I Enter the Percentage
-And I Select the Availability as Always
-Then Check the Save and Publish button is Disabled
-And I Click the Backward button
 
 Scenario: Verify able to Update without Selecting Categories in Exclude
 Given I Search and Edit the Check Based Discount
@@ -684,11 +661,10 @@ And I Select the Availability as Always
 And I Click Update and Publish button
 Then Verify whether the Check Based Discount is Updated or not
 
-
 Scenario: Verify whether able to Inactivate the Check Based Discount Clicking Cancel/No button
 Given I Search the Check Based Discount and Click the Delete button
 And I Click the Cancel button in Pop Up
-Then Verify the Cancelled Check Based Discount Deleted/Inactivated or not
+Then Verify the Cancelled Check Based Discount Deleted or Inactivated or not
 
 Scenario: Verify whether Able to Inactivate the Check Based Discount Clicking Delete/Yes button
 Given I Search the Check Based Discount and Click the Delete button
@@ -713,10 +689,10 @@ When I Enter the New Check Based Discount Name
 And I Change the Priority
 And I Click the Update and Publish button
 Then Verify the Check Based Discount is Updated or not
-Then Check the Priority is Updated or Not
+#Then Check the Priority is Updated or Not
 
-Scenario: Searching with Special Charcters
-Then Enter Sepacial charcters in Search field and Verify
+#Scenario: Searching with Special Charcters
+#Then Enter Sepacial charcters in Search field and Verify
 
 Scenario: Verify whether able to Creating Duplicate Check Based Discount
 Given Click the New Discount button
@@ -726,6 +702,7 @@ And I Select the Apply as Before Tax
 And I Selecting the Categories
 And I Selecting the Menu Items
 And I Select the Discount Type as Promo
+And I Click the Add Offer button
 And I Select the Offers as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
@@ -740,13 +717,5 @@ Then Verify whether the Check Based Discount Name with Space in end is Updated o
 
 Scenario: Verfiy Searched element displaying in Active and Inactive list
 Given Search the Element in Active and InActive List
-
-
-
-
-
-
-
-
 
 

@@ -36,172 +36,172 @@ public class Settings_Till_Setting_Page extends BasePage
 //	}
 	
 	@FindBy(xpath = "//div[@class='settings']/button")
-	WebElement Settings;
+public WebElement Settings;
 	
 	@FindBy(xpath = "//h3[contains(.,'Settings')]")
-	WebElement Settings_Heading;
+public WebElement Settings_Heading;
 	
 	@FindBy(xpath = "//span[contains(.,'Payments')]")
-	WebElement Payments;	
+public WebElement Payments;	
 	
 	@FindBy(xpath = "//h4[contains(.,'Payments')]")
-	WebElement Payments_Heading;	
+public WebElement Payments_Heading;	
 	
 	@FindBy(xpath = "//span[contains(.,'Till')]")
-	WebElement Till;
+public WebElement Till;
 	
 	@FindBy(xpath = "//h3[contains(.,'Till Settings')]")
-	WebElement Till_Heading;
+public WebElement Till_Heading;
 	
-	@FindBy(xpath =  "//div[.='TILL SETTINGS']")
-	WebElement TillSettings;
+	@FindBy(xpath =  "//div[@role='tab'][contains(.,'TILL SETTINGS')]")
+	public WebElement Till_Settings_Tab;
 	
-	@FindBy(xpath =  "//div[.='DENOMINATIONS']")
-	WebElement Denominations;
+	@FindBy(xpath =  "//div[@role='tab'][contains(.,'DENOMINATIONS')]")
+	public WebElement Denominations_Tab;
 	
-	@FindBy(xpath =  "//div[.='CLOSE TILLS']")
-	WebElement CloseTills;
+	@FindBy(xpath =  "//div[@role='tab'][contains(.,'CLOSE TILL')]")
+public WebElement Close_Tills_Tab;
 	
 	@FindBy(xpath =  "//span[contains(.,'SAVE')]")
-	WebElement Save;
+public WebElement Save;
 	
 	@FindBy(xpath =  "//span[contains(.,'Automatic Global Till')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement No_btn_AGT;
+public WebElement Automatic_Global_TIll_NoToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Automatic Global Till')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Yes_btn_AGT;
+public WebElement Automatic_Global_TIll_YesToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Force Cash Out at Clock Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement No_btn_FCOCO;
+public WebElement Force_CashOut_at_ClockOut_NoToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Force Cash Out at Clock Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Yes_btn_FCOCO;
+public WebElement Force_CashOut_at_ClockOut_YesToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Restrict Partial Payments')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement No_btn_RPP;
+public WebElement Restrict_Partial_Payments_NoToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Restrict Partial Payments')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Yes_btn_RPP;
+public WebElement Restrict_Partial_Payments_YesToggle;
 	
 	@FindBy(xpath =  "//span[contains(.,'Automatic Global Till')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button[@aria-pressed='true']")
-	WebElement No_btn_AGT_selected;
+public WebElement No_btn_AGT_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'Automatic Global Till')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button[@aria-pressed='true']")
-	WebElement Yes_btn_AGT_selected;
+public WebElement Yes_btn_AGT_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'Force Cash Out at Clock Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button[@aria-pressed='true']")
-	WebElement No_btn_FCOCO_selected;
+public WebElement No_btn_FCOCO_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'Force Cash Out at Clock Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button[@aria-pressed='true']")
-	WebElement Yes_btn_FCOCO_selected;
+public WebElement Yes_btn_FCOCO_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'Restrict Partial Payments')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button[@aria-pressed='true']")
-	WebElement No_btn_RPP_selected;
+public WebElement No_btn_RPP_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'Restrict Partial Payments')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button[@aria-pressed='true']")
-	WebElement Yes_btn_RPP_selected;
+public WebElement Yes_btn_RPP_selected;
 	
 	@FindBy(xpath =  "//span[contains(.,'BANK DEPOSIT')]")
-	WebElement addBankDeposit;
+public WebElement addBankDeposit;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Deposit Amount')]/../../../input")
-	WebElement depositAmount_input;
+public WebElement depositAmount_input;
 	
 	@FindBy(xpath =  "//input[contains(@class,'mat-datepicker-input')]")
-	WebElement datePicker_input;
+public WebElement datePicker_input;
 	
 	@FindBy(xpath =  "//button[contains(@aria-label,'Open calendar')]")
-	WebElement datePicker_calenderIcon;
+public WebElement datePicker_calenderIcon;
 	
 	@FindBy(xpath =  "//button[contains(@class,'mat-calendar-body-active')]")
-	WebElement currentDate;
+public WebElement currentDate;
 	
 	@FindBy(xpath =  "//span[contains(.,'Save')]")
-	WebElement SaveBtn_BankDeposit;
+public WebElement SaveBtn_BankDeposit;
 	
 	@FindBy(xpath =  "//span[contains(.,'Cancel')]")
-	WebElement CancelBtn_BankDeposit;
+public WebElement CancelBtn_BankDeposit;
 	
 	@FindBy(xpath =  "//span[contains(.,'DENOMINATION')]")
-	WebElement AddDenominationBtn;
+public WebElement AddDenominationBtn;
 	
-	@FindBy(xpath =  "//mat-label[contains(.,'Display Name')]/../../../input")
-	WebElement DisplyName_Denomination;
+	@FindBy(xpath =  "//input[@aria-label='Display Name']")
+public WebElement DisplyName_InputBx;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Amount')]/../../../input")
-	WebElement amount_Denomination;
+public WebElement amount_Denomination;
 	
 	@FindBy(xpath =  "//span[contains(.,'Close')]")
-	WebElement close_Btn;
+public WebElement close_Btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Search')]/../input")
-	WebElement search_denomination;
+public WebElement search_denomination;
 	
 	@FindBy(xpath =  "//input[@placeholder='Search']")
-	WebElement search_denomination1;
+public WebElement search_denomination1;
 	
 	@FindBy(xpath =  "//div[contains(@class,'cdk-drop-list')]/div/data-grid-row/div/div[3]/button")
-	WebElement deleteButton_Denomination;
+public WebElement deleteButton_Denomination;
 	
 	@FindBy(xpath =  "//span[contains(.,'Rows per page:')]/../../div[2]/app-selectbox/div/mat-form-field/div")
-	WebElement rowsPerPage_btn;
+public WebElement rowsPerPage_btn;
 	
 	@FindBy(xpath =  "//select-option[1]/div")
-	WebElement fiveRows_Denomination;
+public WebElement fiveRows_Denomination;
 	
 	@FindBy(xpath =  "//select-option[2]/div")
-	WebElement tenRows_Option;
+public WebElement tenRows_Option;
 	
 	@FindBy(xpath =  "//select-option[3]/div")
-	WebElement fifteenRows_Option;
+public WebElement fifteenRows_Option;
 	
 	@FindBy(xpath =  "//select-option[4]/div")
-	WebElement twentyRows_Option;
+public WebElement twentyRows_Option;
 	
-	@FindBy(xpath =  "//mat-label[contains(.,'Global Till Opening Balance')]/../../../input")
-	WebElement globalOpeningBalance;
+	@FindBy(xpath =  "//input[@aria-label='Global Till Opening Balance ']")
+public WebElement Global_OpeningBalance;
 	
 	@FindBy(xpath =  "//div[@class='message mx-2']/span")
-	WebElement successMessage;
+public WebElement successMessage;
 	
 	@FindBy(xpath =  "//h3[contains(.,'New Bank Deposit')]")
-	WebElement newBankDeposit;
+public WebElement newBankDeposit;
 	
 	@FindBy(xpath =  "//span[.='Save']/../../button[contains(@class,'mat-button-disabled')]")
-	WebElement saveBtn_Disabled;
+public WebElement saveBtn_Disabled;
 	
 	@FindBy(xpath =  "//h3[contains(.,'New Denomination')]")
-	WebElement newDenomination;
+public WebElement newDenomination;
 	
 	@FindBy(xpath =  "//span[contains(.,'Delete')]")
-	WebElement deleteConfirmationBtn;
+public WebElement deleteConfirmationBtn;
 		
 	@FindBy(xpath =  "//div[@class='data-grid']/div[3]/div[1]/div/data-grid-row/div[1]/div/span")
-	WebElement denomination_Name_First_Row;
+public WebElement denomination_Name_First_Row;
 	
 	@FindBy(xpath =  "//div[@class='col-auto ng-star-inserted']/button")
-	WebElement pagination;
+public WebElement pagination;
 	
 	@FindBy(xpath =  "//span[contains(.,'Display Name')]")
-	WebElement displayname;
+public WebElement displayname;
 	
 	@FindBy(xpath =  "//span[contains(.,'Till Name')]")
-	WebElement Tillname;
+public WebElement Tillname;
 	
 	@FindBy(xpath =  "//span[contains(.,'Till Type')]")
-	WebElement TillType;
+public WebElement TillType;
 	
 	@FindBy(xpath =  "//span[contains(.,'Status')]")
-	WebElement Status;
+public WebElement Status;
 	
 	@FindBy(xpath =  "//span[contains(.,'Amount')]")
-	WebElement amount;
+public WebElement amount;
 	
 	@FindBy(xpath =  "//span[contains(.,'Open By')]")
-	WebElement OpenBy;
+public WebElement OpenBy;
 	
 	@FindBy(xpath =  "//div[contains(.,'Actions')and contains(@class,'header d-flex')]")
-	WebElement Actions;
+public WebElement Actions;
 	
 	public void paginationValidations() throws Exception {
 		
@@ -382,7 +382,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		Thread.sleep(5000);
 		
 		//Click the close till
-		CloseTills.click();
+		Close_Tills_Tab.click();
 		
 		if(Tillname.isDisplayed()) {
 			test.log(LogStatus.PASS, "Till Name Colum is displayed while user click the Close Till button");
@@ -435,10 +435,10 @@ public class Settings_Till_Setting_Page extends BasePage
 	}
 	
 	@FindBy(xpath =  "//button[@type='button']/span[contains(.,'No')]")
-	WebElement No_btn;
+public WebElement No_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Yes')]")
-	WebElement Yes_btn;
+public WebElement Yes_btn;
 	
 	public void CloseTheActiveTill() throws InterruptedException {
 		//Get the value of first denomination name
@@ -794,7 +794,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		}
 		
 		//Check whether Till Settings is displayed or not
-		if(TillSettings.getText().equals("TILL SETTINGS"))
+		if(Till_Settings_Tab.getText().equals("TILL SETTINGS"))
 		{
 			test.log(LogStatus.PASS, "Till Setting tab is displayed");
 		}
@@ -804,7 +804,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		}
 		
 		//Check whether Denomination is displayed or not
-		if(Denominations.getText().equals("DENOMINATIONS"))
+		if(Denominations_Tab.getText().equals("DENOMINATIONS"))
 		{
 			test.log(LogStatus.PASS, "Denomination tab is displayed");
 		}
@@ -814,7 +814,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		}
 		
 		//Check whether Close Tills is displayed or not
-		if(CloseTills.getText().equals("CLOSE TILLS"))
+		if(Close_Tills_Tab.getText().equals("CLOSE TILLS"))
 		{
 			test.log(LogStatus.PASS, "Close Tills tab is displayed");
 		}
@@ -843,17 +843,17 @@ public class Settings_Till_Setting_Page extends BasePage
 	public void automaticGlobalTill() throws InterruptedException {
 		
 		//Click the yes button of Automatic Global Till
-		Yes_btn_AGT.click();
+		Automatic_Global_TIll_YesToggle.click();
 		
 		//get the value of attribute text value in the Global Opening Balance
-		String s = globalOpeningBalance.getAttribute("value");
+		String s = Global_OpeningBalance.getAttribute("value");
 		System.out.println("Initial value of Global Opening Balance is : "+s);
 		
 		//Enter the invalid Global Opening Balance
-		globalOpeningBalance.sendKeys("AA%^$");
+		Global_OpeningBalance.sendKeys("AA%^$");
 		
 		//Get the value of attribute text value in the Global Opening Balance after entering the invalid string
-		String s1 = globalOpeningBalance.getAttribute("value");
+		String s1 = Global_OpeningBalance.getAttribute("value");
 		System.out.println("After entering the value of Global Opening Balance is : "+s1);
 		
 		//compare the value of before and after entering the text
@@ -867,10 +867,10 @@ public class Settings_Till_Setting_Page extends BasePage
 		}
 		
 		//Global opening balance
-		globalOpeningBalance.clear();
+		Global_OpeningBalance.clear();
 		
 		//Enter the valid Global Opening Balance
-		globalOpeningBalance.sendKeys("1000");     
+		Global_OpeningBalance.sendKeys("1000");     
 		
 		Click_Save();Thread.sleep(1000);
 		//Check whether the success message is displayed
@@ -897,7 +897,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		
 		
 		//Click the no button of Automatic Global Till
-		No_btn_AGT.click();
+		Automatic_Global_TIll_NoToggle.click();
 		
 		Click_Save();Thread.sleep(1000);
 		
@@ -928,7 +928,7 @@ public class Settings_Till_Setting_Page extends BasePage
 	public void forceCashOutatClockOut() throws InterruptedException {
 		
 		//Click the yes toggle of Force Cash Out at Clock Out
-		Yes_btn_FCOCO.click();
+		Force_CashOut_at_ClockOut_YesToggle.click();
 		
 		Click_Save();Thread.sleep(1000);
 		
@@ -954,7 +954,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		
 		
 		//Click the no button of Force cash out at clock out
-		No_btn_FCOCO.click();
+		Force_CashOut_at_ClockOut_NoToggle.click();
 		
 		Click_Save();Thread.sleep(1000);
 		
@@ -983,7 +983,7 @@ public class Settings_Till_Setting_Page extends BasePage
 	public void restrictPartialPaymnets() throws InterruptedException {
 		
 		//Click the yes toggle of Restrict Partial Payments
-		Yes_btn_RPP.click();
+		Restrict_Partial_Payments_YesToggle.click();
 		
 		Click_Save();Thread.sleep(2000);
 		
@@ -1009,7 +1009,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		
 		
 		//Click the no button of Restrict Partial Payments
-		No_btn_RPP.click();
+		Restrict_Partial_Payments_NoToggle.click();
 		
 		Click_Save();Thread.sleep(1000);
 		
@@ -1162,7 +1162,7 @@ public class Settings_Till_Setting_Page extends BasePage
 		Thread.sleep(1500);
 		//Click the denomination 
 		driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);Thread.sleep(1500);
-		Denominations.click();Thread.sleep(1000);
+		Denominations_Tab.click();Thread.sleep(1000);
 		
 		//check whether the application 
 		if(AddDenominationBtn.isDisplayed())
@@ -1191,7 +1191,7 @@ public class Settings_Till_Setting_Page extends BasePage
 				}
 				
 				//check whether the display name is displayed or not
-				if(DisplyName_Denomination.isDisplayed())
+				if(DisplyName_InputBx.isDisplayed())
 				{
 					test.log(LogStatus.PASS, "Display name is displayed successfully");
 				}
@@ -1227,21 +1227,21 @@ public class Settings_Till_Setting_Page extends BasePage
 	}
 	
 	public void emptyDisplayName() {
-		DisplyName_Denomination.clear();
+		DisplyName_InputBx.clear();
 		//Enter the empty display name
-		DisplyName_Denomination.sendKeys("");
+		DisplyName_InputBx.sendKeys("");
 	}
 	
-	public void validDisplayName() {
-		DisplyName_Denomination.clear();
+	public void Enter_DisplayName() {
+		DisplyName_InputBx.clear();
 		//Enter the valid display name
-		DisplyName_Denomination.sendKeys(RandomStringUtils.randomAlphanumeric(5));
+		DisplyName_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(5));
 	}
 	
-	public void invalidDisplayName() {
-		DisplyName_Denomination.clear();
+	public void Enter_InvalidDisplayName() {
+		DisplyName_InputBx.clear();
 		//Enter the invalid display name
-		DisplyName_Denomination.sendKeys(RandomStringUtils.randomAlphanumeric(26));
+		DisplyName_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(26));
 	}
 	
 	
@@ -1486,13 +1486,13 @@ public class Settings_Till_Setting_Page extends BasePage
 	}
 
 	@FindBy(xpath =  "//span[contains(.,'Close') and contains(@class,'mat-button')]")
-	WebElement Close_btn;
+public WebElement Close_btn;
 	
 	@FindBy(xpath =  "//button[@type='button']/span[contains(.,'Cancel')]")
-	WebElement Cancel_btn;
+public WebElement Cancel_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Delete')]")
-	WebElement Delete_btn;
+public WebElement Delete_btn;
 	
 	public void Delete_Denomination() throws InterruptedException {
 		

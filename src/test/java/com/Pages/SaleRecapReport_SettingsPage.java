@@ -33,187 +33,187 @@ public class SaleRecapReport_SettingsPage extends BasePage
 //	}
 	
 	
-	@FindBy(xpath = "//span[contains(.,'Guest/Checks')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Guest_Checks_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='guestCheck']//mat-button-toggle[.='Yes']")
+	public WebElement Guest_Checks_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Guest/Checks')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Guest_Checks_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='guestCheck']//mat-button-toggle[.='No']")
+	public WebElement Guest_Checks_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Cover')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Cover_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='cover']//mat-button-toggle[.='Yes']")
+	public WebElement Cover_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Cover')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
+	@FindBy(xpath = "//app-toggle[@name='cover']//mat-button-toggle[.='No']")
 	WebElement Cover_NoBtn;
 	
 	@FindBy(xpath = "//div[@class='radio-box'][.='Category']")
-	WebElement Category_LevelTypeBtn;
+	public WebElement Category_LevelTypeBtn;
 	
 	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'Sub-Category')]")
-	WebElement SubCategory_LevelTypeBtn;
+	public WebElement SubCategory_LevelTypeBtn;
 	
 	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'Menu Items')]")
-	WebElement MenuItems_LevelTypeBtn;
+	public WebElement MenuItems_LevelTypeBtn;
 	
 	@FindBy(xpath = "//label[.='Category *']/../../div/div/input")
-	WebElement Category_LevelTypeInputBx;
+	public WebElement Category_LevelTypeInputBx;
 	
 	//app-auto-complete[@name='Category']//input
 	@FindBy(xpath = "//label[.='Sub Category *']/../../div/div/input")
-	WebElement SubCategory_LevelTypeInputBx;
+	public WebElement SubCategory_LevelTypeInputBx;
 	
 	@FindBy(xpath = "//label[.='Menu Item *']/../../div/div/input")
-	WebElement MenuItems_LevelTypeInputBx;
+	public WebElement MenuItems_LevelTypeInputBx;
 	
-	@FindBy(xpath = "//span[contains(.,'Grand Sales')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Grand_Sales_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrandSales']//mat-button-toggle[.='Yes']")
+	public WebElement Grand_Sales_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Grand Sales')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Grand_Sales_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrandSales']//mat-button-toggle[.='No']")
+	public WebElement Grand_Sales_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Gross Receipt')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Gross_Receipt_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrossReceipt']//mat-button-toggle[.='Yes']")
+	public WebElement Gross_Receipt_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Gross Receipt')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Gross_Receipt_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrossReceipt']//mat-button-toggle[.='No']")
+	public WebElement Gross_Receipt_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Gross Void')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Gross_Void_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrossVoid']//mat-button-toggle[.='Yes']")
+	public WebElement Gross_Void_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Gross Void')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Gross_Void_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='GrossVoid']//mat-button-toggle[.='No']")
+	public WebElement Gross_Void_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Net Void')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Net_Void_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='NetVoid']//mat-button-toggle[.='Yes']")
+	public WebElement Net_Void_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Net Void')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Net_Void_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='NetVoid']//mat-button-toggle[.='No']")
+	public WebElement Net_Void_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'CC Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement CC_SplitUp_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='CreditCardSplitUp']//mat-button-toggle[.='Yes']")
+	public WebElement CC_SplitUp_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'CC Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement CC_SplitUp_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='CreditCardSplitUp']//mat-button-toggle[.='No']")
+	public WebElement CC_SplitUp_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Other Payments Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement OtherPayments_SplitUp_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='OtherPayments']//mat-button-toggle[.='Yes']")
+	public WebElement OtherPayments_SplitUp_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Other Payments Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement OtherPayments_SplitUp_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='OtherPayments']//mat-button-toggle[.='No']")
+	public WebElement OtherPayments_SplitUp_NoBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='selectedBusinesBox']/div/div/div/div[contains(.,'System Defined')]")
-	WebElement SystemDefined_PaymentNameBtn;
+	public WebElement SystemDefined_PaymentNameBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='selectedBusinesBox']/div/div/div/div[contains(.,'User Defined')]")
-	WebElement UserDefined_PaymentNameBtn;
+	public WebElement UserDefined_PaymentNameBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Tax_SplitUp_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxes']//mat-button-toggle[.='Yes']")
+	public WebElement Tax_SplitUp_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax Split Up')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Tax_SplitUp_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxes']//mat-button-toggle[.='No']")
+	public WebElement Tax_SplitUp_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax Exempt')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Tax_Exempt_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxExempt']//mat-button-toggle[.='Yes']")
+	public WebElement Tax_Exempt_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax Exempt')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Tax_Exempt_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxExempt']//mat-button-toggle[.='No']")
+	public WebElement Tax_Exempt_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax with Net sales')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Taxwith_NetSales_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxWithNetsales']//mat-button-toggle[.='Yes']")
+	public WebElement Taxwith_NetSales_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Tax with Net sales')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Taxwith_NetSales_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='taxWithNetsales']//mat-button-toggle[.='No']")
+	public WebElement Taxwith_NetSales_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Opening Balance')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement OpeningBalance_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='openingBalance']//mat-button-toggle[.='Yes']")
+	public WebElement OpeningBalance_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Opening Balance')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement OpeningBalance_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='openingBalance']//mat-button-toggle[.='No']")
+	public WebElement OpeningBalance_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Paid In/Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement PaidIn_Out_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='paid']//mat-button-toggle[.='Yes']")
+	public WebElement PaidIn_Out_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Paid In/Out')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement PaidIn_Out_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='paid']//mat-button-toggle[.='No']")
+	public WebElement PaidIn_Out_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Cash Drop')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Cash_Drop_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='cashDrop']//mat-button-toggle[.='Yes']")
+	public WebElement Cash_Drop_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Cash Drop')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Cash_Drop_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='cashDrop']//mat-button-toggle[.='No']")
+	public WebElement Cash_Drop_NoBtn;
 	
-	@FindBy(xpath = "//div[@id='summary']//span[contains(.,'Cash Expected')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Cash_Expected_Summary_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='cashExpected']//mat-button-toggle[.='Yes']")
+	public WebElement Cash_Expected_Summary_YesBtn;
 	
-	@FindBy(xpath = "//div[@id='summary']//span[contains(.,'Cash Expected')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Cash_Expected_Summary_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='cashExpected']//mat-button-toggle[.='No']")
+	public WebElement Cash_Expected_Summary_NoBtn;
 	
-	@FindBy(xpath = "//div[@id='summary']//span[contains(.,'Over / Shortage')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Over_Shortage_Summary_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='overShortage']//mat-button-toggle[.='Yes']")
+	public WebElement Over_Shortage_Summary_YesBtn;
 	
-	@FindBy(xpath = "//div[@id='summary']//span[contains(.,'Over / Shortage')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Over_Shortage_Summary_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='overShortage']//mat-button-toggle[.='No']")
+	public WebElement Over_Shortage_Summary_NoBtn;
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']//span[contains(.,'Cash Expected')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Cash_Expected_FormulaDef_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='isCashExcepted']//mat-button-toggle[.='Yes']")
+	public WebElement Cash_Expected_FormulaDef_YesBtn;
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']//span[contains(.,'Cash Expected')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Cash_Expected_FormulaDef_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='isCashExcepted']//mat-button-toggle[.='No']")
+	public WebElement Cash_Expected_FormulaDef_NoBtn;
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']//span[contains(.,'Overage/Shortage')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Over_Shortage_Summary_FormulaDef_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='isOverageShortage']//mat-button-toggle[.='Yes']")
+	public WebElement Over_Shortage_Summary_FormulaDef_YesBtn;
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']//span[contains(.,'Overage/Shortage')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Over_Shortage_Summary_FormulaDef_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='isOverageShortage']//mat-button-toggle[.='No']")
+	public WebElement Over_Shortage_Summary_FormulaDef_NoBtn;
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']/div[2]/div/div[2]/app-auto-complete/div/mat-form-field/div/div/div[3]/div/div/input")
-	WebElement Cash_Expected_AddInputBox;
+	@FindBy(xpath = "(//div[@id='formulaDefinition']//input)[1]")
+	public WebElement Cash_Expected_AddInputBox;
 	
 	public WebElement Cash_Expected_AddInputBox()
 	{
 		return Cash_Expected_AddInputBox;
 	}
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']/div[2]/div/div[3]/app-auto-complete/div/mat-form-field/div/div/div[3]/div/div/input")
-	WebElement Cash_Expected_SubtractInputBox;
+	@FindBy(xpath = "(//div[@id='formulaDefinition']//input)[2]")
+	public WebElement Cash_Expected_SubtractInputBox;
 		
-	@FindBy(xpath = "//div[@id='formulaDefinition']/div[3]/div/div[2]/app-auto-complete/div/mat-form-field/div/div/div[3]/div/div/input")
-	WebElement Overage_Shortage_AddInputBox;
+	@FindBy(xpath = "(//div[@id='formulaDefinition']//input)[3]")
+	public WebElement Overage_Shortage_AddInputBox;
 	
 	public WebElement Overage_Shortage_AddInputBox()
 	{
 		return Overage_Shortage_AddInputBox;
 	}
 	
-	@FindBy(xpath = "//div[@id='formulaDefinition']/div[3]/div/div[3]/app-auto-complete/div/mat-form-field/div/div/div[3]/div/div/input")
-	WebElement Overage_Shortage_SubtractInputBox;
+	@FindBy(xpath = "(//div[@id='formulaDefinition']//input)[4]")
+	public WebElement Overage_Shortage_SubtractInputBox;
 	
-	@FindBy(xpath = "//span[contains(.,'Department Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Department_Summary_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='departmentSummary']//mat-button-toggle[.='Yes']")
+	public WebElement Department_Summary_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Department Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Department_Summary_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='departmentSummary']//mat-button-toggle[.='No']")
+	public WebElement Department_Summary_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Category Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Category_Summary_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='categorySummary']//mat-button-toggle[.='Yes']")
+	public WebElement Category_Summary_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Category Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Category_Summary_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='categorySummary']//mat-button-toggle[.='No']")
+	public WebElement Category_Summary_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Hourly Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement Hourly_Summary_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='hourlySummary']//mat-button-toggle[.='Yes']")
+	public WebElement Hourly_Summary_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Hourly Summary')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement Hourly_Summary_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='hourlySummary']//mat-button-toggle[.='No']")
+	public WebElement Hourly_Summary_NoBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Include Credits in Daily Summary Report')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement IncludeCredits_in_DailySummaryReport_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='includeCredits']//mat-button-toggle[.='Yes']")
+	public WebElement IncludeCredits_in_DailySummaryReport_YesBtn;
 	
-	@FindBy(xpath = "//span[contains(.,'Include Credits in Daily Summary Report')]/../../div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement IncludeCredits_in_DailySummaryReport_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='includeCredits']//mat-button-toggle[.='No']")
+	public WebElement IncludeCredits_in_DailySummaryReport_NoBtn;
 	
 	@FindBy(xpath = "//button[.='UPDATE']")
-	WebElement UpdateBtnIn_SaleRecapSettings;
+	public WebElement UpdateBtnIn_SaleRecapSettings;
 	
 	public void Click_UpdateButtonSettings()
 	{
@@ -225,29 +225,30 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return UpdateBtnIn_SaleRecapSettings;
 	}
 	
-	public void Enable_GuestChecks()
+	public void Enable_GuestChecks() throws Exception
 	{
-		if(Guest_Checks_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Guest_Checks_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Guest_Checks_YesBtn.click();
-		}
+//		}
 	}
 	
-	
-	public void Disable_GuestChecks()
+	public void Disable_GuestChecks() throws Exception
 	{
-		if(Guest_Checks_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Guest_Checks_YesBtn.isSelected())
+//		{
 			Guest_Checks_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Guest_Checks_YesBtn()
@@ -255,29 +256,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Guest_Checks_YesBtn;
 	}
 	
-	public void Enable_Cover()
+	public void Enable_Cover() throws Exception
 	{
-		if(Cover_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Cover_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Cover_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Cover()
+	public void Disable_Cover() throws Exception
 	{
-		if(Cover_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Cover_YesBtn.isSelected())
+//		{
 			Cover_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Cover_YesBtn()
@@ -546,29 +549,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_Grand_Sales()
+	public void Enable_Grand_Sales() throws Exception
 	{
-		if(Grand_Sales_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Grand_Sales_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Grand_Sales_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Grand_Sales()
+	public void Disable_Grand_Sales() throws Exception
 	{
-		if(Grand_Sales_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Grand_Sales_YesBtn.isSelected())
+//		{
 			Grand_Sales_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Grand_Sales_YesBtn()
@@ -577,29 +582,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_Gross_Receipt()
+	public void Enable_Gross_Receipt() throws Exception
 	{
-		if(Gross_Receipt_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Gross_Receipt_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Gross_Receipt_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Gross_Receipt()
+	public void Disable_Gross_Receipt() throws Exception
 	{
-		if(Gross_Receipt_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Gross_Receipt_YesBtn.isSelected())
+//		{
 			Gross_Receipt_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Gross_Receipt_YesBtn()
@@ -607,29 +614,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Gross_Receipt_YesBtn;
 	}
 	
-	public void Enable_Gross_Void()
+	public void Enable_Gross_Void() throws Exception
 	{
-		if(Gross_Void_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Gross_Void_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Gross_Void_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Gross_Void()
+	public void Disable_Gross_Void() throws Exception
 	{
-		if(Gross_Void_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Gross_Void_YesBtn.isSelected())
+//		{
 			Gross_Void_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Gross_Void_YesBtn()
@@ -637,29 +646,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Gross_Void_YesBtn;
 	}
 	
-	public void Enable_Net_Void()
+	public void Enable_Net_Void() throws Exception
 	{
-		if(Net_Void_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Net_Void_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Net_Void_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Net_Void()
+	public void Disable_Net_Void() throws Exception
 	{
-		if(Net_Void_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Net_Void_YesBtn.isSelected())
+//		{
 			Net_Void_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Net_Void_YesBtn()
@@ -667,29 +678,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Net_Void_YesBtn;
 	}
 	
-	public void Enable_CC_SplitUp()
+	public void Enable_CC_SplitUp() throws Exception
 	{
-		if(CC_SplitUp_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(CC_SplitUp_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			CC_SplitUp_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_CC_SplitUp()
+	public void Disable_CC_SplitUp() throws Exception
 	{
-		if(CC_SplitUp_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(CC_SplitUp_YesBtn.isSelected())
+//		{
 			CC_SplitUp_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement CC_SplitUp_YesBtn()
@@ -697,29 +710,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return CC_SplitUp_YesBtn;
 	}
 	
-	public void Enable_OtherPayments_SplitUp()
+	public void Enable_OtherPayments_SplitUp() throws Exception
 	{
-		if(OtherPayments_SplitUp_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(OtherPayments_SplitUp_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			OtherPayments_SplitUp_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_OtherPayments_SplitUp()
+	public void Disable_OtherPayments_SplitUp() throws Exception
 	{
-		if(OtherPayments_SplitUp_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(OtherPayments_SplitUp_YesBtn.isSelected())
+//		{
 			OtherPayments_SplitUp_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement OtherPayments_SplitUp_YesBtn()
@@ -748,29 +763,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_Tax_SplitUp()
+	public void Enable_Tax_SplitUp() throws Exception
 	{
-		if(Tax_SplitUp_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Tax_SplitUp_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Tax_SplitUp_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Tax_SplitUp()
+	public void Disable_Tax_SplitUp() throws Exception
 	{
-		if(Tax_SplitUp_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Tax_SplitUp_YesBtn.isSelected())
+//		{
 			Tax_SplitUp_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Tax_SplitUp_YesBtn()
@@ -778,29 +795,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Tax_SplitUp_YesBtn;
 	}
 	
-	public void Enable_Tax_Exempt()
+	public void Enable_Tax_Exempt() throws Exception
 	{
-		if(Tax_Exempt_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Tax_Exempt_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Tax_Exempt_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Tax_Exempt()
+	public void Disable_Tax_Exempt() throws Exception
 	{
-		if(Tax_Exempt_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Tax_Exempt_YesBtn.isSelected())
+//		{
 			Tax_Exempt_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Tax_Exempt_YesBtn()
@@ -808,29 +827,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Tax_Exempt_YesBtn;
 	}
 	
-	public void Enable_Taxwith_NetSales()
+	public void Enable_Taxwith_NetSales() throws Exception
 	{
-		if(Taxwith_NetSales_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Taxwith_NetSales_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Taxwith_NetSales_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Taxwith_NetSales()
+	public void Disable_Taxwith_NetSales() throws Exception
 	{
-		if(Taxwith_NetSales_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Taxwith_NetSales_YesBtn.isSelected())
+//		{
 			Taxwith_NetSales_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Taxwith_NetSales_YesBtn()
@@ -838,29 +859,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Taxwith_NetSales_YesBtn;
 	}
 	
-	public void Enable_OpeningBalance()
+	public void Enable_OpeningBalance() throws Exception
 	{
-		if(OpeningBalance_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(OpeningBalance_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			OpeningBalance_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_OpeningBalance()
+	public void Disable_OpeningBalance() throws Exception
 	{
-		if(OpeningBalance_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(OpeningBalance_YesBtn.isSelected())
+//		{
 			OpeningBalance_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement OpeningBalance_YesBtn()
@@ -869,29 +892,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_PaidIn_Out()
+	public void Enable_PaidIn_Out() throws Exception
 	{
-		if(PaidIn_Out_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(PaidIn_Out_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			PaidIn_Out_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_PaidIn_Out()
+	public void Disable_PaidIn_Out() throws Exception
 	{
-		if(PaidIn_Out_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(PaidIn_Out_YesBtn.isSelected())
+//		{
 			PaidIn_Out_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement PaidIn_Out_YesBtn()
@@ -899,29 +924,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return PaidIn_Out_YesBtn;
 	}
 	
-	public void Enable_Cash_Drop()
+	public void Enable_Cash_Drop() throws Exception
 	{
-		if(Cash_Drop_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Cash_Drop_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Cash_Drop_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Cash_Drop()
+	public void Disable_Cash_Drop() throws Exception
 	{
-		if(Cash_Drop_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Cash_Drop_YesBtn.isSelected())
+//		{
 			Cash_Drop_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Cash_Drop_YesBtn()
@@ -929,29 +956,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Cash_Drop_YesBtn;
 	}
 	
-	public void Enable_Cash_Expected_Summary()
+	public void Enable_Cash_Expected_Summary() throws Exception
 	{
-		if(Cash_Expected_Summary_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Cash_Expected_Summary_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Cash_Expected_Summary_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Cash_Expected_Summary()
+	public void Disable_Cash_Expected_Summary() throws Exception
 	{
-		if(Cash_Expected_Summary_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Cash_Expected_Summary_YesBtn.isSelected())
+//		{
 			Cash_Expected_Summary_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Cash_Expected_Summary_YesBtn()
@@ -959,29 +988,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Cash_Expected_Summary_YesBtn;
 	}
 	
-	public void Enable_Over_Shortage_Summary()
+	public void Enable_Over_Shortage_Summary() throws Exception
 	{
-		if(Over_Shortage_Summary_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Over_Shortage_Summary_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Over_Shortage_Summary_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Over_Shortage_Summary()
+	public void Disable_Over_Shortage_Summary() throws Exception
 	{
-		if(Over_Shortage_Summary_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Over_Shortage_Summary_YesBtn.isSelected())
+//		{
 			Over_Shortage_Summary_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Over_Shortage_Summary_YesBtn()
@@ -989,29 +1020,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Over_Shortage_Summary_YesBtn;
 	}
 	
-	public void Enable_Cash_Expected_FormulaDef()
+	public void Enable_Cash_Expected_FormulaDef() throws Exception
 	{
-		if(Cash_Expected_FormulaDef_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Cash_Expected_FormulaDef_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Cash_Expected_FormulaDef_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Cash_Expected_FormulaDef()
+	public void Disable_Cash_Expected_FormulaDef() throws Exception
 	{
-		if(Cash_Expected_FormulaDef_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Cash_Expected_FormulaDef_YesBtn.isSelected())
+//		{
 			Cash_Expected_FormulaDef_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Cash_Expected_FormulaDef_YesBtn()
@@ -1019,7 +1052,7 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Cash_Expected_FormulaDef_YesBtn;
 	}
 	
-	public void Add_CashExpected_FormulaDefintion() throws Exception
+	public void Select_Add_CashExpected_FormulaDefintion() throws Exception
 	{
 		Thread.sleep(1000);
 		Cash_Expected_AddInputBox.click();
@@ -1093,7 +1126,10 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		}
 		
 		}
+	}
 		
+		public void Select_Subtract_Cash_Expected_FormulaDefintion() throws Exception
+		{
 		
 		Thread.sleep(1000);
 		Cash_Expected_SubtractInputBox.click();
@@ -1124,29 +1160,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_Over_Shortage_Summary_FormulaDef()
+	public void Enable_Over_Shortage_Summary_FormulaDef() throws Exception
 	{
-		if(Over_Shortage_Summary_FormulaDef_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Over_Shortage_Summary_FormulaDef_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Over_Shortage_Summary_FormulaDef_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Over_Shortage_Summary_FormulaDef()
+	public void Disable_Over_Shortage_Summary_FormulaDef() throws Exception
 	{
-		if(Over_Shortage_Summary_FormulaDef_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Over_Shortage_Summary_FormulaDef_YesBtn.isSelected())
+//		{
 			Over_Shortage_Summary_FormulaDef_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Over_Shortage_Summary_FormulaDef_YesBtn()
@@ -1154,7 +1192,7 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Over_Shortage_Summary_FormulaDef_YesBtn;
 	}
 	
-	public void Add_Over_Shortage_FormulaDefintion() throws Exception
+	public void Select_Add_Over_Shortage_FormulaDefintion() throws Exception
 	{
 		
 		Thread.sleep(1000);
@@ -1230,9 +1268,11 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		}
 			
 		}
+	}
 		
 		
-		
+		public void Select_Subtract_Overage_Shortage_FormulaDefintion() throws Exception
+		{
 		
 		Thread.sleep(2000);
 		Overage_Shortage_SubtractInputBox.click();
@@ -1261,29 +1301,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		}
 	}
 	
-	public void Enable_Department_Summary()
+	public void Enable_Department_Summary() throws Exception
 	{
-		if(Department_Summary_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Department_Summary_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Department_Summary_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Department_Summary()
+	public void Disable_Department_Summary() throws Exception
 	{
-		if(Department_Summary_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Department_Summary_YesBtn.isEnabled())
+//		{
 			Department_Summary_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Department_Summary_YesBtn()
@@ -1291,29 +1333,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Department_Summary_YesBtn;
 	}
 	
-	public void Enable_Category_Summary()
+	public void Enable_Category_Summary() throws Exception
 	{
-		if(Category_Summary_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Category_Summary_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Category_Summary_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Category_Summary()
+	public void Disable_Category_Summary() throws Exception
 	{
-		if(Category_Summary_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Category_Summary_YesBtn.isSelected())
+//		{
 			Category_Summary_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Category_Summary_YesBtn()
@@ -1322,29 +1366,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 	}
 	
 	
-	public void Enable_Hourly_Summary()
+	public void Enable_Hourly_Summary() throws Exception
 	{
-		if(Hourly_Summary_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(Hourly_Summary_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			Hourly_Summary_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_Hourly_Summary()
+	public void Disable_Hourly_Summary() throws Exception
 	{
-		if(Hourly_Summary_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(Hourly_Summary_YesBtn.isSelected())
+//		{
 			Hourly_Summary_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement Hourly_Summary_YesBtn()
@@ -1352,29 +1398,31 @@ public class SaleRecapReport_SettingsPage extends BasePage
 		return Hourly_Summary_YesBtn;
 	}
 	
-	public void Enable_IncludeCredits_in_DailySummaryReport()
+	public void Enable_IncludeCredits_in_DailySummaryReport() throws Exception
 	{
-		if(IncludeCredits_in_DailySummaryReport_YesBtn.isSelected())
-		{
-			
-		}
-		else
-		{
+		Thread.sleep(1000);
+//		if(IncludeCredits_in_DailySummaryReport_YesBtn.isSelected())
+//		{
+//			
+//		}
+//		else
+//		{
 			IncludeCredits_in_DailySummaryReport_YesBtn.click();
-		}
+//		}
 	}
 	
 	
-	public void Disable_IncludeCredits_in_DailySummaryReport()
+	public void Disable_IncludeCredits_in_DailySummaryReport() throws Exception
 	{
-		if(IncludeCredits_in_DailySummaryReport_YesBtn.isEnabled())
-		{
+		Thread.sleep(1000);
+//		if(IncludeCredits_in_DailySummaryReport_YesBtn.isSelected())
+//		{
 			IncludeCredits_in_DailySummaryReport_NoBtn.click();
-		}
-		else
-		{
-			
-		}
+//		}
+//		else
+//		{
+//			
+//		}
 	}
 	
 	public WebElement IncludeCredits_in_DailySummaryReport_YesBtn()

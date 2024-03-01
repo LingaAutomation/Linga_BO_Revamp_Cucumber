@@ -1,5 +1,6 @@
 @Product/Items
 @Taxes
+@Product/Items01
 
 Feature: Product and Items - Taxes
 I am verify the Product/Items-Taxes module by Add/Edit/Delete/Activate/Duplicate

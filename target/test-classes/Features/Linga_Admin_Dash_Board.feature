@@ -112,7 +112,7 @@ Feature: LingaAdmin - DashBoard
 
   Scenario: Verify able to generate the Admin User Web Order Sales for Last 7 days
    Given I Select the Online Ordering Tab
-    And I Select the Time Period as Last Seven days
+    And I Select the Time Period as Last Seven Days
     And I Click the Apply button
     And I Select the Web Order Sales Tile
     Then Verify User Web Order Sales Report generated for Selected Time Period or Not
@@ -217,7 +217,7 @@ Feature: LingaAdmin - DashBoard
 
   Scenario: Verify able to generate the Admin User Mobile Sales for Last 7 days
     Given I Select the Online Ordering Tab
-    And I Select the Time Period as Last Seven days
+    And I Select the Time Period as Last Seven Days
     And I Click the Apply button
      And I Select the Mobile Sales Tile
     Then Verify User Mobile Sales Report generated for Selected Time Period or Not
@@ -317,7 +317,7 @@ Feature: LingaAdmin - DashBoard
 
   Scenario: Verify able to generate the Admin User Mobile Sales for Last 7 days
   Given I Select the Online Ordering Tab
-    And I Select the Time Period as Last Seven days
+    And I Select the Time Period as Last Seven Days
     And I Click the Apply button
     And I Select the Call Centre Tile
     Then Verify User Call Centre Report generated for Selected Time Period or Not
@@ -417,7 +417,7 @@ Feature: LingaAdmin - DashBoard
 
   Scenario: Verify able to generate the Admin User Total Sales for Last 7 days
    Given I Select the Online Ordering Tab
-    And I Select the Time Period as Last Seven days
+    And I Select the Time Period as Last Seven Days
     And I Click the Apply button
      And I Select the Total Sales Tile
     Then Verify User Total Sales Report generated for Selected Time Period or Not

@@ -25,7 +25,7 @@ public class ReportsPage extends BasePage
 //	public SelfHealingDriver driver;
 //	public ExtentTest test;
 	Utility ut=new Utility();
-	Common_XPaths cmp;
+	Common_XPaths cmp=new Common_XPaths();
 	
 	TaxesPage tx;
 //	public ReportsPage(SelfHealingDriver driver,ExtentTest test)
@@ -38,11 +38,43 @@ public class ReportsPage extends BasePage
 //		PageFactory.initElements(driver, this);
 //	}
 	
-	@FindBy(xpath = "//label[contains(.,'Department')]/../../input")
-	WebElement Department_ReportInputBx;
+//	@FindBy(xpath = "//label[contains(.,'Department')]/../../input")
+//	WebElement Department_ReportInputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Select Department']")
+	public WebElement Select_Department_InputBx;
+	
+
+	@FindBy(xpath = "//input[@aria-label='Category']")
+	public WebElement Select_Category_InputBx;
+	
+
+	@FindBy(xpath = "//input[@aria-label='Sub Category']")
+	public WebElement Select_SubCategory_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Report Type']")
+	public WebElement Report_Type_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Sale Recap Type']/..")
+	public WebElement Sale_Recap_Type_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Menu Item']")
+	public WebElement Menu_Item_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Serving Level']")
+	public WebElement Serving_Level_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Price Level']")
+	public WebElement Price_Level_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Modifier']")
+	public WebElement Modifier_InputBx;
+	
+	@FindBy(xpath = "//app-checkbox[@name='splitBySS']//mat-checkbox")
+	public WebElement Split_By_Serving_Level_CheckBox;
 	
 	@FindBy(xpath = "//label[contains(.,'Time Period')]/../../input")
-	WebElement Time_PeriodInputBx;
+	public WebElement Time_PeriodInputBx;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Today')]")
 	WebElement Today_TimePeriodBtn;
@@ -115,6 +147,46 @@ public class ReportsPage extends BasePage
 	@FindBy(xpath = "//app-line-chart")
 	WebElement Sales_byHours_ChartScreen;
 	
+
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Name')]")
+	public WebElement Name_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Sale Amount')]")
+	public WebElement Sale_Amount_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Quantity')]")
+	public WebElement Quantity_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Tax')]")
+	public WebElement Tax_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Discount')]")
+	public WebElement Discount_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'% of Sale')]")
+	public WebElement Percentage_of_Sale_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Net Sale')]")
+	public WebElement Net_Sale_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Department')]")
+	public WebElement Department_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Category')]")
+	public WebElement Category_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Sub Category')]")
+	public WebElement SubCategory_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Price Level')]")
+	public WebElement Price_Level_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Item Name')]")
+	public WebElement Item_Name_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Modifier Name')]")
+	public WebElement Modifier_Name_Column_Field;
+	
 	public void Verify_ReportHomePage(String str)
 	{
 		if(driver.findElement(By.xpath("//a[contains(@class,'mat-tab-label-active')][contains(.,'"+str+"')]")).isDisplayed())
@@ -131,8 +203,12 @@ public class ReportsPage extends BasePage
 		}
 	}
 	
-	public void Click_ApplyButton()
+	public void Click_ApplyButton() throws Exception
 	{
+		Thread.sleep(2000);
+		driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+		driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+		Thread.sleep(1000);
 		Apply_Btn.click();
 	}
 	
@@ -993,10 +1069,11 @@ public class ReportsPage extends BasePage
 	
 	public void Select_Time_Period_Sale_Recap() throws Exception
 	{
-		Thread.sleep(1000);
-		Sale_RecapType_InputBx.click();
+		Thread.sleep(5000);
+//		cmp.Click_Wait_ForElementClickable(Sale_Recap_Type_InputBx, 30);
+		Sale_Recap_Type_InputBx.click();
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Time_Period_OptionBtn.click();
 	}
 	
@@ -1112,8 +1189,8 @@ public class ReportsPage extends BasePage
 	@FindBy(xpath = "//label[contains(.,'Activity Type')]/../../input")
 	WebElement Activity_Type_GiftCardInputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Employee')]/../../input")
-	WebElement Employee_InputBx;
+	@FindBy(xpath = "//input[@aria-label='Employee']")
+	public WebElement Employee_InputBx;
 	
 	@FindBy(xpath = "//label[contains(.,'Driver')]/../../input")
 	WebElement Driver_InputBx;
@@ -1340,11 +1417,32 @@ public class ReportsPage extends BasePage
 	
 	/////////////////////  Paid In / Paid Out Report  /////////////////
 	
-	@FindBy(xpath = "//label[contains(.,'Paid Type')]/../../input")
-	WebElement Paid_TypeInputBx;
+	@FindBy(xpath = "//input[@aria-label='Paid Type']")
+	public WebElement Paid_TypeInputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'No Paid In& Out Record for Selected Time Period')]")
-	WebElement No_PaidIn_PaidOut_InfoMsg;
+	public WebElement No_PaidIn_PaidOut_InfoMsg;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Node')]")
+	public WebElement Node_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Business Date')]")
+	public WebElement Business_Date_Column_Field;
+	
+//	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Transaction Date')]")
+//	public WebElement Transaction_Date_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Paid In/Out By')]")
+	public WebElement Paid_In_Out_By_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Amount')]")
+	public WebElement Amount_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Paid From/Paid To')]")
+	public WebElement Paid_From_Paid_To_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Reason')]")
+	public WebElement Reason_Column_Field;
 	
 	public void Select_Paid_Type(String PaidType) throws Exception
 	{
@@ -1367,7 +1465,7 @@ public class ReportsPage extends BasePage
 	
 	public void Select_Department_inReport(String Department) throws Exception
 	{
-		Department_ReportInputBx.click();
+		Select_Department_InputBx.click();
 		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//select-option[contains(.,'"+Department+"')]")).click();
@@ -1385,13 +1483,15 @@ public class ReportsPage extends BasePage
 	
 	public WebElement Department_ReportInputBox()
 	{
-		return Department_ReportInputBx;
+		return Select_Department_InputBx;
 	}
 	
 	public WebElement Tax_ReportInputBox()
 	{
 		return Tax_ReportInputBx;
 	}
+	
+
 	
 	public WebElement Net_Sale_DailySummaryReport()
 	{
@@ -1459,22 +1559,58 @@ public class ReportsPage extends BasePage
 	///////////////// Tax Report  //////////////////
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax Per ServiceType')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tax_PerServiceType_ChkBx_SLD;
+	public WebElement Tax_PerServiceType_ChkBx_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax Per ServiceType')]")
-	WebElement Tax_PerServiceType_ChkBx;
+	public WebElement Tax_PerServiceType_ChkBx;
 	
 	@FindBy(xpath = "//div[contains(.,'Total')]/../div[4]/span")
-	WebElement Tax_Total_TaxReport;
+	public WebElement Tax_Total_TaxReport;
 	
 	@FindBy(xpath = "//div[contains(.,'Total')]/../div[5]/span")
-	WebElement Tax_Exempt_TaxReport;
+	public WebElement Tax_Exempt_TaxReport;
 	
 	@FindBy(xpath = "//div[contains(.,'Rounding Off')]/../div[4]/span")
-	WebElement Rounding_Off_TaxReport;
+	public WebElement Rounding_Off_TaxReport;
 	
 	@FindBy(xpath = "//td[contains(.,'Tax details not found')]")
-	WebElement No_Tax_FoundInfoMsg;
+	public WebElement No_Tax_FoundInfoMsg;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Tax Name')]")
+	public WebElement Tax_Name_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Tax Percentage')]")
+	public WebElement Tax_Percentage_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Net Sales')]")
+	public WebElement Net_Sales_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Tax Amount')]")
+	public WebElement Tax_Amount_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Tax Exempt')]")
+	public WebElement Tax_Exempt_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'QSR')]")
+	public WebElement QSR_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Bar')]")
+	public WebElement Bar_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Dine In')]")
+	public WebElement Dine_In_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'To Go')]")
+	public WebElement ToGo_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Delivery')]")
+	public WebElement Delivery_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'For Here')]")
+	public WebElement For_Here_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Web')]")
+	public WebElement Web_Column_Field;
 	
 	public WebElement Tax_Total_TaxReport()
 	{
@@ -1498,33 +1634,33 @@ public class ReportsPage extends BasePage
 
 	public void Enable_Tax_Per_ServiceType()
 	{
-		try
-		{
-			if(Tax_PerServiceType_ChkBx_SLD.isDisplayed())
-			{
-			
-			}
-		}
-		catch(Exception h)
-		{
+//		try
+//		{
+//			if(Tax_PerServiceType_ChkBx_SLD.isDisplayed())
+//			{
+//			
+//			}
+//		}
+//		catch(Exception h)
+//		{
 			Tax_PerServiceType_ChkBx.click();
-		}
+//		}
 	}
 	
 	
 	public void Disable_Tax_Per_ServiceType()
 	{
-		try
-		{
-			if(Tax_PerServiceType_ChkBx_SLD.isDisplayed())
+//		try
+//		{
+			if(Tax_PerServiceType_ChkBx.isDisplayed())
 			{
 				Tax_PerServiceType_ChkBx.click();
 
 			}
-		}
-		catch(Exception h)
-		{
-		}
+//		}
+//		catch(Exception h)
+//		{
+//		}
 	}
 	
 
@@ -2185,6 +2321,9 @@ public class ReportsPage extends BasePage
 	
 	@FindBy(xpath = "//button[contains(.,'EXPORT TO EMAIL')]")
 	WebElement Export_To_EmailBtn;
+	
+	@FindBy(xpath = "//button[contains(.,'EXPORT')]")
+	public WebElement Export_Btn;
 	
 	public void Enter_Email_Address(String Email) throws Exception
 	{
@@ -2896,5 +3035,134 @@ public class ReportsPage extends BasePage
 			 test.log(LogStatus.INFO, "The start date and end date are : "+Utility.getProperty("Report_Start_Date")+" and "+Utility.getProperty("Report_End_Date"));
 		
 		}
+		
+		@FindBy(xpath = "//input[@aria-label='Service Type']")
+		public WebElement Service_Type_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Floor No']")
+		public WebElement Floor_No_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Table No']")
+		public WebElement Table_No_InputBx;
+		
+		@FindBy(xpath = "//mat-checkbox[contains(.,'Group By Employee')]")
+		public WebElement Group_By_Employee_CheckBx;
+		
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Check Number')]")
+		public WebElement Check_Number_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Customer')]")
+		public WebElement Customer_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Transaction Date')]")
+		public WebElement Transaction_Date_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Floor No')]")
+		public WebElement Floor_No_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Table No')]")
+		public WebElement Table_No_Column_Field;
+		
+//		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Net Sale')]")
+//		public WebElement Net_Sale_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Total Tax')]")
+		public WebElement Total_Tax_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Incl.Tax')]")
+		public WebElement Incl_Tax_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'CC Service Charge')]")
+		public WebElement CC_Service_Charge_Column_Field;
+		
+//		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Discount')]")
+//		public WebElement Discount_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Gross Receipt')]")
+		public WebElement Gross_Receipt_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Closed By')]")
+		public WebElement Closed_By_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Closed On')]")
+		public WebElement Closed_On_Column_Field;
+		
+		@FindBy(xpath = "//input[@aria-label='Sale Created By']")
+		public WebElement Sale_Created_By_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Discount Coupon Type']")
+		public WebElement Discount_Coupon_Type_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Discount']")
+		public WebElement Discount_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Approved By']")
+		public WebElement Approved_By_InputBx;
+		
+		@FindBy(xpath = "//input[@aria-label='Employee Name']")
+		public WebElement Employee_Name_InputBx;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Discount Name')]")
+		public WebElement Discount_Name_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Discount Total')]")
+		public WebElement Discount_Total_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'% of Total')]")
+		public WebElement Percentag_ofTotal_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Count')]")
+		public WebElement Count_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Average')]")
+		public WebElement Average_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Discount Coupon Type')]")
+		public WebElement Discount_Coupon_Type_Column_Field;
+		
+		@FindBy(xpath = "//input[@aria-label='Action Type']")
+		public WebElement Action_Type_InputBx;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Check Details')]")
+		public WebElement Check_Details_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Employee Name and Id')]")
+		public WebElement Employee_Name_Id_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Customer Name')]")
+		public WebElement Customer_Name_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Customer Email')]")
+		public WebElement Customer_Email_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Customer Phone')]")
+		public WebElement Customer_Phone_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Credit Amount')]")
+		public WebElement Credit_Amount_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Date & Time')]")
+		public WebElement Date_Time_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Action Type')]")
+		public WebElement Action_Type_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Source')]")
+		public WebElement Source_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Date')]")
+		public WebElement Date_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Grand Sales')]")
+		public WebElement Grand_Sales_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Number Of Customer')]")
+		public WebElement No_Of_Customer_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Grand Sale')]")
+		public WebElement Grand_Sale_Column_Field;
+		
+		
 		
 }

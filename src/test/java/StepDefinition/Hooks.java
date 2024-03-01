@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FilenameUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +43,7 @@ public class Hooks
 //	ExtentReports rep = new Driver_Manager().getRep();
 //	ExtentTest test=new Driver_Manager().rep.startTest(FeatureName);
 
-	
+	Utility ut=new Utility();
 	
 	
 	static LoginTest a=new LoginTest();
@@ -142,6 +143,22 @@ public class Hooks
 	 			
 	 		}
 	 		
+//	 		try
+//	 		{
+//	 			if(driver.findElement(By.xpath("//button[@id='reload-button']")).isDisplayed())
+//	 			{
+//	 				System.out.println("Application Crashed due to Out of Memory Issue & Application Closed...!");
+//		 			ut.FailedCaptureScreenshotAsBASE64();
+//	 				Thread.sleep(2000);
+//		 			driver.navigate().refresh();
+//		 			Thread.sleep(5000);
+//		 			driver.navigate().refresh();
+//		 			Thread.sleep(5000);
+//					a.Login();
+//	 			}
+//	 		}
+//	 		catch(Exception kk) {}
+	 		
 	 		
 	 		
 	 	}
@@ -159,7 +176,13 @@ public class Hooks
 				String s="data:image/png;base64,"+scnsht;
 				
 				new Driver_Manager().test.log(LogStatus.FAIL, new Driver_Manager().test.addScreenCapture(s));
-		
+				
+//				final byte[] screenshot = ((TakesScreenshot) driver.getScreenshotAs(OutputType.BYTES);
+//	            scenario.attach(screenshot, "image/png", scenario.getName()); 
+				
+//				 ExtentTestManager.getTest().addScreenCaptureFromBase64String(ut.getBase64Screenshot());
+//				scenario.attach(scnsht, s, scenario.getName());
+				scenario.attach(s, scnsht, scenario.getName());
 			
 			}
 		}

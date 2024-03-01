@@ -1,5 +1,7 @@
 @Product/Items
 @Serving_Size_Levels
+@Product/Items01
+
 Feature: Product and Items - Serving Size Levels
 I am verify the Product/Items-Serving Size Level module by Add/Edit/Delete/Activate/Duplicate
 
@@ -24,18 +26,23 @@ Given Click the New Serving Size Level button
 When Verify the New Serving Size Level Header
 
 Scenario: Verify whether we able to create the New Serving Size Level without Entering Name/Mandatory Fields
+Given Click the New Serving Size Level button
 And I Click the Save button without Entering Serving Size Level Name
 
 Scenario: Verify whether we able to Save the Serving Size Level with Single letter
+Given Click the New Serving Size Level button
 And I Enter the Single letter in Serving Size Level Name and Click the Save button
 
 Scenario: Verify whether we can able to Save the Serving Size Level only by Entering Serving Size Level Description
+Given Click the New Serving Size Level button
 And I Enter the Only Description and Click the Save button 
 
 Scenario: Verify whether the user can able to Enter the Serving Size Level Name above the limit
+Given Click the New Serving Size Level button
 And I Enter the Serving Size Level Name Exceeding the limit
 
 Scenario: Verify whether user can able to create a New Serving Size Level
+Given Click the New Serving Size Level button
 When I Enter the New Serving Size Level Name
 And I Enter the Serving Size Level Description
 And I Click the Save button 
@@ -46,6 +53,7 @@ Given I Search and Edit the Serving Size Level
 When Verify the Update Serving Size Level Header
 
 Scenario: Verify whether we can able to Cancel/Close the Serving Size Level Update screen
+Given I Search and Edit the Serving Size Level
 And I Click the Cancel button
 Then I Verify Serving Size Level Update screen Close or not
 
@@ -57,7 +65,7 @@ Given I Search and Edit the Serving Size Level
 And I Clicking the Update button without entering Serving Size Level Name
 
 Scenario: Updating Serving Size Level
-#Given I Search and Edit the Serving Size Level
+Given I Search and Edit the Serving Size Level
 When I Enter the New Serving Size Level Name
 And I Enter the Serving Size Level Description
 And I Click the Update button 

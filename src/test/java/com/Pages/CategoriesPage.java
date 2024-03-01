@@ -366,7 +366,11 @@ public class CategoriesPage extends BasePage
 	public void Disable_Age_Restriction_Toggle() throws Exception
 	{
 		Thread.sleep(1000);
+		try
+		{
 		cmp.Visibility_Tab_inContents.click();
+		}
+		catch(Exception k) {}
 		Thread.sleep(1000);
 		if(Enable_Age_Restriction_YesBtn.isSelected())
 		{
@@ -470,7 +474,7 @@ public class CategoriesPage extends BasePage
 		}
 	}
 	
-	@FindBy(xpath = "//h5[contains(.,'Tax')]/../../..//button[contains(.,'Show All')]")
+	@FindBy(xpath = "//p[contains(.,' Select Taxes ')]/../..//button[contains(.,'Show All')]")
 	WebElement ShowAll_Select_TaxBtn;
 	
 	@FindBy(xpath = "//h5[contains(.,'Kitchen Printers')]/../../..//button[contains(.,'Show All')]")
@@ -574,8 +578,14 @@ public class CategoriesPage extends BasePage
 	{
 		Thread.sleep(2000);
 //		//cmp=new Common_XPaths();
-		
-		cmp.Genaral_Tab_inContents.click();
+		try
+		{
+//			if(cmp.Genaral_Tab_inContents.isDisplayed())
+//			{
+				cmp.Genaral_Tab_inContents.click();
+//			}
+		}
+		catch(Exception l) {}
 		
 		Thread.sleep(1000);
 //		cmp.Cursor_MoveToElement(DepartmentDropBtn);

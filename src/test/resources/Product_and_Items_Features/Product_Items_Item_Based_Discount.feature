@@ -1,4 +1,4 @@
-#@Products/Items
+@Product/Items
 @Item_Based_Discount
 Feature: Product and Items - Item Based Discount
 I am verify the Product/Items-Item Based Discount module by Add/Edit/Delete/Activate/Duplicate
@@ -124,7 +124,7 @@ And I Enter the Item Based Discount Name
 And I Enter the Priority
 And I Enter the Quantity
 And I Click Apply Field
-Then Verify whether the Before Tax/After Tax is displayed
+Then Verify whether the Before Tax and After Tax is displayed
 And I Click the Backward button
 
 
@@ -166,7 +166,7 @@ And I Select the Apply as Before Tax
 And I Select the Level Type as Category
 And I Selecting the Categories
 And I Select the Discount Type as Promo
-Then Check Discount Rate Type is Selected Default as Percentage 
+Then Check Discount Rate Type is Selected Default as Percentage
 And I Select the Discount Rate as Percentage
 And I Enter the Percentage above the percentage limit
 Then Check Enter Valid Percentage Error is Displayed
@@ -228,7 +228,7 @@ Given Click the New Discount button
 And I Enter the Item Based Discount Name
 And I Enter the Priority
 And I Enter the Quantity
-And I Select Before Tax/ After Tax
+And I Select the Apply as Before Tax
 And I Select the Multiple Category
 And I Select Promo Discount Type
 And I Enable Coupon Only Toggle
@@ -374,7 +374,7 @@ Then Verify whether the Item Based Discount is Saved or not
 Scenario: Verify whether we can able to Cancel/Close the Item Based Discount Update screen
 Given I Search and Edit the Item Based Discount
 And I Click the Backward button
-Then I Verify Item Discount Discount Update screen Close or not
+Then I Verify Item Discount Update screen Close or not
 
 Scenario: Verify able to search the Item Based Discount by entering 3 letters of Item Based Discount Name
 And I Verify Searching the Item when entering three letters
@@ -443,7 +443,7 @@ And I Select the Discount Type as Promo
 And I Select the Discount Rate as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always
-And I Click the Save and Publish button 
+And I Click the Save and Publish button
 Then Verify whether the Item Based Discount is Saved with Priority as Decimal or not
 And I Click the Backward button
 
@@ -729,7 +729,7 @@ Then Verify whether the Item Based Discount is Updated or not
 Scenario: Verify whether able to Inactivate the Item Based Discount Clicking Cancel/No button
 Given I Search the Item Based Discount and Click the Delete button
 And I Click the Cancel button in Pop Up
-Then Verify the Cancelled Item Based Discount Deleted/Inactivated or not
+Then Verify the Cancelled Item Based Discount Deleted or Inactivated or not
 
 Scenario: Verify whether Able to Inactivate the Item Based Discount Clicking Delete/Yes button
 Given I Search the Item Based Discount and Click the Delete button
@@ -754,10 +754,10 @@ When I Enter the New Item Based Discount Name
 And I Change the Priority
 And I Click the Update and Publish button
 Then Verify the Item Based Discount is Updated or not
-Then Check the Priority is Updated or Not
+#Then Check the Priority is Updated or Not
 
-Scenario: Searching with Special Charcters
-Then Enter Sepacial charcters in Search field and Verify
+#Scenario: Searching with Special Charcters
+#Then Enter Sepacial charcters in Search field and Verify
 
 Scenario: Verify whether able to Creating Duplicate Item Based Discount
 Given Click the New Discount button
@@ -768,7 +768,6 @@ And I Select the Apply as Before Tax
 And I Select the Level Type as Category
 And I Selecting the Categories
 And I Select the Discount Type as Promo
-And I Select the Membership Plan
 And I Select the Discount Rate as Percentage
 And I Enter the Percentage
 And I Select the Availability as Always

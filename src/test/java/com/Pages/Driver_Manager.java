@@ -24,7 +24,7 @@ public class Driver_Manager {
 	public static ExtentReports rep=ExtentManager.getInstance();//=ExtentManager.getInstance();
 	public static ExtentTest test=rep.startTest("Test Started...!"+Hooks.FeatureNameText());//=rep.startTest("Test Started...!"+Hooks.FeatureName.toString());
 	
-	 public SelfHealingDriver getDriver()
+	 public static SelfHealingDriver getDriver()
 	    {
 	    	return driver.get();
 	    }

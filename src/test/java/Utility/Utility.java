@@ -14,8 +14,10 @@ import org.jsoup.Connection.Base;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 
 import com.Pages.BasePage;
+import com.Pages.Driver_Manager;
 import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -23,7 +25,10 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Utility extends BasePage
 {
-	
+	public String getBase64Screenshot() throws Exception
+	{
+	    return ((TakesScreenshot) Driver_Manager.getDriver()).getScreenshotAs(OutputType.BASE64);
+	}
 	
 	public void PassedCaptureScreenshotAsBASE64()
 	{
@@ -40,6 +45,14 @@ public class Utility extends BasePage
 		String s="data:image/png;base64,"+scnsht;
 		
 		test.log(LogStatus.FAIL, test.addScreenCapture(s));
+	}
+	
+	public void InfoCaptureScreenshotAsBASE64()
+	{
+		String scnsht=((TakesScreenshot)driver.getDelegate()).getScreenshotAs(OutputType.BASE64);
+		String s="data:image/png;base64,"+scnsht;
+		
+		test.log(LogStatus.INFO, test.addScreenCapture(s));
 	}
 	 
 	

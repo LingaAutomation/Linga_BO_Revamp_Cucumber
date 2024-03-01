@@ -1,5 +1,7 @@
 @Product/Items
 @Categories
+@Product/Items01
+
 Feature: Product and Items - Category
 I am verify the Product/Items-Category module by Add/Edit/Delete/Activate/Duplicate
 

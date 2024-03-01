@@ -81,7 +81,7 @@ LoginPage lgpg=new LoginPage();
 		cmp.Click_SaveButton();
 		
 		Thread.sleep(3000);
-		//Check whether the New Course Saved or not
+		//Check whether the New Coursing Saved or not
 		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Please Enter Name"))
 		{
 			test.log(LogStatus.PASS, "Please Enter Name Alert Displayed");
@@ -119,9 +119,9 @@ LoginPage lgpg=new LoginPage();
 			
 				ut.PassedCaptureScreenshotAsBASE64();
 			}
-			else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+			else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 			{
-				test.log(LogStatus.FAIL, "Course Saved with Single Letter");
+				test.log(LogStatus.FAIL, "Coursing Saved with Single Letter");
 			
 				ut.FailedCaptureScreenshotAsBASE64();
 				
@@ -179,16 +179,16 @@ LoginPage lgpg=new LoginPage();
 			cmp.Click_SaveButton();
 
 	Thread.sleep(3000);
-	//Check whether the New Course Saved or not
+	//Check whether the New Coursing Saved or not
 	if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Enter Valid Priority"))
 	{
 		test.log(LogStatus.PASS, "Enter Valid Priority Alert Displayed");
 
 		ut.PassedCaptureScreenshotAsBASE64();
 	}
-	else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+	else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 	{
-		test.log(LogStatus.FAIL, "Course Saved only with Priority");
+		test.log(LogStatus.FAIL, "Coursing Saved only with Priority");
 	
 		ut.FailedCaptureScreenshotAsBASE64();
 		
@@ -233,16 +233,16 @@ else
 cmp.Click_SaveButton();
 
 Thread.sleep(3000);
-//Check whether the New Course Saved or not
+//Check whether the New Coursing Saved or not
 if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Enter Valid Priority"))
 {
 	test.log(LogStatus.PASS, "Enter Valid Priority Alert Displayed");
 
 	ut.PassedCaptureScreenshotAsBASE64();
 }
-else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 {
-	test.log(LogStatus.FAIL, "Course Saved without Priority");
+	test.log(LogStatus.FAIL, "Coursing Saved without Priority");
 
 	ut.FailedCaptureScreenshotAsBASE64();
 	
@@ -320,16 +320,16 @@ else
 					cmp.Click_SaveButton();
 
 					Thread.sleep(3000);
-				//Check whether the New Course Saved or not
+				//Check whether the New Coursing Saved or not
 				if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Enter Valid Priority"))
 				{
 					test.log(LogStatus.PASS, "Enter Valid Priority Alert Displayed");
 
 					ut.PassedCaptureScreenshotAsBASE64();
 				}
-				else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+				else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 				{
-					test.log(LogStatus.FAIL, "Course Saved with Priority as Decimal Value");
+					test.log(LogStatus.FAIL, "Coursing Saved with Priority as Decimal Value");
 				
 					ut.FailedCaptureScreenshotAsBASE64();
 					
@@ -365,7 +365,7 @@ else
 	public void verifyWhetherTheCoursingIsSavedOrNot() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 //	    throw new io.cucumber.java.PendingException()
-		cmp.VerifySaveConfirmationAlertMessage("Course Saved");
+		cmp.VerifySaveConfirmationAlertMessage("Coursing Saved");
 	}
 	
 	@Given("I Search and Edit the Coursing")
@@ -410,7 +410,7 @@ else
 			
 			Thread.sleep(3000);
 			//Check whether the New Coursing Saved or not
-			if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Updated Successfully"))
+			if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Updated Successfully"))
 			{
 				test.log(LogStatus.FAIL, "Coursing Updated without Coursing Name");
 			
@@ -443,14 +443,14 @@ else
 				cmp.Click_UpdateButton();
 
 					Thread.sleep(3000);
-					//Check whether the New Course Saved or not
+					//Check whether the New Coursing Saved or not
 					if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Enter Valid Priority"))
 					{	
 						test.log(LogStatus.PASS, "Enter Valid Priority Alert Displayed");
 
 						ut.PassedCaptureScreenshotAsBASE64();
 					}
-					else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Updated Successfully"))
+					else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Updated Successfully"))
 					{
 						test.log(LogStatus.FAIL, "Coursing Updated without Priority");
 					
@@ -499,14 +499,14 @@ else
 					cmp.Click_UpdateButton();
 
 					Thread.sleep(3000);
-				//Check whether the New Course Saved or not
+				//Check whether the New Coursing Saved or not
 				if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Enter Valid Priority"))
 				{
 					test.log(LogStatus.PASS, "Enter Valid Priority Alert Displayed");
 
 					ut.PassedCaptureScreenshotAsBASE64();
 				}
-				else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Updated Successfully"))
+				else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Updated Successfully"))
 				{
 					test.log(LogStatus.FAIL, "Coursing Updated with Priority as Decimal Value");
 				
@@ -542,7 +542,7 @@ else
 	@Then("Verify the Coursing is Updated or not")
 	public void verifyTheCoursingIsUpdatedOrNot() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-	    cmp.VerifySaveConfirmationAlertMessage("Course Updated");
+	    cmp.VerifySaveConfirmationAlertMessage("Coursing Updated");
 	}
 	
 	@Given("I Search the Coursing and Click the Delete button")
@@ -565,7 +565,7 @@ else
 		try
 		{
 		//Check whether the New Modifier Saved or not
-		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Inactivated Successfully"))
+		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Inactivated Successfully"))
 		{
 			test.log(LogStatus.FAIL, "Course Deleted when clicking Cancel button");
 		
@@ -588,15 +588,15 @@ else
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(3000);
 		//Check whether the New Coursing Saved or not
-		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Inactivated Successfully"))
+		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Inactivated Successfully"))
 		{
-			test.log(LogStatus.PASS, "Course Inactivated Successfully");
+			test.log(LogStatus.PASS, "Coursing Inactivated Successfully");
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
 		else
 		{
-			test.log(LogStatus.FAIL, "Course Inactivated Failed");
+			test.log(LogStatus.FAIL, "Coursing Inactivated Failed");
 			
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
@@ -633,9 +633,9 @@ else
 		{
 		Thread.sleep(3000);
 		//Check whether the New Modifier Saved or not
-		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Activated Successfully"))
+		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Activated Successfully"))
 		{
-			test.log(LogStatus.FAIL, "Course Activated when clicking Cancel button");
+			test.log(LogStatus.FAIL, "Coursing Activated when clicking Cancel button");
 		
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
@@ -655,15 +655,15 @@ else
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(3000);
 		//Check whether the New Coursing Saved or not
-		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Activated Successfully"))
+		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Activated Successfully"))
 		{
-			test.log(LogStatus.PASS, "Course activated Successfully");
+			test.log(LogStatus.PASS, "Coursing Activated Successfully");
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
 		else
 		{
-			test.log(LogStatus.FAIL, "Course activated Failed");
+			test.log(LogStatus.FAIL, "Coursing Activated Failed");
 			
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
@@ -735,7 +735,7 @@ else
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
-		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Inactivated Successfully"))
+		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Inactivated Successfully"))
 		{
 			test.log(LogStatus.FAIL, "Category Mapped Coursing Inactivated");
 			
@@ -794,7 +794,7 @@ else
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
-		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Inactivated Successfully"))
+		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Inactivated Successfully"))
 		{
 			test.log(LogStatus.FAIL, "SubCategory Mapped Coursing Inactivated");
 			
@@ -832,9 +832,9 @@ else
 			
 			cmp.Click_CancelButton();
 		}
-		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 		{
-			test.log(LogStatus.PASS, "Duplicate Course Saved");
+			test.log(LogStatus.PASS, "Duplicate Coursing Saved");
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
@@ -866,9 +866,9 @@ else
 	    // Write code here that turns the phrase above into concrete actions
 	    
 		Thread.sleep(3000);
-		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Saved Successfully"))
+		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Saved Successfully"))
 		{
-			test.log(LogStatus.PASS, "Course Saved with Special Characters");
+			test.log(LogStatus.PASS, "Coursing Saved with Special Characters");
 		
 			ut.PassedCaptureScreenshotAsBASE64();
 		}
@@ -906,9 +906,9 @@ else
 	public void verifyWhetherTheCoursingNameWithSpaceInEndIsUpdatedOrNot() {
 	    // Write code here that turns the phrase above into concrete actions
 		// Write code here that turns the phrase above into concrete actions
-				if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Course Updated Successfully"))
+				if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Coursing Updated Successfully"))
 				{
-					test.log(LogStatus.PASS, "Course Updated with Space in the End of Coursing Name");
+					test.log(LogStatus.PASS, "Coursing Updated with Space in the End of Coursing Name");
 				
 					ut.PassedCaptureScreenshotAsBASE64();
 				}

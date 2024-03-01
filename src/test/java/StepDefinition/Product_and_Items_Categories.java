@@ -371,6 +371,7 @@ public class Product_and_Items_Categories
 	@When("I Select the Taxes")
 	public void iSelectTheTaxes() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		Thread.sleep(1000);
 	    ctp.Select_Taxes();
 	}
 	
@@ -430,6 +431,12 @@ public class Product_and_Items_Categories
 	@When("Click on New Kitchen Printer button")
 	public void clickOnNewKitchenPrinterButton() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		
+		try
+		{
+		cmp.Kitchen_Printers_Tab_inContents.click();
+		}
+		catch(Exception ll) {}
 	    ctp.Click_New_Kitchen_PrinterButton_SecondaryScreen();
 	}
 	@When("Verify the New Kitchen Printer Header")
@@ -499,6 +506,12 @@ public class Product_and_Items_Categories
 	@Then("Click on New Label Printer button")
 	public void clickOnNewLabelPrinterButton() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		try
+		{
+		cmp.Label_Printers_Tab_inContents.click();
+		}
+		catch(Exception ll) {}
+		
 	    ctp.Click_New_Label_PrinterButton_SecondaryScreen();
 	}
 	@When("Verify the New Label Printer Header")
@@ -576,7 +589,7 @@ public class Product_and_Items_Categories
 	@Then("I Verify the Selected Availability as Always")
 	public void iVerifyTheSelectedAvailabilityAsAlways() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		cmp.Availability_Tab_inContents.click();
 		Thread.sleep(1000);
 	    cmp.Check_Button_Enabled(al.Always_AvailabiltyBtn, "Always Availability");
@@ -972,7 +985,7 @@ public class Product_and_Items_Categories
 	@Then("I Verify the Selected Availability as Date Range with Time")
 	public void iVerifyTheSelectedAvailabilityAsDateRangeWithTime() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		cmp.Availability_Tab_inContents.click();
 		Thread.sleep(1000);
 		 cmp.Check_Button_Enabled(al.DateRangeWithTime_AvailabiltyBtn, "Date Range with Time Availability");
@@ -1183,7 +1196,7 @@ public class Product_and_Items_Categories
 	public void verifyWhetherTheDuplicateCategoryIsSavedOrNot() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 //		wait.until(ExpectedConditions.visibilityOf(cmp.ConfirmationAlertMsg()));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 //		Thread.sleep(5000);
 		//Check whether the New Category Saved or not
 		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Name already exist"))
@@ -1203,7 +1216,7 @@ public class Product_and_Items_Categories
 			
 			cmp.Click_BackspaceButton();
 		}
-		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Category Saved Successfully and Store data published successfully"))
+		else if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Category Saved and Published Successfully"))
 		{
 			test.log(LogStatus.FAIL, "Duplicate Category Saved");
 		
@@ -1276,7 +1289,7 @@ public class Product_and_Items_Categories
 	public void verifyWhetherKitchenPrinterWithDuplicateIpSavedOrNot() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 //		wait.until(ExpectedConditions.visibilityOf(cmp.ConfirmationAlertMsg()));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		//Check whether the New Category Saved or not
 		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Name already exist"))
 		{

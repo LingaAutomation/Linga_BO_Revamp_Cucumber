@@ -75,6 +75,9 @@ public class GiftCardsPage extends BasePage
 	@FindBy(xpath = "//button[contains(.,'Edit')]")
 	WebElement EditGC_Btn;
 	
+	@FindBy(xpath = "//button[contains(.,'Edit')]")
+	WebElement CopyGC_Btn;
+	
 	@FindBy(xpath = "//button[contains(.,'Delete')]")
 	WebElement DeleteGC_Btn;
 	
@@ -100,6 +103,24 @@ public class GiftCardsPage extends BasePage
 		
 		EditGC_Btn.click();
 	}
+	
+	public void Click_Copy_GiftCardButton(String str) throws Exception
+	{
+		Thread.sleep(1000);
+		cmp=new Common_XPaths();
+		cmp.SearchBox.clear();
+		Thread.sleep(1000);
+
+		cmp.SearchBox.sendKeys(str);
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//tr[contains(.,'"+str+"')]/td[3]/div/button")).click();
+		
+		Thread.sleep(1000);
+		
+		CopyGC_Btn.click();
+	}
+	
 	
 	public void Click_Delete_GiftCardButton(String str) throws Exception
 	{

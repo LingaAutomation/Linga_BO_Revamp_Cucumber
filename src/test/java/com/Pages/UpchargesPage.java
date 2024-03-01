@@ -46,13 +46,13 @@ public class UpchargesPage extends BasePage
 	@FindBy(xpath = "//app-radio-box-button/div/div/div[.='Menu Item']")
 	public WebElement MenuItemLevelTypeBtn;
 
-	@FindBy(xpath = "//label[contains(.,'Category')]/../..//div/input")
+	@FindBy(xpath = "//input[@placeholder='Select Category']")
 	public WebElement Category_InputBox;
 	
 	@FindBy(xpath = "//label[contains(.,'Category')]/../../..//button")
 	WebElement Remove_Icon_Category_LevelType;
 
-	@FindBy(xpath = "//label[contains(.,'Sub Category')]/../..//div/input")
+	@FindBy(xpath = "//input[@placeholder='Select Sub Category']")
 	public WebElement SubCategory_InputBox;
 	
 	@FindBy(xpath = "//label[contains(.,'Sub Category')]/../../..//button")
@@ -471,26 +471,88 @@ public class UpchargesPage extends BasePage
 	public void Select_LevelType_Category() throws Exception
 	{
 		Thread.sleep(1000);
-		cmp.Level_Tab_inContents.click();
+		
+			if(cmp.Level_Tab_inContents.isDisplayed())
+			{
+				Thread.sleep(1000);
+				cmp.Level_Tab_inContents.click();
+			}
+			
+			Thread.sleep(1000);
+			CategoryLevelTypeBtn.click();
+		
+	}
+	
+	public void Select_LevelType_Category_GeneralTab() throws Exception
+	{
 		Thread.sleep(1000);
+	
+			if(cmp.Genaral_Tab_inContents.isDisplayed())
+			{
+				Thread.sleep(1000);
+				cmp.Genaral_Tab_inContents.click();
+			}
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+			Thread.sleep(1000);
+			CategoryLevelTypeBtn.click();
+		
+		
+	
+		
+	}
+	
+	public void Select_LevelType_SubCategory_GeneralTab() throws Exception
+	{
 		Thread.sleep(1000);
-		CategoryLevelTypeBtn.click();
+		if(cmp.Genaral_Tab_inContents.isDisplayed())
+		{
+			cmp.Genaral_Tab_inContents.click();
+		}
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(1000);
+		SubCategoryLevelTypeBtn.click();
 	}
 	
 	public void Select_LevelType_SubCategory() throws Exception
 	{
 		Thread.sleep(1000);
-		cmp.Level_Tab_inContents.click();
-		Thread.sleep(1000);
+//		try
+//		{
+			if(cmp.Level_Tab_inContents.isDisplayed())
+			{
+				cmp.Level_Tab_inContents.click();
+			}
+//		}
+//		catch(Exception k)
+//		{
+//			
 		Thread.sleep(1000);
 		SubCategoryLevelTypeBtn.click();
+	}
+	
+	public void Select_LevelType_MenuItem_GeneralTab() throws Exception
+	{
+		Thread.sleep(1000);
+	
+		if(cmp.Genaral_Tab_inContents.isDisplayed())
+		{
+			cmp.Genaral_Tab_inContents.click();
+		}
+//	}
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+	Thread.sleep(1000);
+	MenuItemLevelTypeBtn.click();
 	}
 	
 	public void Select_LevelType_MenuItem() throws Exception
 	{
 		Thread.sleep(1000);
-		cmp.Level_Tab_inContents.click();
-		Thread.sleep(1000);
+		
+			if(cmp.Level_Tab_inContents.isDisplayed())
+			{
+				cmp.Level_Tab_inContents.click();
+			}
+		
 		Thread.sleep(1000);
 		MenuItemLevelTypeBtn.click();
 	}
@@ -502,12 +564,13 @@ public class UpchargesPage extends BasePage
 		
 //		Thread.sleep(1000);
 //		CategoryLevelTypeBtn.click();
-		Thread.sleep(15000);
+		Thread.sleep(5000);
+		
 		
 		//driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_DOWN);
-		for(int i=1;i<=3;i++)
-		{
-			Thread.sleep(1000);
+//		for(int i=1;i<=3;i++)
+//		{
+			Thread.sleep(3000);
 		Category_InputBox.click();
 		Thread.sleep(1000);
 		
@@ -571,7 +634,7 @@ public class UpchargesPage extends BasePage
 //			cmp.FirstOption_DropBtn.click();
 //		}
 	
-	}
+//	}
 
 				
 		}

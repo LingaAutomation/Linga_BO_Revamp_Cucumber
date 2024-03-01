@@ -90,7 +90,7 @@ And I Click the Apply button
 Then Verify User Feedback Report generated for Selected Time Period or Not
 
 Scenario: Verify able to generate the User Feedback for Last 7 days
-And I Select the Time Period as Last Seven days
+And I Select the Time Period as Last Seven Days
 And I Click the Apply button
 Then Verify User Feedback Report generated for Selected Time Period or Not
 

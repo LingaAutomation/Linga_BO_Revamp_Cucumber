@@ -11,6 +11,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -86,6 +87,12 @@ public class Common_XPaths extends BasePage
 	@FindBy(xpath = "//button[contains(.,'Roles')][contains(@class,'segment-button')]")
 	public WebElement Roles_Tab_inContents; 
 	
+	@FindBy(xpath = "//button[contains(.,'Prefix')][contains(@class,'segment-button')]")
+	public WebElement Prefix_Tab_inContents; 
+	
+	@FindBy(xpath = "//button[contains(.,'Serving Size')][contains(@class,'segment-button')]")
+	public WebElement Serving_Sizes_Tab_inContents; 
+	
 	@FindBy(xpath = "//button[contains(.,'Tare Group')][contains(@class,'segment-button')]")
 	public WebElement Tare_Group_Tab_inContents; 
 	
@@ -104,20 +111,41 @@ public class Common_XPaths extends BasePage
 	@FindBy(xpath = "//button[contains(.,'Restrict Printers')][contains(@class,'segment-button')]")
 	public WebElement Restrict_Printers_Tab_inContents;
 	
-	@FindBy(xpath = "//div[contains(@class,'breadcrumb-component')]/ol/li[1]")
+	@FindBy(xpath = "//button[contains(.,'Summary')][contains(@class,'segment-button')]")
+	public WebElement Summary_Tab_inContents; 
+	
+	@FindBy(xpath = "//button[contains(.,'Sales')][contains(@class,'segment-button')]")
+	public WebElement Sales_Tab_inContents; 
+	
+	@FindBy(xpath = "//button[contains(.,'Payments')][contains(@class,'segment-button')]")
+	public WebElement Payments_Tab_inContents;
+	
+	@FindBy(xpath = "//button[contains(.,'Formula Definition')][contains(@class,'segment-button')]")
+	public WebElement Formula_Definition_Tab_inContents;
+	
+	@FindBy(xpath = "//button[contains(.,'Other Summaries')][contains(@class,'segment-button')]")
+	public WebElement Other_Summaries_Tab_inContents;
+	
+	@FindBy(xpath = "(//span[@class='sub-title'])[1]")
 	public WebElement Home;
 
-	@FindBy(xpath = "//div[contains(@class,'breadcrumb-component')]/ol/li[2]")
+	@FindBy(xpath = "(//span[@class='sub-title'])[2]")
 	public WebElement Modules_Name;
 
-	@FindBy(xpath = "//div[contains(@class,'breadcrumb-component')]/ol/li[3]")
+	@FindBy(xpath = "(//span[@class='sub-title'])[3]")
 	public WebElement path1;
 	
-	@FindBy(xpath = "//div[contains(@class,'breadcrumb-component')]/ol/li[4]")
+	@FindBy(xpath = "(//span[@class='sub-title'])[3]")
 	public WebElement path2;
 	
 	@FindBy(xpath = "//mat-select[@aria-label='Rows per page:']//span/span")
-	WebElement Rows_Per_Page;
+	public WebElement Rows_Per_Page;
+	
+	@FindBy(xpath = "//button[contains(.,'Pricing/Cost')][contains(@class,'segment-button')]")
+	public WebElement Pricing_Cost_Tab_inContents;
+	
+//	@FindBy(xpath = "//button[contains(.,'Visibility')][contains(@class,'segment-button')]")
+//	public WebElement Visibility_Tab_inContents;
 	
 	public WebElement Save_Button()
 	{
@@ -153,19 +181,19 @@ public class Common_XPaths extends BasePage
 	WebElement UpdateBtn;
 	
 	@FindBy(xpath = "//button[.='Cancel']")
-	WebElement CancelBtn;
+	public WebElement CancelBtn;
 	
 	@FindBy(xpath = "//div[@class='action-buttons']/div/div/button[contains(.,'Cancel')]")
-	WebElement CancelBtn_AlertPopup;
+	public WebElement CancelBtn_AlertPopup;
 	
 	@FindBy(xpath = "//button[contains(.,'Delete')]")
-	WebElement DeleteBtn;
+	public WebElement DeleteBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'Activate')]")
-	WebElement ActivateBtn;
+	public WebElement ActivateBtn;
 	
 	@FindBy(xpath = "//div/span[contains(.,'Close')]")
-	WebElement CloseBtn;
+	public WebElement CloseBtn;
 	
 	@FindBy(xpath = "//div[@class='drawer-component']/div/div/h3")
 	WebElement CreationScreenHeader;
@@ -210,25 +238,25 @@ public class Common_XPaths extends BasePage
 	WebElement PaginationIcon;
 	
 	@FindBy(xpath = "//button[contains(@mattooltip,'to POS')]")
-	WebElement PublishButton;
+	public WebElement PublishButton;
 	
 	@FindBy(xpath = "//button[contains(.,'keyboard_backspace')]")
-	WebElement Backspace_Icon;
+	public WebElement Backspace_Icon;
 	
 	@FindBy(xpath = "//button[contains(.,'SAVE AND PUBLISH')]")
-	WebElement SaveAndPublish_Btn;
+	public WebElement SaveAndPublish_Btn;
 	
 	@FindBy(xpath = "//button[contains(.,'UPDATE AND PUBLISH')]")
-	WebElement UpdateAndPublish_Btn;
+	public WebElement UpdateAndPublish_Btn;
 
 	@FindBy(xpath = "//button[contains(.,'COLUMNS')]")
-	WebElement Columns_Btn;
+	public WebElement Columns_Btn;
 
 	@FindBy(xpath = "//input[@type='file']")
-	WebElement Upload_PictureBtn;
+	public WebElement Upload_PictureBtn;
 
 	@FindBy(xpath = "//div[@class='alert-content']/p")
-	WebElement Alert_Popup;
+	public WebElement Alert_Popup;
 	
 	@FindBy(xpath = "//button[contains(.,'amount')]")
 	WebElement AmountBtn;
@@ -761,7 +789,7 @@ public class Common_XPaths extends BasePage
 		
 		try
 		{
-			
+		Thread.sleep(2000);
 		if(driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]")).isDisplayed())
 		{
 		String SearchText=driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]")).getText().substring(0, 3);
@@ -990,13 +1018,26 @@ public class Common_XPaths extends BasePage
 		
 		try
 		{
-		driver.findElement(By.xpath("//span[.=' "+SearchValue+" ']/../../td//div/button")).click();
+		driver.findElement(By.xpath("//span[.=' "+SearchValue+" ']/../..//button[@aria-label='Activate']")).click();
 		}
 		catch(Exception h)
 		{
-			driver.findElement(By.xpath("//span[.='"+SearchValue+" ']/../../div//div/button")).click();
+			
+			
+			try
+			{
+			driver.findElement(By.xpath("//span[.='"+SearchValue+" ']/../..//button[@aria-label='Activate']")).click();
+			}
+			catch(Exception l)
+			{
+				driver.findElement(By.xpath("//span[.='"+SearchValue+"']/../..//button[@aria-label='Activate']")).click();
 
+			}
 		}
+		
+		
+		
+		
 	}
 
 	
@@ -1369,7 +1410,7 @@ public class Common_XPaths extends BasePage
 	
 	
 	@FindBy(xpath = "//cdk-virtual-scroll-viewport//div/div[1]//select-option")
-	WebElement First_Option_inDropDown;
+	public WebElement First_Option_inDropDown;
 	
 
 	public void Click_Button(WebElement ele, String msg) throws Exception
@@ -1903,13 +1944,13 @@ public class Common_XPaths extends BasePage
 	
 	public void Check_Button_Enabled(WebElement ele, String Msg) throws Exception
 	{
-		if(ele.isEnabled())
+		if(ele.isSelected())
 	    {
 	    	test.log(LogStatus.PASS, Msg+" is Enabled");
 	    	
 	    	ut.PassedCaptureScreenshotAsBASE64();
 	    	
-	    	Assert.assertEquals(true, ele.isEnabled());
+	    	Assert.assertEquals(true, ele.isSelected());
 	    }
 	    else
 	    {
@@ -1936,7 +1977,7 @@ public class Common_XPaths extends BasePage
 	    	
 	    	ut.PassedCaptureScreenshotAsBASE64();
 	    	
-	    	Assert.assertEquals(false, ele.isEnabled());
+	    	Assert.assertEquals(false, ele.isSelected());
 	    }
 	}
 	
@@ -2083,36 +2124,79 @@ public class Common_XPaths extends BasePage
 	
 	public void Assertion_Validation_True_Element_Selected(WebElement ele)
 	{
+		if(ele.isSelected())
+		{
 		Assert.assertEquals(true, ele.isSelected());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
+		}
+		else if(!ele.isSelected())
+		{
+			Assert.assertEquals(false, ele.isSelected());
+			
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
 	}
 	
 	public void Assertion_Validation_False_Element_Not_Selected(WebElement ele)
 	{
+		if(!ele.isSelected())
+		{
 		Assert.assertEquals(false, ele.isSelected());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
+		}
+		else if(ele.isSelected())
+		{
+			Assert.assertEquals(true, ele.isSelected());
+			
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
 	}
 	
 	public void Assertion_Validation_True_Element_Enabled(WebElement ele)
 	{
+		if(ele.isEnabled())
+		{
 		Assert.assertEquals(true, ele.isEnabled());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
+		}
+		else if(!ele.isEnabled())
+		{
+			Assert.assertEquals(false, ele.isEnabled());
+			
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
 	}
 	
 	public void Assertion_Validation_False_Element_Disabled(WebElement ele)
 	{
+		if(!ele.isEnabled())
+		{
 		Assert.assertEquals(false, ele.isEnabled());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
+		}
+		else if(ele.isEnabled())
+		{
+			Assert.assertEquals(true, ele.isEnabled());
+			
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
 	}
 	
 	
 	public void Assertion_Validation_Two_Values(String Actual, String Expected, String Msg)
 	{
 		Assert.assertEquals(Actual, Expected, Msg);
+		
+		ut.PassedCaptureScreenshotAsBASE64();
+	}
+	
+	public void Assertion_Validation_Two_Values_NotEqual(String Actual, String Expected, String Msg)
+	{
+		Assert.assertNotEquals(Actual, Expected, Msg);
 		
 		ut.PassedCaptureScreenshotAsBASE64();
 	}
@@ -2159,4 +2243,311 @@ public class Common_XPaths extends BasePage
 //		Thread.sleep(1000);
 //		ele.sendKeys(Text);
 //	}
+	
+	@FindBy(xpath = "//button[contains(.,'Discount Rate')][contains(@class,'segment-button')]")
+	public WebElement Discount_Rate_Tab_inContents;
+	
+	public void Click_DropDown_withSearch_MultipleSelection(WebElement ele, String Msg) throws Exception
+	{
+	    Thread.sleep(2000);
+	    Click_Wait_ForElementClickable(ele, 120);
+	    Thread.sleep(500);
+
+	    Thread.sleep(500);
+	    List<WebElement> optList=driver.findElements(By.xpath("//cdk-virtual-scroll-viewport//div/div//select-option"));
+	    int optionSize=optList.size();
+	    System.out.println("Options Size "+optionSize);
+	    if(optionSize==0)
+	    {
+	       List<WebElement> optList1=driver.findElements(By.xpath("//cdk-virtual-scroll-viewport//div/div//select-option"));
+	       int optionSize1=optList1.size();
+	       for (int i =1; i<=3; i++) {
+	          int randomOpt = ThreadLocalRandom.current().nextInt(1, optionSize1);
+	          Thread.sleep(1000);
+	          String opt = driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div["+randomOpt+"]//select-option")).getText();
+	          SearchBox_DropDown.clear();
+	          SearchBox_DropDown.sendKeys(opt);
+	          First_Option_inDropDown.click();
+	       }
+	    }
+	    else
+	    {
+	       for (int i =1; i<=3; i++) {
+	          int randomOpt = ThreadLocalRandom.current().nextInt(1, optionSize);
+	          Thread.sleep(1000);
+	          String opt = driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div[" + randomOpt + "]//select-option")).getText();
+	          Thread.sleep(2000);
+	          First_Option_inDropDown.click();
+	       }
+	    }
+	    List<WebElement> ModifyWithList1=driver.findElements(By.xpath("//div[@class='option-list']/div/select-option"));
+	    if(ModifyWithList1.size()!=0)
+	    {
+	       ele.click();
+	    }
+	    System.out.println(Msg);
+	}
+	
+
+
+    // Example method for waiting for page to load
+    public void waitForPageToLoad() {
+        
+        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
+    }
+
+    public void scrollpageup() {
+    	 JavascriptExecutor js = (JavascriptExecutor) driver;
+         js.executeScript("window.scrollBy(0, -250)"); // Scroll up by 250 pixels
+    }
+    
+    public void scrollpagedown() {
+   	 JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 250)"); // Scroll down by 250 pixels
+   }
+    @FindBy(xpath = "//button[.='SAVE'][@disabled='true']")
+    public WebElement SaveBtnDisabled;
+
+    @FindBy(xpath = "//button[.='SAVE'][@disabled='false']")
+    public WebElement SaveBtnEnabled;
+    
+    public WebElement Save_Button_disabled()
+    {
+    	return SaveBtnDisabled;
+    }
+
+    
+    public void Check_Save_Button_Diabled() throws Exception
+    {
+
+    	 if(Save_Button_disabled().isEnabled())
+    	    {
+    		 
+    		 
+    	    	test.log(LogStatus.FAIL, "Save button is Enabled");
+    	    	
+    	    	ut.FailedCaptureScreenshotAsBASE64();
+    	    }
+    	    else
+    	    {
+    	    	test.log(LogStatus.PASS, "Save button is Disabled");
+    	    	
+    	    	ut.PassedCaptureScreenshotAsBASE64();
+    	    	
+    	    	Assert.assertEquals(false, Save_Button_disabled().isEnabled());}
+    	    }
+    public WebElement Save_Button_Enabled()
+    {
+    	return SaveBtnEnabled;
+    }
+
+    public void Check_Save_Button_Enabled() throws Exception
+    {
+
+    	 if(Save_Button_Enabled().isEnabled())
+    	    {
+    		 
+    		 
+    	    	test.log(LogStatus.PASS, "Save button is Enabled");
+    	    	ut.PassedCaptureScreenshotAsBASE64();
+    	    	Assert.assertEquals(false, Save_Button_Enabled().isEnabled());
+    	    	
+    	    }
+    	    else
+    	    {
+    	    	test.log(LogStatus.FAIL, "Save button is Disabled");
+    	    	ut.FailedCaptureScreenshotAsBASE64();
+    	    	
+    	    	}
+    	    }
+    	
+    	
+
+    public void safeClick(WebDriver driver, WebElement element) throws InterruptedException {
+        int attempts = 0;
+        while (attempts < 2) {
+            try {
+                element.click();
+                break;
+            } catch (StaleElementReferenceException e) {
+                // Catch and ignore StaleElementReferenceException
+            } catch (org.openqa.selenium.WebDriverException e) {
+                // Catch and ignore any WebDriverException
+            }
+            Thread.sleep(1000); // Wait for 1 second before retrying
+            attempts++;
+        }
+    }
+
+    @FindBy(xpath = "//button[contains(.,'Tax')][contains(@name,'retailItemAddTax')]")
+    public WebElement AddTax_Tab_RetailItem; 
+
+    public void Click_AddTax_RetailItem() throws Exception
+    {
+    	Thread.sleep(1000);
+    	AddTax_Tab_RetailItem.click();
+    	}
+
+
+    @FindBy(xpath = "//span[contains(text(),'Save')]")
+    public WebElement Click_SaveTax_RetailItem; 
+
+    public WebElement IClick_SaveTax_RetailItem() {
+    return Click_SaveTax_RetailItem;
+    }
+
+    public void IClickTaxSavebutton_Retailitem() throws Exception
+    {
+    	Thread.sleep(1000);
+    	Cursor_MoveToElement(IClick_SaveTax_RetailItem());
+    	Click_SaveTax_RetailItem.click();
+    }
+
+
+    @FindBy(xpath = "//button[.='UPDATE'][@disabled='true']")
+    public WebElement UpdateBtnDisabled;
+
+    public WebElement Update_Button_disabled()
+    {
+    	return UpdateBtnDisabled;
+    }
+
+    public void Check_Update_Button_Diabled() throws Exception
+    {
+
+    	 if(Update_Button_disabled().isEnabled())
+    	    {
+    		 
+    		 
+    	    	test.log(LogStatus.FAIL, "Save button is Enabled");
+    	    	
+    	    	ut.FailedCaptureScreenshotAsBASE64();
+    	    }
+    	    else
+    	    {
+    	    	test.log(LogStatus.PASS, "Save button is Disabled");
+    	    	
+    	    	ut.PassedCaptureScreenshotAsBASE64();
+    	    	
+    	    	Assert.assertEquals(false, Update_Button_disabled().isEnabled());}
+    	    }
+
+
+    @FindBy(xpath = "//*[@id=\"ngForm\"]//button[contains(.,'SAVE & NEXT')]")
+    public WebElement Click_SAVEandNEXT_Button;
+
+    public void iClickTheSaveNextButton() throws InterruptedException {
+    	
+    	Thread.sleep(3000);
+    	Click_SAVEandNEXT_Button.click();
+    }
+
+
+    @FindBy(xpath="//p[contains(text(),'Please Save Retail Item Before Moving To Child Item')]")
+    public WebElement SAVENEXTAlertMessageTitle;
+
+    public WebElement SAVENEXTConfirmationAlertMsg()
+    {
+    	return SAVENEXTAlertMessageTitle;
+    }
+
+
+    @FindBy(xpath="//button[contains(.,'Cancel')]")
+    public WebElement ClickCancelBtn_SAVENEXTConfirmationAlertMsg;
+
+    public WebElement ClickCancelBtn_SAVENEXTConfirmationAlertMsg()
+    {
+    	return ClickCancelBtn_SAVENEXTConfirmationAlertMsg;
+    }
+
+
+    @FindBy(xpath="//alert-dialog[1]/div[1]/div[3]/div[1]/div[2]/button[1]/span[1]")
+    public WebElement ClickSaveBtn_SAVENEXTConfirmationAlertMsg;
+
+    public WebElement IClickSaveBtn_SAVENEXTConfirmationAlertMsg()
+    {
+    	return ClickSaveBtn_SAVENEXTConfirmationAlertMsg;
+    }
+
+    public void IClick_SaveBtn_SAVENEXTConfirmationAlertMsg() {
+    	wait.until(ExpectedConditions.elementToBeClickable(IClickSaveBtn_SAVENEXTConfirmationAlertMsg()));
+    	
+    	IClickSaveBtn_SAVENEXTConfirmationAlertMsg().click();
+    }
+
+    public void VerifySaveNextConfirmationAlertMessage(String Str) throws Exception
+    {
+    	//Thread.sleep(3000);
+    	if(wait.until(ExpectedConditions.visibilityOf(SAVENEXTConfirmationAlertMsg())).getText().equalsIgnoreCase(Str+" displayed"))
+    	{
+    		test.log(LogStatus.PASS, Str+"displayed");
+    		ut.PassedCaptureScreenshotAsBASE64();
+    		}
+    	else
+    	{
+    	}
+
+    	}
+
+    public void IClickCancelBtn_SAVENEXTConfirmationAlertMsg() throws Exception {
+    	
+    	cmp=new Common_XPaths();
+    	Thread.sleep(1000);
+    	cmp.Click_Wait_ForElementClickable(ClickCancelBtn_SAVENEXTConfirmationAlertMsg, 60);
+    	//Thread.sleep(1000);
+    	
+    	//Thread.sleep(2000);
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+    	wait.until(ExpectedConditions.elementToBeClickable(ClickCancelBtn_SAVENEXTConfirmationAlertMsg));
+    	
+    	ClickCancelBtn_SAVENEXTConfirmationAlertMsg.click();
+    }
+
+
+    @FindBy(xpath = "//*[@id=\"new-retail\"]//div[2]/button[contains(.,'NEXT')]/span[1]")
+    public WebElement Click_NEXT_Button;
+
+    public WebElement I_clickNext_Button() {
+    	return Click_NEXT_Button;
+    }
+
+    public void iClickTheNextButton() throws InterruptedException {
+    	
+    	Thread.sleep(3000);
+    	wait.until(ExpectedConditions.elementToBeClickable(I_clickNext_Button()));
+    	Click_NEXT_Button.click();
+    }
+
+//    public void Click_UpdateButton()
+//    {
+//    	if(UpdateBtn.isEnabled()) {
+//    	UpdateBtn.click();
+//    	}
+//    	
+//    	else {
+//    		
+//    		
+//    	}
+//    	
+//    }
+
+
+        // Example method for waiting for page to load
+//        public void waitForPageToLoad() {
+//            
+//            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
+//        }
+//
+//        public void scrollpageup() {
+//        	 JavascriptExecutor js = (JavascriptExecutor) driver;
+//             js.executeScript("window.scrollBy(0, -250)"); // Scroll up by 250 pixels
+//        }
+//        
+//        public void scrollpagedown() {
+//       	 JavascriptExecutor js = (JavascriptExecutor) driver;
+//            js.executeScript("window.scrollBy(0, 250)"); // Scroll down by 250 pixels
+//       }
+      
+
+  
 }

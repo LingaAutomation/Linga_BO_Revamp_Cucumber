@@ -1,5 +1,6 @@
 @Product/Items 
 @SubCategory
+@Product/Items01
 
 Feature: Product and Items - SubCategory
   I am verify the Product/Items-SubCategory module by Add/Edit/Delete/Activate/Duplicate

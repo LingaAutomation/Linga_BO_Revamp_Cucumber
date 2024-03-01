@@ -1,26 +1,33 @@
-#@Product/Items
+@Product/Items
 @Menu_Items
+@Product/Items01
+
 Feature: Product and Items - Menu Items
 I am verify the Product/Items-Menu Items module by Add/Edit/Delete/Activate/Duplicate
 
 Background: Opening the Product/Items - Menu Items page
-Given Open the Menu Items home page BaseURL and StoreID
+Given Open the Product/Items home page BaseURL and StoreID
 
+#@EditMenuItem
 Scenario: Verfiy whether the Menu Item Header is Displayed 
-Given Verifying the Menu Item Header page
+Given Verifying the Product/Items Header page
 
+#@EditMenuItem
 Scenario: Verify whether we can able to do Pagination
 Given I can do the Pagination
 
+#@EditMenuItem
 Scenario: Verify the Filter & Ascending and Descending Order 
 When User Select the Filter option with Columns
 And Verify the Ascending and Descending Order
 
+#@EditMenuItem
 Scenario: Verify the New Menu Item Page header
 Given I Click the New Menu Item button
 Then Verify the New Menu Item header
 And I Click the Backward button
 
+#@EditMenuItem
 Scenario: Verify whether we able to Create the New Menu Item without entering Name Fields
 And I Click the New Menu Item button
 And I Selecting the Categories
@@ -31,6 +38,7 @@ And I Select the Taxes
 Then Check the Save and Publish button is Disabled
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify whether we able to Create the New Menu Item without Selecting Category 
 And I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -45,7 +53,7 @@ Scenario: Verify whether we able to Create the New Menu Item without Selecting S
 And I Click the New Menu Item button 
 And I Enter the Menu Item Name
 And  Check Level Type is Selected as Category
-And I Select the Level Type as Sub-Category
+And I Select the Level Type in General as Sub-Category
 And I Selecting the Categories 
 #And I Not Selecting Subcategory
 And I Select Serving Size in Set Price for Variable
@@ -90,12 +98,12 @@ And I Enter the PLU Code Exceeding the limit
 #Then Secondary name text box should not allows to enter more than 50 characters
 And I Click the Backward button
 
-Scenario: Verify Evertec Tax Type drop down shows taxes in list
-And I Click the New Menu Item button
-And I Check Evertec Type and Check the Evertec Options is Displayed
+#Scenario: Verify Evertec Tax Type drop down shows taxes in list
+#And I Click the New Menu Item button
+#And I Check the Evertec Options is Displayed and Select Evertec
 #And I Verify below options None, State Tax,Reduced Tax,Municipal Tax
 #Then I Verify Evertec Tax Type drop down shows taxes in list
-And I Click the Backward button
+#And I Click the Backward button
 
 Scenario: Verify we able to Create New Menu Item without Selecting Serving Size
 And I Click the New Menu Item button
@@ -109,12 +117,13 @@ Then Check the Save and Publish button is Disabled
 #Then I Verify we able to Create New Menu Item without Selecting Serving Size
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to Create New Menu Item with same Serving Size
 And I Click the New Menu Item button
 And I Enter the Menu Item Name
 Then Check Level Type is Selected as Category
 And I Select the Menu Type as Menu Item 
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 Then Check the Menu Type is Selected as Menu Item
 And I Select the Menu Type as Menu Item With Serving Size
@@ -126,6 +135,7 @@ Then Check the Save and Publish button is Disabled
 #Then I Verify we able to Create New Menu Item with same Serving Size
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to Create New Menu Item with Same S.No
 And I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -134,6 +144,7 @@ And I Selecting the Categories
 Then Check the Menu Type is Selected as Menu Item
 And I Select the Menu Type as Menu Item With Serving Size
 And I Select Serving Size for Menu Item With Serving Size in Set Price for Variable
+And I Click the Add Serving Size Level
 And I Enter Same Serial Number for Mutiple Serving Size
 And  Check the Save and Publish button is Disabled
 #Then I Verify we able to Create New Menu Item with same S.No
@@ -191,6 +202,7 @@ Then Check the Save and Publish button is Disabled
 #Then Verify whether Menu Item is Saved or Not
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to Create New Combo Item with same Menu Items
 And I Click the New Menu Item button
 And I Enter the Menu Item Name for Combo Item
@@ -205,6 +217,7 @@ Then Check the Save and Publish button is Disabled
 #Then I Verify able to Create New Combo Item with same Menu Item
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to set the Same Seq No to Combo Menu Item
 And I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -219,6 +232,7 @@ Then Check the Save and Publish button is Disabled
 #Then I Verify We able to Create Combo Menu Item  with same Seq No
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to Create a New Combo Menu Item
 And I Click the New Menu Item button
 And I Enter the Menu Item Name for Combo Item
@@ -236,6 +250,7 @@ And I Select the Availability as Always
 And I Click the Save and Publish button 
 Then Verify whether Menu Item is Saved or Not
 
+@EditMenuItem
 Scenario: Verify Include Modifiers Optional Modifiers Mandatory Modifiers Inventory Details are disabled if Menutype selected as Comboitem
 And I Click the New Menu Item button
 Then Check Level Type is Selected as Category
@@ -250,6 +265,7 @@ And I Click the Backward button
 
 ##//Scenario: New category creation, subcategeory , tax
 #New Category
+@EditMenuItem
 Scenario: Verify we able to Create New Category in Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -259,7 +275,7 @@ And I Enter the Category Name in Menu Item
 And I Select the Department
 And I Select the Coursing
 And I Select Serving Size level
-And I Select Taxes in Drop Down
+And I Select the Taxes in Drop Down
 #And I Check the Save button is Enabled
 And I Click the Save button
 And Verify whether Category Saved or Not
@@ -267,6 +283,7 @@ Then Check Added Category is Selected
 And I Click the Backward button
 
 #New Subcategory
+@EditMenuItem
 Scenario: Verify we able to Create New Subcategory in Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -274,7 +291,7 @@ And I Click the New SubCategory button in Menu Item
 When I Verify the New SubCategory Header
 And I Enter the SubCategory Name in Menu Item
 And I Select Serving Size level
-And I Select Taxes in Drop Down
+And I Select the Taxes in Drop Down
 #And I Check the Save button is Enabled
 And I Click the Save button
 And Verify whether SubCategory Saved or Not
@@ -293,7 +310,7 @@ And I Enter the Amount
 And I Click the Save button
 Then Verify whether the Tax is Saved or not
 Then Check the Menu Type is Selected as Menu Item
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select Serving Size in Set Price for Variable
 Then Check the Save and Publish button is Enabled
@@ -337,10 +354,11 @@ And I Click the Add Include Modifiers button
 Then Check Please Choose all the Mandatory fields in Basic Details Error message is Displayed
 And I Click the Backward button
 
+@EditMenuItemA
 Scenario: Verif we able to Create Included Modifier group without Selecting the Modifier
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
@@ -360,10 +378,11 @@ And I Select the Alternate Modifier Group
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
+@EditMenuItemA
 Scenario: Verify we able to Create Mandatory Modifier Group without Selecting the Modifier Group
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
@@ -375,18 +394,19 @@ And I Select Modifier Group in Mandatory Modifier Group
 Then Check Enter Display Order Error is Displayed
 And I Enter the Display Order
 Then Check the Save and Publish button is Enabled
-And I Enter Minimum Quantity
+And I Enter the Minimum Quantity
 And I Enter Invalid Maximum Quantity
 Then Check Enter Maximum Quantity Error is Displayed
-And I Enter Maximum Quantity
+And I Enter the Maximum Quantity
 And I Disable Jump with Minimum Quantity Toggle
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
+@EditMenuItemA
 Scenario: Verify we able to Save the Opitonal Modifier Group without Selecting Modifier Group
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
@@ -400,17 +420,17 @@ And I Enter the Display Order in Optional Modifier
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
-
+@EditMenuItemA
 Scenario: Verify we able to add the Inventory Details to Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
 And I Select Inventory Details Tab
 Then Check Selected Serving Size is Displayed
-And I Click on the Add Inventory Item button
+And I Click the Add Inventory Item button
 Then Check the Save and Publish button is Disabled
 And I Select the Level in Inventory Item as SubCategory
 And I Select the Category in Inventory Item
@@ -418,19 +438,20 @@ And I Select the SubCategory in Inventory Item
 And I Select the Item in Inventory Item
 And I Select the Recipe Unit in Inventory Item
 And I Enter the Quantity in Inventory Item
-Then Validate the Cost by using Unit Price with Quantity
+Then Validate the Cost by using Unit Price with Quantity in Inventory Items
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
+@EditMenuItemA
 Scenario: Verify we able to add the Sub Recipe to Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
 And I Select Inventory Details Tab
-And I Click on the Add Sub-Recipe button
+And I Click the Add Sub-Recipe button
 Then Check the Save and Publish button is Disabled
 And I Select the Item in SubRecipe
 And I Select the Recipe Unit in SubRecipe
@@ -439,15 +460,16 @@ Then Validate the Cost by using Unit Price with Quantity in SubRecipe
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
+@EditMenuItemA
 Scenario: Verify we able to add the Manual Entry to Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Select Serving Size in Set Price for Variable
 And I Select Inventory Details Tab
-And I Click on the Add Manual Entry button
+And I Click the Add Manual Entry button
 Then Check the Save and Publish button is Disabled
 And I Enter the Item Name in Manual Entry
 And I Enter the Unit Price in Manual Entry
@@ -456,6 +478,7 @@ Then Validate the Cost by using Unit Price with Quantity in Manual Entry
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Create a New Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -463,13 +486,13 @@ And I Enter the Secondary Name
 And I Enter the PLU Code
 And I Enter the Item Preparation Time
 And I Check the Evertec Options is Displayed and Select Evertec
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Enable Conversational UI at POS Toggle
 And I Disable Price Level Settings Toggle
 And I Select Serving Size in Set Price for Variable
-And I Select Taxes
+And I Select the Taxes
 And I Select the Availability as Always
 And I Select the Kitchen Printers
 And I Select the Label Printers
@@ -477,14 +500,15 @@ And I Select the Restrict Printers
 And I Click the Save and Publish button
 Then Verfiy whether Menu Item Saved or Not
 
+@EditMenuItem
 Scenario: Create a New Menu Item With Serving Size
 Given I Click the New Menu Item button
 And I Enter the Menu Item With Serving Size Name
 And I Enter the Secondary Name
-And I Enter the PLU Code
+#And I Enter the PLU Code
 And I Enter the Item Preparation Time
 And I Check the Evertec Options is Displayed and Select Evertec
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item With Serving Size
 And I Select Cost Type as Fixed
@@ -492,14 +516,17 @@ And I Select Serving Size for Menu Item With Serving Size in Set Price for Fixed
 And I Click the Save and Publish button
 Then Verfiy whether Menu Item Saved or Not
 
+@EditMenuItem
 Scenario: Verify the Update header by Editing Saved Menu Item
 Given I Search and Edit the Menu Item
 Then Verify the Update Menu Item Header
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify able to search the Menu Item by entering 3 letters of Menu Item Name
-And I Verify Searching the Item when entering three letters
+And I Verify Searching the Item when entering three letters Two
 
+@EditMenuItem
 Scenario: Update Menu Item without Entering Menu Item name
 Given I Search and Edit the Menu Item
 When I Clear the Name
@@ -512,9 +539,10 @@ And I Click the Backward button
 #Then Check the Update and Publish button is Disabled
 #And I Click the Backward button
 
+@EditMenuItem
 Scenario: Update Menu Item wihtout Subcategory
 Given I Search and Edit the Menu Item
-And I Select the Level Type as Sub-Category
+And I Select the Level Type in General as Sub-Category
 Then Check the Update and Publish button is Disabled
 And I Click the Backward button
 
@@ -523,32 +551,32 @@ Given I Search and Edit the Menu Item
 Then I Verify Conversational UI at POS is Enabled
 And I Enable Hide In Kiosk Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Hide In Kiosk is Enabled
 And I Enable EBT Menu Item Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify EBT Menu Item is Enabled
 And I Enable Hide In POS Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Hide In POS is Enabled
 And I Enable Hide In Online Order Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Hide In Online Order is Enabled
 And I Enable Eighty Six List Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Eighty Six List is Enabled
 And I Enable Hide Menu Item Picture In POS Toggle 
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Hide Menu Item Picture In POS is Enabled
 And I Disable Hide In Kiosk Toggle 
@@ -558,7 +586,7 @@ And I Disable Hide In Online Order Toggle
 And I Disable Eighty Six List Toggle
 And I Disable Hide Menu Item Picture In POS Toggle  
 And I Click the Update and Publish button
-Then Verify whether the Menu Item is Updated or not
+Then Verfiy whether Menu Item Updated or Not
 Given I Search and Edit the Menu Item
 Then I Verify Hide In Kiosk is Disabled
 Then I Verify EBT Menu Item is Disabled
@@ -758,6 +786,7 @@ Then Check the Update and Publish button is Enabled
 And I Click the Update and Publish button
 Then Verfiy whether Menu Item Updated or Not
 
+@EditMenuItem
 Scenario: Update the Menu Item with Always
 Given I Search and Edit the Menu Item
 Then Check the Menu Type is Selected as Menu Item
@@ -767,37 +796,43 @@ And I Select the Availability as Always
 And I Click the Update and Publish button
 Then Verfiy whether Menu Item Updated or Not
 
+@EditMenuItem
 Scenario: Verify Updated Menu Item Availability is Selected as Always
 Given I Search and Edit the Menu Item
 Then I Verify the Selected Availability as Always
 And I Click the Backward button
 
-
+@EditMenuItem
 Scenario: Searching with Special Characters
 Then Enter Special Characters in Search field and Verify
 
+@EditMenuItem
 Scenario: Verify whether able to Inactivate the Menu Item Clicking Cancel/No button
 Given I Search the Menu Item and Click the Delete button
   And I Click the Cancel button in Pop Up
 Then Verify the Cancelled Menu Item Deleted/Inactivated or not
 
+@EditMenuItem
 Scenario: Verify whether Able to Inactivate the Menu Item Clicking Delete/Yes button
 Given I Search the Menu Item and Click the Delete button
 And I Click the Delete button
 Then I Verifying the Menu Item Deleted or not
 And I Click the Inactive button to navigate Inactivated screen to Verify Inactivated Menu Item
 
+@EditMenuItem
 Scenario: Verify whether able to Activate the Menu Item Clicking Cancel/No button
 Given I Search the Menu Item and Click the Active button
 And I Click the Cancel button in Pop Up
 Then Verify the Cancelled Menu Item is Activated or not
 
+@EditMenuItem
 Scenario: Verify whether Able to Activate the Menu Item Clicking Activate/Yes button
 Given I Search the Menu Item and Click the Active button
 And I Click the Activate button
 Then I Verifying the Menu Item Activated or not
 And I Click the Active button to navigate Activated screen to Verify Activated Menu Item
 
+@EditMenuItem
 Scenario: Create a Duplicate Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -805,13 +840,13 @@ And I Enter the Secondary Name
 And I Enter the PLU Code
 And I Enter the Item Preparation Time
 And I Check the Evertec Options is Displayed and Select Evertec
-And I Select the Level Type as Category
+And I Select the Level Type in General as Category
 And I Selecting the Categories
 And I Select the Menu Type as Menu Item
 And I Enable Conversational UI at POS Toggle
 And I Disable Price Level Settings Toggle
 And I Select Serving Size in Set Price for Variable
-And I Select Taxes
+And I Select the Taxes
 And I Select the Availability as Always
 And I Select the Kitchen Printers
 And I Select the Label Printers
@@ -819,11 +854,13 @@ And I Select the Restrict Printers
 And I Click the Save and Publish button
 Then Verfiy whether Duplicate Menu Item Saved or Not
 
+@EditMenuItem
 Scenario: Verify we able to Delete the Combo Menu Item
 Given I Search the Combo Menu Item and Click the Delete button
 And I Click the Delete button
 Then I Verifying the Combo Menu Item is Deleted or not
 
+@EditMenuItem
 Scenario: Verify we able to Create the New Menu Item with the COPY option 
 Given I Search the Menu Item and Click the Copy button
 #And I Verfiy Is Category/SubCategory selected or not
@@ -832,6 +869,7 @@ Given I Search the Menu Item and Click the Copy button
 Then Verify the New Menu Item header
 And I Click the Backward button
 
+@EditMenuItem
 Scenario: Verify we able to Update the Price to Include Modifiers Price
 Given I Search and Edit the Menu Item
 And I Select Included Modifiers Tab
@@ -865,10 +903,10 @@ And I Select Modifier Group in Mandatory Modifier Group
 And I Enable Set Tiered Price Toggle 
 And I Click the Add Set Tiered Price button
 And I Select the Serving Size
-And I Enter the Sequence
-And I Enter the Quantity 
+#And I Enter the Sequence
+And I Enter the Quantity in Set Tiered Price
 And I Select the Set Price For
-And I Enter Set Price in Decimal
+And I Enter Set Price in Decimal in Set Tiered Price
 And I Click the Update and Publish button
 Then Verfiy whether Menu Item Updated or Not
 And I Search and Edit the Menu Item

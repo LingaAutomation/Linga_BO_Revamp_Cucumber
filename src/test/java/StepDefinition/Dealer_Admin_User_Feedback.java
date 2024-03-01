@@ -229,7 +229,7 @@ public class Dealer_Admin_User_Feedback
 //		rp.Select_Last_Month_TimePeriod();
 //	}
 //
-//	@And("I Select the Time Period as Last Thirty days")
+//	@And("I Select the Time Period as Last Thirty Days")
 //	public void SelectTimePeriodAsLastThirtyDays() throws Exception 
 //	{
 //		rp.Select_Last_30_Days_TimePeriod();
