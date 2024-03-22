@@ -1,11 +1,16 @@
 package com.Pages;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.apache.maven.surefire.shared.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -22,11 +27,12 @@ public class Settings_Delivary_Settings_Page extends BasePage
 	Utility ut=new Utility();
 	Common_XPaths cmp;
 	
-//	public Settings_Delivary_Settings_Page(SelfHealingDriver driver,ExtentTest test)
+//	public Delivary_SettingsPage(SelfHealingDriver driver,ExtentTest test)
 //	{
 ////		this.driver=driver;
 ////		this.test=test;
-//		super(driver, test);
+//		super(driver,test);
+//		
 //		PageFactory.initElements(driver, this);
 //	}
 	
@@ -37,64 +43,156 @@ public class Settings_Delivary_Settings_Page extends BasePage
 	WebElement Delivary;
 	
 	@FindBy(xpath = "(//div[contains(@class,'d-flex justify-content-end')])[1]/button/span[1]")
-	WebElement sync;
+	public WebElement sync;
 	
 	@FindBy(xpath = "//app-input[@type='currency']/div/div/mat-form-field/div/div[1]/div[4]/input")
-	WebElement cost;
+	public WebElement cost;
 	
 	@FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix')])[3]/input")
-	WebElement per;
+	public WebElement per;
 	
 	@FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix')])[4]/input")
-	WebElement min;
+	public WebElement min;
 	
 	@FindBy(xpath = "(//div[contains(@class,'mobile-tool-box')])[2]/button")
-	WebElement action_btn;
+	public WebElement action_btn;
 	
 	@FindBy(xpath = "(//div[contains(@class,'align-items-center')])[1]/button")
-	WebElement add_zone;
+	public WebElement add_zone;
 	
 	@FindBy(xpath = "//app-toggle[contains(@class,'ng-untouched')]/div/mat-button-toggle-group/mat-button-toggle/button")
-	WebElement puc_tog;
+	public WebElement puc_tog;
 	
-	@FindBy(xpath = "//button/span/span[.='DELIVERY ZONES']")
-	WebElement delzone_btn;
+	@FindBy(xpath = "//span[.='DELIVERY ZONES']")
+	public WebElement delzone_btn;
 	
-	@FindBy(xpath = "//button/span/span[.='PUC']")
-	WebElement puc_btn;
 	
-	@FindBy(xpath = "//button/span/span[.='DRIVER']")
-	WebElement driver_btn;
+	
+	@FindBy(xpath = "//span[.='PUC']")
+	public WebElement puc_btn;
+	
+	@FindBy(xpath = "//span[.='DRIVER']")
+	public WebElement driver_btn;
 	
 	@FindBy(xpath = "((//div[contains(@class,'col-sm-')])[4]/app-segmentation/div/div/button)[4]")
-	WebElement driver_dept;
+	public WebElement driver_dept;
 	
 	@FindBy(xpath = "//div[contains(@class,'drawer-footer')]/div[2]/button")
-	WebElement save;
+	public WebElement save;
 	
-	@FindBy(xpath = "(//div[@class='toggle-component-group']/mat-button-toggle-group/mat-button-toggle/button)[2]")
-	WebElement puc_Yes;
+	@FindBy(xpath = "//app-toggle[contains(@class,'ng-untouched')]/div//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement puc_Yes;
+	
+	@FindBy(xpath = "//app-toggle[contains(@class,'ng-untouched')]/div//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement puc_No;
 	
 	@FindBy(xpath = "//div[contains(@class,'app-container')]/div[1]/div[3]/div/div[3]/button")
-	WebElement save_btn;
+	public WebElement save_btn;
 	
 	@FindBy(xpath = "//app-input[@type='text']/div/div/mat-form-field/div/div[1]/div[4]/input")
-	WebElement zone_name;
+	public WebElement zone_name;
 	
 	@FindBy(xpath = "(//app-input[@size='normal'])[1]/div/div/mat-form-field/div/div[1]/div[4]/input")
-	WebElement zone_time;
+	public WebElement zone_time;
 	
 	@FindBy(xpath = "//div[contains(@class,'alert-dialog-component')]/div[3]/div/div[2]")
-	WebElement delete_btn;
+	public WebElement delete_btn;
 	
 	@FindBy(xpath = "(//button[contains(@class,'action-button')])[2]/span[1]")
-	WebElement edit_btn;
+	public WebElement edit_btn;
 	
 	@FindBy(xpath = "//div[contains(@class,'drawer-footer')]/div[2]/button/span[1]")
-	WebElement updt_btn;
+	public WebElement updt_btn;
 	
 	@FindBy(xpath = "//div[contains(@class,'message')]/span")
-	WebElement AlertMessageTitle;
+	public WebElement AlertMessageTitle;
+	
+	@FindBy(xpath = "(//div[contains(@class,'toggle-component-group')])[1]//mat-button-toggle-group/mat-button-toggle[2]/button/span")
+	public WebElement AssignOrderToDepartedOrder_YesToggle;
+	
+	@FindBy(xpath = "(//div[contains(@class,'toggle-component-group')])[1]//mat-button-toggle-group/mat-button-toggle[1]/button/span")
+	public WebElement AssignOrderToDepartedOrder_NoToggle;
+	
+	@FindBy(xpath = "(//div[contains(@class,'toggle-component')])[2]//mat-button-toggle-group/mat-button-toggle[1]/button/span")
+	public WebElement EnableCashierReportForDriver_NoToggle;
+	
+	@FindBy(xpath = "(//div[contains(@class,'toggle-component')])[2]//mat-button-toggle-group/mat-button-toggle[2]/button/span")
+	public WebElement EnableCashierReportForDriver_YesToggle;
+	
+	@FindBy(xpath = "(//div[contains(@class,'mat-form-field-wrapper')])[2]/div[1]/div[4]/input")
+	public WebElement APIKey_Input;
+	
+	@FindBy(xpath = "(//div[contains(@class,'mat-form-field-wrapper')])[3]/div[1]/div[4]/input")
+	public WebElement Cabinate_Alias_Input;
+	
+	@FindBy(xpath = "(//div[contains(@class,'mat-form-field-wrapper')])[4]/div[1]/div[4]/input")
+	public WebElement Cabinate_ID_Input;
+	
+	@FindBy(xpath = "//div[contains(@class,'delivery')]/div/div[2]/div[1]/div[2]/div//div/mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement EnableTracking_NoToggle;
+	
+	@FindBy(xpath = "//div[contains(@class,'delivery')]/div/div[2]/div[1]/div[2]/div//div/mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement EnableTracking_YesToggle;
+	
+	@FindBy(xpath = "//div[contains(@class,'delivery')]/div/div[2]/div[2]/div[2]/div//div/mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement Direction_YesToggle;
+	
+	@FindBy(xpath = "//div[contains(@class,'delivery')]/div/div[2]/div[2]/div[2]/div//div/mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement Direction_NoToggle;
+	
+	@FindBy(xpath = "//span[.='Show Inactive Drivers']/../..//button[.='Yes']")
+	public WebElement Show_InactiveDrivers_Yes;
+	
+	@FindBy(xpath = "//span[.='Show Inactive Drivers']/../..//button[.='No']")
+	public WebElement Show_InactiveDrivers_No;
+	
+	@FindBy(xpath = "//span[.='Driver Departure']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement Driver_Departure_No;
+	
+	@FindBy(xpath = "//span[.='Driver Departure']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement Driver_Departure_Yes;
+	
+	@FindBy(xpath = "//textarea[@placeholder='Restaurant driver is on the way']")
+	public WebElement Driver_DepartureTextArea;
+	
+	@FindBy(xpath = "//span[.='Order Delayed']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement OrderDelayed_Yes;
+	
+	@FindBy(xpath = "//span[.='Order Delayed']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement OrderDelayed_No;
+	
+	@FindBy(xpath = "//textarea[@placeholder='Your order will be delayed about few minutes']")
+	public WebElement OrderDelayed_Text;
+	
+	@FindBy(xpath = "//span[.='Undelivered']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement Undelivered_No;
+	
+
+	@FindBy(xpath = "//span[.='Undelivered']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement Undelivered_Yes;
+	
+	@FindBy(xpath = "//textarea[@placeholder='Driver order undelivered']")
+	public WebElement Undelivered_Text;
+	
+	@FindBy(xpath = "//span[.='Near By']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement NearBy_No;
+	
+	@FindBy(xpath = "//span[.='Near By']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement NearBy_Yes;
+	
+	@FindBy(xpath = "//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")
+	public WebElement NearBy_Text;
+	
+	@FindBy(xpath = "//span[.='Completed']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[1]/button")
+	public WebElement Completed_No;
+	
+	@FindBy(xpath = "//span[.='Completed']/../..//div[2]/div/app-toggle//mat-button-toggle-group/mat-button-toggle[2]/button")
+	public WebElement Completed_Yes;
+	
+	@FindBy(xpath = "//textarea[contains(@placeholder,'Your order completed.')]")
+	public WebElement Order_Completed;
+	
+	
 	
 	public void Click_Edit_zone() throws Exception {
 		Thread.sleep(2000);
@@ -131,7 +229,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 	
 	public void Click_Inctive() throws Exception {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(@id,'cdk-drop-list-')]/div[1]/data-grid-row/div/div[4]/button/span[1]")).click();
+		driver.findElement(By.xpath("//div[contains(@id,'cdk-drop-list-')]/div[1]/data-grid-row/div/div[4]/div/button/span")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[contains(@class,'action-buttons')]/div/div[2]/button/span[1]")).click();
 		Thread.sleep(5000);
@@ -141,7 +239,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 	
 	public void Click_Delete() throws Exception {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(@id,'cdk-drop-list')]/div[1]/data-grid-row/div/div[4]/button[2]")).click();
+		driver.findElement(By.xpath("//div[contains(@id,'cdk-drop-list')]/div[1]/data-grid-row/div/div[4]/div[2]/button")).click();
 		Thread.sleep(2000);
 	}
 	
@@ -158,7 +256,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 	public void Click_store() throws InterruptedException {
 		driver.findElement(By.xpath("(//div[contains(@class,'menu-item-title')])[2]/span")).click();
 		Thread.sleep(8000);
-		driver.findElement(By.xpath("//input[@data-placeholder='Search']")).sendKeys("PART4");
+		driver.findElement(By.xpath("//input[@data-placeholder='Search']")).sendKeys("Namma2");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("(//div[contains(@class,'row ')])[9]/div[1]")).click();
 		Thread.sleep(5000);
@@ -213,12 +311,12 @@ public class Settings_Delivary_Settings_Page extends BasePage
 		Thread.sleep(5000);
 		
 		cost.clear();Thread.sleep(500);
-		cost.sendKeys(Utility.getProperty("cost"));
+		cost.sendKeys(RandomStringUtils.randomNumeric(4));
 		Thread.sleep(1000);
 		save_btn.click(); 
 		String str1=cost.getAttribute("value");//string store
 		Thread.sleep(500);
-		cost.sendKeys(Utility.getProperty("value1"));//string2 store
+		cost.sendKeys(RandomStringUtils.randomNumeric(4));//string2 store
 		Thread.sleep(1000);
 		save_btn.click(); 
 		String str2=cost.getAttribute("value");
@@ -244,7 +342,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 		Thread.sleep(5000);
 		String st1=per.getAttribute("value");//string store
 		Thread.sleep(5000);
-		per.sendKeys(Utility.getProperty("value1"));
+		per.sendKeys(RandomStringUtils.randomNumeric(4));
 		Thread.sleep(1500);
 		save_btn.click(); 
 		String st2=cost.getAttribute("value");
@@ -294,15 +392,14 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		min.clear();
-		min.sendKeys(Utility.getProperty("minute1"));
+		min.clear(); min.sendKeys(RandomStringUtils.randomNumeric(5));
 		Thread.sleep(500);
 		String msg1=driver.findElement(By.xpath("//div[contains(@class,'tab-content')]/div[4]/div[2]/div[2]")).getText();
 		save_btn.click();
 		Thread.sleep(5000);
 		String str3=per.getAttribute("value");//string store
 		Thread.sleep(5000);min.clear();
-		min.sendKeys(Utility.getProperty("value1"));
+		min.sendKeys(RandomStringUtils.randomNumeric(2));
 		Thread.sleep(1500);
 		save_btn.click(); 
 		String str4=cost.getAttribute("value");
@@ -335,7 +432,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		Thread.sleep(5000);min.clear();
-		min.sendKeys(Utility.getProperty("minute"));
+		min.sendKeys(RandomStringUtils.randomNumeric(2));
 		String min1=min.getAttribute("value");
 		Thread.sleep(1500);
 		save_btn.click(); 
@@ -412,7 +509,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 		driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
 		Thread.sleep(2000);
 		puc_btn.click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		
 		WebElement yes=driver.findElement(By.xpath("//div[@class='toggle-component-group']/mat-button-toggle-group/mat-button-toggle[2]/button/span"));
 		
@@ -452,17 +549,17 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		if(s1==null) {
-			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[2]/div[1]/div[4]/input")).sendKeys(Utility.getProperty("API_Key"));
+			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[2]/div[1]/div[4]/input")).sendKeys(RandomStringUtils.randomAlphanumeric(12));
 		    Thread.sleep(1000);
 		    test.log(LogStatus.PASS,"Enter API Key");
 			ut.PassedCaptureScreenshotAsBASE64();
 			
-			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[3]/div[1]/div[4]/input")).sendKeys(Utility.getProperty("Alias_Key"));
+			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[3]/div[1]/div[4]/input")).sendKeys(RandomStringUtils.randomAlphanumeric(12));
 		    Thread.sleep(1000);
 		    test.log(LogStatus.PASS,"Enter Alias Key");
 			ut.PassedCaptureScreenshotAsBASE64();
 			
-			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[4]/div[1]/div[4]/input")).sendKeys(Utility.getProperty("Cabinate_Id"));
+			driver.findElement(By.xpath("(//div[contains(@class,'mat-form-field-wrapper')])[4]/div[1]/div[4]/input")).sendKeys(RandomStringUtils.randomAlphanumeric(12));
 		    Thread.sleep(1000);
 		    test.log(LogStatus.PASS,"Enter Cabinate ID");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -497,13 +594,15 @@ public class Settings_Delivary_Settings_Page extends BasePage
 		add_zone.click();
 		zone_name.sendKeys(Utility.getProperty("New_Store_State"));
 		Thread.sleep(2000);
-		cost.sendKeys(Utility.getProperty("Refund1"));
+		cost.sendKeys(RandomStringUtils.randomNumeric(2));
 		Thread.sleep(2000);
-		zone_time.sendKeys(Utility.getProperty("minute"));
+		zone_time.sendKeys(RandomStringUtils.randomNumeric(1));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(@class,'drawer-footer')]/div[2]/button/span")).click();
 		Thread.sleep(2000);
 	}
+	
+	
 	
 
 	public void Click_Driver_Delivery() throws Exception {
@@ -568,7 +667,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			test.log(LogStatus.PASS,"Enable Tracking :Yes");
 			ut.PassedCaptureScreenshotAsBASE64();
 			
-			driver.findElement(By.xpath("//div[contains(@class,'form-card delivery')]/div/div/div[3]/div/div/div[2]/div/app-input/div/div/mat-form-field/div/div/div[4]/input")).sendKeys(Utility.getProperty("API_Key"));
+			driver.findElement(By.xpath("//div[contains(@class,'form-card delivery')]/div/div/div[3]/div/div/div[2]/div/app-input/div/div/mat-form-field/div/div/div[4]/input")).sendKeys(RandomStringUtils.randomAlphanumeric(12));
 		    Thread.sleep(1000);
 		    test.log(LogStatus.PASS,"Enter API Key");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -578,7 +677,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			driver.findElement(By.xpath("//div[contains(@class,'delivery')]/div/div[2]/div[1]/div[2]/div/app-toggle/div/mat-button-toggle-group/mat-button-toggle[2]/button")).click();
 			test.log(LogStatus.FAIL, "Enable Tracking :No");
 			ut.FailedCaptureScreenshotAsBASE64();
-			driver.findElement(By.xpath("//app-input[contains(@label,'API Key')]/div/div/mat-form-field/div/div[1]/div[4]/input")).sendKeys(Utility.getProperty("API_Key"));
+			driver.findElement(By.xpath("//app-input[contains(@label,'API Key')]/div/div/mat-form-field/div/div[1]/div[4]/input")).sendKeys(RandomStringUtils.randomAlphanumeric(12));
 		    Thread.sleep(1000);
 		    test.log(LogStatus.PASS,"Enter API Key");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -595,7 +694,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Driver_Departure"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Driver Departure");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -608,7 +707,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Driver_Departure"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Restaurant driver is on the way')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Driver Departure");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -623,7 +722,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Delay"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Order Delayed");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -636,7 +735,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Delay"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'delayed about few minutes')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Order Delayed");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -652,7 +751,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Order_cancel"));;
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));;
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Order concelled");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -665,7 +764,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Order_cancel"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter order cancel");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -680,7 +779,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Order_cancel"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Order cancelled");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -693,7 +792,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("Order_cancel"));
+			driver.findElement(By.xpath("//app-input[contains(@placeholder,'Driver order cancelled')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Order cancelled");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -710,7 +809,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(Utility.getProperty("order"));;
+			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(RandomStringUtils.randomAlphabetic(18));;
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Near by");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -723,7 +822,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(Utility.getProperty("order"));
+			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Near by");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -738,7 +837,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(Utility.getProperty("Order_cancel"));
+			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Near by");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -751,7 +850,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).clear();
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(Utility.getProperty("order"));
+			driver.findElement(By.xpath("//textarea[contains(@placeholder,'Your order will arrive in 10 minutes.')]")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 			Thread.sleep(1000);
 			test.log(LogStatus.PASS,"Enter Near by");
 			ut.PassedCaptureScreenshotAsBASE64();
@@ -769,7 +868,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 					Thread.sleep(1000);
 					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 					Thread.sleep(500);
-					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("completed"));
+					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 					Thread.sleep(1000);
 					test.log(LogStatus.PASS,"Enter Order Completed");
 					ut.PassedCaptureScreenshotAsBASE64();
@@ -782,7 +881,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 					Thread.sleep(1000);
 					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 					Thread.sleep(500);
-					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("completed"));
+					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 					Thread.sleep(1000);
 					test.log(LogStatus.PASS,"Enter order Completed");
 					ut.PassedCaptureScreenshotAsBASE64();
@@ -797,7 +896,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 					Thread.sleep(1000);
 					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 					Thread.sleep(500);
-					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("completed"));
+					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));
 					Thread.sleep(1000);
 					test.log(LogStatus.PASS,"Enter Order Completed");
 					ut.PassedCaptureScreenshotAsBASE64();
@@ -810,7 +909,7 @@ public class Settings_Delivary_Settings_Page extends BasePage
 					Thread.sleep(1000);
 					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).clear();
 					Thread.sleep(500);
-					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("completed"));;
+					driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(RandomStringUtils.randomAlphabetic(18));;
 					Thread.sleep(1000);
 					test.log(LogStatus.PASS,"Enter Order Completed");
 					ut.PassedCaptureScreenshotAsBASE64();
@@ -868,5 +967,223 @@ public class Settings_Delivary_Settings_Page extends BasePage
 		driver.findElement(By.xpath("//app-input[contains(@placeholder,'Your order completed.')]/div/div/mat-form-field/div/div[1]/div[4]/textarea")).sendKeys(Utility.getProperty("completed"));
 		Thread.sleep(1000);
 		*/
+	}
+	
+	@FindBy(xpath = "//button[contains(.,'ADD DELIVERY ZONE')]")
+	public WebElement Add_Delivery_ZoneBtn;
+	
+	@FindBy(xpath = "//label[contains(.,'Delivery Charge Cost')]/../../input")
+	public WebElement Delivery_Charge_Cost_InputBx;
+	
+	@FindBy(xpath = "//label[contains(.,'Expected Delivery Time')]/../../input")
+	public WebElement Expected_DeliveryTime_InputBx;
+	
+	@FindBy(xpath = "//div[@id='colorPickerTemplate']/button")
+	WebElement Colour_PickerBtn;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Location']")
+	WebElement Enter_LocationInputBox;
+	
+	@FindBy(xpath = "//div[@id='editMap']/div/div/div[4]/div/div[1]/button")
+	WebElement Map_inEditMapBtn;
+	
+	public WebElement Map_inEditMapButton()
+	{
+		return Map_inEditMapBtn;
+	}
+	
+	@FindBy(xpath = "//div[@id='editMap']/div/div/div[4]/div/div[2]/button")
+	WebElement Satellite_inEditMapBtn;
+	
+	public WebElement Satellite_inEditMapButton()
+	{
+		return Satellite_inEditMapBtn;
+	}
+	
+	public void Click_Add_Delivery_Zone()
+	{
+		Add_Delivery_ZoneBtn.click();
+	}
+	
+	public void Enter_Delivery_Charge_Cost(String str) throws InterruptedException
+	{
+		Thread.sleep(1000);
+
+		Delivery_Charge_Cost_InputBx.clear();
+		Thread.sleep(1000);
+		Delivery_Charge_Cost_InputBx.sendKeys(str);
+	}
+	
+	public WebElement Delivery_Charge_Cost()
+	{
+		return Delivery_Charge_Cost_InputBx;
+	}
+	
+	public void Enter_Expected_Delivery_Time(String str) throws InterruptedException
+	{
+		Thread.sleep(1000);
+
+		Expected_DeliveryTime_InputBx.clear();
+		Thread.sleep(1000);
+		Expected_DeliveryTime_InputBx.sendKeys(str);
+	}
+	
+	public WebElement Expected_Delivery_Time()
+	{
+		return Expected_DeliveryTime_InputBx;
+	}
+	
+	public void Add_New_DeliveryZone(String str) throws Exception
+	{
+		Common_XPaths cmp=new Common_XPaths();
+		
+		cmp.EnterName(str);
+	}
+	
+	
+	public void Click_Delivery_ZoneTab() throws Exception
+	{
+		Thread.sleep(1000);
+		driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
+		delzone_btn.click();
+	}
+	
+	@FindBy(xpath = "//button[@title='Draw a circle']")
+	WebElement Circle_Drawing_inMapBtn;
+	
+	@FindBy(xpath = "//div[contains(@style,'url(\"https://maps.gstatic.com/mapfiles/crosshair.cur\")')]")
+	WebElement Start_Postition_onMap;
+	
+	@FindBy(xpath = "(//div[@id='editMap']/div/div/div[2]/..//div[contains(@style,'z-index:')])[1]/div[2]")
+	WebElement End_Position_onMap;
+	
+	////div[@id='editMap']/div/div/div[2]/div/div[contains(@style,'z-index:')]/div[2]
+	
+	public void Draw_DeliveryZone_onMap() throws Exception
+	{
+		Thread.sleep(1000);
+		Circle_Drawing_inMapBtn.click();
+		
+		Thread.sleep(1000);
+		Start_Postition_onMap.click();
+		
+		Actions ac=new Actions(driver);
+		ac.dragAndDropBy(Start_Postition_onMap, 0, 100).click(End_Position_onMap).build().perform();
+		
+		
+		Thread.sleep(2000);
+//		End_Position_onMap.click();
+//		driver.findElement(By.tagName("html")).sendKeys(Keys.ESCAPE);
+		
+
+		Robot rd=new Robot();
+		rd.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+	}
+	
+	public void Verify_DeliveryHomePage(String str)
+	{
+		if(driver.findElement(By.xpath("(//app-segmentation//span[contains(.,'"+str+"')])[2]")).isDisplayed())
+		{
+			test.log(LogStatus.PASS, str+" Page Loaded Successfully");
+			
+			ut.PassedCaptureScreenshotAsBASE64();
+		}
+		else
+		{
+			test.log(LogStatus.PASS, str+"Page Loading Failed");
+			
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
+	}
+	
+	@FindBy(xpath = "//th/div[contains(.,' NAME ')]")
+	public WebElement NameField;
+	
+	@FindBy(xpath = "//th/div[contains(.,' CHARGE COST ')]")
+	public WebElement ChargeCostField;
+	
+	@FindBy(xpath = "//th/div[contains(.,' EXP DELIVERY TIME ')]")
+	public WebElement ExpDeliveryTimeFiled;
+	
+	
+	public void SearchAndClickEdit(String SearchValue) throws Exception
+	{
+		Common_XPaths cmp = new Common_XPaths();
+		//Wait_ForElementVisibility(SearchBox, 180);
+	
+		Thread.sleep(1000);
+		cmp.SearchBox.clear();
+		Thread.sleep(2000);
+
+		cmp.SearchBox.sendKeys(SearchValue);
+		Thread.sleep(2000);
+		try
+		{
+			Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[.=' "+SearchValue+" ']/../../td//div[1]/button")).click();
+		
+		}
+		catch(Exception g)
+		{
+			
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath("//span[.='"+SearchValue+" ']/../../div//div[1]/button")).click();
+		}
+		
+		}
+	
+	public void SearchAndClickDelete(String SearchValue) throws Exception
+	{
+		Common_XPaths cmp = new Common_XPaths();
+		//Wait_ForElementVisibility(SearchBox, 180);
+		try
+		{
+		Thread.sleep(1000);
+		cmp.SearchBox.clear();
+		Thread.sleep(2000);
+
+		cmp.SearchBox.sendKeys(SearchValue);
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//span[.=' "+SearchValue+" ']/../../td//div[2]/button")).click();
+		Thread.sleep(1000);
+		}
+		catch(Exception h)
+		{
+			Thread.sleep(1000);
+			cmp.SearchBox.clear();
+			Thread.sleep(2000);
+
+			cmp.SearchBox.sendKeys(SearchValue);
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath("//span[.='"+SearchValue+" ']/../../div//div[2]/button")).click();
+			Thread.sleep(1000);
+		}
+	}
+	
+	public void SearchAndClickActivate(String SearchValue) throws Exception
+	{
+		Common_XPaths cmp = new Common_XPaths();
+//		WebDriverWait wt=new WebDriverWait(driver, Duration.ofSeconds(300));
+		//Wait_ForElementVisibility(SearchBox, 180);
+		Thread.sleep(1000);
+		cmp.SearchBox.clear();
+		Thread.sleep(1000);
+
+		cmp.SearchBox.sendKeys(SearchValue);
+		Thread.sleep(2000);
+		
+		try
+		{
+		driver.findElement(By.xpath("//span[.=' "+SearchValue+" ']/../../td//div/button")).click();
+		}
+		catch(Exception h)
+		{
+			driver.findElement(By.xpath("//span[.='"+SearchValue+" ']/../../div//div/button")).click();
+
+		}
 	}
 }

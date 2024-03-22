@@ -35,10 +35,25 @@ public class PaymentMethodsPage extends BasePage
 	
 	
 	@FindBy(xpath = "//button[contains(.,'PAYMENT METHOD')]")
-	WebElement New_PaymentMethod;
+	public WebElement New_PaymentMethod;
 	
 	@FindBy(xpath = "//app-selectbox[@name='paymentMethodType']/div/mat-form-field/div/div/div[3]/input")
-	WebElement PaymentType_Inputbox;
+	public WebElement PaymentType_Inputbox;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Payment Type')]")
+	public WebElement Payment_Type_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Priority')]")
+	public WebElement Priority_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Amount')]")
+	public WebElement Amount_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Open Cash Drawer')]")
+	public WebElement Open_Cash_Drawer_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Actions')]")
+	public WebElement Actions_Column_Field;
 	
 	public WebElement PaymentType_Inputbox()
 	{
@@ -46,158 +61,164 @@ public class PaymentMethodsPage extends BasePage
 	}
 	
 	
-	@FindBy(xpath = "//app-input[@name='paymentMethodCode']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement PaymentMethod_CodeInputbox;
+	@FindBy(xpath = "//input[@aria-label='Code']")
+	public WebElement Code_Inputbox;
 	
-	@FindBy(xpath = "//app-input[@name='paymentMethodPriority']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement PaymentMethod_PriorityInputbox;
+	@FindBy(xpath = "//input[@aria-label='Priority']")
+	public WebElement Priority_Inputbox;
 	
-	public WebElement PaymentMethod_PriorityInputbox()
-	{
-		return PaymentMethod_PriorityInputbox;
-	}
+//	public WebElement PaymentMethod_PriorityInputbox()
+//	{
+//		return pri;
+//	}
+//	
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodIsMultiCurrency']//mat-button-toggle[.='Yes']")
+	public WebElement Enable_MultiCurrency_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Enable Multi Currency')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Enable_MultiCurrency_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodIsMultiCurrency']//mat-button-toggle[.='No']")
+	public WebElement Enable_MultiCurrency_NoToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Enable Multi Currency')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Enable_MultiCurrency_NoBtn;
+	@FindBy(xpath = "//input[@aria-label='Currency']")
+	public WebElement Currency_Inputbox;
 	
-	@FindBy(xpath = "//app-selectbox[@name='paymentMethodCurrencyId']/div/mat-form-field/div/div/div[3]/input")
-	WebElement CurrencyID_Inputbox;
+	@FindBy(xpath = "//input[@aria-label='Exchange Rate']")
+	public WebElement Exchange_Inputbox;
 	
-	@FindBy(xpath = "//app-input[@type='currency']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Exchange_Inputbox;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodOpenCashDrawer']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Open_CashDrawer_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Open Cash Drawer')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Open_CashDrawer_YesBtn;
-	
-	@FindBy(xpath = "//span[contains(.,'Open Cash Drawer')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Open_CashDrawer_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodOpenCashDrawer']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Open_CashDrawer_NoToggle;
 	
 	@FindBy(xpath = "//app-selectbox[@name='paymentMethodModelType']/div/mat-form-field/div/div/div[3]/input")
-	WebElement Model_TypeInputbox;
+	public WebElement Model_TypeInputbox;
 	
-	@FindBy(xpath = "//span[contains(.,'Enable EBT')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Enable_EBT_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodIsEbtEnable']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Enable_EBT_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Enable EBT')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Enable_EBT_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodIsEbtEnable']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Enable_EBT_NoToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Factor4 Cards')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Factor4Cards_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodFactor4Cards']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Factor4Cards_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Factor4 Cards')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Factor4Cards_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodFactor4Cards']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Factor4Cards_NoToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Exempt Cash Discount Fee')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Exempt_CashDiscountFee_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='exemptCashDiscount']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Exempt_Surcharge_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Exempt Cash Discount Fee')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Exempt_CashDiscountFee_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='exemptCashDiscount']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Exempt_Surcharge_NoToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Valutec Cards')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Valutec_Cards_YesBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodValutecCards']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Valutec_Cards_YesToggle;
 	
-	@FindBy(xpath = "//span[contains(.,'Valutec Cards')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Valutec_Cards_NoBtn;
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodValutecCards']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Valutec_Cards_NoToggle;
+	
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodDebit']//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Debit_YesToggle;
+	
+	@FindBy(xpath = "//app-toggle[@name='paymentMethodDebit']//mat-button-toggle[contains(.,'No')]")
+	public WebElement Debit_NoToggle;
 
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Sale')]/label/span[1]")
-	WebElement Sale_DebitInMPPGCard_RadioButton;
+	public WebElement Sale_DebitInMPPGCard_RadioButton;
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Authorize')]/label/span[1]")
-	WebElement Authorize_DebitInMPPGCard_RadioButton;
+	public WebElement Authorize_DebitInMPPGCard_RadioButton;
 	
 	@FindBy(xpath = "//span[contains(.,'Allowance Reset Periodically')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Allowance_ResetPeriodically_YesBtn;
+	public WebElement Allowance_ResetPeriodically_YesToggle;
 	
 	@FindBy(xpath = "//span[contains(.,'Allowance Reset Periodically')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Allowance_ResetPeriodically_NoBtn;
+	public WebElement Allowance_ResetPeriodically_NoToggle;
 	
 	@FindBy(xpath = "//span[contains(.,'Cash')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Cash_inEvertecPayment_YesBtn;
+	public WebElement Cash_inEvertecPayment_YesToggle;
 	
 	@FindBy(xpath = "//span[contains(.,'Cash')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Cash_inEvertecPayment_NoBtn;
+	public WebElement Cash_inEvertecPayment_NoToggle;
 	
 	@FindBy(xpath = "//span[contains(.,'Manual')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Manual_inEvertecPayment_YesBtn;
+	public WebElement Manual_inEvertecPayment_YesToggle;
 	
 	@FindBy(xpath = "//span[contains(.,'Manual')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Manual_inEvertecPayment_NoBtn;
+	public WebElement Manual_inEvertecPayment_NoToggle;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Cash')]")
-	WebElement Cash_PaymentType;
+	public WebElement Cash_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Gift Card')]")
-	WebElement GiftCard_PaymentType;
+	public WebElement GiftCard_PaymentType;
 	
 	@FindBy(xpath = "//select-option[.=' Credit Card ']")
-	WebElement CreditCard_PaymentType;
+	public WebElement CreditCard_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Side CC')]")
-	WebElement SideCC_PaymentType;
+	public WebElement SideCC_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Bionet Meal Card')]")
-	WebElement Bionet_MealCard_PaymentType;
+	public WebElement Bionet_MealCard_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Castle And Go')]")
-	WebElement CastleAndGo_PaymentType;
+	public WebElement CastleAndGo_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'SPPax')]")
-	WebElement SPPax_PaymentType;
+	public WebElement SPPax_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Others')]")
-	WebElement Others_PaymentType;
+	public WebElement Others_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'GiveX')]")
-	WebElement GiveX_PaymentType;
+	public WebElement GiveX_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'NMI Tokenization')]")
-	WebElement  NMI_Tokenization_PaymentType;
+	public WebElement  NMI_Tokenization_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Dejavoo')]")
-	WebElement Dejavoo_PaymentType;
+	public WebElement Dejavoo_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Optomany')]")
-	WebElement Optomany_PaymentType;
+	public WebElement Optomany_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'MPPG Credit Card')]")
-	WebElement MPPG_CreditCard_PaymentType;
+	public WebElement MPPG_CreditCard_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Ingenico')]")
-	WebElement Ingenico_PaymentType;
+	public WebElement Ingenico_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'MemberShip')]")
-	WebElement MemberShip_PaymentType;
+	public WebElement MemberShip_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Evertec')]")
-	WebElement Evertec_PaymentType;
+	public WebElement Evertec_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'PayPal')]")
-	WebElement PayPal_PaymentType;
+	public WebElement PayPal_PaymentType;
 	
 	@FindBy(xpath = "//select-option[contains(.,'Venmo')]")
-	WebElement Venmo_PaymentType;
+	public WebElement Venmo_PaymentType;
 	
 	public void Click_NewPaymentMethod()
 	{
 		New_PaymentMethod.click();
 	}
 	
-	public void Enter_PeymentMethod_Code(String str)
-	{
-		PaymentMethod_CodeInputbox.clear();
-		
-		PaymentMethod_CodeInputbox.sendKeys(str);
-	}
+//	public void Enter_PeymentMethod_Code(String str)
+//	{
+//		PaymentMethod_CodeInputbox.clear();
+//		
+//		PaymentMethod_CodeInputbox.sendKeys(str);
+//	}
 	
-	public void Enter_PeymentMethod_Priority(String str)
-	{
-		PaymentMethod_PriorityInputbox.clear();
-		
-		PaymentMethod_PriorityInputbox.sendKeys(str);
-	}
+//	public void Enter_PeymentMethod_Priority(String str)
+//	{
+//		PaymentMethod_PriorityInputbox.clear();
+//		
+//		PaymentMethod_PriorityInputbox.sendKeys(str);
+//	}
 	
 	
 	public void Select_CashPayment()
@@ -210,21 +231,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Multi_Currency()
 	{
-		if(Enable_MultiCurrency_YesBtn.isSelected())
+		if(Enable_MultiCurrency_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Enable_MultiCurrency_YesBtn.click();
+			Enable_MultiCurrency_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Multi_Currency()
 	{
-		if(Enable_MultiCurrency_YesBtn.isSelected())
+		if(Enable_MultiCurrency_YesToggle.isSelected())
 		{
-			Enable_MultiCurrency_NoBtn.click();
+			Enable_MultiCurrency_NoToggle.click();
 		}
 		else
 		{
@@ -235,7 +256,7 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Select_Currency_inMultiCurrency()
 	{
-		CurrencyID_Inputbox.click();
+		Currency_Inputbox.click();
 		
 	List<WebElement> CurrencyList=driver.findElements(By.xpath("//div[@class='cdk-virtual-scroll-content-wrapper']/div/select-option"));
 		
@@ -244,7 +265,7 @@ public class PaymentMethodsPage extends BasePage
 		if(CurrencySize==0)
 		{
 			
-			CurrencyID_Inputbox.click();
+			Currency_Inputbox.click();
 			
 			driver.findElement(By.xpath("//div[@class='cdk-virtual-scroll-content-wrapper']/div[1]/select-option")).click();
 			
@@ -290,7 +311,7 @@ public class PaymentMethodsPage extends BasePage
 
 		if(CurrencyList1.size()!=0)
 		{
-			CurrencyID_Inputbox.click();
+			Currency_Inputbox.click();
 
 		}
 	}
@@ -305,26 +326,26 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_OpenCashDrawer()
 	{
-		if(Open_CashDrawer_YesBtn.isSelected())
+		if(Open_CashDrawer_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Open_CashDrawer_YesBtn.click();
+			Open_CashDrawer_YesToggle.click();
 		}
 	}
 	
-	public WebElement Open_CashDrawer_YesBtn()
+	public WebElement Open_CashDrawer_YesToggle()
 	{
-		return Open_CashDrawer_YesBtn;
+		return Open_CashDrawer_YesToggle;
 	}
 	
 	public void Disable_OpenCashDrawer()
 	{
-		if(Open_CashDrawer_YesBtn.isSelected())
+		if(Open_CashDrawer_YesToggle.isSelected())
 		{
-			Open_CashDrawer_NoBtn.click();
+			Open_CashDrawer_NoToggle.click();
 		}
 		else
 		{
@@ -416,21 +437,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_EBT()
 	{
-		if(Enable_EBT_YesBtn.isSelected())
+		if(Enable_EBT_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Enable_EBT_YesBtn.click();
+			Enable_EBT_YesToggle.click();
 		}
 	}
 	
 	public void Disable_EBT()
 	{
-		if(Enable_EBT_YesBtn.isSelected())
+		if(Enable_EBT_YesToggle.isSelected())
 		{
-			Enable_EBT_NoBtn.click();
+			Enable_EBT_NoToggle.click();
 		}
 		else
 		{
@@ -441,21 +462,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Factor4Cards()
 	{
-		if(Factor4Cards_YesBtn.isSelected())
+		if(Factor4Cards_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Factor4Cards_YesBtn.click();
+			Factor4Cards_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Factor4Cards()
 	{
-		if(Factor4Cards_YesBtn.isSelected())
+		if(Factor4Cards_YesToggle.isSelected())
 		{
-			Factor4Cards_NoBtn.click();
+			Factor4Cards_NoToggle.click();
 		}
 		else
 		{
@@ -463,28 +484,28 @@ public class PaymentMethodsPage extends BasePage
 		}
 	}
 	
-	public void Enable_Exempt_CashDiscountFee()
+	public void Enable_Exempt_Surcharge()
 	{
-		if(Exempt_CashDiscountFee_YesBtn.isSelected())
+		if(Exempt_Surcharge_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Exempt_CashDiscountFee_YesBtn.click();
+			Exempt_Surcharge_YesToggle.click();
 		}
 	}
 	
-	public WebElement Exempt_CashDiscountFee_YesBtn()
+	public WebElement Exempt_Surcharge_YesToggle()
 	{
-		return Exempt_CashDiscountFee_YesBtn;
+		return Exempt_Surcharge_YesToggle;
 	}
 	
-	public void Disable_Exempt_CashDiscountFee()
+	public void Disable_Exempt_Surcharge()
 	{
-		if(Exempt_CashDiscountFee_YesBtn.isSelected())
+		if(Exempt_Surcharge_YesToggle.isSelected())
 		{
-			Exempt_CashDiscountFee_NoBtn.click();
+			Exempt_Surcharge_NoToggle.click();
 		}
 		else
 		{
@@ -494,21 +515,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Valutec_Cards()
 	{
-		if(Valutec_Cards_YesBtn.isSelected())
+		if(Valutec_Cards_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Valutec_Cards_YesBtn.click();
+			Valutec_Cards_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Valutec_Cards()
 	{
-		if(Valutec_Cards_YesBtn.isSelected())
+		if(Valutec_Cards_YesToggle.isSelected())
 		{
-			Valutec_Cards_NoBtn.click();
+			Valutec_Cards_NoToggle.click();
 		}
 		else
 		{
@@ -587,21 +608,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Allowance_ResetPeriodically()
 	{
-		if(Allowance_ResetPeriodically_YesBtn.isSelected())
+		if(Allowance_ResetPeriodically_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Allowance_ResetPeriodically_YesBtn.click();
+			Allowance_ResetPeriodically_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Allowance_ResetPeriodically()
 	{
-		if(Allowance_ResetPeriodically_YesBtn.isSelected())
+		if(Allowance_ResetPeriodically_YesToggle.isSelected())
 		{
-			Allowance_ResetPeriodically_NoBtn.click();
+			Allowance_ResetPeriodically_NoToggle.click();
 		}
 		else
 		{
@@ -618,21 +639,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Cash_inEvertecPayment()
 	{
-		if(Cash_inEvertecPayment_YesBtn.isSelected())
+		if(Cash_inEvertecPayment_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Cash_inEvertecPayment_YesBtn.click();
+			Cash_inEvertecPayment_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Cash_inEvertecPayment()
 	{
-		if(Cash_inEvertecPayment_YesBtn.isSelected())
+		if(Cash_inEvertecPayment_YesToggle.isSelected())
 		{
-			Cash_inEvertecPayment_NoBtn.click();
+			Cash_inEvertecPayment_NoToggle.click();
 		}
 		else
 		{
@@ -642,21 +663,21 @@ public class PaymentMethodsPage extends BasePage
 	
 	public void Enable_Manual_inEvertecPayment()
 	{
-		if(Manual_inEvertecPayment_YesBtn.isSelected())
+		if(Manual_inEvertecPayment_YesToggle.isSelected())
 		{
 			
 		}
 		else
 		{
-			Manual_inEvertecPayment_YesBtn.click();
+			Manual_inEvertecPayment_YesToggle.click();
 		}
 	}
 	
 	public void Disable_Manual_inEvertecPayment()
 	{
-		if(Manual_inEvertecPayment_YesBtn.isSelected())
+		if(Manual_inEvertecPayment_YesToggle.isSelected())
 		{
-			Manual_inEvertecPayment_NoBtn.click();
+			Manual_inEvertecPayment_NoToggle.click();
 		}
 		else
 		{
@@ -666,7 +687,7 @@ public class PaymentMethodsPage extends BasePage
 	
 //	public WebElement Cash_Evertec()
 //	{
-//		return Cash_inEvertecPayment_YesBtn
+//		return Cash_inEvertecPayment_YesToggle
 //	}
 	
 	

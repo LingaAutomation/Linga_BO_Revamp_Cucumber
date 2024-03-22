@@ -60,16 +60,16 @@ public class Product_and_Items_Categories
 	KitchenPrinterPage kp=new KitchenPrinterPage();
 	
 	
-	String Actual_Percentage;
-	String Expected_Percentage=null;
-	String Expected_ChangeAmount, Actual_ChangeAmount, Expected_ChangeAmountBef;
+	public static String Actual_Percentage;
+	public static String Expected_Percentage=null;
+	public static String Expected_ChangeAmount, Actual_ChangeAmount, Expected_ChangeAmountBef;
 	
 	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(150));
 	
 	SoftAssert sa=new SoftAssert();
 	
 	Availability_RestrictionTimePage al=new Availability_RestrictionTimePage();
-	String Cat_inMenuPage;
+	public static String Cat_inMenuPage;
 
 	@Given("Open the Category home page BaseURL and StoreID")
 	public void openTheCategoryHomePageBaseURLAndStoreID() throws Exception {
@@ -371,7 +371,7 @@ public class Product_and_Items_Categories
 	@When("I Select the Taxes")
 	public void iSelectTheTaxes() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-		Thread.sleep(1000);
+		Thread.sleep(6000);
 	    ctp.Select_Taxes();
 	}
 	
@@ -447,6 +447,7 @@ public class Product_and_Items_Categories
 	@When("I Select Printer Model")
 	public void iSelectPrinterModel() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		Thread.sleep(2000);
 	    kp.Select_Printer_Model();
 	}
 

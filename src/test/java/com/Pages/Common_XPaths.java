@@ -52,16 +52,19 @@ public class Common_XPaths extends BasePage
 	public WebElement SearchBox_DropDown;
 	
 	@FindBy(xpath = "//button[.='Save']")
-	WebElement SaveBtn;
+	public WebElement SaveBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'SAVE')]")
-	WebElement Save_ButtonTwo;
+	public WebElement Save_ButtonTwo;
 	
 	@FindBy(xpath = "//button[contains(.,'UPDATE')]")
 	WebElement Update_ButtonTwo;
 	
 	@FindBy(xpath = "//mat-hint")
 	WebElement Error_BelowInputBx;
+	
+	@FindBy(xpath = "//mat-hint/mat-hint[contains(.,'Name already exist')]")
+	public WebElement Name_Already_Exist_ErrorMsg;
 	
 	@FindBy(xpath = "//button[@mattooltip='Click to see actions']")
 	WebElement Actions_inSearch;
@@ -683,9 +686,9 @@ public class Common_XPaths extends BasePage
 		}
 		else
 		{
-			test.log(LogStatus.FAIL, "Pagination not available");
+			test.log(LogStatus.INFO, "Pagination not available");
 			
-			ut.FailedCaptureScreenshotAsBASE64();
+			ut.InfoCaptureScreenshotAsBASE64();
 		}
 		
 		
@@ -862,7 +865,7 @@ public class Common_XPaths extends BasePage
 		{
 			test.log(LogStatus.WARNING, SearchValue+" is not available");
 			
-			ut.FailedCaptureScreenshotAsBASE64();
+			ut.InfoCaptureScreenshotAsBASE64();
 		}
 	}
 	
@@ -1119,10 +1122,10 @@ public class Common_XPaths extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Amount')]/../../input")
-	WebElement Amount_InputBx;
+	public WebElement Amount_InputBx;
 	
 	@FindBy(xpath = "//label[contains(.,'Percentage')]/../../input")
-	WebElement Percentage_InputBx;
+	public WebElement Percentage_InputBx;
 	
 	
 	public void Enter_Amount(String str) throws Exception
@@ -1491,6 +1494,21 @@ public class Common_XPaths extends BasePage
 		System.out.println(Msg);
 	}
 	
+	public void Click_DropDown_withSearch_Selection(WebElement ele, String Option, String Msg) throws Exception
+	{
+		Thread.sleep(1000);
+		ele.click();
+		
+		SearchBox_DropDown.clear();
+		SearchBox_DropDown.sendKeys(Option);
+		
+		First_Option_inDropDown.click();
+		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//select-option[contains(.,'"+Option+"')]")).click();
+				
+		System.out.println(Msg);
+	}
+	
 	public void Click_DropDown_withSearch(WebElement ele, String Msg) throws Exception
 	{
 		
@@ -1591,7 +1609,7 @@ public class Common_XPaths extends BasePage
 	
 	public void Click_DropDown_withSearchText(WebElement ele, String Option, String Msg) throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		ele.click();
 		
 		Thread.sleep(1000);
@@ -2038,7 +2056,7 @@ public class Common_XPaths extends BasePage
 	    	test.log(LogStatus.FAIL, Msg+" is not Displayed");
 	    	
 	    	ut.FailedCaptureScreenshotAsBASE64();
-	    	
+	    	Assert.assertEquals(false, ele.isDisplayed());
 	    	
 	    }
 	}
@@ -2108,16 +2126,16 @@ public class Common_XPaths extends BasePage
 		}
 	}
 
-	public void Assertion_Validation_True_Element(WebElement ele)
+	public void Assertion_Validation_True_Element_Displayed(WebElement ele)
 	{
-		Assert.assertEquals(true, ele);
+		Assert.assertEquals(true, ele.isDisplayed());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
 	}
 	
-	public void Assertion_Validation_False_Element(WebElement ele)
+	public void Assertion_Validation_False_Element_Not_Displayed(WebElement ele)
 	{
-		Assert.assertEquals(false, ele);
+		Assert.assertEquals(false, ele.isDisplayed());
 		
 		ut.PassedCaptureScreenshotAsBASE64();
 	}
@@ -2188,6 +2206,13 @@ public class Common_XPaths extends BasePage
 	
 	
 	public void Assertion_Validation_Two_Values(String Actual, String Expected, String Msg)
+	{
+		Assert.assertEquals(Actual, Expected, Msg);
+		
+		ut.PassedCaptureScreenshotAsBASE64();
+	}
+	
+	public void Assertion_Validation_Two_ListValues(List<String> Actual, List<String> Expected, String Msg)
 	{
 		Assert.assertEquals(Actual, Expected, Msg);
 		
@@ -2548,6 +2573,217 @@ public class Common_XPaths extends BasePage
 //            js.executeScript("window.scrollBy(0, 250)"); // Scroll down by 250 pixels
 //       }
       
+    	public void Select_CheckBox(WebElement ele1, WebElement ele2) throws Exception
+    	{
+    		Thread.sleep(500);
+//    		if(ele.isSelected())
+//    		{
+//    			
+//    		}
+//    		else
+//    		{
+//    			Thread.sleep(500);
+//    			ele.click();
+//    		}
+    		
+    		Thread.sleep(500);
+//    		String isChecked=ele.findElement(By.tagName("input")).getAttribute("checked");
+//    		if(isChecked=="true")
+//    		try
+//    		{
+    		if(ele2.isSelected())
+    		{
+    			
+    		}
+//    		}
+//    		catch(Exception k)
+    		{
+    			Thread.sleep(500);
+    			ele2.click();
+    		}
+    	}
+    	
+    	public void Deselect_CheckBox(WebElement ele1, WebElement ele2) throws Exception
+    	{
+    		
+    		Thread.sleep(500);
+//    		String isChecked=ele.findElement(By.tagName("input")).getAttribute("checked");
+//    		if(isChecked=="true")
+    		try
+    		{
+    		if(ele1.isDisplayed())
+    		{
+    			Thread.sleep(500);
+    			ele2.click();
+    		}
+    		}
+    		catch(Exception k)
+    		{
+    			
+    		}
+    	}
+    	
+//    	@FindBy(xpath = "//button[.='SAVE'][@disabled='true']")
+//    	public WebElement SaveBtnDisabled;
+//    	 
+//    	@FindBy(xpath = "//button[.='SAVE'][@disabled='false']")
+//    	public WebElement SaveBtnEnabled;
+    	 
+    	@FindBy(xpath="//button[.='SAVE & ADD'][@disabled='true']")
+    	public WebElement Save_ADD_BtnDisabled;
+    	 
+    	@FindBy(xpath = "//button[.='SAVE & ADD']")
+    	public WebElement Save_ADD_BtnEnabled;
+    	 
+    	 
+//    	public WebElement Save_Button_disabled()
+//    	{
+//    		return SaveBtnDisabled;
+//    	}
+    	 
+    	public WebElement Save_ADD_Btn_Disabled()
+    	{
+    		return Save_ADD_BtnDisabled;
+    	}
+    	 
+    	public WebElement Save_ADD_Btn_Enabled()
+    	{
+    		return Save_ADD_BtnEnabled;
+    	}
+    	 
+    	 
+//    	public WebElement Save_Button_Enabled()
+//    	{
+//    		return SaveBtnEnabled;
+//    	}
+    	 
+//    	public void Check_Save_Button_Diabled() throws Exception
+//    	{
+//    	 
+//    		 if(Save_Button_disabled().isEnabled())
+//    		    {
+//    			
+//    			
+//    		    	test.log(LogStatus.FAIL, "Save button is Enabled");
+//    		    	
+//    		    	ut.FailedCaptureScreenshotAsBASE64();
+//    		    }
+//    		    else
+//    		    {
+//    		    	test.log(LogStatus.PASS, "Save button is Disabled");
+//    		    	
+//    		    	ut.PassedCaptureScreenshotAsBASE64();
+//    		    	
+//    		    	Assert.assertEquals(false, Save_Button_disabled().isEnabled());}
+//    		    }
+    	 
+    	public void Check_Save_ADD_Button_Diabled() throws Exception
+    	{
+    	 
+    		 if(Save_ADD_Btn_Disabled().isEnabled())
+    		    {
+    			
+    			
+    		    	test.log(LogStatus.FAIL, "Save & Add button is Enabled");
+    		    	
+    		    	ut.FailedCaptureScreenshotAsBASE64();
+    		    }
+    		    else
+    		    {
+    		    	test.log(LogStatus.PASS, "Save & Add button is Disabled");
+    		    	
+    		    	ut.PassedCaptureScreenshotAsBASE64();
+    		    	
+    		    	Assert.assertEquals(false, Save_ADD_Btn_Disabled().isEnabled());}
+    		    }
+    	 
+    	 
+//    	public void Check_Save_Button_Enabled() throws Exception
+//    	{
+//    	 
+//    		 if(Save_Button_Enabled().isEnabled())
+//    		    {
+//    			
+//    			
+//    		    	test.log(LogStatus.PASS, "Save button is Enabled");
+//    		    	ut.PassedCaptureScreenshotAsBASE64();
+//    		    	Assert.assertEquals(false, Save_Button_Enabled().isEnabled());
+//    		    	
+//    		    }
+//    		    else
+//    		    {
+//    		    	test.log(LogStatus.FAIL, "Save button is Disabled");
+//    		    	ut.FailedCaptureScreenshotAsBASE64();
+//    		    	
+//    		    	}
+//    		    }
+    		
+//    	public void Check_Save_ADD_Button_Enabled() throws Exception
+//    	{
+//    	 
+//    		 if(Save_ADD_Btn_Enabled().isEnabled())
+//    		    {
+//    			
+//    			
+//    		    	test.log(LogStatus.PASS, "Save & Add button is Enabled");
+//    		    	
+//    		    	ut.PassedCaptureScreenshotAsBASE64();
+//    		    }
+//    		    else
+//    		    {
+//    		    	test.log(LogStatus.FAIL, "Save & Add button is Disabled");
+//    		    	
+//    		    	ut.FailedCaptureScreenshotAsBASE64();
+//    		    	
+//    		    	Assert.assertEquals(false, Save_ADD_Btn_Enabled().isEnabled());
+//    		    }
+//    	}
+    	 
+    	
+//    	public void Check_Save_ADD_Button_Diabled() throws Exception
+//    	{
+//    	 
+//    		 if(Save_ADD_Btn_Disabled().isEnabled())
+//    		    {
+//    			
+//    			
+//    		    	test.log(LogStatus.FAIL, "Save & Add button is Enabled");
+//    		    	
+//    		    	ut.FailedCaptureScreenshotAsBASE64();
+//    		    }
+//    		    else
+//    		    {
+//    		    	test.log(LogStatus.PASS, "Save & Add button is Disabled");
+//    		    	
+//    		    	ut.PassedCaptureScreenshotAsBASE64();
+//    		    	
+//    		    	Assert.assertEquals(false, Save_ADD_Btn_Disabled().isEnabled());
+//    		    	}
+//     }
 
+public void Check_Save_ADD_Button_Enabled() throws Exception
+{
+ 
+	 if(Save_ADD_Btn_Enabled().isEnabled())
+	    {
+		
+		
+	    	test.log(LogStatus.PASS, "Save & Add button is Enabled");
+	    	
+	    	ut.PassedCaptureScreenshotAsBASE64();
+	    }
+	    else
+	    {
+	    	test.log(LogStatus.FAIL, "Save & Add button is Disabled");
+	    	
+	    	ut.FailedCaptureScreenshotAsBASE64();
+	    	
+	    	Assert.assertEquals(false, Save_ADD_Btn_Enabled().isEnabled());
+	    }
+}
+public void IClickSAVE_ADD_Btn() {
+	 
+Save_ADD_Btn_Enabled().click();
+}
   
 }

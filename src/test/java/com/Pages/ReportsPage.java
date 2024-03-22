@@ -27,6 +27,8 @@ public class ReportsPage extends BasePage
 	Utility ut=new Utility();
 	Common_XPaths cmp=new Common_XPaths();
 	
+	LoginPage lgpg=new LoginPage();
+	
 	TaxesPage tx;
 //	public ReportsPage(SelfHealingDriver driver,ExtentTest test)
 //	{
@@ -1007,47 +1009,56 @@ public class ReportsPage extends BasePage
 	@FindBy(xpath = "//select-option[contains(.,'Time Period')]")
 	WebElement Time_Period_OptionBtn;
 	
+	@FindBy(xpath = "//td[contains(.,'Check Count')]/../td[2]")
+	public WebElement Check_Count_SaleRecap;
+	
+	@FindBy(xpath = "//td[contains(.,'Check Count')]/../td[2]")
+	public WebElement Guest_Count_SaleRecap;
+	
+	@FindBy(xpath = "//td[contains(.,'Cover Count')]/../td[2]")
+	public WebElement Cover_Count_SaleRecap;
+	
 	@FindBy(xpath = "//td[contains(.,'Gross Sales')]/../td[2]")
-	WebElement Gross_Sales_SaleRecap;
+	public WebElement Gross_Sales_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Net Sales')]/../td[2]")
-	WebElement Net_Sales_SaleRecap;
+	public WebElement Net_Sales_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Grand Sales')]/../td[2]")
-	WebElement Grand_Sales_SaleRecap;
+	public WebElement Grand_Sales_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Gross Receipt')]/../td[2]")
-	WebElement Gross_Receipt_SaleRecap;
+	public WebElement Gross_Receipt_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Total Tax Collected')]/../td[4]")
-	WebElement Tax_SaleRecap;
+	public WebElement Tax_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Tax Exempted')]/../td[4]")
-	WebElement Tax_Exempt_SaleRecap;
+	public WebElement Tax_Exempt_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Discount')]/../td[2]")
-	WebElement Discount_SaleRecap;
+	public WebElement Discount_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Discount Tax')]/../td[2]")
-	WebElement Discount_Tax_SaleRecap;
+	public WebElement Discount_Tax_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Gross Void')]/../td[2]")
-	WebElement Gross_Void_SaleRecap;
+	public WebElement Gross_Void_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Net Void')]/../td[2]")
-	WebElement Net_Void_SaleRecap;
+	public WebElement Net_Void_SaleRecap;
 	
 	@FindBy(xpath = "//td[contains(.,'Rounding Off')]/../td[4]")
-	WebElement Rounding_Off_SaleRecap;
+	public WebElement Rounding_Off_SaleRecap;
 	
 	@FindBy(xpath = "//app-custom-dynamic-table//span[contains(.,'Refund')]/../..//td[contains(.,'Total')]/../td[2]")
-	WebElement Refund_SaleRecap;
+	public WebElement Refund_SaleRecap;
 	
 	@FindBy(xpath = "//app-custom-dynamic-table//span[contains(.,'SALES')]" )
-	WebElement Sales_Table_inSaleRecap;
+	public WebElement Sales_Table_inSaleRecap;
 	
 	@FindBy(xpath = "//app-custom-dynamic-table//span[contains(.,'TAXES')]" )
-	WebElement Taxes_Table_inSaleRecap;
+	public WebElement Taxes_Table_inSaleRecap;
 	
 	@FindBy(xpath = "//app-custom-dynamic-table//span[contains(.,'REFUND')]" )
 	WebElement Refund_Table_inSaleRecap;
@@ -3164,5 +3175,627 @@ public class ReportsPage extends BasePage
 		public WebElement Grand_Sale_Column_Field;
 		
 		
+		@FindBy(xpath= "//label[contains(.,'Employee')]")
+		public WebElement Report_EmpLabor_EmployeeField;
+
+		@FindBy(xpath= "//label[contains(.,'Process')]")
+		public WebElement Report_EmpLabor_ProcessField;
+
+		@FindBy(xpath= "//label[contains(.,'Format')]")
+		public WebElement Report_EmpLabor_FormatField;
+
+		@FindBy(xpath= "//label[contains(.,'Active/Inactive')]")
+		public WebElement Report_EmpLabor_ActiveInactiveField;
+
+		@FindBy(xpath= "//label[contains(.,'Shift Status')]")
+		public WebElement Report_EmpLabor_ShiftStatusField;
+
+		@FindBy(xpath= "//label[contains(.,'Time Period')]")
+		public WebElement Report_EmpLabor_TimePeriodField;
+
+		@FindBy(xpath= "//mat-form-field[contains(.,'search')]")
+		public WebElement Report_EmpLabor_SearchField;
+
+		@FindBy(xpath= "//button[contains(.,'COLUMNS')]")
+		public WebElement Report_EmpLabor_ColumnsBtn;
+
+		@FindBy(xpath= "//button[contains(.,'EXPORT')]")
+		public WebElement Report_EmpLabor_ExportBtn;
+
+		@FindBy(xpath= "//span[normalize-space()='Name']")
+		public WebElement Report_EmpLabor_NameFieldInTable;
+
+		@FindBy(xpath= "//span[normalize-space()='Employee Id']")
+		public WebElement Report_EmpLabor_EmployeeIdInTable;
+
+		@FindBy(xpath= "//span[normalize-space()='Net Sales']")
+		public WebElement Report_EmpLabor_NetsalesInTable;
+
+		@FindBy(xpath= "//span[normalize-space()='Hours']")
+		public WebElement Report_EmpLabor_HoursInTable;
+
+		@FindBy(xpath= "//div/span[normalize-space()='Labor']")
+		public WebElement Report_EmpLabor_LaborInTable;
+
+		@FindBy(xpath= "//span[normalize-space()='% Of Net Sales']")
+		public WebElement Report_EmpLabor_PercentageNetsalesInTable;
+
+		@FindBy(xpath= "//span[normalize-space()='Labor Percentage']")
+		public WebElement Report_EmpLabor_LaborPercentageInTable;
+
+		@FindBy(xpath= "//span[contains(text(),'Shift Status')]")
+		public WebElement Report_EmpLabor_ShiftStatusInTable;
+
+		@FindBy(xpath= "//span[contains(.,'Employee')]/../input")
+		public WebElement SelectEmployeeLabel;
+
+		@FindBy(xpath= "//select-option[contains(.,'All')]")
+		public WebElement EmployeeLabel_InputBx_All;
+
+		@FindBy(xpath= "//span[contains(.,'Process')]/../input")
+		public WebElement SelectProcessLabel;
+
+		@FindBy(xpath= "//select-option[contains(.,'Daily')]")
+		public WebElement Process_InputBx_Daily;
+
+		@FindBy(xpath= "//select-option[contains(.,'Weekly')]")
+		public WebElement Process_InputBx_Weekly;
+
+		@FindBy(xpath= "//select-option[contains(.,'Daily/Weekly')]")
+		public WebElement Process_InputBx_DailyWeekly;
+
+		@FindBy(xpath= "//span[contains(.,'Format')]/../input")
+		public WebElement SelectFormatLabel;
+
+		@FindBy(xpath= "//select-option[contains(.,'In Hours')]")
+		public WebElement Format_InputBx_InHours;
+
+		@FindBy(xpath= "//select-option[contains(.,'In Time')]")
+		public WebElement Format_InputBx_InTime;
+
+		@FindBy(xpath= "//span[contains(.,'Active/Inactive')]/../input")
+		public WebElement SelectActiveInactiveLabel;
+
+		@FindBy(xpath= "//select-option[contains(.,'All')]")
+		public WebElement ActiveInactive_InputBx_All;
+
+		@FindBy(xpath= "//select-option[contains(.,'Active')]")
+		public WebElement ActiveInactive_InputBx_Active;
+
+		@FindBy(xpath= "//select-option[contains(.,'Inactive')]")
+		public WebElement ActiveInactive_InputBx_Inactive;
+
+		@FindBy(xpath= "//span[contains(.,'Shift Status')]/../input")
+		public WebElement SelectShiftStatusLabel;
+
+		@FindBy(xpath= "//select-option[contains(.,'All')]")
+		public WebElement ShiftStatus_InputBx_All;
+
+		@FindBy(xpath= "//select-option[contains(.,'In Shift')]")
+		public WebElement ShiftStatus_InputBx_InShift;
+
+		@FindBy(xpath= "//select-option[contains(.,'Shift Closed')]")
+		public WebElement ShiftStatus_InputBx_ShiftClosed;
+
+		
+
+		@FindBy(xpath= "//div[@class='mat-tab-links']/div[3]")
+		public WebElement ClickLaborBtn;
+
+
+		public void openTheReportsEmployeeLaborHomePageBaseURLAndStoreID() throws Exception {
+			    // Write code here that turns the phrase above into concrete actions
+				
+				Thread.sleep(5000);
+				//Load the Reports Employee Labor page
+				try {
+					
+					driver.navigate().refresh();
+					cmp.waitForPageToLoad();
+				lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"employee/labor");
+				Thread.sleep(5000);
+				
+				}
+				//ClickLaborBtn.click();}
+				catch(Exception K) {}
+				Thread.sleep(5000);
+				cmp.waitForPageToLoad();
+
+		}
+			
+			
+		public void verifyingTheReportEmployeeLaborHeaderPage() throws Exception {
+			    // Write code here that turns the phrase above into concrete actions
+				Thread.sleep(5000);
+				//Verify the Category page loaded or not
+				cmp.VerifyMainScreenPageHeader("Employee");	
+			}
+
+		public void IcheckEmployeeFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+			    Report_EmpLabor_EmployeeField.isDisplayed();
+			    System.out.println("Employee Field is Displayed");
+			}
+			
+		public void IcheckProcessFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ProcessField.isDisplayed();
+				 System.out.println("Process Field is Displayed");
+			}
+
+			
+
+		public void IcheckFormatFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_FormatField.isDisplayed();
+				 System.out.println("Format Field is Displayed");
+			}
+
+
+		public void IcheckActiveInactiveFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ActiveInactiveField.isDisplayed();
+				 System.out.println("Active/Inactive Field is Displayed");
+			}
+
+
+		public void IcheckShiftStatusFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ShiftStatusField.isDisplayed();
+				 System.out.println("Shift Status Field is Displayed");
+			}
+
+
+		public void IcheckTimePeriodFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_TimePeriodField.isDisplayed();
+				 System.out.println("Time Period Field is Displayed");
+			}
+
+
+		public void IcheckSearchFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_SearchField.isDisplayed();
+				 System.out.println("Search Field is Displayed");
+			}
+
+
+		public void IcheckColumnsFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ColumnsBtn.isDisplayed();
+				 System.out.println("Columns Button Field is Displayed");
+			}
+
+
+		public void IcheckExportFieldIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ExportBtn.isDisplayed();
+				 System.out.println("Export Button Field is Displayed");
+			}
+
+			
+		public void IcheckNameFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_NameFieldInTable.isDisplayed();
+				 System.out.println("Name in Table is Displayed");
+			}
+
+
+		public void IcheckEmployeeIdFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_EmployeeIdInTable.isDisplayed();
+				 System.out.println("Employee ID in Table is Displayed");
+			}
+
+		public void IcheckNetSalesFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_NetsalesInTable.isDisplayed();
+				 System.out.println("Net Sales in Table is Displayed");
+			}
+
+
+		public void IcheckHoursInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_HoursInTable.isDisplayed();
+				 System.out.println("Hours in Table is Displayed");
+			}
+
+		public void IcheckLaborInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_LaborInTable.isDisplayed();
+				 System.out.println("Labor in Table is Displayed");
+			}
+
+			
+		public void IcheckOfNetSalesFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_PercentageNetsalesInTable.isDisplayed();
+				 System.out.println("% Of Net Sales in Table is Displayed");
+			}
+			
+		public void IcheckLaborPercentageFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_LaborPercentageInTable.isDisplayed();
+				 System.out.println("Labor Percentage in Table is Displayed");
+			}
+			
+		public void IcheckShiftStatusFieldInTableIsDisplayed() {
+			    // Write code here that turns the phrase above into concrete actions
+				Report_EmpLabor_ShiftStatusInTable.isDisplayed();
+				 System.out.println("Shift Status in Table is Displayed");
+			}
+
+		public void iSelectEmployeeAsAll() {
+			    // Write code here that turns the phrase above into concrete actions
+		SelectEmployeeLabel.click();
+		EmployeeLabel_InputBx_All.click();
+
+			}
+
+		public void iSelectProcessAsDaily() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectProcessLabel.click();
+		Process_InputBx_Daily.click();
+		}
+
+		public void iSelectProcessAsWeekly() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectProcessLabel.click();
+		Process_InputBx_Weekly.click();
+		}
+
+		public void iSelectProcessAsDailyWeekly() {
+			    // Write code here that turns the phrase above into concrete actions
+		SelectProcessLabel.click();
+		Process_InputBx_DailyWeekly.click();
+			}
+
+
+		public void iSelectFormatAsInHours() {
+			    // Write code here that turns the phrase above into concrete actions
+		SelectFormatLabel.click();
+		Format_InputBx_InHours.click();
+			}
+
+		public void iSelectFormatAsInTime() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectFormatLabel.click();
+		Format_InputBx_InTime.click();
+		}
+
+		public void iSelectActiveInactiveAsAll() {
+			    // Write code here that turns the phrase above into concrete actions
+		SelectActiveInactiveLabel.click();
+		ActiveInactive_InputBx_All.click();
+			}
+
+		public void iSelectActiveInactiveAsActive() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectActiveInactiveLabel.click();
+		ActiveInactive_InputBx_Active.click();
+		}
+
+		public void iSelectActiveInactiveAsInactive() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectActiveInactiveLabel.click();
+		ActiveInactive_InputBx_Inactive.click();
+		}
+
+		public void iSelectShiftStatusAsAll() {
+			    // Write code here that turns the phrase above into concrete actions
+		SelectShiftStatusLabel.click();
+		ShiftStatus_InputBx_All.click();
+
+			}
+
+		public void iSelectShiftStatusAsInShift() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectShiftStatusLabel.click();
+		ShiftStatus_InputBx_InShift.click();
+
+		}
+
+		public void iSelectShiftStatusAsShiftClosed() {
+		    // Write code here that turns the phrase above into concrete actions
+		SelectShiftStatusLabel.click();
+		ShiftStatus_InputBx_ShiftClosed.click();
+		}
+
+		public void iSelectTimePeriodAsToday() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Today_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsYesterday() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Yesterday_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLast7days() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_7_Days_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLast30days() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_30_Days_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLastNDays() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_N_days_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsDaysNDays() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Days_NdaysInputBx.click();
+		}
+
+		public void iSelectTimePeriodAsThisWeek() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		This_Week_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLastWeek() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_Week_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLast7Days() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_7_Days_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsThisMonth() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		This_Month_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLastMonth() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_Month_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsLast30Days() {
+		    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Last_30_Days_TimePeriodBtn.click();
+		}
+
+		public void iSelectTimePeriodAsSpecificDate(String SpecificDate) throws Exception {
+		    // Write code here that turns the phrase above into concrete actions
+
+		Thread.sleep(1000); 
+				Time_PeriodInputBx.click();
+				
+				WebElement Sel=driver.findElement(By.xpath("//div[@class='option-list']/div/cdk-virtual-scroll-viewport/div[1]/div[8]"));
+				JavascriptExecutor je = (JavascriptExecutor) driver;
+		       
+		        je.executeScript("arguments[0].scrollIntoView(true);",Sel);
+		        
+		        Thread.sleep(2000);
+		        driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
+				Thread.sleep(2000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+		        
+				Thread.sleep(2000);
+				Specific_Date_TimePeriodBtn.click();
+				
+				
+				Thread.sleep(1000);
+				Date_inSpecificDateInputBx.click();
+				Thread.sleep(500);
+				monthAndYear_Calender.click();
+				String year = SpecificDate.substring(6,10);
+				driver.findElement(By.xpath("//div[contains(.,'"+year+"') and contains(@class,'mat-calendar-body-today')]")).click();
+				String months = SpecificDate.substring(3,5);
+				String month = selectMonth(months);
+				driver.findElement(By.xpath("//div[contains(.,'"+month+"') and contains(@class,'mat-calendar-body')]")).click();
+				String days = SpecificDate.substring(0,2);
+				String day = selectDate(days);
+				driver.findElement(By.xpath("//div[contains(.,'"+day+"') and contains(@class,'mat-calendar-body')]")).click();
+				//Date_inSpecificDateInputBx.clear();
+				Thread.sleep(500);
+				//Date_inSpecificDateInputBx.sendKeys(SpecificDate);
+				
+				test.log(LogStatus.INFO, "The specific date is : "+Utility.getProperty("Report_Specific_Date"));
+			}
+
+			
+
+
+		public void iSelectTimePeriodAsDateRange() {
+			    // Write code here that turns the phrase above into concrete actions
+		Time_PeriodInputBx.click();
+		Date_Range_TimePeriodBtn.click();
+
+			}
+
+		public void iClickApplyButton() throws Exception {
+//		    Write code here that turns the phrase above into concrete actions
+//		    Thread.sleep(2000);
+//		    driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
+//			  Thread.sleep(2000);
+//			  driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+			
+			try 
+			{
+				//driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
+				//driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+				//cmp.Wait_ForElementVisibility(Apply_Btn, 60);
+				ApplyButton().sendKeys(Keys.ARROW_UP);
+				ApplyButton().sendKeys(Keys.ARROW_UP);
+			if (ApplyButton().isDisplayed());
+			{
+				Thread.sleep(3000);
+				Apply_Btn.click();
+				System.out.println("Apply Button is clicked");
+				//Thread.sleep(10000);
+			}
+			
+				
+		} catch(Exception K) {
+			//cmp.Cursor_MoveToElement(Apply_Btn);
+			//cmp.Wait_ForElementVisibility(Apply_Btn, 60);
+//			driver.findElement(By.tagName("html")).sendKeys(Keys.HOME);
+//			driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+//			cmp.Wait_ForElementVisibility(Apply_Btn, 60);
+//			Apply_Btn.click();
+//				System.out.println("Apply Button is clicked");
+			System.out.println("Apply Button is not clicked");
+			}
+			
+			}
+
+			
+		public void IverifyEmployeeLabor_report() throws InterruptedException {
+			try {
+				Thread.sleep(5000); 
+				ut.InfoCaptureScreenshotAsBASE64();	
+				if (No_TransactionFound_InfoMessage().isDisplayed()) {
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					test.log(LogStatus.INFO, "Employee - Labor Report Not Available for the selected Fields");
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					ut.FailedCaptureScreenshotAsBASE64();
+				}
+				
+			} 
+
+			catch (Exception G) {
+
+				test.log(LogStatus.PASS, "Employee - Labor Report is Available for the selected Fields");
+				ut.InfoCaptureScreenshotAsBASE64();	
+				if (driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[3]")).isDisplayed())
+				{
+					System.out.println("Report Summary is displayed");
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					test.log(LogStatus.INFO, "Netsales Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[3]")).getText());
+					test.log(LogStatus.INFO, "Hours Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[4]")).getText());
+					test.log(LogStatus.INFO, "Labour Amount : Total "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[5]")).getText());
+					test.log(LogStatus.INFO, "% of Net Sales Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[6]")).getText());
+					test.log(LogStatus.INFO, "Labor % : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[7]")).getText());
+					Thread.sleep(2000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+					Thread.sleep(1000);
+					ut.PassedCaptureScreenshotAsBASE64();
+				} else 
+				{
+				System.out.println("Report Summary is not displayed, So clicking page down");
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);	
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				Thread.sleep(1000);
+				test.log(LogStatus.INFO, "Netsales Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[3]")).getText());
+				test.log(LogStatus.INFO, "Hours Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[4]")).getText());
+				test.log(LogStatus.INFO, "Labour Amount : Total "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[5]")).getText());
+				test.log(LogStatus.INFO, "% of Net Sales Total : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[6]")).getText());
+				test.log(LogStatus.INFO, "Labor % : "+driver.findElement(By.xpath("//span[contains(.,'Summary')]/../../div[7]")).getText());
+				Thread.sleep(3000);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+				ut.PassedCaptureScreenshotAsBASE64();
+			}
+			}
+			}
+
+
+
+
+
 		
 }

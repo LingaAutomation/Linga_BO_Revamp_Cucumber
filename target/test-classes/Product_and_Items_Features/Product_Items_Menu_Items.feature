@@ -478,7 +478,7 @@ Then Validate the Cost by using Unit Price with Quantity in Manual Entry
 Then Check the Save and Publish button is Enabled
 And I Click the Backward button
 
-@EditMenuItem
+#@EditMenuItemUp
 Scenario: Create a New Menu Item
 Given I Click the New Menu Item button
 And I Enter the Menu Item Name
@@ -539,6 +539,18 @@ And I Click the Backward button
 #Then Check the Update and Publish button is Disabled
 #And I Click the Backward button
 
+@EditMenuItemUp
+Scenario: Update Menu Item by Changing Tax
+Given I Search and Edit the Menu Item
+#And Check Tax selected as Expected
+And I Select the Taxes
+And I Take selected Tax Names
+And I Click the Update and Publish button
+Then Verfiy whether Menu Item Updated or Not
+Given I Search and Edit the Menu Item
+Then Check Tax selected as Expected
+And I Click the Backward button
+
 @EditMenuItem
 Scenario: Update Menu Item wihtout Subcategory
 Given I Search and Edit the Menu Item
@@ -595,6 +607,8 @@ Then I Verify Hide In Online Order is Disabled
 Then I Verify Eighty Six List is Disabled
 Then I Verify Hide Menu Item Picture In POS is Disabled
 And I Click the Backward button
+
+
 
 Scenario: Update the Menu Item to Menu Item With Serving Size with Days of Week
 Given I Search and Edit the Menu Item

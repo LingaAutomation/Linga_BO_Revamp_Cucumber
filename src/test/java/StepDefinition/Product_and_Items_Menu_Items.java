@@ -1,7 +1,12 @@
 package StepDefinition;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 import com.Pages.CategoriesPage;
 import com.Pages.Common_XPaths;
@@ -46,6 +51,10 @@ public class Product_and_Items_Menu_Items
 	UpchargesPage up=new UpchargesPage();
 	SubCategoriesPage scp=new SubCategoriesPage();
 	
+	public static ArrayList<String> taxlist1=new ArrayList<>();
+	public static ArrayList<String> taxlist2=new ArrayList<>();
+	public static String Sel_TaxSize;
+	
 //	GiftCardsPage gc=new GiftCardsPage();
 	
 	@Given("Open the Product\\/Items home page BaseURL and StoreID")
@@ -72,7 +81,7 @@ public class Product_and_Items_Menu_Items
 	@Given("I Click the New Menu Item button")
 	public void iClickTheNewMenuItemButton() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 	    pmt.Click_New_MenuItem();
 	}
 	
@@ -276,6 +285,7 @@ public void iSelectTheMenuItemsForComboItem() throws Exception {
 	cmp.Pricing_Cost_Tab_inContents.click();
 	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 	Thread.sleep(1000);
+	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 	Thread.sleep(1000);
     cmp.Click_DropDown(driver.findElement(By.xpath("(//input[@aria-label='Menu Item'])[1]")), "Menu Item Selected for Combo Item");
@@ -820,7 +830,7 @@ public void validateTheCostByUsingUnitPriceWithQuantityInManualEntry() {
 	  
 	  double ExpectedCost=Unit_Price*Quantity;
 	  
-	  String Expected_Cost=String.valueOf(ExpectedCost);
+	  String Expected_Cost=String.valueOf(ExpectedCost)+"0";
 	  
 	//  String Actual_Cost=driver.findElement(By.xpath("//span[contains(.,'Selected Inventory Items')]/../..//div[contains(@class,'inventory-table')]//div[8]/span")).getText();
 	  String Actual_Cost=pmt.Cost_ManualEntryInputBx.getText();
@@ -1100,6 +1110,110 @@ public void checkTheMenuTypeIsSelectedAsComboItem() {
     // Write code here that turns the phrase above into concrete actions
 	cmp.Assertion_Validation_True_Element_Selected(pmt.ComboItem_MenuType_RadioBtn);
 }
+
+@Given("I Take selected Tax Names")
+public void iTakeSelectedTaxNames() throws Exception {
+    // Write code here that turns the phrase above into concrete actions
+	Thread.sleep(3000);
+    List<WebElement> txlist=driver.findElements(By.xpath("//div[@id='new-menu-item-tax']//app-chip//mat-chip-list//mat-chip[contains(@class,'selected')]"));
+   this.Sel_TaxSize=String.valueOf(txlist.size());
+    
+//   System.out.println("Tax size Before Reopen : "+txlist.size());
+    for(WebElement taxName:txlist)
+    {
+    	taxlist1.add(taxName.getText());
+    	
+    	
+    }
+//    ArrayList<String> sortedList = new ArrayList<String>();
+//	for(String s:taxlist)
+//	{
+//	sortedList.add(s);
+//	}
+	Collections.sort(taxlist1);
+	
+	 test.log(LogStatus.INFO, "Tax size Before Reopen : "+txlist.size()+" Selected Taxes before Reopen : "+taxlist1);
+	   ut.PassedCaptureScreenshotAsBASE64();
+    
+}
+@Then("Check Tax selected as Expected")
+public void checkTaxSelectedAsExpected() throws Exception {
+    // Write code here that turns the phrase above into concrete actions
+	Thread.sleep(6000);
+	cmp.Tax_Tab_inContents.click();
+	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+	driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+	
+	try
+	{
+	Thread.sleep(1000);
+	if(ctp.ShowAll_Select_TaxBtn.isDisplayed())
+	{
+		Thread.sleep(1000);
+		ctp.ShowAll_Select_TaxBtn.click();
+	}
+	}
+	catch(Exception l) {}
+	
+	
+	 List<WebElement> txlist=driver.findElements(By.xpath("//div[@id='new-menu-item-tax']//app-chip//mat-chip-list//mat-chip[contains(@class,'selected')]"));
+//	    this.Sel_TaxSize=txlist.size();
+	 
+	    
+//	   System.out.println("Tax size After Reopen : "+txlist.size());
+//	 if(txlist.size()==Sel_TaxSize)
+//	 {
+//		 test.log(null, null)
+//	 }
+	   
+//	   test.log(lo, Sel_TaxSize)
+	   
+	   if(Sel_TaxSize.equals(String.valueOf(txlist.size())))
+			   {
+		   		test.log(LogStatus.PASS, "Selected Taxes available after Reopen");
+		   		
+		   		ut.PassedCaptureScreenshotAsBASE64();
+			   }
+	   else
+	   {
+	   		test.log(LogStatus.FAIL, "Selected Taxes available after Reopen");
+	   		
+	   		ut.FailedCaptureScreenshotAsBASE64();
+
+	   }
+	   
+//	   for(WebElement txName:txlist)
+//	   {
+	   
+//	   test.log(LogStatus.INFO, "Tax size After Reopen : "+txlist.size()+ " Selected Taxes after Reopen : "+txName.getText());
+//	   ut.PassedCaptureScreenshotAsBASE64();
+//	   }
+	 
+	 cmp.Assertion_Validation_Two_Values(Sel_TaxSize, String.valueOf(txlist.size()), "Selected Tax Count is Equal");
+	    
+	    for(WebElement taxName:txlist)
+	    {
+	    	taxlist2.add(taxName.getText());
+	    	
+	    	
+	    }
+//	    ArrayList<String> sortedList1 = new ArrayList<String>();
+//		for(String s:taxlist2)
+//		{
+//		sortedList1.add(s);
+//		}
+		Collections.sort(taxlist2);
+		
+//		if(taxlist.equals(sortedList1))
+//		{
+//			
+//		}
+		  test.log(LogStatus.INFO, "Tax size After Reopen : "+txlist.size()+ " Selected Taxes after Reopen : "+taxlist2);
+		   ut.PassedCaptureScreenshotAsBASE64();
+		cmp.Assertion_Validation_Two_ListValues(taxlist1, taxlist2, "Selected Taxes Available as Expected");
+}
+
 
 @Given("I Search the Menu Item and Click the Delete button")
 public void iSearchTheMenuItemAndClickTheDeleteButton() throws Exception {

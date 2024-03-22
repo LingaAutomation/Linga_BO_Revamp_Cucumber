@@ -475,12 +475,12 @@ public class Product_and_Items_Departments
 		
 	}
 
-	@And("^I Click the Cancel button$")
+	@And("I Click the Cancel button")
 	public void iClick_the_Cancel_button() throws Throwable {
 		//cmp=new Common_XPaths();
 		//dpg=new DepartmentPage(driver, test);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		//Click Cancel button
 		cmp.Click_CancelButton();
 		

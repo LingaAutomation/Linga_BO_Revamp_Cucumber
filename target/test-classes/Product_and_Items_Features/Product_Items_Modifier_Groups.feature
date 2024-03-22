@@ -1,5 +1,6 @@
 @Product/Items
 @Modifier_Groups
+
 Feature: Product and Items - Modifier_Groups
 I am verify the Product/Items-Modifier_Groups module by Add/Edit/Delete/Activate/Duplicate
 

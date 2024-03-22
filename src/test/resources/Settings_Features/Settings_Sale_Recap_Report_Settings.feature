@@ -51,6 +51,17 @@ And I Click the Update buttonTwo
 Then Verify Sale Recap Report Settings Updated or Not
 
 
+Scenario: Verify whether the Disabled Toggle are Not Displayed in Sale Recap Report
+And I Navigate to Reports - Sale Recap Report Page
+And I Select Sale Recap Type as Time Period
+And I Select the Time Period as Today
+And I Select the Employee as All
+And I Click the Apply button
+Then Check Guest Column is Not Displayed in Sale Recap Report
+Then Check Checks Column is Not Displayed in Sale Recap Report
+Then Check Cover Column is Not Displayed in Sale Recap Report
+And Open the Settings - Sale Recap Report Settings home page BaseURL and storeID
+
 Scenario: Updating Sale Recap Report Settings by Disabling All Toggles from Sales
 And I Refresh the Page
 Then Check Guest/Checks Toggle is Disabled
@@ -63,6 +74,18 @@ And I Disable Net Void Toggle
 Then Check the Update buttonTwo is Enabled
 And I Click the Update buttonTwo 
 Then Verify Sale Recap Report Settings Updated or Not
+
+Scenario: Verify whether the Disabled Toggle are Not Displayed in Sale Recap Report
+And I Navigate to Reports - Sale Recap Report Page
+And I Select Sale Recap Type as Time Period
+And I Select the Time Period as Today
+And I Select the Employee as All
+And I Click the Apply button
+Then Check Grand Sales Column is Not Displayed in Sale Recap Report
+Then Check Gross Receipt Column is Not Displayed in Sale Recap Report
+Then Check Gross Void Column is Not Displayed in Sale Recap Report
+Then Check Net Void Column is Not Displayed in Sale Recap Report
+And Open the Settings - Sale Recap Report Settings home page BaseURL and storeID
 
 Scenario: Updating Sale Recap Report Settings by Disabling All Toggles from Payments
 And I Refresh the Page
@@ -151,6 +174,18 @@ And I Click the Update buttonTwo
 Then Verify Sale Recap Report Settings Updated or Not
 
 
+Scenario: Verify whether the Enabled Toggle are Displayed in Sale Recap Report
+And I Navigate to Reports - Sale Recap Report Page 
+And I Select Sale Recap Type as Time Period
+And I Select the Time Period as Today
+And I Select the Employee as All
+And I Click the Apply button
+Then Check Guest Column is Displayed in Sale Recap Report
+Then Check Checks Column is Displayed in Sale Recap Report
+Then Check Cover Column is Displayed in Sale Recap Report
+And Open the Settings - Sale Recap Report Settings home page BaseURL and storeID
+
+
 Scenario: Updating Sale Recap Report Settings by Enabling All Toggles from Sales
 And I Refresh the Page
 Then Check Guest/Checks Toggle is Enabled
@@ -162,6 +197,18 @@ And I Enable Net Void Toggle
 Then Check the Update buttonTwo is Enabled
 And I Click the Update buttonTwo 
 Then Verify Sale Recap Report Settings Updated or Not
+
+Scenario: Verify whether the Enabled Toggle are Not Displayed in Sale Recap Report
+And I Navigate to Reports - Sale Recap Report Page 
+And I Select Sale Recap Type as Time Period
+And I Select the Time Period as Today
+And I Select the Employee as All
+And I Click the Apply button
+Then Check Grand Sales Column is Displayed in Sale Recap Report
+Then Check Gross Receipt Column is Displayed in Sale Recap Report
+Then Check Gross Void Column is Displayed in Sale Recap Report
+Then Check Net Void Column is Displayed in Sale Recap Report
+And Open the Settings - Sale Recap Report Settings home page BaseURL and storeID
 
 Scenario: Updating Sale Recap Report Settings by Enabling All Toggles from Payments
 And I Refresh the Page

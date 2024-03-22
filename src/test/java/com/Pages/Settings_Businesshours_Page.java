@@ -38,56 +38,58 @@ public class Settings_Businesshours_Page extends BasePage
 	WebElement Business_hours;
 
 	@FindBy(xpath = "//div[@class='radio-box']/div[.='Store Hours']")
-	WebElement Store_hours;
+	public WebElement Store_hours;
 
 	@FindBy(xpath = "//span[.='Require Confirmation Before Closing Day']/../..//button[.='Yes']")
-	WebElement Closing_Conf_YesToggle;
+	public WebElement Closing_Conf_YesToggle;
 
 	@FindBy(xpath = "//span[.='Require Confirmation Before Closing Day']/../..//button[.='No']")
-	WebElement Closing_Conf_NoToggle;
+	public WebElement Closing_Conf_NoToggle;
 
 	@FindBy(xpath = "//span[.='Close All Active Tills']/../..//button[.='Yes']")
-	WebElement Close_Till_YesToggle;
+	public WebElement Close_Till_YesToggle;
 
 	@FindBy(xpath = "//span[.='Close All Active Tills']/../..//button[.='No']")
-	WebElement Close_Till_NoToggle;
+	public WebElement Close_Till_NoToggle;
 
 	@FindBy(xpath = "//span[.='Close All Active Employees']/../..//button[.='Yes']")
-	WebElement Close_ActiveEmp_YesToggle;
+	public WebElement Close_ActiveEmp_YesToggle;
 
 	@FindBy(xpath = "//span[.='Close All Active Employees']/../..//button[.='No']")
-	WebElement Close_ActiveEmp_NoToggle;
+	public WebElement Close_ActiveEmp_NoToggle;
 
 	@FindBy(xpath = "//span[.='Close Opened Checks']/../..//button[.='Yes']")
-	WebElement Close_Check_YesToggle;
+	public WebElement Close_Check_YesToggle;
 
 	@FindBy(xpath = "//span[.='Close Opened Checks']/../..//button[.='No']")
-	WebElement Close_Check_NoToggle;
+	public WebElement Close_Check_NoToggle;
 
 	@FindBy(xpath = "//span[.='Closing Opened Checks']/../..//button[.='CASH']")
-	WebElement Close_Check_CashToggle;
+	public WebElement Close_Check_CashToggle;
 
 	@FindBy(xpath = "//span[.='Closing Opened Checks']/../..//button[.='VOID']")
-	WebElement Close_Check_VoidToggle;
+	public WebElement Close_Check_VoidToggle;
 
 
 	@FindBy(xpath = "//div[@class='radio-box']/div[.='Shifts']")
 	WebElement Shifts;
 
 	@FindBy(xpath = "//span[contains(.,'add')]")
+	public
 	WebElement Add_Shift;
 
-	@FindBy(xpath = " //div[@class='form-card store-hours']/div[5]/div/div[2]/div/app-input-table/div/div[5]/div[4]")
+	@FindBy(xpath = " //div[@class='form-card store-hours']/form/div[5]/div/div[2]/div/app-input-table/div/div[5]/div[4]")
+	public
 	WebElement Delete;
 
 	@FindBy(xpath = "//button[.=' UPDATE ']")
 	WebElement Update;
 	
 	@FindBy(xpath = "//select-option[contains(.,'OPEN')]")
-	WebElement Open;
+	public WebElement Open;
 	
 	@FindBy(xpath = "//select-option[contains(.,'CLOSED')]")
-	WebElement Closed;
+	public WebElement Closed;
 	
 	@FindBy(xpath = "//button[contains(.,' Cancel')]")
 	WebElement Cancel;

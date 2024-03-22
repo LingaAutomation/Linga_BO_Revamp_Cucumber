@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>27 Feb 2024, 10:37</td>
+      <td>20 Mar 2024, 01:35</td>
     </tr>
   </tbody>
 </table>
@@ -127,19 +127,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@RetailTest5</td>
-          <td      class="passed"    >13</td>
-          <td >0</td>
-          <td >0</td>
+          <td      class="passed"    >5</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >7</td>
           <td >0</td>
           <td >0</td>
           <td class="total">13</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="111141931700">1:51.141</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="135784068400">2:15.784</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -184,12 +184,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:51.141</span>
+  <span class="lead-duration duration">2:15.784</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">Verify whether we able to Create the New Retail Item without entering Name Fields</span>
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -222,7 +222,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">StepDefinition.Hooks.Start_Scenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">30.418</span>
+  <span class="lead-duration duration">30.420</span>
 
           </div>
 
@@ -239,9 +239,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -251,7 +251,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -259,7 +259,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">Click the New Retail Item button</span>
 
-  <span class="lead-duration duration">3.142</span>
+  <span class="lead-duration duration">3.114</span>
 
 </div>
 
@@ -286,7 +286,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">I Enter the Secondary Name</span>
 
-  <span class="lead-duration duration">3.066</span>
+  <span class="lead-duration duration">4.762</span>
 
 </div>
 
@@ -313,7 +313,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">I Select the POS Level as Category</span>
 
-  <span class="lead-duration duration">2.342</span>
+  <span class="lead-duration duration">2.389</span>
 
 </div>
 
@@ -340,7 +340,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">I Select the POS Category</span>
 
-  <span class="lead-duration duration">1:19.326</span>
+  <span class="lead-duration duration">1:19.113</span>
 
 </div>
 
@@ -367,7 +367,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">I Select Unit of Measure</span>
 
-  <span class="lead-duration duration">2.419</span>
+  <span class="lead-duration duration">2.497</span>
 
 </div>
 
@@ -390,11 +390,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">I Select the Taxes from RetailItems</span>
 
-  <span class="lead-duration duration">5.220</span>
+  <span class="lead-duration duration">43.907</span>
 
 </div>
 
@@ -402,6 +402,48 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.ElementNotInteractableException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1c3296c04d22f70b381b15f7459489b8, clickElement {id=f.8C426AA90E1F7923DC99FC50E860FCEC.d.184230409000345E77893847AB5D4D61.e.23019}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\raja.s\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51437}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51437/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (1c3296c04d22f70b381b15f7459489b8)] -&gt; xpath: //app-chip[@name='retailItemTaxes']/div/mat-chip-list/div/mat-chip[91]]
+Session ID: 1c3296c04d22f70b381b15f7459489b8
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor80.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.epam.healenium.handlers.proxy.WebElementProxyHandler.invoke(WebElementProxyHandler.java:68)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
+	at com.Pages.ProductItems_Menu_RetailPage.Select_Taxes_RetailItems(ProductItems_Menu_RetailPage.java:3580)
+	at StepDefinition.Product_and_Items_Retail_Items.ISelectTaxes_RetailItems(Product_and_Items_Retail_Items.java:99)
+	at &#10045;.I Select the Taxes from RetailItems(classpath:Product_and_Items_Features/Product_Items_Retail_Items.feature:38)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -417,11 +459,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Select Unit of Measure</span>
 
-  <span class="lead-duration duration">2.301</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -444,11 +486,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Enter the SKU Code</span>
 
-  <span class="lead-duration duration">0.316</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -471,11 +513,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Enter the Selling Price</span>
 
-  <span class="lead-duration duration">2.185</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -498,11 +540,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Verify Basic details title to scroll up page</span>
 
-  <span class="lead-duration duration">4.275</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -525,11 +567,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Select Inventory Details Tab</span>
 
-  <span class="lead-duration duration">2.113</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -552,11 +594,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">Check the Save button is Disabled</span>
 
-  <span class="lead-duration duration">0.281</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -579,11 +621,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">I Click the Backward button</span>
 
-  <span class="lead-duration duration">4.149</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -610,7 +652,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -622,13 +664,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">StepDefinition.Hooks.TestFail(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">2.229</span>
 
           </div>
 
@@ -637,6 +679,19 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Verify whether we able to Create the New Retail Item without entering Name Fields</a>
+      <a href="embeddings/embedding_158627373.unknown" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+        <pre class="embedding-content">This file cannot be displayed. Use download button to get the content as file.</pre>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>

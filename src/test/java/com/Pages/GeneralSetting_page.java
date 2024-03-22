@@ -58,7 +58,7 @@ public class GeneralSetting_page extends BasePage
     @FindBy(xpath = "//input[@aria-label='Network Name']")
     public WebElement Prferred_Network_Name_InputBx;
     
-    @FindBy(xpath = "//app-input[@name='minimumAgeYears']//input")
+    @FindBy(xpath = "//input[contains(@aria-label,'Age')]")
     public WebElement Minimum_Age_Limit_InputBx;
     
     @FindBy(xpath = "//textarea[@name='ageRestrictionAlertMessage']")

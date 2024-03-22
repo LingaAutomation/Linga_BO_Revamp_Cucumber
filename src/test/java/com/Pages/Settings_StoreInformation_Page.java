@@ -46,25 +46,25 @@ public class Settings_StoreInformation_Page extends BasePage
 	WebElement Save;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Store Name')]/../../../input")
-	WebElement StoreName_input;
+	public WebElement StoreName_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Business Type')]/../../../../div[4]")
-	WebElement Business_input;
+	public WebElement Business_input;
 	
 	@FindBy(xpath =  "//div[4]/select-option/div")
-	WebElement FourthBusinessType;
+	public WebElement FourthBusinessType;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Phone Number')]/../../../input")
-	WebElement PhoneNumber_input;
+	public WebElement PhoneNumber_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Store ID')]/../../../input")
-	WebElement StoreID_input;
+	public WebElement StoreID_input;
 	
 	@FindBy(xpath =  "//mat-label[.=' Email ']/../../../input")
-	WebElement Email_input;
+	public WebElement Email_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Gift Card Email')]/../../../input")
-	WebElement GiftCardEmail_input;
+	public WebElement GiftCardEmail_input;
 	
 	@FindBy(xpath =  "//div[contains(@class,'image-picker-options')]/div[2]/div")
 	WebElement ImageSelector_input;
@@ -72,43 +72,45 @@ public class Settings_StoreInformation_Page extends BasePage
 	@FindBy(xpath =  "//div[contains(@class,'mat-tooltip above')]")
 	WebElement ToolTip;
 	
-	@FindBy(xpath =  "//mat-label[contains(.,'Language')]/../../../div/div/input")
-	WebElement Language_input;
+	@FindBy(xpath =  "//input[@aria-label='Languages']")
+	public WebElement Language_input;
 	
-	@FindBy(xpath =  "//mat-label[contains(.,'Default Language')]/../../../input")
-	WebElement DefaultLaunguage_input;
+	@FindBy(xpath =  "//input[@aria-label='Set Default Language']")
+	public WebElement DefaultLaunguage_input;
 	
 	@FindBy(xpath =  "//div[4]/select-option/div/mat-checkbox")
 	WebElement FourthLaunguage_CheckBox;
 	
 	@FindBy(xpath =  "//div[1]/select-option/div")
+	public
 	WebElement firstLanguage;
 	
 	@FindBy(xpath =  "//mat-icon[.='cancel']")
-	WebElement CloseBtnOfLaunguage;
+	public WebElement CloseBtnOfLaunguage;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Street')]/../../../input")
-	WebElement Street_input;
+	public WebElement Street_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Apt,')]/../../../input")
-	WebElement Apartment_input;
+	public WebElement Apartment_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'City')]/../../../input")
-	WebElement City_input;
+	public WebElement City_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'State')]/../../../input")
-	WebElement State_input;
+	public WebElement State_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Country')]/../../../input")
 	WebElement Country_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'ZipCode')]/../../../input")
-	WebElement ZipCode_input;
+	public WebElement ZipCode_input;
 	
 	@FindBy(xpath =  "//mat-label[contains(.,'Time Zone')]/../../../input")
-	WebElement TimeZone_input;
+	public WebElement TimeZone_input;
 	
 	@FindBy(xpath =  "//input[@placeholder='Search']")
+	public
 	WebElement Search_input;
 	
 	@FindBy(xpath =  "//mat-hint")

@@ -33,83 +33,143 @@ public class Payroll_Report_SettingsPage extends BasePage
 //	}
 	
 	@FindBy(xpath = "//button[contains(.,'OVERTIME')]")
-	WebElement Overtime_btn;
+	public WebElement Add_Overtime_btn;
 	
-	@FindBy(xpath = "//span[contains(.,'Allow Over Tip Out')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'Yes')]")
-	WebElement Allow_OverTip_Out_YesBtn;
+	@FindBy(xpath = "//span[contains(.,'Allow Over Tip Out')]/../..//mat-button-toggle[contains(.,'Yes')]")
+	public WebElement Allow_OverTip_Out_YesBtn;
 		
-	@FindBy(xpath = "//span[contains(.,'Allow Over Tip Out')]/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[contains(.,'No')]")
-	WebElement Allow_OverTip_Out_NoBtn;
+	@FindBy(xpath = "//span[contains(.,'Allow Over Tip Out')]/../..//mat-button-toggle[contains(.,'No')]")
+	public WebElement Allow_OverTip_Out_NoBtn;
 	
-	@FindBy(xpath = "//label[contains(.,'Select Day')]/../../input")
-	WebElement Payroll_Week_Start_DayInputBx;
+	@FindBy(xpath = "//input[@aria-label='Select Day']")
+	public WebElement Payroll_Week_Start_DayInputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Default Payroll Process')]/../..//input")
-	WebElement Default_Payroll_ProcessInputBx;
+	public WebElement Default_Payroll_ProcessInputBx;
 	
 	@FindBy(xpath = "//select-option[contains(.,'DAILY')]")
-	WebElement Daily_Payroll_ProcessBtn;
+	public WebElement Daily_Payroll_ProcessBtn;
 	
 	@FindBy(xpath = "//select-option[contains(.,'WEEKLY')]")
-	WebElement Weekly_Payroll_ProcessBtn;
+	public WebElement Weekly_Payroll_ProcessBtn;
 	
-	@FindBy(xpath = "//label[contains(.,'Age')]/../../input")
-	WebElement Age_LimitInputBx;
+	@FindBy(xpath = "//input[@aria-label='Age']")
+	public WebElement Age_LimitInputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Hours')]/../../input")
-	WebElement Hours_LimitInputBx;
+	@FindBy(xpath = "//input[@aria-label='Hours']")
+	public WebElement Hours_LimitInputBx;
 	
 	@FindBy(xpath = "//div/span[.='SETTINGS']")
-	WebElement SettingsTab;
+	public WebElement SettingsTab;
 	
-	@FindBy(xpath = "//div/span[.='OVER TIME SETTINGS']")
-	WebElement OverTime_SettingsTab;
+	@FindBy(xpath = "//span[contains(@class,'segment-button')][.='OVER TIME SETTINGS']")
+	public WebElement OverTime_SettingsTab;
+	
+	@FindBy(xpath = "//span[contains(@class,'segment-button')][.='MANAGE BREAKS']")
+	public WebElement Manage_BreaksTab;
+	
+	@FindBy(xpath = "//input[@aria-label='Break-In/Break-Out Terminal']")
+	public WebElement Break_In_BreakOut_InputBx;
 	
 	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'Daily')]")
-	WebElement Daily_Set_OverTimeRadioBtn;
+	public WebElement Daily_Set_OverTimeRadioBtn;
 	
 	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'Weekly')]")
-	WebElement Weekly_Set_OverTimeRadioBtn;
+	public WebElement Weekly_Set_OverTimeRadioBtn;
 	
-	@FindBy(xpath = "//label[contains(.,'Effective Date')]/../../input")
-	WebElement Effective_DateInputBx;
+	@FindBy(xpath = "//button[@aria-label='Open calendar']")//button[@aria-label='Open calendar']
+	public WebElement Effective_DateInputBx;
 	
 	@FindBy(xpath = "//div[contains(@class,'calendar-controls')]/button[3]")
-	WebElement NextMonth_Calender_EffectiveDateBtn;
+	public WebElement NextMonth_Calender_EffectiveDateBtn;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 1')]/../..//label[contains(.,'Hours')]/../../input")
-	WebElement Hours_OverTime_OneInputBx;
+	public WebElement Hours_OverTime_1_InputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 1')]/../..//label[contains(.,'Percentage')]/../../input")
-	WebElement Percentage_OverTime_OneInputBx;
+	public WebElement Percentage_OverTime_1_InputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 2')]/../..//label[contains(.,'Hours')]/../../input")
-	WebElement Hours_OverTime_TwoInputBx;
+	public WebElement Hours_OverTime_2_InputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 2')]/../..//label[contains(.,'Percentage')]/../../input")
-	WebElement Percentage_OverTime_TwoInputBx;
+	public WebElement Percentage_OverTime_2_InputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 3')]/../..//label[contains(.,'Hours')]/../../input")
-	WebElement Hours_OverTime_ThreeInputBx;
+	public WebElement Hours_OverTime_3_InputBx;
 	
 	@FindBy(xpath = "//span[contains(.,'Over Time 3')]/../..//label[contains(.,'Percentage')]/../../input")
-	WebElement Percentage_OverTime_ThreeInputBx;
+	public WebElement Percentage_OverTime_3_InputBx;
 	
 	@FindBy(xpath = "//mat-hint[contains(.,'Enter the minimum Age')]")
-	WebElement Minimum_AgeErrorMsg;
+	public WebElement Minimum_AgeErrorMsg;
 	
-	@FindBy(xpath = "//mat-hint[contains(.,'Maximum age limit is 100')]")
-	WebElement Age_LimitErrorMsg;
+	@FindBy(xpath = "//p[contains(.,'Maximum age limit is 100')]")
+	public WebElement Maximum_Age_Limit_100ErrorMsg;
 	
-	@FindBy(xpath = "//mat-hint[contains(.,'Enter valid Hours')]")
-	WebElement Valid_HoursErrorMsg;
+	@FindBy(xpath = "//mat-hint/mat-hint[contains(.,'Enter valid Hours')]")
+	public WebElement Enter_Valid_HoursErrorMsg;
 	
-	@FindBy(xpath = "//mat-hint[contains(.,'Enter valid percentage should be more than 100')]")
-	WebElement Valid_PercentageErrorMsg;
+	@FindBy(xpath = "//p[contains(.,'Enter valid percentage should be more than 100')]")
+	public WebElement Enter_Valid_Percentage_Morethan_100ErrorMsg;
 	
-	public void Click_OverTime()
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Type')]")
+	public WebElement Type_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Effective Date')]")
+	public WebElement Effective_Date_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Hours')]")
+	public WebElement Hours_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Break Name')]")
+	public WebElement Break_Name_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Payroll Type')]")
+	public WebElement Payroll_Type_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Duration')]")
+	public WebElement Duration_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Percentage')]")
+	public WebElement Percentage_Column_Field;
+	
+	@FindBy(xpath = "//button[contains(.,'NEW BREAK')]")
+	public WebElement New_Break_Btn;
+	
+	@FindBy(xpath = "//input[@aria-label='Break Name']")
+	public WebElement Break_Name_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Duration (mins)']")
+	public WebElement Duration_InputBx;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][.='Paid']")
+	public WebElement Paid_PaidType_RadioBtn;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][.='Unpaid']")
+	public WebElement Unpaid_PaidType_RadioBtn;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][.='All Employees']")
+	public WebElement All_Employees_RadioBtn;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][.='Specific Roles']")
+	public WebElement Specific_Roles_RadioBtn;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][.='Specific Employees']")
+	public WebElement Specific_Employees_RadioBtn;
+	
+	@FindBy(xpath = "//input[@aria-label='Select Roles']")
+	public WebElement Select_Roles_InputBx;
+	
+	@FindBy(xpath = "//input[@aria-label='Select Employees']")
+	public WebElement Select_Employees_InputBx;
+	
+	@FindBy(xpath = "//div[contains(@class,'row')][contains(.,'Duration minimum 1 mins and maximum 100 mins')]")
+	public WebElement Duration_Min1_Max100_ErrorMsg;
+	
+	public void Click_New_OverTime()
 	{
-		Overtime_btn.click();
+		Add_Overtime_btn.click();
 	}
 	
 	public void Select_SettingsTab()
@@ -244,7 +304,7 @@ public class Payroll_Report_SettingsPage extends BasePage
 	{
 		try
 		{
-		if(Age_LimitErrorMsg.isDisplayed())
+		if(Maximum_Age_Limit_100ErrorMsg.isDisplayed())
 		{
 			test.log(LogStatus.PASS, "Enter the minimum Age Error Pop is Displayed");
 		}
@@ -280,7 +340,7 @@ public class Payroll_Report_SettingsPage extends BasePage
 	{
 		try
 		{
-		if(Valid_HoursErrorMsg.isDisplayed())
+		if(Enter_Valid_HoursErrorMsg.isDisplayed())
 		{
 			test.log(LogStatus.PASS, "Enter Valid Hours Error Pop is Displayed");
 		}
@@ -296,7 +356,7 @@ public class Payroll_Report_SettingsPage extends BasePage
 	{
 		try
 		{
-		if(Valid_PercentageErrorMsg.isDisplayed())
+		if(Enter_Valid_Percentage_Morethan_100ErrorMsg.isDisplayed())
 		{
 			test.log(LogStatus.PASS, "Enter Valid Percentage Error Pop is Displayed");
 		}
@@ -311,75 +371,75 @@ public class Payroll_Report_SettingsPage extends BasePage
 	//span[contains(.,'Over Time 3')]/../..//mat-hint[contains(.,'Enter valid Hours')]
 	//span[contains(.,'Over Time 3')]/../..//mat-hint[contains(.,'Enter valid percentage should be more than 100')]
 	
-	public void Enter_Hours_OverTime_One(String str) throws Exception
+	public void Enter_Hours_OverTime_1_(String str) throws Exception
 	{
 		Thread.sleep(1000);
-		Hours_OverTime_OneInputBx.clear();
+		Hours_OverTime_1_InputBx.clear();
 		Thread.sleep(500);
-		Hours_OverTime_OneInputBx.sendKeys(str);
+		Hours_OverTime_1_InputBx.sendKeys(str);
 		
 	}
 
-	public void Enter_Percentage_OverTime_One(String str) throws Exception
+	public void Enter_Percentage_OverTime_1_(String str) throws Exception
 	{
 		Thread.sleep(1000);
-		Percentage_OverTime_OneInputBx.clear();
+		Percentage_OverTime_1_InputBx.clear();
 		Thread.sleep(500);
-		Percentage_OverTime_OneInputBx.sendKeys(str);
+		Percentage_OverTime_1_InputBx.sendKeys(str);
 		
 	}
 	
-	public WebElement Hours_OverTime_OneInputBox()
+	public WebElement Hours_OverTime_1_InputBox()
 	{
-		return Hours_OverTime_OneInputBx;
+		return Hours_OverTime_1_InputBx;
 	}
 	
 	
-	public WebElement Percentage_OverTime_OneInputBox()
+	public WebElement Percentage_OverTime_1_InputBox()
 	{
-		return Percentage_OverTime_OneInputBx;
+		return Percentage_OverTime_1_InputBx;
 	}
 	
-	public void Enter_OverTime_One(String str, String str2) throws Exception
+	public void Enter_OverTime_1_(String str, String str2) throws Exception
 	{
 		Thread.sleep(1000);
-		Hours_OverTime_OneInputBx.clear();
+		Hours_OverTime_1_InputBx.clear();
 		Thread.sleep(500);
-		Hours_OverTime_OneInputBx.sendKeys(str);
+		Hours_OverTime_1_InputBx.sendKeys(str);
 	
 		Thread.sleep(1000);
-		Percentage_OverTime_OneInputBx.clear();
+		Percentage_OverTime_1_InputBx.clear();
 		Thread.sleep(500);
-		Percentage_OverTime_OneInputBx.sendKeys(str2);
+		Percentage_OverTime_1_InputBx.sendKeys(str2);
 		
 	}
 	
-	public void Enter_OverTime_Two(String str,String str2) throws Exception
+	public void Enter_OverTime_2_(String str,String str2) throws Exception
 	{
 		Thread.sleep(1000);
-		Hours_OverTime_TwoInputBx.clear();
+		Hours_OverTime_2_InputBx.clear();
 		Thread.sleep(500);
-		Hours_OverTime_TwoInputBx.sendKeys(str);
+		Hours_OverTime_2_InputBx.sendKeys(str);
 	
 		Thread.sleep(1000);
-		Percentage_OverTime_TwoInputBx.clear();
+		Percentage_OverTime_2_InputBx.clear();
 		Thread.sleep(500);
-		Percentage_OverTime_TwoInputBx.sendKeys(str2);
+		Percentage_OverTime_2_InputBx.sendKeys(str2);
 		
 	}
 	
 	
-	public void Enter_OverTime_Three(String str,String str2) throws Exception
+	public void Enter_OverTime_3_(String str,String str2) throws Exception
 	{
 		Thread.sleep(1000);
-		Hours_OverTime_ThreeInputBx.clear();
+		Hours_OverTime_3_InputBx.clear();
 		Thread.sleep(500);
-		Hours_OverTime_ThreeInputBx.sendKeys(str);
+		Hours_OverTime_3_InputBx.sendKeys(str);
 	
 		Thread.sleep(1000);
-		Percentage_OverTime_ThreeInputBx.clear();
+		Percentage_OverTime_3_InputBx.clear();
 		Thread.sleep(500);
-		Percentage_OverTime_ThreeInputBx.sendKeys(str2);
+		Percentage_OverTime_3_InputBx.sendKeys(str2);
 		
 	}
 	
@@ -436,15 +496,46 @@ public class Payroll_Report_SettingsPage extends BasePage
 	//table[@class='mat-calendar-table']/tbody/tr
 	//table[@class='mat-calendar-table']/tbody/tr[5]/td
 	
-	public void Edit_OverTime()
+	public void Edit_Daily_OverTime()
 	{
 		 cmp=new Common_XPaths();
 		
-		List<WebElement> overTimeList=driver.findElements(By.xpath("//data-grid/div/div/div/div/data-grid-row/div/div[5]/div/button"));
+//		List<WebElement> overTimeList=driver.findElements(By.xpath("//table/tbody/tr/td[5]"));
+		 List<WebElement> overTimeList=driver.findElements(By.xpath("//table/tbody/tr/td[contains(.,'Weekly')]/../td[5]"));
 		
 		
 		
-		driver.findElement(By.xpath("//data-grid/div/div/div["+overTimeList.size()+"]/div/data-grid-row/div/div[5]/div/button")).click();
+//		driver.findElement(By.xpath("//table/tbody/tr["+overTimeList.size()+"]/td[5]")).click();
+		driver.findElement(By.xpath("(//table/tbody/tr/td[contains(.,'Daily')]/../td[5])["+overTimeList.size()+"]")).click();
+	
+		
+		try
+		{
+			if(cmp.Alert_Popup.getText().equalsIgnoreCase("The field cannot be edited since it has passed the effective date"))
+			{
+				
+				Thread.sleep(1000);
+				cmp.Click_Okay_Button();
+			}
+		}
+		catch(Exception g)
+		{
+	
+		}
+		
+	}
+	
+	public void Edit_Weekly_OverTime()
+	{
+		 cmp=new Common_XPaths();
+		
+		List<WebElement> overTimeList=driver.findElements(By.xpath("//table/tbody/tr/td[contains(.,'Daily')]/../td[5]"));
+		
+//		int size=overTimeList.size()-1;
+		
+//		driver.findElement(By.xpath("//table/tbody/tr["+size+"]/td[5]")).click();
+		
+		driver.findElement(By.xpath("(//table/tbody/tr/td[contains(.,'Weekly')]/../td[5])["+overTimeList.size()+"]")).click();
 		
 		
 		try

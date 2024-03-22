@@ -32,109 +32,112 @@ public class KitchenPrinterPage extends BasePage
 //	}
 	
 	@FindBy(xpath = "//button[contains(.,'NEW KITCHEN PRINTER')]")
-	WebElement New_KitchenPrinterBtn;
+	public WebElement New_KitchenPrinterBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='printerType']/div/div/div/div[contains(.,'Printer')]")
-	WebElement Printer_KitchenPrinterBtn;
+	public WebElement Printer_KitchenPrinterTypeBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='printerType']/div/div/div/div[contains(.,'KDS')]")
-	WebElement KDS_KitchenPrinterBtn;
+	public WebElement KDS_KitchenPrinterTypeBtn;
 	
-	@FindBy(xpath = "//app-radio-box-button[@name='printerType']/div/div/div/div[contains(.,'Printer')]")
-	WebElement Driver_KitchenPrinterBtn;
+	@FindBy(xpath = "//app-radio-box-button[@name='printerType']/div/div/div/div[contains(.,'Driver')]")
+	public WebElement Driver_KitchenPrinterTypeBtn;
 	
-	@FindBy(xpath = "//label[contains(.,'Printer Model')]/../../input")
-	WebElement Printer_ModelInputBox;
+	@FindBy(xpath = "//input[@aria-label='Printer Model']")
+	public WebElement Printer_ModelInputBox;
 	
 	@FindBy(xpath = "//app-input[@name='printerName']//input")
-	WebElement KitchenPrinterNameInputBx;
+	public WebElement KitchenPrinterNameInputBx;
 	
 	@FindBy(xpath = "//h3[contains(.,'Label Printer')]/../../..//app-input[@name='name']//input")
-	WebElement LabelPrinter_NameInputBx;
+	public WebElement LabelPrinter_NameInputBx;
 	
-	@FindBy(xpath = "//app-input[@name='IpAddress']//input")
-	WebElement IP_AddressInputBx;
+	@FindBy(xpath = "//input[@aria-label='IP Address']")
+	public WebElement IP_AddressInputBx;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Enable Service Type Restriction')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement EnableServiceTypeRestriction_YesBtn;
+	public WebElement EnableServiceTypeRestriction_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Enable Service Type Restriction')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement EnableServiceTypeRestriction_NoBtn;
+	public WebElement EnableServiceTypeRestriction_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Apply To All Categories')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement ApplyToAllCategories_YesBtn;
+	public WebElement ApplyToAllCategories_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Apply To All Categories')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement ApplyToAllCategories_NoBtn;
+	public WebElement ApplyToAllCategories_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Apply To All Menu Items')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement ApplyToAllMenuItems_YesBtn;
+	public WebElement ApplyToAllMenuItems_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Apply To All Menu Items')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement ApplyToAllMenuItems_NoBtn;
+	public WebElement ApplyToAllMenuItems_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Expo Device')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement ExpoDevice_YesBtn;
+	public WebElement ExpoDevice_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Expo Device')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement ExpoDevice_NoBtn;
+	public WebElement ExpoDevice_NoBtn;
 	
-	@FindBy(xpath = "//app-input[@label='Expo Printer IP Address']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Expo_Printer_IP_AddressInputBx;
+	@FindBy(xpath = "//input[@aria-label='Expo Printer IP Address']")
+	public WebElement Expo_Printer_IP_AddressInputBx;
 	
-	@FindBy(xpath = "//app-input[@label='Queue Device Ip Address']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Queue_Device_IP_AddressInputBx;
+	@FindBy(xpath = "//input[@aria-label='Queue Device IP Address']")
+	public WebElement Queue_Device_IP_AddressInputBx;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Alternate Printer')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement AlternatePrinter_YesBtn;
+	public WebElement AlternatePrinter_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Alternate Printer')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement AlternatePrinter_NoBtn;
+	public WebElement AlternatePrinter_NoBtn;
 	
-	@FindBy(xpath = "//app-selectbox[@label='Alternate Printer']/div/mat-form-field/div/div/div[3]/input")
-	WebElement Alternate_PrinterInputBox;
+	@FindBy(xpath = "//input[@aria-label='Alternate Printer']")
+	public WebElement Alternate_PrinterInputBox;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Seat Ordering Override')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement SeatOrderingOverride_YesBtn;
+	public WebElement SeatOrderingOverride_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Seat Ordering Override')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement SeatOrderingOverride_NoBtn;
+	public WebElement SeatOrderingOverride_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Voided Items to the Kitchen')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Print_VoidedItemstotheKitchen_YesBtn;
+	public WebElement Print_VoidedItemstotheKitchen_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Voided Items to the Kitchen')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Print_VoidedItemstotheKitchen_NoBtn;
+	public WebElement Print_VoidedItemstotheKitchen_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Included Modifier In Kitchen')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Print_IncludedModifierInKitchen_YesBtn;
+	public WebElement Print_IncludedModifierInKitchen_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Included Modifier In Kitchen')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Print_IncludedModifierInKitchen_NoBtn;
+	public WebElement Print_IncludedModifierInKitchen_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Included Modifier For Alternate Modifier')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Print_IncludedModifier_For_AlternateModifier_YesBtn;
+	public WebElement Print_IncludedModifier_For_AlternateModifier_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print Included Modifier For Alternate Modifier')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Print_IncludedModifier_For_AlternateModifier_NoBtn;
+	public WebElement Print_IncludedModifier_For_AlternateModifier_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Serving Size in Front of Menu in KOT')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement ServingSizeinFront_of_MenuinKOT_YesBtn;
+	public WebElement ServingSizeinFront_of_MenuinKOT_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Serving Size in Front of Menu in KOT')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement ServingSizeinFront_of_MenuinKOT_NoBtn;
+	public WebElement ServingSizeinFront_of_MenuinKOT_NoBtn;
 	
-	@FindBy(xpath = "//button/span[.='PRINTERS']")
-	WebElement Printers_Tab;
+	@FindBy(xpath = "//span[contains(@class,'segment-button')][.='PRINTERS']")
+	public WebElement Printers_Tab;
 	
-	@FindBy(xpath = "//button/span[.='SETTINGS']")
-	WebElement Settings_Tab;
+	@FindBy(xpath = "//span[contains(@class,'segment-button')][.='SETTINGS']")
+	public WebElement Settings_Tab;
 	
 	@FindBy(xpath = "//app-input[@label='IP Address']/../div/p")
-	WebElement Invalid_IPAddressErrorMsg;
+	public WebElement Invalid_IPAddressErrorMsg;
+	
+	@FindBy(xpath = "//p[contains(@class,'color-red')][contains(.,'Please Enter Valid IP Address')]")
+	public WebElement Enter_Valid_IP_Address_ErrorMsg;
 	
 	@FindBy(xpath = "//button[contains(.,'UPDATE')]")
-	WebElement Update_BtnPrinters;
+	public WebElement Update_BtnPrinters;
 	
 	public void Click_NewKitchenPrinter()
 	{
@@ -148,32 +151,32 @@ public class KitchenPrinterPage extends BasePage
 	
 	public void Click_Printer_PrinterType()
 	{
-		Printer_KitchenPrinterBtn.click();
+		Printer_KitchenPrinterTypeBtn.click();
 	}
 	
 	public WebElement Printer_KitchenPrinterBtn()
 	{
-		return Printer_KitchenPrinterBtn;
+		return Printer_KitchenPrinterTypeBtn;
 	}
 	
 	public void Click_KDS_PrinterType()
 	{
-		KDS_KitchenPrinterBtn.click();
+		KDS_KitchenPrinterTypeBtn.click();
 	}
 	
 	public WebElement KDS_KitchenPrinterBtn()
 	{
-		return KDS_KitchenPrinterBtn;
+		return KDS_KitchenPrinterTypeBtn;
 	}
 	
 	public void Click_Driver_PrinterType()
 	{
-		Driver_KitchenPrinterBtn.click();
+		Driver_KitchenPrinterTypeBtn.click();
 	}
 	
 	public WebElement Driver_KitchenPrinterBtn()
 	{
-		return Driver_KitchenPrinterBtn;
+		return Driver_KitchenPrinterTypeBtn;
 	}
 	
 	public void Enter_KitchenPrinterName(String str)
@@ -289,7 +292,7 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//p[contains(.,'Allow Service Types')]/..//button[contains(.,'Show All')]")
-	WebElement ShowAll_ServiceTypesBtn;
+	public WebElement ShowAll_ServiceTypesBtn;
 	
 	public void Enable_EnableServiceTypeRestriction() throws Exception
 	{
@@ -332,8 +335,42 @@ public class KitchenPrinterPage extends BasePage
 	
 	}
 	
+	public void Select_Allow_ServiceTypes() throws Exception
+	{
+		Thread.sleep(1000);
+		try
+		{
+		if(ShowAll_ServiceTypesBtn.isDisplayed())
+		{
+			ShowAll_ServiceTypesBtn.click();
+		}
+		}
+		catch(Exception k) {}
+		
+		for(int i = 0;i <=15;i++) {
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+		}
+		
+		Thread.sleep(2000);
+		List<WebElement> ServTypeList=driver.findElements(By.xpath("//app-chip[contains(@name,'service')]/div/mat-chip-list/div/mat-chip"));
+		
+
+		int ServTypeSize=ServTypeList.size();
+		
+		
+		
+		int randomServType=ThreadLocalRandom.current().nextInt(1, ServTypeSize);
+		
+		
+		driver.findElement(By.xpath("//app-chip[contains(@name,'service')]/div/mat-chip-list/div/mat-chip["+randomServType+"]")).click();
+	
+	}
+	
 	@FindBy(xpath = "//p[contains(.,'Select Service Types')]/..//button[contains(.,'Show All')]")
-	WebElement ShowAll_ServiceTypesBtn1;
+	public WebElement ShowAll_ServiceTypesBtn1;
+	
+	@FindBy(xpath = "//app-toggle[@name='serviceTypeRestriction']//mat-button-toggle-group[contains(@class,'disabled')]")
+	public WebElement Enable_ServiceType_Restriction_DisabledToggle;
 	
 	public void Enable_EnableServiceTypeRestriction1() throws Exception
 	{
@@ -471,7 +508,7 @@ public class KitchenPrinterPage extends BasePage
 			test.log(LogStatus.FAIL, "New Kitchen Printer page not opened");
 		}
 		
-		KDS_KitchenPrinterBtn.click();
+		KDS_KitchenPrinterTypeBtn.click();
 		
         Printer_ModelInputBox.click();
 		
@@ -770,29 +807,32 @@ public class KitchenPrinterPage extends BasePage
 	
 	//Receipt Printers
 	@FindBy(xpath = "//button[contains(.,'NEW RECEIPT PRINTER')]")
-	WebElement New_ReceiptPrinterBtn;
+	public WebElement New_ReceiptPrinterBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Set as Default')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement SetasDefault_YesBtn;
+	public WebElement SetasDefault_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Set as Default')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement SetasDefault_NoBtn;
+	public WebElement SetasDefault_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Auto Print Receipt')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement AutoPrintReceipt_YesBtn;
+	public WebElement AutoPrintReceipt_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Auto Print Receipt')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement AutoPrintReceipt_NoBtn;
+	public WebElement AutoPrintReceipt_NoBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show CC Receipt Screen')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Show_CC_ReceiptScreen_YesBtn;
+	public WebElement Show_CC_ReceiptScreen_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show CC Receipt Screen')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Show_CC_ReceiptScreen_NoBtn;
+	public WebElement Show_CC_ReceiptScreen_NoBtn;
 
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Default')]")
+	public WebElement Default_Column_Field;
 	
-	public void Click_New_ReceiptPrinter()
+	public void Click_New_ReceiptPrinter() throws Exception
 	{
+		Thread.sleep(3000);
 		New_ReceiptPrinterBtn.click();
 	}
 	
@@ -890,10 +930,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print CC Customer Copy')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Print_CC_CustomerCopy_YesBtn;
+	public WebElement Print_CC_CustomerCopy_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print CC Customer Copy')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Print_CC_CustomerCopy_NoBtn;
+	public WebElement Print_CC_CustomerCopy_NoBtn;
 
 	public void Enable_Print_CC_CustomerCopy()
 	{
@@ -927,10 +967,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Digital Receipt Screen')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Show_Digital_ReceiptScreen_YesBtn;
+	public WebElement Show_Digital_ReceiptScreen_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Digital Receipt Screen')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Show_Digital_ReceiptScreen_NoBtn;
+	public WebElement Show_Digital_ReceiptScreen_NoBtn;
 
 	public void Enable_Show_Digital_ReceiptScreen()
 	{
@@ -962,10 +1002,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Digital Receipt in CDS')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Show_Digital_ReceiptinCDS_YesBtn;
+	public WebElement Show_Digital_ReceiptinCDS_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Digital Receipt in CDS')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Show_Digital_ReceiptinCDS_NoBtn;
+	public WebElement Show_Digital_ReceiptinCDS_NoBtn;
 	
 	public void Enable_Show_Digital_ReceiptinCDS()
 	{
@@ -997,10 +1037,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Signature Pad')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Show_SignaturePad_YesBtn;
+	public WebElement Show_SignaturePad_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Show Signature Pad')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Show_SignaturePad_NoBtn;
+	public WebElement Show_SignaturePad_NoBtn;
 	
 	public void Enable_Show_SignaturePad()
 	{
@@ -1032,10 +1072,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print CC Merchant Copy')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Print_CC_MerchantCopy_YesBtn;
+	public WebElement Print_CC_MerchantCopy_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Print CC Merchant Copy')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Print_CC_MerchantCopy_NoBtn;
+	public WebElement Print_CC_MerchantCopy_NoBtn;
 	
 	
 	public void Enable_Print_CC_MerchantCopy()
@@ -1069,10 +1109,10 @@ public class KitchenPrinterPage extends BasePage
 	
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Remove Tip Line')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Remove_Tip_Line_YesBtn;
+	public WebElement Remove_Tip_Line_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Remove Tip Line')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Remove_Tip_Line_NoBtn;
+	public WebElement Remove_Tip_Line_NoBtn;
 	
 	
 	public void Enable_Remove_Tip_Line()
@@ -1105,10 +1145,10 @@ public class KitchenPrinterPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Enable Itemized Receipt')]//mat-button-toggle/button[contains(.,'Yes')]")
-	WebElement Enable_Itemized_Receipt_YesBtn;
+	public WebElement Enable_Itemized_Receipt_YesBtn;
 	
 	@FindBy(xpath = "//app-toggle[contains(.,'Enable Itemized Receipt')]//mat-button-toggle/button[contains(.,'No')]")
-	WebElement Enable_Itemized_Receipt_NoBtn;
+	public WebElement Enable_Itemized_Receipt_NoBtn;
 	
 	public void Enable_Enable_Itemized_Receipt()
 	{
@@ -1142,13 +1182,13 @@ public class KitchenPrinterPage extends BasePage
 	
 	//Label Printers page objects
 	@FindBy(xpath = "//button[contains(.,'NEW LABEL PRINTER')]")
-	WebElement New_LabelPrinterBtn;
+	public WebElement New_LabelPrinterBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='printertype']/div/div/div[contains(.,'Kitchen Label')]")
-	WebElement Kitchen_LabelBtn;
+	public WebElement Kitchen_Label_PrinterTypeBtn;
 	
 	@FindBy(xpath = "//app-radio-box-button[@name='printertype']/div/div/div[contains(.,'Box Label')]")
-	WebElement Box_LabelBtn;
+	public WebElement Box_Label_PrinterTypeBtn;
 	
 	public void Click_New_LabelPrinter()
 	{
@@ -1158,22 +1198,22 @@ public class KitchenPrinterPage extends BasePage
 	
 	public void Click_KitchenLabel_PrinterType()
 	{
-		Kitchen_LabelBtn.click();
+		Kitchen_Label_PrinterTypeBtn.click();
 	}
 	
 	public WebElement Kitchen_LabelBtn()
 	{
-		return Kitchen_LabelBtn;
+		return Kitchen_Label_PrinterTypeBtn;
 	}
 	
 	public void Click_BoxLabel_PrinterType()
 	{
-		Box_LabelBtn.click();
+		Box_Label_PrinterTypeBtn.click();
 	}
 	
 	public WebElement Box_LabelBtn()
 	{
-		return Box_LabelBtn;
+		return Box_Label_PrinterTypeBtn;
 	}
 	
 	public WebElement Printer_ModelInputBox()

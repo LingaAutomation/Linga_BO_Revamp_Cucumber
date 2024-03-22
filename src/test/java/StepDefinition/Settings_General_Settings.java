@@ -944,7 +944,7 @@ public class Settings_General_Settings {
 	public void iEnterMinimumAgeLimit() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(1000);
-		   cmp.Enter_Text(gs.Minimum_Age_Limit_InputBx, "10","Entered Minimum Age Limit");
+		   cmp.Enter_Text(gs.Minimum_Age_Limit_InputBx, "20","Entered Minimum Age Limit");
 	}
 	@Then("I Clear the Age Alert Message")
 	public void iClearTheAgeAlertMessage() throws Exception {

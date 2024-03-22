@@ -3,6 +3,7 @@ package StepDefinition;
 import com.Pages.Common_XPaths;
 import com.Pages.Driver_Manager;
 import com.Pages.LoginPage;
+import com.Pages.ReportsPage;
 import com.Pages.SaleRecapReport_SettingsPage;
 import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -28,6 +29,7 @@ public class Settings_Sale_Recap_Report
 	Common_XPaths cmp=new Common_XPaths(); 
 	LoginTest a=new LoginTest();
 	SaleRecapReport_SettingsPage srcr=new SaleRecapReport_SettingsPage(); 
+	ReportsPage repts=new ReportsPage();
 	
 	@Given("Open the Settings - Sale Recap Report Settings home page BaseURL and storeID")
 	public void openTheSettingsSaleRecapReportSettingsHomePageBaseURLAndStoreID() throws Exception {
@@ -760,10 +762,99 @@ public class Settings_Sale_Recap_Report
 		cmp.Assertion_Validation_True_Element_Selected(srcr.MenuItems_LevelTypeBtn);
 	}
 
+	@Given("I Navigate to Reports - Sale Recap Report Page")
+	public void iNavigateToReportsSaleRecapReportPage() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		Thread.sleep(5000);
+		//Load the Daily page
+		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/sale-recap");
+	}
+	@Then("Check Guest Column is Not Displayed in Sale Recap Report")
+	public void checkGuestColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Guest_Count_SaleRecap, "Guest Count Field");
+	}
+	@Then("Check Checks Column is Not Displayed in Sale Recap Report")
+	public void checkChecksColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Check_Count_SaleRecap, "Checks Count Field");
+	}
+	@Then("Check Cover Column is Not Displayed in Sale Recap Report")
+	public void checkCoverColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Cover_Count_SaleRecap, "Cover Count Field");
+	}
+	@Then("Check Grand Sales Column is Not Displayed in Sale Recap Report")
+	public void checkGrandSalesColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Grand_Sales_SaleRecap, "Grand Sales Field");
 
+	}
+	@Then("Check Gross Receipt Column is Not Displayed in Sale Recap Report")
+	public void checkGrossReceiptColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Gross_Receipt_SaleRecap, "Gross Receipt Field");
 
+	}
+	@Then("Check Gross Void Column is Not Displayed in Sale Recap Report")
+	public void checkGrossVoidColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Gross_Void_SaleRecap, "Gross Void Field");
 
+	}
+	@Then("Check Net Void Column is Not Displayed in Sale Recap Report")
+	public void checkNetVoidColumnIsNotDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Not_Displayed(repts.Net_Void_SaleRecap, "Net Void Field");
 
+	}
+	@Then("Check Guest Column is Displayed in Sale Recap Report")
+	public void checkGuestColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Guest_Count_SaleRecap, "Guest Count Field");
 
+	}
+	@Then("Check Checks Column is Displayed in Sale Recap Report")
+	public void checkChecksColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Check_Count_SaleRecap, "Checks Count Field");
+	}
+	@Then("Check Cover Column is Displayed in Sale Recap Report")
+	public void checkCoverColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Cover_Count_SaleRecap, "Cover Count Field");
+	}
+	@Then("Check Grand Sales Column is Displayed in Sale Recap Report")
+	public void checkGrandSalesColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Grand_Sales_SaleRecap, "Grand Sales Field");
+	}
+	@Then("Check Gross Receipt Column is Displayed in Sale Recap Report")
+	public void checkGrossReceiptColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Gross_Receipt_SaleRecap, "Gross Receipt Field");
+
+	}
+	@Then("Check Gross Void Column is Displayed in Sale Recap Report")
+	public void checkGrossVoidColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Gross_Void_SaleRecap, "Gross Void Field");
+
+	}
+	@Then("Check Net Void Column is Displayed in Sale Recap Report")
+	public void checkNetVoidColumnIsDisplayedInSaleRecapReport() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+	    cmp.Check_Element_or_Text_Displayed(repts.Net_Void_SaleRecap, "Net Void Field");
+
+	}
+
+	@Then("I Select the Level Type in General as Menu Items")
+	public void iSelectTheLevelTypeInGeneralAsMenuItems() throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		Thread.sleep(1000);
+	    cmp.Genaral_Tab_inContents.click();
+		Thread.sleep(1000);
+	    srcr.MenuItems_LevelTypeBtn.click();
+	}
 
 }

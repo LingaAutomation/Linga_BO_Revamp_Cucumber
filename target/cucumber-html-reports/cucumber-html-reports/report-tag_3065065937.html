@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>27 Feb 2024, 10:37</td>
+      <td>20 Mar 2024, 01:35</td>
     </tr>
   </tbody>
 </table>
@@ -128,8 +128,8 @@ $(document).ready(function() {
         <tr>
           <td class="tagname">@RetailTest41</td>
           <td >0</td>
-          <td >0</td>
-          <td     class="skipped"   >4</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >3</td>
           <td >0</td>
           <td >0</td>
           <td class="total">4</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="0">0.000</td>
+          <td class="duration" data-value="30067705300">30.067</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -184,7 +184,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">30.067</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -222,7 +222,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">StepDefinition.Hooks.Start_Scenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">30.385</span>
+  <span class="lead-duration duration">30.420</span>
 
           </div>
 
@@ -255,11 +255,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">I Click Retail Items Active button</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">30.067</span>
 
 </div>
 
@@ -267,6 +267,27 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (1c3296c04d22f70b381b15f7459489b8)] -&gt; xpath: //*[@id='menuItem-datagrid']/div/div/div/div[1]/button/span[3]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: jdk.proxy2.$Proxy29
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.Pages.Common_XPaths.Click_Wait_ForElementClickable(Common_XPaths.java:1172)
+	at com.Pages.ProductItems_Menu_RetailPage.IClickActiveRetailItem_Btn(ProductItems_Menu_RetailPage.java:4605)
+	at StepDefinition.Product_and_Items_Retail_Items.iClickRetailItemsActiveButton(Product_and_Items_Retail_Items.java:608)
+	at &#10045;.I Click Retail Items Active button(classpath:Product_and_Items_Features/Product_Items_Retail_Items.feature:821)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -367,7 +388,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -379,13 +400,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">StepDefinition.Hooks.TestFail(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.197</span>
+  <span class="lead-duration duration">2.205</span>
 
           </div>
 
@@ -396,13 +417,13 @@ $(document).ready(function() {
 
   <div class="embeddings inner-level">
   <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-5" class="collapsable-control">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Verify whether able to Activate the Retail Item Clicking Cancel/No button</a>
-      <a href="embeddings/embedding_-875835070.unknown" download target="_blank">
+      <a href="embeddings/embedding_-346496581.unknown" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-5" class="collapse collapsable-details ">
+    <div id="embedding-6" class="collapse collapsable-details ">
         <pre class="embedding-content">This file cannot be displayed. Use download button to get the content as file.</pre>
     </div>
   </div>

@@ -119,7 +119,8 @@ public class Availability_RestrictionTimePage extends BasePage
 	public WebElement PM_Btn;
 		
 	@FindBy(xpath = "//div[contains(@class,'timepicker__actions')]/div/button[contains(.,'OK')]")
-	WebElement OK_TimePickerBtn;
+	
+	public WebElement OK_TimePickerBtn;
 	
 	@FindBy(xpath = "//div[contains(@class,'timepicker__actions')]/div/button[contains(.,'CANCEL')]")
 	WebElement Cancel_TimePickerBtn;

@@ -31,7 +31,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 //	}
 	
 	@FindBy(xpath = "//h3[contains(.,'Front End Receipt')]")
-	WebElement Front_EndReceipt_Header;
+	public WebElement Front_EndReceipt_Header;
 	
 	public WebElement Front_EndReceipt_Header()
 	{
@@ -39,7 +39,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Small')]")
-	WebElement Small_RadioBtn;
+	public WebElement Small_RadioBtn;
 	
 	public WebElement Small_RadioButton()
 	{
@@ -61,7 +61,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Medium')]")
-	WebElement Medium_RadioBtn;
+	public WebElement Medium_RadioBtn;
 	
 	public WebElement Medium_RadioButton()
 	{
@@ -75,7 +75,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Medium')][contains(@class,'mat-radio-checked')]")
-	WebElement Medium_RadioBtn_SLD;
+	public WebElement Medium_RadioBtn_SLD;
 	
 	public WebElement Medium_RadioBtn_SLD()
 	{
@@ -83,19 +83,19 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Print Template']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Print_Template_ArrowRightBtn;
+	public WebElement Print_Template_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Print Template']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Print_Template_ArrowDownBtn;
+	public WebElement Print_Template_ArrowDownBtn;
 	
 	
 	//Store Info Screen
 
 	@FindBy(xpath = "//div[.='Store Info']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Store_Info_ArrowRightBtn;
+	public WebElement Store_Info_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Store_Info_ArrowDownBtn;
+	public WebElement Store_Info_ArrowDownBtn;
 	
 	public void Open_Print_Template_Screen() throws Exception
 	{
@@ -161,10 +161,23 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Store Logo')]")
-	WebElement Store_Logo_ChkBox;
+	public WebElement Store_Logo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Store Logo')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Store_Logo_ChkBox_SLD;
+	public WebElement Store_Logo_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Hightlight Store Name')]")
+	public WebElement Highlight_Store_Name_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Hightlight Store Name')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Highlight_Store_Name_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Include Hours Of Operation')]")
+	public WebElement Include_Hours_Of_Operation_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Include Hours Of Operation')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Include_Hours_Of_Operation_ChkBox_SLD;
+	
 	
 	public WebElement Store_Logo_CheckBox()
 	{
@@ -177,10 +190,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Email')]")
-	WebElement Email_StoreInfo_ChkBox;
+	public WebElement Email_StoreInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Email')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Email_StoreInfo_ChkBox_SLD;
+	public WebElement Email_StoreInfo_ChkBox_SLD;
 	
 	public WebElement Email_StoreInfo_CheckBox()
 	{
@@ -193,10 +206,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Store Name')]")
-	WebElement Store_Name_ChkBox;
+	public WebElement Store_Name_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Store Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Store_Name_ChkBox_SLD;
+	public WebElement Store_Name_ChkBox_SLD;
 	
 	public WebElement Store_Name_CheckBox()
 	{
@@ -209,10 +222,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Phone Number')]")
-	WebElement Phone_Number_StoreInfo_ChkBox;
+	public WebElement Phone_Number_StoreInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Phone Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Phone_Number_StoreInfo_ChkBox_SLD;
+	public WebElement Phone_Number_StoreInfo_ChkBox_SLD;
 	
 	public WebElement Phone_Number_StoreInfo_CheckBox()
 	{
@@ -225,10 +238,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Address')]")
-	WebElement Address_StoreInfo_ChkBox;
+	public WebElement Address_StoreInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Store Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Address')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Address_StoreInfo_ChkBox_SLD;
+	public WebElement Address_StoreInfo_ChkBox_SLD;
 	
 	public WebElement Address_StoreInfo_CheckBox()
 	{
@@ -241,10 +254,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Header Notes')]")
-	WebElement Header_Notes_ChkBox;
+	public WebElement Header_Notes_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Header Notes')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Header_Notes_ChkBox_SLD;
+	public WebElement Header_Notes_ChkBox_SLD;
 	
 	public WebElement Header_Notes_CheckBox()
 	{
@@ -257,7 +270,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//input[@type='file']")
-	WebElement Store_Logo_Upload;
+	public WebElement Store_Logo_Upload;
 	
 	public WebElement Store_Logo_Upload()
 	{
@@ -265,7 +278,28 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Header Notes')]/../../../../textarea")
-	WebElement Header_Notes_TxtBox;
+	public WebElement Header_Notes_TxtBox;
+	
+	@FindBy(xpath = "//div[@class='template-content']//div[contains(@class,'col')][contains(.,'Tip')]")
+	public WebElement Tip_Line_inTemplate;
+	
+	@FindBy(xpath = "//img[@alt='Customer Signature']")
+	public WebElement Signature_inTemplate;
+	
+	@FindBy(xpath = "//span[contains(.,'E-Voice Url')]")
+	public WebElement E_Invoice_URL_inTemplate;
+	
+	@FindBy(xpath = "//img[@alt='QR']")
+	public WebElement E_Invoice_QR_inTemplate;
+	
+	@FindBy(xpath = "//img[@alt='Barcode']")
+	public WebElement Barcode_inTemplate;
+	
+	@FindBy(xpath = "//img[@alt='QR Payment']")
+	public WebElement QR_Payment_inTemplate;
+	
+	@FindBy(xpath = "//h6[contains(.,'Suggested Tip Amounts')]/..//table")
+	public WebElement Tip_Suggestion_inTemplate;
 	
 	public WebElement Header_Notes_TextBox()
 	{
@@ -283,10 +317,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Check Details screen
 	
 	@FindBy(xpath = "//div[.='Check Details']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Check_Details_ArrowRightBtn;
+	public WebElement Check_Details_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Check Details']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Check_Details_ArrowDownBtn;
+	public WebElement Check_Details_ArrowDownBtn;
 	
 	
 	public void Open_Check_Details_Screen() throws Exception
@@ -322,10 +356,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Number')]")
-	WebElement Check_Number_ChkBox;
+	public WebElement Check_Number_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Check_Number_ChkBox_SLD;
+	public WebElement Check_Number_ChkBox_SLD;
 	
 	public WebElement Check_Number_CheckBox()
 	{
@@ -338,10 +372,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Close Server')]")
-	WebElement Check_Close_Server_ChkBox;
+	public WebElement Check_Close_Server_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Close Server')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Check_Close_Server_ChkBox_SLD;
+	public WebElement Check_Close_Server_ChkBox_SLD;
 	
 	public WebElement Check_Close_Server_CheckBox()
 	{
@@ -354,10 +388,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Open date & time')]")
-	WebElement Open_Date_Time_ChkBox;
+	public WebElement Open_Date_Time_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Open date & time')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Open_Date_Time_ChkBox_SLD;
+	public WebElement Open_Date_Time_ChkBox_SLD;
 	
 	public WebElement Open_Date_Time_CheckBox()
 	{
@@ -370,10 +404,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Close date & time')]")
-	WebElement Close_Date_Time_ChkBox;
+	public WebElement Close_Date_Time_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Close date & time')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Close_Date_Time_SLD;
+	public WebElement Close_Date_Time_ChkBox_SLD;
 	
 	public WebElement Close_Date_Time_CheckBox()
 	{
@@ -382,14 +416,14 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 	public WebElement Close_Date_Time_CheckBox_Selected()
 	{
-		return Close_Date_Time_SLD;
+		return Close_Date_Time_ChkBox_SLD;
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Service Type')]")
-	WebElement Service_Type_ChkBox;
+	public WebElement Service_Type_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Service Type')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Service_Type_ChkBox_SLD;
+	public WebElement Service_Type_ChkBox_SLD;
 	
 	public WebElement Service_Type_CheckBox()
 	{
@@ -402,10 +436,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Table Name')]")
-	WebElement Table_Name_ChkBox;
+	public WebElement Table_Name_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Table Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Table_Name_ChkBox_SLD;
+	public WebElement Table_Name_ChkBox_SLD;
 	
 	public WebElement Table_Name_CheckBox()
 	{
@@ -418,10 +452,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Seat Number')]")
-	WebElement Seat_Number_ChkBox;
+	public WebElement Seat_Number_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Seat Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Seat_Number_ChkBox_SLD;
+	public WebElement Seat_Number_ChkBox_SLD;
 	
 	public WebElement Seat_Number_CheckBox()
 	{
@@ -434,10 +468,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check open server')]")
-	WebElement Check_Open_Server_ChkBox;
+	public WebElement Check_Open_Server_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check open server')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Check_Open_Server_ChkBox_SLD;
+	public WebElement Check_Open_Server_ChkBox_SLD;
 	
 	public WebElement Check_Open_Server_CheckBox()
 	{
@@ -450,10 +484,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Block 1')]")
-	WebElement Block_1_RadioBtn;
+	public WebElement Block_1_RadioBtn;
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Block 1')][contains(@class,'mat-radio-checked')]")
-	WebElement Block_1_RadioBtn_SLD;
+	public WebElement Block_1_RadioBtn_SLD;
 	
 	public WebElement Block_1_RadioBtn()
 	{
@@ -466,10 +500,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Block 2')]")
-	WebElement Block_2_RadioBtn;
+	public WebElement Block_2_RadioBtn;
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Block 2')][contains(@class,'mat-radio-checked')]")
-	WebElement Block_2_RadioBtn_SLD;
+	public WebElement Block_2_RadioBtn_SLD;
 	
 	public WebElement Block_2_RadioBtn()
 	{
@@ -482,10 +516,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Large')]")
-	WebElement Large_RadioBtn;
+	public WebElement Large_RadioBtn;
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Large')][contains(@class,'mat-radio-checked')]")
-	WebElement Large_RadioBtn_SLD;
+	public WebElement Large_RadioBtn_SLD;
 	
 	public WebElement Large_RadioBtn()
 	{
@@ -498,10 +532,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Normal')]")
-	WebElement Normal_RadioBtn;
+	public WebElement Normal_RadioBtn;
 	
 	@FindBy(xpath = "//mat-radio-button[contains(.,'Normal')][contains(@class,'mat-radio-checked')]")
-	WebElement Normal_RadioBtn_SLD;
+	public WebElement Normal_RadioBtn_SLD;
 	
 	public WebElement Normal_RadioBtn()
 	{
@@ -516,10 +550,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Order Summary Screen
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Order_Summary_ArrowRightBtn;
+	public WebElement Order_Summary_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Order_Summary_ArrowDownBtn;
+	public WebElement Order_Summary_ArrowDownBtn;
 	
 	public void Open_Order_Summary_Screen() throws Exception
 	{
@@ -554,10 +588,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Secondary Menu Name')]")
-	WebElement Secondary_MenuName_ChkBox;
+	public WebElement Secondary_MenuName_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Secondary Menu Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Secondary_MenuName_ChkBox_SLD;
+	public WebElement Secondary_MenuName_ChkBox_SLD;
 	
 	public WebElement Secondary_MenuName_CheckBox()
 	{
@@ -570,10 +604,16 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier Price To Menu')]")
-	WebElement RollOut_ModifierPrice_To_Menu_ChkBox;
+	public WebElement RollOut_ModifierPrice_To_Menu_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier Price To Menu')][contains(@class,'mat-checkbox-checked')]")
-	WebElement RollOut_ModifierPrice_To_Menu_ChkBox_SLD;
+	public WebElement RollOut_ModifierPrice_To_Menu_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier Price & Quantity To Menu')]")
+	public WebElement RollOut_ModifierPrice_Quantity_To_Menu_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier Price & Quantity To Menu')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement RollOut_ModifierPrice_Quantity_To_Menu_ChkBox_SLD;
 	
 	public WebElement RollOut_ModifierPrice_To_Menu_CheckBox()
 	{
@@ -586,10 +626,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier To Menu')]")
-	WebElement RollOut_Modifier_To_Menu_ChkBox;
+	public WebElement RollOut_Modifier_To_Menu_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Roll Out Modifier To Menu')][contains(@class,'mat-checkbox-checked')]")
-	WebElement RollOut_Modifier_To_Menu_ChkBox_SLD;
+	public WebElement RollOut_Modifier_To_Menu_ChkBox_SLD;
 	
 	public WebElement RollOut_Modifier_To_Menu_CheckBox()
 	{
@@ -602,10 +642,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Exclude Zero Price Menu Item')]")
-	WebElement Exclude_ZeroPrice_MenuItem_ChkBox;
+	public WebElement Exclude_ZeroPrice_MenuItem_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Exclude Zero Price Menu Item')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Exclude_ZeroPrice_MenuItem_ChkBox_SLD;
+	public WebElement Exclude_ZeroPrice_MenuItem_ChkBox_SLD;
 	
 	public WebElement Exclude_ZeroPrice_MenuItem_CheckBox()
 	{
@@ -618,10 +658,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Exclude Zero Price Modifier')]")
-	WebElement Exclude_ZeroPrice_Modifier_ChkBox;
+	public WebElement Exclude_ZeroPrice_Modifier_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Exclude Zero Price Modifier')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Exclude_ZeroPrice_Modifier_ChkBox_SLD;
+	public WebElement Exclude_ZeroPrice_Modifier_ChkBox_SLD;
 	
 	public WebElement Exclude_ZeroPrice_Modifier_CheckBox()
 	{
@@ -634,10 +674,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax Total')]")
-	WebElement Tax_Total_ChkBox;
+	public WebElement Tax_Total_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax Total')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tax_Total_ChkBox_SLD;
+	public WebElement Tax_Total_ChkBox_SLD;
 	
 	public WebElement Tax_Total_CheckBox()
 	{
@@ -650,10 +690,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Hide Inclusive Tax')]")
-	WebElement  Hide_Inclusive_Tax_ChkBox;
+	public WebElement  Hide_Inclusive_Tax_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Hide Inclusive Tax')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Hide_Inclusive_Tax_ChkBox_SLD;
+	public WebElement  Hide_Inclusive_Tax_ChkBox_SLD;
 	
 	public WebElement Hide_Inclusive_Tax_CheckBox()
 	{
@@ -666,10 +706,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Gratuity')]")
-	WebElement Gratuity_ChkBox;
+	public WebElement Gratuity_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Gratuity')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Gratuity_ChkBox_SLD;
+	public WebElement Gratuity_ChkBox_SLD;
 	
 	public WebElement Gratuity_CheckBox()
 	{
@@ -682,10 +722,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../../../div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Tip')]")
-	WebElement Tip_ChkBox;
+	public WebElement Tip_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../../../div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Tip')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tip_ChkBox_SLD;
+	public WebElement Tip_ChkBox_SLD;
 	
 	public WebElement Tip_CheckBox()
 	{
@@ -698,10 +738,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Cash Discount')]")
-	WebElement Cash_Discount_ChkBox;
+	public WebElement Cash_Discount_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Cash Discount')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Cash_Discount_ChkBox_SLD;
+	public WebElement Cash_Discount_ChkBox_SLD;
 	
 	public WebElement Cash_Discount_CheckBox()
 	{
@@ -714,10 +754,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Total')]")
-	WebElement Check_Total_ChkBox;
+	public WebElement Check_Total_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Total')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Check_Total_ChkBox_SLD;
+	public WebElement Check_Total_ChkBox_SLD;
 	
 	public WebElement Check_Total_CheckBox()
 	{
@@ -730,10 +770,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tender Details')]")
-	WebElement Tender_Details_ChkBox;
+	public WebElement Tender_Details_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tender Details')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tender_Details_ChkBox_SLD;
+	public WebElement Tender_Details_ChkBox_SLD;
 	
 	public WebElement Tender_Details_CheckBox()
 	{
@@ -746,10 +786,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show Membership Balance')]")
-	WebElement Show_Membership_Balance_ChkBox;
+	public WebElement Show_Membership_Balance_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show Membership Balance')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Show_Membership_Balance_ChkBox_SLD;
+	public WebElement Show_Membership_Balance_ChkBox_SLD;
 	
 	public WebElement Show_Membership_Balance_CheckBox()
 	{
@@ -762,10 +802,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Loyalty Amount')]")
-	WebElement Loyalty_Amount_ChkBox;
+	public WebElement Loyalty_Amount_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Loyalty Amount')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Loyalty_Amount_ChkBox_SLD;
+	public WebElement Loyalty_Amount_ChkBox_SLD;
 	
 	public WebElement Loyalty_Amount_CheckBox()
 	{
@@ -778,10 +818,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Discount under the Menu Item')]")
-	WebElement Discount_Under_MenuItem_ChkBox;
+	public WebElement Discount_Under_MenuItem_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Discount under the Menu Item')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Discount_Under_MenuItem_ChkBox_SLD;
+	public WebElement Discount_Under_MenuItem_ChkBox_SLD;
 	
 	public WebElement Discount_Under_MenuItem_CheckBox()
 	{
@@ -794,10 +834,16 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,' Print Check in Primary & Secondary Languages ')]")
-	WebElement  Print_Check_inPrimary_SecondaryLanguages_ChkBox;
+	public WebElement  Print_Check_inPrimary_SecondaryLanguages_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,' Print Check in Primary & Secondary Languages ')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Print_Check_inPrimary_SecondaryLanguages_ChkBox_SLD;
+	public WebElement  Print_Check_inPrimary_SecondaryLanguages_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Single Quantity Price Inside Braces')]")
+	public WebElement  Single_Quantity_Price_Inside_Braces_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Single Quantity Price Inside Braces')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement  Single_Quantity_Price_Inside_Braces_ChkBox_SLD;
 	
 	public WebElement Print_Check_inPrimary_SecondaryLanguages_CheckBox()
 	{
@@ -812,10 +858,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Customer Info Screen
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Customer_Info_ArrowRightBtn;
+	public WebElement Customer_Info_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Customer_Info_ArrowDownBtn;
+	public WebElement Customer_Info_ArrowDownBtn;
 	
 	public void Open_Customer_Info_Screen() throws Exception
 	{
@@ -849,10 +895,16 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Email')]")
-	WebElement Email_CustomerInfo_ChkBox;
+	public WebElement Email_CustomerInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Email')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Email_CustomerInfo_ChkBox_SLD;
+	public WebElement Email_CustomerInfo_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Card Details')]")
+	public WebElement Card_Details_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Card Details')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Card_Details_ChkBox_SLD;
 	
 	public WebElement Email_CustomerInfo_CheckBox()
 	{
@@ -865,10 +917,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Address')]")
-	WebElement Address_CustomerInfo_ChkBox;
+	public WebElement Address_CustomerInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Address')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Address_CustomerInfo_ChkBox_SLD;
+	public WebElement Address_CustomerInfo_ChkBox_SLD;
 	
 	public WebElement Address_CustomerInfo_CheckBox()
 	{
@@ -881,10 +933,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Phone Number')]")
-	WebElement Phone_Number_CustomerInfo_ChkBox;
+	public WebElement Phone_Number_CustomerInfo_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../..//app-checkbox/div/mat-checkbox[contains(.,'Phone Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Phone_Number_CustomerInfo_ChkBox_SLD;
+	public WebElement Phone_Number_CustomerInfo_ChkBox_SLD;
 	
 	
 	public WebElement Phone_Number_CustomerInfo_CheckBox()
@@ -899,10 +951,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Name')]")
-	WebElement Customer_Name_ChkBox;
+	public WebElement Customer_Name_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Customer_Name_ChkBox_SLD;
+	public WebElement Customer_Name_ChkBox_SLD;
 	
 	public WebElement Customer_Name_CheckBox()
 	{
@@ -915,10 +967,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Notes')]")
-	WebElement Customer_Notes_ChkBox;
+	public WebElement Customer_Notes_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Notes')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Customer_Notes_ChkBox_SLD;
+	public WebElement Customer_Notes_ChkBox_SLD;
 	
 	public WebElement Customer_Notes_CheckBox()
 	{
@@ -931,7 +983,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//app-checkbox[@name='receiptPrinterTemplateCustomerNotes']/../textarea")
-	WebElement Customer_Notes_TxtBx;
+	public WebElement Customer_Notes_TxtBx;
 	
 	public WebElement Customer_Notes_TextBox()
 	{
@@ -950,10 +1002,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Additional Settings
 	
 	@FindBy(xpath = "//div[.='Additional Settings']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Additional_Settings_ArrowRightBtn;
+	public WebElement Additional_Settings_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Additional Settings']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Additional_Settings_ArrowDownBtn;
+	public WebElement Additional_Settings_ArrowDownBtn;
 	
 	
 	public void Open_Additional_Settings_Screen() throws Exception
@@ -988,10 +1040,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip Line')]")
-	WebElement Tip_Line_ChkBox;
+	public WebElement Tip_Line_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip Line')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tip_Line_ChkBox_SLD;
+	public WebElement Tip_Line_ChkBox_SLD;
 	
 	public WebElement Tip_Line_CheckBox()
 	{
@@ -1004,10 +1056,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Barcode')]")
-	WebElement  Barcode_ChkBox;
+	public WebElement  Barcode_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Barcode')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Barcode_ChkBox_SLD;
+	public WebElement  Barcode_ChkBox_SLD;
 	
 	public WebElement Barcode_CheckBox()
 	{
@@ -1020,10 +1072,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Signature')]")
-	WebElement  Signature_ChkBox;
+	public WebElement  Signature_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Signature')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Signature_ChkBox_SLD;
+	public WebElement  Signature_ChkBox_SLD;
 	
 	public WebElement Signature_CheckBox()
 	{
@@ -1036,10 +1088,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show E-Invoice URL')]")
-	WebElement  Show_EInvoice_URL_ChkBox;
+	public WebElement  Show_EInvoice_URL_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show E-Invoice URL')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Show_EInvoice_URL_ChkBox_SLD;
+	public WebElement  Show_EInvoice_URL_ChkBox_SLD;
 	
 	public WebElement Show_EInvoice_URL_CheckBox()
 	{
@@ -1052,10 +1104,23 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show E-Invoice QR')]")
-	WebElement  Show_EInvoice_QR_ChkBox;
+	public WebElement  Show_EInvoice_QR_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show E-Invoice QR')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Show_EInvoice_QR_ChkBox_SLD;
+	public WebElement  Show_EInvoice_QR_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Show QR Payment')]")
+	public WebElement  Show_QR_Payment_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Show QR Payment')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement  Show_QR_Payment_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Rename Tip amount as Additional Tip')]")
+	public WebElement  Rename_Tip_Amount_To_AdditionalTip_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Rename Tip amount as Additional Tip')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement  Rename_Tip_Amount_To_AdditionalTip_ChkBox_SLD;
+	
 	
 	public WebElement Show_EInvoice_QR_CheckBox()
 	{
@@ -1069,10 +1134,16 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip Suggestion')]")
-	WebElement  Tip_Suggestion_ChkBox;
+	public WebElement  Tip_Suggestion_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip Suggestion')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Tip_Suggestion_ChkBox_SLD;
+	public WebElement  Tip_Suggestion_ChkBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip suggestion custom message')]")
+	public WebElement  Tip_Suggestion_CustomMsg_ChkBox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip suggestion custom message')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement  Tip_Suggestion_CustomMsg_ChkBox_SLD;
 	
 	public WebElement Tip_Suggestion_CheckBox()
 	{
@@ -1085,10 +1156,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Special Notes')]")
-	WebElement  Special_Notes_ChkBox;
+	public WebElement  Special_Notes_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Special Notes')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Special_Notes_ChkBox_SLD;
+	public WebElement  Special_Notes_ChkBox_SLD;
 	
 	public WebElement Special_Notes_CheckBox()
 	{
@@ -1101,10 +1172,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Cut Paper After Each print')]")
-	WebElement  Cut_Paper_After_Each_Print_ChkBox;
+	public WebElement  Cut_Paper_After_Each_Print_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Cut Paper After Each print')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Cut_Paper_After_Each_Print_ChkBox_SLD;
+	public WebElement  Cut_Paper_After_Each_Print_ChkBox_SLD;
 	
 	public WebElement Cut_Paper_After_Each_Print_CheckBox()
 	{
@@ -1117,10 +1188,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show Remaining Balance')]")
-	WebElement  Show_Remaining_Balance_ChkBox;
+	public WebElement  Show_Remaining_Balance_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Show Remaining Balance')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Show_Remaining_Balance_ChkBox_SLD;
+	public WebElement  Show_Remaining_Balance_ChkBox_SLD;
 	
 	public WebElement Show_Remaining_Balance_CheckBox()
 	{
@@ -1135,10 +1206,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Merchant Copy Screen
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Merchant_Copy_ArrowRightBtn;
+	public WebElement Merchant_Copy_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Merchant_Copy_ArrowDownBtn;
+	public WebElement Merchant_Copy_ArrowDownBtn;
 	
 	public void Open_Merchant_Copy_Screen() throws Exception
 	{
@@ -1173,10 +1244,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print GC Balance')]")
-	WebElement  Print_GC_Balance_MerchantCopy_ChkBox;
+	public WebElement  Print_GC_Balance_MerchantCopy_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print GC Balance')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Print_GC_Balance_MerchantCopy_ChkBox_SLD;
+	public WebElement  Print_GC_Balance_MerchantCopy_ChkBox_SLD;
 	
 	public WebElement Print_GC_Balance_MerchantCopy_CheckBox()
 	{
@@ -1189,10 +1260,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print HA Balance')]")
-	WebElement  Print_HA_Balance_MerchantCopy_ChkBox;
+	public WebElement  Print_HA_Balance_MerchantCopy_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print HA Balance')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Print_HA_Balance_MerchantCopy_ChkBox_SLD;
+	public WebElement  Print_HA_Balance_MerchantCopy_ChkBox_SLD;
 	
 	public WebElement Print_HA_Balance_MerchantCopy_CheckBox()
 	{
@@ -1205,10 +1276,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Print Tab Name')]")
-	WebElement  Print_Tab_Name_ChkBox;
+	public WebElement  Print_Tab_Name_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Print Tab Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Print_Tab_Name_ChkBox_SLD;
+	public WebElement  Print_Tab_Name_ChkBox_SLD;
 	
 	public WebElement Print_Tab_Name_CheckBox()
 	{
@@ -1221,10 +1292,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print Membership Balance')]")
-	WebElement  Print_Membership_Balance_MerchantCopy_ChkBox;
+	public WebElement  Print_Membership_Balance_MerchantCopy_ChkBox;
 	
 	@FindBy(xpath = "//div[.='Merchant Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print Membership Balance')][contains(@class,'mat-checkbox-checked')]")
-	WebElement  Print_Membership_Balance_MerchantCopy_ChkBox_SLD;
+	public WebElement  Print_Membership_Balance_MerchantCopy_ChkBox_SLD;
 	
 	
 	public WebElement Print_Membership_Balance_MerchantCopy_CheckBox()
@@ -1241,10 +1312,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	//Customer Copy Screen
 	
 		@FindBy(xpath = "//div[.='Customer Copy']/../../div[contains(.,'keyboard_arrow_right')]")
-		WebElement Customer_Copy_ArrowRightBtn;
+		public WebElement Customer_Copy_ArrowRightBtn;
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../div[contains(.,'keyboard_arrow_down')]")
-		WebElement Customer_Copy_ArrowDownBtn;
+		public WebElement Customer_Copy_ArrowDownBtn;
 		
 		
 		public void Open_Customer_Copy_Screen() throws Exception
@@ -1280,10 +1351,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 		
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print GC Balance')]")
-		WebElement  Print_GC_Balance_CustomerCopy_ChkBox;
+		public WebElement  Print_GC_Balance_CustomerCopy_ChkBox;
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print GC Balance')][contains(@class,'mat-checkbox-checked')]")
-		WebElement  Print_GC_Balance_CustomerCopy_ChkBox_SLD;
+		public WebElement  Print_GC_Balance_CustomerCopy_ChkBox_SLD;
 		
 		public WebElement Print_GC_Balance_CustomerCopy_CheckBox()
 		{
@@ -1295,11 +1366,14 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 			return Print_GC_Balance_CustomerCopy_ChkBox_SLD;
 		}
 		
+		@FindBy(xpath = "//input[@aria-label='Choose Template']")
+		public WebElement Choose_Template_InputBx;
+		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print HA Balance')]")
-		WebElement  Print_HA_Balance_CustomerCopy_ChkBox;
+		public WebElement  Print_HA_Balance_CustomerCopy_ChkBox;
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print HA Balance')][contains(@class,'mat-checkbox-checked')]")
-		WebElement  Print_HA_Balance_CustomerCopy_ChkBox_SLD;
+		public WebElement  Print_HA_Balance_CustomerCopy_ChkBox_SLD;
 		
 		public WebElement Print_HA_Balance_CustomerCopy_CheckBox()
 		{
@@ -1312,10 +1386,10 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 		}
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print Membership Balance')]")
-		WebElement  Print_Membership_Balance_CustomerCopy_ChkBox;
+		public WebElement  Print_Membership_Balance_CustomerCopy_ChkBox;
 		
 		@FindBy(xpath = "//div[.='Customer Copy']/../../../../div/div/div/div/div/div/div/app-checkbox/div/mat-checkbox[contains(.,'Print Membership Balance')][contains(@class,'mat-checkbox-checked')]")
-		WebElement  Print_Membership_Balance_CustomerCopy_ChkBox_SLD;
+		public WebElement  Print_Membership_Balance_CustomerCopy_ChkBox_SLD;
 		
 		public WebElement Print_Membership_Balance_CustomerCopy_CheckBox()
 		{
@@ -1328,7 +1402,7 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 		}
 		
 		@FindBy(xpath = "//img[@alt='Store Logo']")
-		WebElement Store_LogoInTemplate;
+		public WebElement Store_LogoInTemplate;
 		
 		public void Verify_Store_Logo_inTemplate()
 		{
@@ -1347,7 +1421,19 @@ public class Front_End_Receipt_TemplatePage extends BasePage
 	
 		
 		@FindBy(xpath = "//div[contains(@class,'check-font-size')]/h6")
-		WebElement Check_Number_Block1_InTemplate;
+		public WebElement Check_Number_Block1_InTemplate;
+		
+		@FindBy(xpath = "//mat-radio-button[contains(.,'Block 1')]")
+		public WebElement Block1_Position_RadioBtn;
+		
+		@FindBy(xpath = "//mat-radio-button[contains(.,'Block 2')]")
+		public WebElement Block2_Position_RadioBtn;
+		
+		@FindBy(xpath = "//mat-radio-button[contains(.,'Normal')]")
+		public WebElement Normal_FontSize_CheckNumber_RadioBtn;
+		
+		@FindBy(xpath = "//mat-radio-button[contains(.,'Large')]")
+		public WebElement Large_FontSize_CheckNumber_RadioBtn;
 		
 		public void Verify_Check_Number_Block1_inTemplate()
 		{

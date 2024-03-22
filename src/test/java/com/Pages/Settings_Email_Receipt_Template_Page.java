@@ -29,41 +29,73 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	@FindBy(xpath = "//div[@class='settings']")
 	WebElement Settings;
 
+
 	@FindBy(xpath ="//span[.='Email Receipt Template']")
 	WebElement Email_Receipt_Temp;
+	
+	@FindBy(xpath = "//h3[.='Email Receipt Template']")
+	public WebElement EmailTemplateHeader;
 
 	@FindBy(xpath = "//div/div/div[.='Store Information']")
-	WebElement Store_Inform;
+	public WebElement Store_Inform;
 
 	@FindBy(xpath = "//div/div/div[.='Check Details']")
-	WebElement Check_Details;
+	public WebElement Check_Details;
 
 	@FindBy(xpath = "//div/div[1]/div[.='Order Summary']")
-	WebElement Order_Summary;
+	public WebElement Order_Summary;
 
 	@FindBy(xpath = "//div/div/div[.='Additional Details']")
-	WebElement additional_Details;
+	public WebElement additional_Details;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateStoreName']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Store_Name;
+	public WebElement Store_Name;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Store Name ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Store_Name_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Store Name ')][contains(@class,'ng-untouched')]")
+	public WebElement Store_Name_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateEmail']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Email;
+	public WebElement Email;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Email ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Email_CheckBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Email ')][contains(@class,'ng-untouched')]")
+	public WebElement Email_CheckBox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateAddress']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Address;
+	public WebElement Address;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Address ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Address_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Address ')][contains(@class,'ng-untouched')]")
+	public WebElement Address_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplatePhoneNumber']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement phone_Number;
+	public WebElement phone_Number;
+	
+
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Phone Number ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement PhoneNumber_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Phone Number ')][contains(@class,'ng-untouched')]")
+	public WebElement PhoneNumber_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateLogo']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Store_Logo;//mat-checkbox[contains(.,'Store Logo') and contains(@class,'checkbox-checked')]
+	public WebElement Store_Logo;//mat-checkbox[contains(.,'Store Logo') and contains(@class,'checkbox-checked')]
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Store Logo ') and contains(@class,'checkbox-checked')]")
+	public WebElement StoreLogo_Checkbox_SLD;
 
 	@FindBy(xpath ="//span[.='emailTemplateTextColor']/../../../div[2]/div[2]")
-	WebElement Text_Color_Button;
+	public WebElement Text_Color_Button;
 
 	@FindBy(xpath = "//div[@class='row no-gutters preset-colors']/div[3]")
-	WebElement Text_Color;
+	public WebElement Text_Color;
 
 	@FindBy(xpath = "//span[.='emailTemplateBackgroundColor']/../../../div[2]/div[2]")
 	WebElement Background_Color_Button;
@@ -75,103 +107,182 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	WebElement scroll;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateCheckNumber']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement check_Number;
+	public WebElement check_Number;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateTableName']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Table_No;
+	public WebElement Table_No;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Table No ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Table_No_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Table No ')][contains(@class,'ng-untouched')]")
+	public WebElement Table_No_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateServerName']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Server_Name;
+	public WebElement Server_Name;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateDate']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Date_Time;
+	public WebElement Date_Time;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Date & Time ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Date_Time_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Date & Time ')][contains(@class,'ng-untouched')]")
+	public WebElement Date_Time_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateCustomerName']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Customer_Name;
+	public WebElement Customer_Name;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateSeatNumber']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Seat_Number;
+	public WebElement Seat_Number;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Seat Number ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Seat_Number_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Seat Number ')][contains(@class,'ng-untouched')]")
+	public WebElement Seat_Number_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateServiceType']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Service_Type;
+	public WebElement Service_Type;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateOrderSummary']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement order_summary_Checkbox;;
+	public WebElement order_summary_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Order Summary ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Order_SummaryCheckbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Order Summary ')][contains(@class,'ng-untouched')]")
+	public WebElement Order_SummaryCheckbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateNameAndPrice']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Roll_Out_Modifier_Price;
+	public WebElement Roll_Out_Modifier_Price;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Roll Out Modifier Price To Menu ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Roll_Out_Modifier_Price_CheckBox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Roll Out Modifier Price To Menu ')][contains(@class,'ng-untouched')]")
+	public WebElement Roll_Out_Modifier_Price_CheckBox_SLD1;
+
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateexcludeZeroPriceModifier']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Exclude_Zero_Price_Modifier;
+	public WebElement Exclude_Zero_Price_Modifier;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Exclude Zero Price Modifier ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Exclude_Zero_Price_Modifier_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Exclude Zero Price Modifier ')][contains(@class,'ng-untouched')]")
+	public WebElement Exclude_Zero_Price_Modifier_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateMenuDiscount']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Menu_Item_Discount;
+	public WebElement Menu_Item_Discount;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Discount under the Menu Item ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Menu_Item_Discount_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Discount under the Menu Item ')][contains(@class,'ng-untouched')]")
+	public WebElement Menu_Item_Discount_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateisOtherLanguageMenuName']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Secondary_Menu_Name;
+	public WebElement Secondary_Menu_Name;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Secondary Menu Name ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Secondary_Menu_Name_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Secondary Menu Name ')][contains(@class,'ng-untouched')]")
+	public WebElement Secondary_Menu_Name_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateModifier']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Secondary_Modifier_Name;
+	public WebElement Secondary_Modifier_Name;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateExcludeZeroPriceMenu']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Exclude_Zero_Price_Menu;
+	public WebElement Exclude_Zero_Price_Menu;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Exclude Zero Price Menu Item ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Exclude_Zero_Price_Menu_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Exclude Zero Price Menu Item ')][contains(@class,'ng-untouched')]")
+	public WebElement Exclude_Zero_Price_Menu_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateTaxSummary']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Tax_Summary;
+	public WebElement Tax_Summary;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tax Summary ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Tax_Summary_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tax Summary ')][contains(@class,'ng-untouched')]")
+	public WebElement Tax_Summary_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateCheckTotal']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Check_Total;
+	public WebElement Check_Total;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Check Total ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Check_Total_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Check Total ')][contains(@class,'ng-untouched')]")
+	public WebElement Check_Total_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateTip']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Tip;
+	public WebElement Tip;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tip ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Tip_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tip ')][contains(@class,'ng-untouched')]")
+	public WebElement Tip_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateTenderDetails']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Tender_Details;
+	public WebElement Tender_Details;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tender Details ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Tender_Details_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Tender Details ')][contains(@class,'ng-untouched')]")
+	public WebElement Tender_Details_Checkbox_SLD1;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplatePayCardInfo']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Card_Details;
+	public WebElement Card_Details;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateSignature']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement signature;
+	public WebElement signature;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateBarcode']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement BarCode;
+	public WebElement BarCode;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateLingaPromotion']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Powered_By;
+	public WebElement Powered_By;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateSocialIcons']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Social_Icon;
+	public WebElement Social_Icon;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateFb']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Facebook;
+	public WebElement Facebook;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateTwitter']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Twitter;
+	public WebElement Twitter;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateLinkedin']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement LinkedIn;
+	public WebElement LinkedIn;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateCusFeedBack']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Customer_Feedback;
+	public WebElement Customer_Feedback;
 
 	@FindBy(xpath = "//app-checkbox[@name='emailTemplateNotes']/div/mat-checkbox/label/span[@class='mat-checkbox-inner-container']")
-	WebElement Special_Note;
+	public WebElement Special_Note;
 
 	@FindBy(xpath = "//app-input[@name='emailTemplateFreeText']/div/div/mat-form-field/div/div/div[4]/textarea")
-	WebElement Special_Note_Text;
+	public WebElement Special_Note_Text;
 
 	@FindBy(xpath = "//app-input[@name='emailTemplateFbLink']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Facebook_Text;
+	public WebElement Facebook_Text;
 
 	@FindBy(xpath = "//app-input[@name='emailTemplateTwitterLink']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Twitter_Text;
+	public WebElement Twitter_Text;
 
 	@FindBy(xpath = "//app-input[@name='emailTemplateLinkedinLink']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement LinkedIn_Text;
+	public WebElement LinkedIn_Text;
 
 	@FindBy(xpath = "//app-input[@name='emailTemplateLogoUrl']/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement StoreLogo_Text;
+	public WebElement StoreLogo_Text;
 
 	@FindBy(xpath = "//button[.='SAVE']")
 	WebElement save;
@@ -1078,7 +1189,12 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Include Card Details') and contains(@class,'checkbox-checked')]")
-	WebElement IncludeCardDetails_Enabled;
+	public WebElement IncludeCardDetails_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Include Card Details ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement IncludeCardDetailsCheckbox_SLD;
+	
+	
 	public void Click_Card_Details()
 	{
 		Card_Details.click();
@@ -1115,7 +1231,11 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Signature') and contains(@class,'checkbox-checked')]")
-	WebElement Signature_Enabled;
+	public WebElement Signature_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Signature')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement SignatureCheckbox_SLD;
+	
 	public void Click_Signature() throws Exception 
 	{
 		for(int i=1;i<=6;i++)
@@ -1154,7 +1274,11 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Barcode') and contains(@class,'checkbox-checked')]")
-	WebElement Barcode_Enabled;
+	public WebElement Barcode_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Barcode')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement BarcodeCheckbox_SLD;
+	
 	public void Click_Barcode()
 	{
 		BarCode.click();
@@ -1191,7 +1315,11 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Powered by LINGA') and contains(@class,'checkbox-checked')]")
-	WebElement PoweredByLinga_Enabled;
+	public WebElement PoweredByLinga_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Powered by LINGA')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement PoweredByLingaCheckbox_SLD;
+	
 	public void Click_PoweredBy() throws Exception
 	{
 		for(int i=1;i<=4;i++)
@@ -1232,7 +1360,10 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Social Icons') and contains(@class,'checkbox-checked')]")
-	WebElement SocialIcons_Enabled;
+	public WebElement SocialIcons_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Social Icons')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement SocialIconsCheckbox_SLD;
 	public void Click_Social_Icon() throws Exception 
 	{
 		for(int i=1;i<=4;i++)
@@ -1281,7 +1412,10 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Facebook Link') and contains(@class,'checkbox-checked')]")
-	WebElement FaceBookLink_Enabled;
+	public WebElement FaceBookLink_Enabled;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Facebook Link')][contains(@class,'mat-checkbox-checked')]")
+	WebElement FaceBookLinkCheckbox_SLD;
 	public void Click_Facebook() throws Exception
 	{
 		Facebook.click();
@@ -1334,7 +1468,7 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Twitter Link') and contains(@class,'checkbox-checked')]")
-	WebElement TwitterLink_Enabled;
+	public WebElement TwitterLink_Enabled;
 	public void Click_Twitter() throws Exception 
 	{
 		Twitter.click();
@@ -1381,7 +1515,7 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Linkedin Link') and contains(@class,'checkbox-checked')]")
-	WebElement LinkedinLink_Enabled;
+	public WebElement LinkedinLink_Enabled;
 	public void Click_LinkedIn() throws Exception
 	{
 		LinkedIn.click();
@@ -1428,7 +1562,7 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Feedback') and contains(@class,'checkbox-checked')]")
-	WebElement CustomerFeedback_Enabled;
+	public WebElement CustomerFeedback_Enabled;
 	public void Click_Customer_Feedback() 
 	{
 		Customer_Feedback.click();
@@ -1465,7 +1599,7 @@ public class Settings_Email_Receipt_Template_Page extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Special Notes') and contains(@class,'checkbox-checked')]")
-	WebElement SpecialNotes_Enabled;
+	public WebElement SpecialNotes_Enabled;
 	public void Special_Note() throws Exception 
 	{
 		Special_Note.click();

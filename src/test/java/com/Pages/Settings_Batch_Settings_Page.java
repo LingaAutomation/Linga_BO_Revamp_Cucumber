@@ -33,40 +33,46 @@ public class Settings_Batch_Settings_Page extends BasePage
 	 WebElement Batch_Settings;
 	 
 	 @FindBy(xpath = "//span[.='Enable Auto Batch']/../..//div[2]/mat-button-toggle-group/mat-button-toggle/button[.='Yes']")
-	 WebElement Enable_AutoBatch_Yes;
+	 public WebElement Enable_AutoBatch_Yes;
 	 
 	 @FindBy(xpath = "//span[.='Enable Auto Batch']/../..//div[2]/mat-button-toggle-group/mat-button-toggle/button[.='No']")
-	 WebElement Enable_AutoBatch_No;
+	 public WebElement Enable_AutoBatch_No;
 	 
-	 @FindBy(xpath = "//app-time-picker[@label='Time']/div/app-input/div/div/mat-form-field/div/div/div[4]/input")
-	 WebElement Time_Picker;
+	 @FindBy(xpath = "//span[.='Print Batch Report']/../..//div[2]/mat-button-toggle-group/mat-button-toggle/button[.='Yes']")
+	 public WebElement Print_BatchReport_Yes;
+	 
+	 @FindBy(xpath = "//span[.='Print Batch Report']/../..//div[2]/mat-button-toggle-group/mat-button-toggle/button[.='No']")
+	 public WebElement Print_BatchReport_No;
+	 
+	 @FindBy(xpath = "//app-time-picker[@customtimepickerclass='batch-settings']/div/app-input/div/div/mat-form-field/div/div/div[4]/input")
+	 public WebElement Time_Picker;
 	 
 	 @FindBy(xpath = "//span[.='Batch Submit Device']/../../div[2]/div/app-selectbox/div/mat-form-field/div/div/div/div/div")
-	 WebElement Batch_Submit_Device_DropDown;
+	 public WebElement Batch_Submit_Device_DropDown;
 	 
 	 @FindBy(xpath = "//div[@class='cdk-virtual-scroll-content-wrapper']/div[1]/select-option")
-	 WebElement Node1;
+	 public WebElement Node1;
 	 
 	 @FindBy(xpath = "//div[@class='cdk-virtual-scroll-content-wrapper']/div[2]/select-option")
-	 WebElement Node2;
+	 public WebElement Node2;
 	 
 	 @FindBy(xpath = "//span[.='Default Batch Payment ']/../../div[2]/div/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	 WebElement Default_Batch_Payment;
+	 public WebElement Default_Batch_Payment;
 	 
 	 @FindBy(xpath = "//div[contains(@class,'options')]/select-option[1]/div")
-	 WebElement Payment1;
+	 public WebElement Payment1;
 	 
 	 @FindBy(xpath = "//div[contains(@class,'options')]/select-option[2]/div")
-	 WebElement Payment2;
+	 public WebElement Payment2;
 	 
 	 @FindBy(xpath = "//span[.=' Rows per page: ']/../../div[2]/app-selectbox/div/mat-form-field/div/div/div[3]/input")
-	 WebElement Rows_Per_Page;
+	 public WebElement Rows_Per_Page;
 	 
 	 @FindBy(xpath = "//div[.=' 10 ']")
 	 WebElement Rows10;
 	 
 	 @FindBy(xpath = "//div[.=' 5 ']")
-	 WebElement Rows5;
+	 public WebElement Rows5;
 	 
 	 @FindBy(xpath = "//mat-icon[.='keyboard_arrow_right']")
 	 WebElement Right_Arrow;
@@ -78,19 +84,26 @@ public class Settings_Batch_Settings_Page extends BasePage
 	 WebElement Search;
 	 
 	 @FindBy(xpath = "//div[.='2-005']/../div[5]")
+	public
 	 WebElement delete;
 	 
 	 @FindBy(xpath = "//button[.='UPDATE ']")
-	 WebElement save_button;
+	 public WebElement Update_button;
 	 
-	 @FindBy(xpath = "//span[.=' Ticket No ']")
-	 WebElement Ticket_No;
+	 @FindBy(xpath = "//th[.=' Ticket No ']")
+	 public WebElement Ticket_No;
 	 
-	 @FindBy(xpath = "//span[.=' Amount ']")
-	 WebElement Amount;
+	 @FindBy(xpath = "//th[.=' Amount ']")
+	 public WebElement Amount;
 	 
-	 @FindBy(xpath = "//span[.=' Tip Amount ']")
-	 WebElement TipAmount;
+	 @FindBy(xpath = "//th[.=' Tip Amount ']")
+	 public  WebElement TipAmount;
+	 
+	 @FindBy(xpath = "//th[.=' Card No ']")
+	 public WebElement Card_No;
+	 
+	 @FindBy(xpath = "//th[.='Actions']")
+	 public WebElement Actions;
 	
 	 
 	 @FindBy(xpath = "//span[.='keyboard_backspace']")
@@ -156,6 +169,7 @@ public class Settings_Batch_Settings_Page extends BasePage
 	 }
 	 public void Click_Batch_Submit_Device_DropDown() throws Exception 
 	 {
+		 Thread.sleep(3000);
 		Batch_Submit_Device_DropDown.click(); 
 		
 	 }
@@ -330,7 +344,7 @@ public class Settings_Batch_Settings_Page extends BasePage
 	 {
 		 Common_XPaths cmp= new Common_XPaths();
 		 Utility ut = new Utility();
-		 save_button.click();
+		 Update_button.click();
 		 Thread.sleep(2000);
 	 		//Check whether Batch settings saved or not
 	 		if(cmp.ConfirmationAlertMsg().getText().equalsIgnoreCase("Batch Settings updated successfully"))

@@ -62,7 +62,7 @@ public class Dealer_Admin_Announcement
 	@Then("Verify the Image is Removed or not")
 	public void verifyTheImageIsRemovedOrNot() {
 	    // Write code here that turns the phrase above into concrete actions
-	    cmp.Assertion_Validation_False_Element(lap.Uploaded_Image_Icon);
+	    cmp.Assertion_Validation_False_Element_Not_Displayed(lap.Uploaded_Image_Icon);
 	}
 	
 	@When("I Change the From Date")

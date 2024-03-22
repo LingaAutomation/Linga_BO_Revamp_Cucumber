@@ -21,9 +21,9 @@ public class Label_TemplatePage extends BasePage
 //	public SelfHealingDriver driver;
 //	public ExtentTest test;
 	Utility ut=new Utility();
-	Common_XPaths cmp;
+	Common_XPaths cmp=new Common_XPaths();
 	
-	TaxesPage tx;
+	TaxesPage tx=new TaxesPage();
 //	public Label_TemplatePage(SelfHealingDriver driver,ExtentTest test)
 //	{
 ////		this.driver=driver;
@@ -35,7 +35,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//button[contains(.,'Epson Box Label Template')]")
-	WebElement EpsonBox_LabelTemplateTab;
+	public WebElement EpsonBox_LabelTemplateTab;
 	
 	public void Click_EpsonBox_LabelTemplate()
 	{
@@ -43,7 +43,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//button[contains(.,'Zebra Box Label Template')]")
-	WebElement Zebra_LabelTemplateTab;
+	public WebElement Zebra_LabelTemplateTab;
 	
 	public void Click_Zebra_LabelTemplate()
 	{
@@ -51,7 +51,10 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//button[contains(.,'Kitchen Box Label Template')]")
-	WebElement Kitchen_LabelTemplateTab;
+	public WebElement Kitchen_LabelTemplateTab;
+	
+	@FindBy(xpath = "//button[contains(.,'SKU Code Label Template')]")
+	public WebElement SKU_CodeLabelTemplate;
 	
 	public void Click_Kitchen_LabelTemplate()
 	{
@@ -59,10 +62,10 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Enable Autocut')]")
-	WebElement Enable_Autocut_ChkBox;
+	public WebElement Enable_Autocut_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Enable Autocut')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Enable_Autocut_ChkBox_SLD;
+	public WebElement Enable_Autocut_ChkBox_SLD;
 	
 	public WebElement Enable_Autocut_CheckBox()
 	{
@@ -103,8 +106,11 @@ public class Label_TemplatePage extends BasePage
 		}
 	}
 	
+	@FindBy(xpath = "//label[contains(.,' Select Template ')]/../../input")
+	public WebElement SKU_SelectTemplateInputBox;
+	
 	@FindBy(xpath = "//label[contains(.,'Select template')]/../../input")
-	WebElement Select_TemplateInputBox;
+	public WebElement Select_TemplateInputBox;
 	
 	public String Selected_TemplateName()
 	{
@@ -129,7 +135,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Width')]/../../input")
-	WebElement Width_InputBox;
+	public WebElement Width_InputBox;
 	
 	public WebElement Width_InputBox()
 	{
@@ -144,7 +150,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Height')]/../../input")
-	WebElement Height_InputBox;
+	public WebElement Height_InputBox;
 	
 	public WebElement Height_InputBox()
 	{
@@ -160,12 +166,12 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//div[.='Font Options']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement FontOptions_ArrowRightBtn;
+	public WebElement FontOptions_ArrowRightBtn;
 	
 
 	
 	@FindBy(xpath = "//div[.='Font Options']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement FontOptions_ArrowDownBtn;
+	public WebElement FontOptions_ArrowDownBtn;
 	
 	public void Open_FontOptions_Screen() throws Exception
 	{
@@ -198,7 +204,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Check & Date')]/../../input")
-	WebElement Check_Date_InputBox;
+	public WebElement Check_Date_InputBox;
 	
 	public void Select_Check_Date_Option()
 	{
@@ -222,7 +228,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Business Name')]/../../input")
-	WebElement Business_Name_InputBox;
+	public WebElement Business_Name_InputBox;
 	
 	public void Select_Business_Name_Option()
 	{
@@ -246,7 +252,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Menu Item Name')]/../../input")
-	WebElement Menu_ItemName_InputBox;
+	public WebElement Menu_ItemName_InputBox;
 	
 	public void Select_MenuItem_Name_Option()
 	{
@@ -270,7 +276,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Customer Address & Phone')]/../../input")
-	WebElement Customer_Address_Phone_InputBox;
+	public WebElement Customer_Address_Phone_InputBox;
 	
 	public void Select_Customer_Address_Phone_Option()
 	{
@@ -294,7 +300,10 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Delivery Notes')]/../../input")
-	WebElement Delivery_Notes_InputBox;
+	public WebElement Delivery_Notes_InputBox;
+	
+	@FindBy(xpath = "//label[contains(.,' Customer Info ')]/../../input")
+	public WebElement CstomerInfo_InputBox;
 	
 	public void Select_Delivery_Notes_Option()
 	{
@@ -318,7 +327,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Modifiers')]/../../input")
-	WebElement Modifiers_InputBox;
+	public WebElement Modifiers_InputBox;
 	
 	public void Select_Modifiers_Option()
 	{
@@ -342,7 +351,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Customer Info')]/../../input")
-	WebElement CustomerInfo_EpsonBox_InputBox;
+	public WebElement CustomerInfo_EpsonBox_InputBox;
 	
 	public void Select_CustomerInfo_EpsonBox_Option()
 	{
@@ -366,10 +375,16 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Check Details']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement CheckDetails_ArrowRightBtn;
+	public WebElement CheckDetails_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Check Details']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement CheckDetails_ArrowDownBtn;
+	public WebElement CheckDetails_ArrowDownBtn;
+	
+	@FindBy(xpath = "//label[contains(.,' Select Template ')]/../../input")
+	public WebElement Select_Template_InputBox;
+	
+	@FindBy(xpath = "//label[contains(.,' Select Label Size ')]/../../input")
+	public WebElement Select_LabelSize_Input;
 	
 	public void Open_CheckDetails_Screen() throws Exception
 	{
@@ -405,13 +420,13 @@ public class Label_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Business Name')]")
-	WebElement Business_Name_CheckDetails_ChkBox;
+	public WebElement Business_Name_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Business Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Business_Name_CheckDetails_ChkBox_SLD;
+	public WebElement Business_Name_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Business Name')][contains(@class,'ng-untouched')]")
-	WebElement Business_Name_CheckDetails_ChkBox_SLD1;
+	public WebElement Business_Name_CheckDetails_ChkBox_SLD1;
 	
 	
 	public WebElement Business_Name_CheckDetails_CheckBox()
@@ -430,13 +445,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Server Name')]")
-	WebElement Server_Name_CheckDetails_ChkBox;
+	public WebElement Server_Name_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Server Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Server_Name_CheckDetails_ChkBox_SLD;
+	public WebElement Server_Name_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Server Name')][contains(@class,'ng-untouched')]")
-	WebElement Server_Name_CheckDetails_ChkBox_SLD1;
+	public WebElement Server_Name_CheckDetails_ChkBox_SLD1;
 	
 	
 	public WebElement Server_Name_CheckDetails_CheckBox()
@@ -456,13 +471,13 @@ public class Label_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Number')]")
-	WebElement Check_Number_CheckDetails_ChkBox;
+	public WebElement Check_Number_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Check_Number_CheckDetails_ChkBox_SLD;
+	public WebElement Check_Number_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Check Number')][contains(@class,'ng-untouched')]")
-	WebElement Check_Number_CheckDetails_ChkBox_SLD1;
+	public WebElement Check_Number_CheckDetails_ChkBox_SLD1;
 	
 	
 	public WebElement Check_Number_CheckDetails_CheckBox()
@@ -482,13 +497,13 @@ public class Label_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type')]")
-	WebElement Order_Type_CheckDetails_ChkBox;
+	public WebElement Order_Type_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Order_Type_CheckDetails_ChkBox_SLD;
+	public WebElement Order_Type_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type')][contains(@class,'ng-untouched')]")
-	WebElement Order_Type_CheckDetails_ChkBox_SLD1;
+	public WebElement Order_Type_CheckDetails_ChkBox_SLD1;
 	
 	public WebElement Order_Type_CheckDetails_CheckBox()
 	{
@@ -507,13 +522,13 @@ public class Label_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Date & Time')]")
-	WebElement Date_Time_CheckDetails_ChkBox;
+	public WebElement Date_Time_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Date & Time')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Date_Time_CheckDetails_ChkBox_SLD;
+	public WebElement Date_Time_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Date & Time')][contains(@class,'ng-untouched')]")
-	WebElement Date_Time_CheckDetails_ChkBox_SLD1;
+	public WebElement Date_Time_CheckDetails_ChkBox_SLD1;
 	
 	public WebElement Date_Time_CheckDetails_CheckBox()
 	{
@@ -532,13 +547,13 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Pay Status')]")
-	WebElement PayStatus_CheckDetails_ChkBox;
+	public WebElement PayStatus_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Pay Status')][contains(@class,'mat-checkbox-checked')]")
-	WebElement PayStatus_CheckDetails_ChkBox_SLD;
+	public WebElement PayStatus_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Check Details')]/../div/div/div/div/div[2]/div/app-checkbox/div/mat-checkbox[contains(.,'Pay Status')][contains(@class,'ng-untouched')]")
-	WebElement PayStatus_CheckDetails_ChkBox_SLD1;
+	public WebElement PayStatus_CheckDetails_ChkBox_SLD1;
 	
 	public WebElement PayStatus_CheckDetails_CheckBox()
 	{
@@ -556,13 +571,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Number')]")
-	WebElement MenuItem_Number_CheckDetails_ChkBox;
+	public WebElement MenuItem_Number_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement MenuItem_Number_CheckDetails_ChkBox_SLD;
+	public WebElement MenuItem_Number_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Number')][contains(@class,'ng-untouched')]")
-	WebElement MenuItem_Number_CheckDetails_ChkBox_SLD1;
+	public WebElement MenuItem_Number_CheckDetails_ChkBox_SLD1;
 
 	public WebElement MenuItem_Number_CheckDetails_CheckBox()
 	{
@@ -581,7 +596,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//label[contains(.,'Business Name Font')]/../../input")
-	WebElement BusinessName_Zebra_Font_InputBox;
+	public WebElement BusinessName_Zebra_Font_InputBox;
 	
 	public void Select_BusinessName_Zebra_Font_Option()
 	{
@@ -606,7 +621,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//label[contains(.,'Check Details')]/../../input")
-	WebElement CheckDetails_Font_InputBox;
+	public WebElement CheckDetails_Font_InputBox;
 	
 	public void Select_CheckDetails_Font_Option()
 	{
@@ -630,7 +645,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Order Type & Pay Status')]/../../input")
-	WebElement OrderType_PayStatus_InputBox;
+	public WebElement OrderType_PayStatus_InputBox;
 	
 	public void Select_OrderType_PayStatus_Font_Option()
 	{
@@ -654,13 +669,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Check Details')]")
-	WebElement CheckDetails_CheckDetails_ChkBox;
+	public WebElement CheckDetails_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Check Details')][contains(@class,'mat-checkbox-checked')]")
-	WebElement CheckDetails_CheckDetails_ChkBox_SLD;
+	public WebElement CheckDetails_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Check Details')][contains(@class,'ng-untouched')]")
-	WebElement CheckDetails_CheckDetails_ChkBox_SLD1;
+	public WebElement CheckDetails_CheckDetails_ChkBox_SLD1;
 	
 	public WebElement CheckDetails_CheckDetails_CheckBox()
 	{
@@ -678,13 +693,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type & Pay Status')]")
-	WebElement OrderType_PayStatus_CheckDetails_ChkBox;
+	public WebElement OrderType_PayStatus_CheckDetails_ChkBox;
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type & Pay Status')]")
-	WebElement OrderType_PayStatus_CheckDetails_ChkBox_SLD;
+	public WebElement OrderType_PayStatus_CheckDetails_ChkBox_SLD;
 	
 	@FindBy(xpath = "//div[contains(.,'Dash Dividers')]/div/div/app-checkbox/div/mat-checkbox[contains(.,'Order Type & Pay Status')][contains(@class,'ng-untouched')]")
-	WebElement OrderType_PayStatus_CheckDetails_ChkBox_SLD1;
+	public WebElement OrderType_PayStatus_CheckDetails_ChkBox_SLD1;
 	
 	public WebElement OrderType_PayStatus_CheckDetails_CheckBox()
 	{
@@ -703,10 +718,10 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//div[.='Menu Item Info']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement MenuItem_Info_ArrowRightBtn;
+	public WebElement MenuItem_Info_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Menu Item Info']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement MenuItem_Info_ArrowDownBtn;
+	public WebElement MenuItem_Info_ArrowDownBtn;
 	
 	public void Open_MenuItem_Info_Screen() throws Exception
 	{
@@ -739,13 +754,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name')]")
-	WebElement MenuItem_Name_MenuItemInfo_ChkBox;
+	public WebElement MenuItem_Name_MenuItemInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement MenuItem_Name_MenuItemInfo_ChkBox_SLD;
+	public WebElement MenuItem_Name_MenuItemInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name')][contains(@class,'ng-untouched')]")
-	WebElement MenuItem_Name_MenuItemInfo_ChkBox_SLD1;
+	public WebElement MenuItem_Name_MenuItemInfo_ChkBox_SLD1;
 	
 	
 	public WebElement MenuItem_Name_MenuItemInfo_CheckBox()
@@ -766,13 +781,13 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Modifiers')]")
-	WebElement Modifiers_MenuItemInfo_ChkBox;
+	public WebElement Modifiers_MenuItemInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Modifiers')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Modifiers_MenuItemInfo_ChkBox_SLD;
+	public WebElement Modifiers_MenuItemInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Modifiers')][contains(@class,'ng-untouched')]")
-	WebElement Modifiers_MenuItemInfo_ChkBox_SLD1;
+	public WebElement Modifiers_MenuItemInfo_ChkBox_SLD1;
 	
 	
 	public WebElement Modifiers_MenuItemInfo_CheckBox()
@@ -791,13 +806,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Serving Size')]")
-	WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox;
+	public WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Serving Size')][contains(@class,'mat-checkbox-checked')]")
-	WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox_SLD;
+	public WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Serving Size')][contains(@class,'ng-untouched')]")
-	WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox_SLD1;
+	public WebElement MenuItem_ServingSize_MenuItemInfo_ChkBox_SLD1;
 	
 	
 	public WebElement MenuItem_ServingSize_MenuItemInfo_CheckBox()
@@ -816,13 +831,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Item Notes')]")
-	WebElement ItemNotes_MenuItemInfo_ChkBox;
+	public WebElement ItemNotes_MenuItemInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Item Notes')][contains(@class,'mat-checkbox-checked')]")
-	WebElement ItemNotes_MenuItemInfo_ChkBox_SLD;
+	public WebElement ItemNotes_MenuItemInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Item Notes')][contains(@class,'ng-untouched')]")
-	WebElement ItemNotes_MenuItemInfo_ChkBox_SLD1;
+	public WebElement ItemNotes_MenuItemInfo_ChkBox_SLD1;
 	
 	
 	public WebElement ItemNotes_MenuItemInfo_CheckBox()
@@ -841,13 +856,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Bottom Divider')]")
-	WebElement BottomDivider_MenuItemInfo_ChkBox;
+	public WebElement BottomDivider_MenuItemInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Bottom Divider')][contains(@class,'mat-checkbox-checked')]")
-	WebElement BottomDivider_MenuItemInfo_ChkBox_SLD;
+	public WebElement BottomDivider_MenuItemInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Bottom Divider')][contains(@class,'ng-untouched')]")
-	WebElement BottomDivider_MenuItemInfo_ChkBox_SLD1;
+	public WebElement BottomDivider_MenuItemInfo_ChkBox_SLD1;
 	
 	public WebElement BottomDivider_MenuItemInfo_CheckBox()
 	{
@@ -880,7 +895,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//label[contains(.,'Item Name & Serving Size')]/../../input")
-	WebElement ItemName_ServingSize_MenuItemInfoInputBox;
+	public WebElement ItemName_ServingSize_MenuItemInfoInputBox;
 	
 
 	public void Select_ItemName_ServingSize_MenuItemInfo_Font_Option()
@@ -905,7 +920,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Modifiers & Notes')]/../../input")
-	WebElement Modifiers_Notes_MenuItemInfoInputBox;
+	public WebElement Modifiers_Notes_MenuItemInfoInputBox;
 	
 	public void Select_Modifiers_Notes_MenuItemInfo_Font_Option()
 	{
@@ -929,10 +944,10 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Customer_Info_ArrowRightBtn;
+	public WebElement Customer_Info_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Customer Info']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Customer_Info_ArrowDownBtn;
+	public WebElement Customer_Info_ArrowDownBtn;
 	
 	public void Open_Customer_Info_Screen() throws Exception
 	{
@@ -965,14 +980,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Name')]")
-	WebElement CustomerName_CustomerInfo_ChkBox;
+	public WebElement CustomerName_CustomerInfo_ChkBox;
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Name')][contains(@class,'mat-checkbox-checked')]")
-	WebElement CustomerName_CustomerInfo_ChkBox_SLD;
+	public WebElement CustomerName_CustomerInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Name')][contains(@class,'ng-untouched')]")
-	WebElement CustomerName_CustomerInfo_ChkBox_SLD1;
+	public WebElement CustomerName_CustomerInfo_ChkBox_SLD1;
 	
 	
 	public WebElement CustomerName_CustomerInfo_CheckBox()
@@ -991,14 +1006,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Address')]")
-	WebElement CustomerAddress_CustomerInfo_ChkBox;
+	public WebElement CustomerAddress_CustomerInfo_ChkBox;
 	
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Address')][contains(@class,'mat-checkbox-checked')]")
-	WebElement CustomerAddress_CustomerInfo_ChkBox_SLD;
+	public WebElement CustomerAddress_CustomerInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Customer Address')][contains(@class,'ng-untouched')]")
-	WebElement CustomerAddress_CustomerInfo_ChkBox_SLD1;
+	public WebElement CustomerAddress_CustomerInfo_ChkBox_SLD1;
 	
 	
 	public WebElement CustomerAddress_CustomerInfo_CheckBox()
@@ -1017,13 +1032,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Notes')]")
-	WebElement DeliveryNotes_CustomerInfo_ChkBox;
+	public WebElement DeliveryNotes_CustomerInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Notes')][contains(@class,'mat-checkbox-checked')]")
-	WebElement DeliveryNotes_CustomerInfo_ChkBox_SLD;
+	public WebElement DeliveryNotes_CustomerInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Notes')][contains(@class,'ng-untouched')]")
-	WebElement DeliveryNotes_CustomerInfo_ChkBox_SLD1;
+	public WebElement DeliveryNotes_CustomerInfo_ChkBox_SLD1;
 	
 	public WebElement DeliveryNotes_CustomerInfo_CheckBox()
 	{
@@ -1041,14 +1056,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Phone Number')]")
-	WebElement PhoneNumber_CustomerInfo_ChkBox;
+	public WebElement PhoneNumber_CustomerInfo_ChkBox;
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Phone Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement PhoneNumber_CustomerInfo_ChkBox_SLD;
+	public WebElement PhoneNumber_CustomerInfo_ChkBox_SLD;
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Phone Number')][contains(@class,'ng-untouched')]")
-	WebElement PhoneNumber_CustomerInfo_ChkBox_SLD1;
+	public WebElement PhoneNumber_CustomerInfo_ChkBox_SLD1;
 	
 	public WebElement PhoneNumber_CustomerInfo_CheckBox()
 	{
@@ -1066,13 +1081,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Right Divider')]")
-	WebElement RightDivider_CustomerInfo_ChkBox;
+	public WebElement RightDivider_CustomerInfo_ChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Right Divider')][contains(@class,'mat-checkbox-checked')]")
-	WebElement RightDivider_CustomerInfo_ChkBox_SLD;
+	public WebElement RightDivider_CustomerInfo_ChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Right Divider')][contains(@class,'ng-untouched')]")
-	WebElement RightDivider_CustomerInfo_ChkBox_SLD1;
+	public WebElement RightDivider_CustomerInfo_ChkBox_SLD1;
 	
 	
 	public WebElement RightDivider_CustomerInfo_CheckBox()
@@ -1091,7 +1106,7 @@ public class Label_TemplatePage extends BasePage
 	}
 
 	@FindBy(xpath = "//label[contains(.,'Customer Name')]/../../input")
-	WebElement CustomerName_CustomerInfoInputBox;
+	public WebElement CustomerName_CustomerInfoInputBox;
 	
 	public void Select_CustomerName_CustomerInfo_Font_Option()
 	{
@@ -1116,7 +1131,7 @@ public class Label_TemplatePage extends BasePage
 
 	
 	@FindBy(xpath = "//label[contains(.,'Customer Details')]/../../input")
-	WebElement CustomerDetails_CustomerInfoInputBox;
+	public WebElement CustomerDetails_CustomerInfoInputBox;
 	
 	
 	public void Select_CustomerDetails_CustomerInfo_Font_Option()
@@ -1143,10 +1158,10 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../div[contains(.,'keyboard_arrow_right')]")
-	WebElement Order_Summary_ArrowRightBtn;
+	public WebElement Order_Summary_ArrowRightBtn;
 	
 	@FindBy(xpath = "//div[.='Order Summary']/../../div[contains(.,'keyboard_arrow_down')]")
-	WebElement Order_Summary_ArrowDownBtn;
+	public WebElement Order_Summary_ArrowDownBtn;
 	
 
 	public void Open_Order_Summary_Screen() throws Exception
@@ -1180,13 +1195,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sub Total')]")
-	WebElement SubTotal_OrderSummaryChkBox;
+	public WebElement SubTotal_OrderSummaryChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sub Total')][contains(@class,'mat-checkbox-checked')]")
-	WebElement SubTotal_OrderSummaryChkBox_SLD;
+	public WebElement SubTotal_OrderSummaryChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sub Total')][contains(@class,'ng-untouched')]")
-	WebElement SubTotal_OrderSummaryChkBox_SLD1;
+	public WebElement SubTotal_OrderSummaryChkBox_SLD1;
 	
 	public WebElement SubTotal_OrderSummary_CheckBox()
 	{
@@ -1204,13 +1219,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip')]")
-	WebElement Tip_OrderSummaryChkBox;
+	public WebElement Tip_OrderSummaryChkBox;
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tip_OrderSummaryChkBox_SLD;
+	public WebElement Tip_OrderSummaryChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tip')][contains(@class,'ng-untouched')]")
-	WebElement Tip_OrderSummaryChkBox_SLD1;
+	public WebElement Tip_OrderSummaryChkBox_SLD1;
 	
 	public WebElement Tip_OrderSummary_CheckBox()
 	{
@@ -1228,14 +1243,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Discounts')]")
-	WebElement Discounts_OrderSummaryChkBox;
+	public WebElement Discounts_OrderSummaryChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Discounts')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Discounts_OrderSummaryChkBox_SLD;
+	public WebElement Discounts_OrderSummaryChkBox_SLD;
 	
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Discounts')][contains(@class,'ng-untouched')]")
-	WebElement Discounts_OrderSummaryChkBox_SLD1;
+	public WebElement Discounts_OrderSummaryChkBox_SLD1;
 	
 	public WebElement Discounts_OrderSummary_CheckBox()
 	{
@@ -1253,14 +1268,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Order Summary')]/../div/div/div/div/div[2]/div/app-checkbox[2]/div/mat-checkbox[contains(.,'Total')]")
-	WebElement Total_OrderSummaryChkBox;
+	public WebElement Total_OrderSummaryChkBox;
 
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Order Summary')]/../div/div/div/div/div[2]/div/app-checkbox[2]/div/mat-checkbox[contains(.,'Total')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Total_OrderSummaryChkBox_SLD;
+	public WebElement Total_OrderSummaryChkBox_SLD;
 	
 
 	@FindBy(xpath = "//mat-expansion-panel-header[contains(.,'Order Summary')]/../div/div/div/div/div[2]/div/app-checkbox[2]/div/mat-checkbox[contains(.,'Total')][contains(@class,'ng-untouched')]")
-	WebElement Total_OrderSummaryChkBox_SLD1;
+	public WebElement Total_OrderSummaryChkBox_SLD1;
 	
 	public WebElement Total_OrderSummary_CheckBox()
 	{
@@ -1278,13 +1293,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Fee')]")
-	WebElement DeliveryFee_OrderSummaryChkBox;
+	public WebElement DeliveryFee_OrderSummaryChkBox;
 
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Fee')][contains(@class,'mat-checkbox-checked')]")
-	WebElement DeliveryFee_OrderSummaryChkBox_SLD;
+	public WebElement DeliveryFee_OrderSummaryChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Delivery Fee')][contains(@class,'ng-untouched')]")
-	WebElement DeliveryFee_OrderSummaryChkBox_SLD1;
+	public WebElement DeliveryFee_OrderSummaryChkBox_SLD1;
 	
 	public WebElement DeliveryFee_OrderSummary_CheckBox()
 	{
@@ -1303,14 +1318,14 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Balance Due')]")
-	WebElement BalanceDue_OrderSummaryChkBox;
+	public WebElement BalanceDue_OrderSummaryChkBox;
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Balance Due')][contains(@class,'mat-checkbox-checked')]")
-	WebElement BalanceDue_OrderSummaryChkBox_SLD;
+	public WebElement BalanceDue_OrderSummaryChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Balance Due')][contains(@class,'ng-untouched')]")
-	WebElement BalanceDue_OrderSummaryChkBox_SLD1;
+	public WebElement BalanceDue_OrderSummaryChkBox_SLD1;
 	
 	public WebElement BalanceDue_OrderSummary_CheckBox()
 	{
@@ -1328,13 +1343,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax')]")
-	WebElement Tax_OrderSummaryChkBox;
+	public WebElement Tax_OrderSummaryChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax')][contains(@class,'mat-checkbox-checked')]")
-	WebElement Tax_OrderSummaryChkBox_SLD;
+	public WebElement Tax_OrderSummaryChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Tax')][contains(@class,'ng-untouched')]")
-	WebElement Tax_OrderSummaryChkBox_SLD1;
+	public WebElement Tax_OrderSummaryChkBox_SLD1;
 	
 	public WebElement Tax_OrderSummary_CheckBox()
 	{
@@ -1352,7 +1367,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Order Summary')]/../../input")
-	WebElement OrderSummary_OrderSummaryInputBox;
+	public WebElement OrderSummary_OrderSummaryInputBox;
 	
 	public void Select_OrderSummary_OrderSummary_Font_Option()
 	{
@@ -1376,7 +1391,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Balance Due')]/../../input")
-	WebElement BalanceDue_OrderSummaryInputBox;
+	public WebElement BalanceDue_OrderSummaryInputBox;
 	
 	public void Select_BalanceDue_OrderSummary_Font_Option()
 	{
@@ -1401,7 +1416,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//label[contains(.,'Item Name')]/../../input")
-	WebElement Item_Name_FontSize_KitchenLabelInputBox;
+	public WebElement Item_Name_FontSize_KitchenLabelInputBox;
 	
 	public void Select_Item_Name_FontSize_KitchenLabel_Font_Option()
 	{
@@ -1425,7 +1440,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//label[contains(.,'Modifiers')]/../../input")
-	WebElement Modifiers_FontSize_KitchenLabelInputBox;
+	public WebElement Modifiers_FontSize_KitchenLabelInputBox;
 	
 	public void Select_Modifiers_FontSize_KitchenLabel_Font_Option()
 	{
@@ -1449,13 +1464,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name Bottom Divider')]")
-	WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox;
+	public WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name Bottom Divider')][contains(@class,'mat-checkbox-checked')]")
-	WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox_SLD;
+	public WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Menu Item Name Bottom Divider')][contains(@class,'ng-untouched')]")
-	WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox_SLD1;
+	public WebElement MenuItem_Name_BottomDivider_KitchenLabelChkBox_SLD1;
 
 	public WebElement MenuItem_Name_BottomDivider_KitchenLabel_CheckBox()
 	{
@@ -1486,8 +1501,8 @@ public class Label_TemplatePage extends BasePage
 	}
 
 	
-	@FindBy(xpath = "//span[contains(.,'Minimum Width is 3 and Maximum Width is 4')]")
-	WebElement Width_ErrorMsg;
+	@FindBy(xpath = "//span[.='Minimum width is 3 and Maximum width is 4']")
+	public WebElement Width_ErrorMsg;
 	
 	public void Verify_Width_ErrorMsg()
 	{
@@ -1502,8 +1517,8 @@ public class Label_TemplatePage extends BasePage
 				}
 	}
 	
-	@FindBy(xpath = "//span[contains(.,'Minimum Height is 2.5 and Maximum Height is 3')]")
-	WebElement Height_ErrorMsg;
+	@FindBy(xpath = "//span[.='Minimum height is 2.5 and Maximum height is 3']")
+	public WebElement Height_ErrorMsg;
 	
 	public void Verify_Height_ErrorMsg()
 	{
@@ -1520,7 +1535,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//span[contains(.,'Minimum Width is 2 and Maximum Width is 4')]")
-	WebElement Width_ErrorMsg_Template2;
+	public WebElement Width_ErrorMsg_Template2;
 	
 	public void Verify_Width_ErrorMsg_Template2()
 	{
@@ -1536,7 +1551,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//span[contains(.,'Minimum Height is 1 and Maximum Height is 3')]")
-	WebElement Height_ErrorMsg_Template2;
+	public WebElement Height_ErrorMsg_Template2;
 	
 	public void Verify_Height_ErrorMsg_Template2()
 	{
@@ -1556,7 +1571,7 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//h3[.='Label Template']")
-	WebElement Label_TemplateHeader;
+	public WebElement Label_TemplateHeader;
 	
 	public WebElement Label_TemplateHeader()
 	{
@@ -1564,7 +1579,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//span[contains(.,'Minimum Width is 1 and Maximum Width is 4')]")
-	WebElement Width_ErrorMsg_Two;
+	public WebElement Width_ErrorMsg_Two;
 	
 	public void Verify_Width_ErrorMsgTwo()
 	{
@@ -1580,7 +1595,7 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//span[contains(.,'Minimum Height is 1 and Maximum Height is 6')]")
-	WebElement Height_ErrorMsg_Two;
+	public WebElement Height_ErrorMsg_Two;
 	
 	public void Verify_Height_ErrorMsgTwo()
 	{
@@ -1597,13 +1612,13 @@ public class Label_TemplatePage extends BasePage
 	}
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sale Number')]")
-	WebElement SaleNumber_KitchenLabelChkBox;
+	public WebElement SaleNumber_KitchenLabelChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sale Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement SaleNumber_KitchenLabelChkBox_SLD;
+	public WebElement SaleNumber_KitchenLabelChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Sale Number')][contains(@class,'ng-untouched')]")
-	WebElement SaleNumber_KitchenLabelChkBox_SLD1;
+	public WebElement SaleNumber_KitchenLabelChkBox_SLD1;
 	
 	
 	public WebElement SaleNumber_KitchenLabel_CheckBox()
@@ -1623,13 +1638,13 @@ public class Label_TemplatePage extends BasePage
 	
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Order Number')]")
-	WebElement OrderNumber_KitchenLabelChkBox;
+	public WebElement OrderNumber_KitchenLabelChkBox;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Order Number')][contains(@class,'mat-checkbox-checked')]")
-	WebElement OrderNumber_KitchenLabelChkBox_SLD;
+	public WebElement OrderNumber_KitchenLabelChkBox_SLD;
 	
 	@FindBy(xpath = "//mat-checkbox[contains(.,'Order Number')][contains(@class,'ng-untouched')]")
-	WebElement OrderNumber_KitchenLabelChkBox_SLD1;
+	public WebElement OrderNumber_KitchenLabelChkBox_SLD1;
 	
 	
 	public WebElement OrderNumber_KitchenLabel_CheckBox()
@@ -1646,4 +1661,16 @@ public class Label_TemplatePage extends BasePage
 	{
 		return OrderNumber_KitchenLabelChkBox_SLD1;
 	}
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' SKU Code ')]")
+	public WebElement SKU_Code_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Item Name ')]")
+	public WebElement Item_name_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Price ')]")
+	public WebElement Price_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Barcode ')]")
+	public WebElement Barcode_Checkbox;
 }

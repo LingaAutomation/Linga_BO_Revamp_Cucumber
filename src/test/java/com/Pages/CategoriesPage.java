@@ -475,24 +475,26 @@ public class CategoriesPage extends BasePage
 	}
 	
 	@FindBy(xpath = "//p[contains(.,' Select Taxes ')]/../..//button[contains(.,'Show All')]")
-	WebElement ShowAll_Select_TaxBtn;
+	public WebElement ShowAll_Select_TaxBtn;
 	
 	@FindBy(xpath = "//h5[contains(.,'Kitchen Printers')]/../../..//button[contains(.,'Show All')]")
-	WebElement ShowAll_Select_KitchenPrintersBtn;
+	public WebElement ShowAll_Select_KitchenPrintersBtn;
 	
 	@FindBy(xpath = "//h5[contains(.,'Label Printers')]/../../..//button[contains(.,'Show All')]")
-	WebElement ShowAll_Select_LabelPrintersBtn;
+	public WebElement ShowAll_Select_LabelPrintersBtn;
 	
 	@FindBy(xpath = "//h5[contains(.,'Restrict Printers')]/../../..//button[contains(.,'Show All')]")
-	WebElement ShowAll_Select_RestrictPrintersBtn;
+	public WebElement ShowAll_Select_RestrictPrintersBtn;
 	
 	
 	public void Select_Taxes() throws Exception
 	{
 //		Taxes.click();
-		Thread.sleep(1000);
+		Thread.sleep(6000);
+//		cmp.Tax_Tab_inContents.click();
 		cmp.Tax_Tab_inContents.click();
-		
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(1000);
 		List<WebElement> courseList=driver.findElements(By.xpath("//div[contains(@id,'tax')]//app-chip/div/mat-chip-list/div/mat-chip"));
 		
@@ -630,6 +632,8 @@ public class CategoriesPage extends BasePage
 	{
 		Thread.sleep(1000);
 		cmp.Genaral_Tab_inContents.click();
+		Thread.sleep(1000);
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(2000);
 //		cmp.Cursor_MoveToElement(CoursingDropBtn);
 //		wait.until(ExpectedConditions.elementToBeClickable(CoursingDropBtn));
@@ -680,7 +684,16 @@ public class CategoriesPage extends BasePage
 	{
 //		//cmp=new Common_XPaths();
 		Thread.sleep(2000);
-		cmp.Genaral_Tab_inContents.click();
+		try
+		{
+//			if(cmp.Genaral_Tab_inContents.isDisplayed())
+//			{
+				cmp.Genaral_Tab_inContents.click();
+				
+//			}
+		
+		}
+		catch(Exception j) {}
 //		cmp.Cursor_MoveToElement(ServingSizeLevelDropBtn);
 //		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
 //		for(int i=1;i<=3;i++)
@@ -691,7 +704,7 @@ public class CategoriesPage extends BasePage
 //		}
 //		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		wait=new WebDriverWait(driver, Duration.ofSeconds(120));
 	
 		wait.until(ExpectedConditions.elementToBeClickable(ServingSizeLevelDropBtn)).click();

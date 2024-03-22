@@ -172,8 +172,9 @@ public void iEnableShowModifierInMenuPrintToggle() {
     mp.Enable_ShowModifierInMenuPrint();
 }
 @Given("I Select the Proceed to Inventory Mapping Tab")
-public void iSelectTheProceedToInventoryMappingTab() {
+public void iSelectTheProceedToInventoryMappingTab() throws Exception {
     // Write code here that turns the phrase above into concrete actions
+	Thread.sleep(2000);
     mp.ProceedToInventoryMappingTab().click();
 }
 @Then("Check There is unsaved data and Do you want to continue without saving Info Message is Displayed")
