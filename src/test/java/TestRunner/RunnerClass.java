@@ -13,8 +13,8 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		"de.monochromata.cucumber.report.PrettyReports:target/cucumber-html-reports", 
 //		"html:test-output","json:target/json_output/cucumber.json",
 //		"html:target/cucumber-html-report"
-		}, dryRun = false,snippets = CAMELCASE
-		, tags = "@WaitList"
+		}, dryRun = true,snippets = CAMELCASE
+		, tags = "@AccountBalance"
 		)
  
 //@Product/Items01
