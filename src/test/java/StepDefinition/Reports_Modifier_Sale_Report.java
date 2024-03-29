@@ -45,7 +45,7 @@ public class Reports_Modifier_Sale_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Modifier sales report page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/modifier");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/modifier");
 	}
 	@Given("Verifying the Modifier Sale Report Header Page")
 	public void verifyingTheModifierSaleReportHeaderPage() throws Exception {

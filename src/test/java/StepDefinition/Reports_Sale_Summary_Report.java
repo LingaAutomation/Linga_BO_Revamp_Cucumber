@@ -41,7 +41,7 @@ public class Reports_Sale_Summary_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Sale Summarys report page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/saleSummary");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/saleSummary");
 
 	}
 	@Given("Verifying the Sale Summary Report Header Page")

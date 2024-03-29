@@ -43,7 +43,7 @@ public class Settings_Payroll_Report_Settings
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Label Printer page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"payroll");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"payroll");
 	}
 	@Given("Verifying the Payroll Report Header Page")
 	public void verifyingThePayrollReportHeaderPage() throws Exception {

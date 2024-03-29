@@ -42,7 +42,7 @@ public class Settings_Label_Printers
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Label Printer page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"labelPrinters");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"labelPrinters");
 	}
 	@Given("Verifying the Label Printer Header Page")
 	public void verifyingTheLabelPrinterHeaderPage() throws Exception {

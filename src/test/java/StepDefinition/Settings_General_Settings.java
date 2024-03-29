@@ -43,7 +43,7 @@ public class Settings_General_Settings {
 		Thread.sleep(8000);
 		//load the Notifications page
 //		Thread.sleep(2000);
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"generalSettings");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"generalSettings");
 	}
 	@Given("Verifying the Settings - General Settings Header Page")
 	public void verifyingTheSettingsGeneralSettingsHeaderPage() throws Exception {

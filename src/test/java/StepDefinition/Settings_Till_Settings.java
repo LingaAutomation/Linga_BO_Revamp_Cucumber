@@ -41,7 +41,7 @@ public class Settings_Till_Settings
 		Thread.sleep(10000);
 		
 		//Load the Department page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"till-Settings");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"till-Settings");
 
 	}
 	@Given("Verifying the Settings - Till Settings Header Page")

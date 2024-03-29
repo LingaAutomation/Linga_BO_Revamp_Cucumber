@@ -39,7 +39,7 @@ public class Settings_Front_End_Receipt_Template
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Front End Receipt Template page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"frontEndReceipt");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"frontEndReceipt");
 
 	}
 	@Given("Verifying the Settings - Front End Receipt Settings Header Page")

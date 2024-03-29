@@ -39,7 +39,7 @@ public class Reports_Sale_Recap_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Daily page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/sale-recap");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/sale-recap");
 
 	}
 	@Given("Verifying the Sale Recap Sale Report Header Page")

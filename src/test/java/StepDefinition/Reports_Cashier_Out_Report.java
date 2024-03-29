@@ -38,7 +38,7 @@ public void openTheReportsCashierOutSaleReportHomePageBaseURLAndStoreID() throws
     // Write code here that turns the phrase above into concrete actions
 	Thread.sleep(5000);
 	//Load the Daily page
-	driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/cashier-out");
+	lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/cashier-out");
 
 }
 @Given("Verifying the Cashier Out Sale Report Header Page")

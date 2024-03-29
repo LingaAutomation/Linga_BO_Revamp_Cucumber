@@ -42,119 +42,140 @@ public class Settings_Table_Layout_Page extends BasePage
 	WebElement TableLayout_Heading;
 
 	@FindBy(xpath = "//button[contains(.,'Add Floor')]")
-	WebElement AddFloor_Btn;
+	public WebElement AddFloor_Btn;
 	
 	@FindBy(xpath = "//button[contains(.,'SAVE')]")
-	WebElement Save_Btn;
+	public WebElement Save_Btn;
 	
 	@FindBy(xpath = "//button[.='Save']")
-	WebElement NewFloorSave_Btn;
+	public WebElement NewFloorSave_Btn;
 	
 	@FindBy(xpath = "//h6[contains(.,'Table Display Options')]")
-	WebElement TableDisplayOptions;
+	public WebElement TableDisplayOptions;
 	
 	@FindBy(xpath = "//label[contains(.,'Table Name')]")
-	WebElement TableName;
+	public WebElement TableName;
 	
 	@FindBy(xpath = "//img[@alt='Ellipse Table']")
-	WebElement EclipseTable;
+	public WebElement EclipseTable;
 	
 	@FindBy(xpath = "//img[@alt='Rectangle Table']")
-	WebElement RectangleTable;
+	public WebElement RectangleTable;
 	
 	@FindBy(xpath = "//span[.='Edit']")
-	WebElement EditTble;
+	public WebElement EditTble;
 	
 	@FindBy(xpath = "//span[.='Delete']/..")
-	WebElement DeleteTble;
+	public WebElement DeleteTble;
 	
 	@FindBy(xpath = "//span[.='Duplicate']")
-	WebElement DuplicateTble;
+	public WebElement DuplicateTble;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Name')]/../../../input")
-	WebElement Name;
+	public WebElement Name;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Number of seats')]/../../../input")
-	WebElement EnterNumberOfSeats;
+	public WebElement EnterNumberOfSeats;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Number of seats')]/../../../../../../../div/button[1]")
-	WebElement EnterNumberOfSeats_Up;
+	public WebElement EnterNumberOfSeats_Up;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Number of seats')]/../../../../../../../div/button[2]")
-	WebElement EnterNumberOfSeats_Down;
+	public WebElement EnterNumberOfSeats_Down;
 	
 	@FindBy(xpath = "//span[contains(.,'Rectangle')]")
-	WebElement RectangleOpt;
+	public WebElement RectangleOpt;
 	
 	@FindBy(xpath = "//span[contains(.,'Ellipse')]")
-	WebElement EclipseOpt;
+	public WebElement EclipseOpt;
 	
 	@FindBy(xpath = "//span[contains(.,'Update')]")
-	WebElement Update;
+	public WebElement Update;
 	
 	
 	@FindBy(xpath = "//label[contains(.,'Guest Count')]")
-	WebElement GuestCount;
+	public WebElement GuestCount;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,'Guest Count')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement GuestCount_SLD_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Table Name ')]")
+	public WebElement TableName_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Table Name ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement TableName_Checkbox_SLD;
 	
 	@FindBy(xpath = "//label[contains(.,'Customer')]")
-	WebElement Customer;
+	public WebElement Customer;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Customer ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Customer_Checkbox_SLD;
+	
+	@FindBy(xpath = "//label[contains(.,' Employee ')]")
+	public WebElement Employee;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Employee ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Employee_Checkbox_SLD;
 	
 	@FindBy(xpath = "//label[contains(.,'Wait Time')]")
-	WebElement WaitTime;
+	public WebElement WaitTime;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Wait Time ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement WaitTime_Checkbox_SLD;
 	
 	@FindBy(xpath = "//button[contains(.,'Print QR Code')]")
-	WebElement PrintQRCode;
+	public WebElement PrintQRCode;
 	
 	@FindBy(xpath = "//button[contains(.,'Floor Settings')]")
-	WebElement FloorSettings;
+	public WebElement FloorSettings;
 	
 	@FindBy(xpath = "//button[contains(.,'Delete Floor')]")
-	WebElement DeleteFloor;
+	public WebElement DeleteFloor;
 	
 	@FindBy(xpath = "//h3[contains(.,'Floor Settings')]")
-	WebElement FloorSettings_Head;
+	public WebElement FloorSettings_Head;
 	
 	@FindBy(xpath = "//h3[contains(.,'New Floor')]")
-	WebElement NewFloor;
+	public WebElement NewFloor;
 
 	@FindBy(xpath = "//mat-label[contains(.,'Floor Name')]/../../../input")
-	WebElement FloorName;
+	public WebElement FloorName;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Order Sequence')]/../../../input")
-	WebElement OrderSequence;
+	public WebElement OrderSequence;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Order Sequence')]/../../../../../../../div/button[1]")
-	WebElement OrderSequence_Up;
+	public WebElement OrderSequence_Up;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Order Sequence')]/../../../../../../../div/button[2]")
-	WebElement OrderSequence_Down;
+	public WebElement OrderSequence_Down;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Width')]/../../../input")
-	WebElement Width;
+	public WebElement Width;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Width')]/../../../../../../../div/button[1]")
-	WebElement Width_Up;
+	public WebElement Width_Up;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Width')]/../../../../../../../div/button[2]")
-	WebElement Width_Down;
+	public WebElement Width_Down;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Height')]/../../../input")
-	WebElement Hieght;
+	public WebElement Hieght;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Height')]/../../../../../../../div/button[1]")
-	WebElement Hieght_Up;
+	public WebElement Hieght_Up;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Height')]/../../../../../../../div/button[2]")
-	WebElement Hieght_Down;
+	public WebElement Hieght_Down;
 	
 	@FindBy(xpath = "//div[@class='row no-gutters']/div[1]")
-	WebElement StandardColor;
+	public WebElement StandardColor;
 	
 	@FindBy(xpath = "//div[@class='row no-gutters']/div[2]")
-	WebElement Gallery;
+	public WebElement Gallery;
 	
 	@FindBy(xpath = "//div[@class='row no-gutters']/div[3]")
-	WebElement Img_Disk;
+	public WebElement Img_Disk;
 	
 	@FindBy(xpath = "//button[.='Cancel']")
 	WebElement CancelBtn;

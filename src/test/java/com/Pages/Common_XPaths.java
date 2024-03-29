@@ -150,6 +150,12 @@ public class Common_XPaths extends BasePage
 //	@FindBy(xpath = "//button[contains(.,'Visibility')][contains(@class,'segment-button')]")
 //	public WebElement Visibility_Tab_inContents;
 	
+	@FindBy(xpath = "//button[@alt='Close']")
+	public WebElement Close_Icon_InDropDownIputBx;
+	
+	@FindBy(xpath = "//p[@class='color-red'][contains(.,'Name already exist')]")
+	public WebElement Nama_Already_ExistErrorInputBx;
+	
 	public WebElement Save_Button()
 	{
 		return SaveBtn;
@@ -1428,15 +1434,17 @@ public class Common_XPaths extends BasePage
 	
 	public void Click_DropDown(WebElement ele, String Msg) throws Exception
 	{
+		Thread.sleep(1000);
 		ele.click();
 		
-		List<WebElement> optList=driver.findElements(By.xpath("//cdk-virtual-scroll-viewport//div/div//select-option"));
+		Thread.sleep(2000);
+		List<WebElement> optList=driver.findElements(By.xpath("//select-option"));
  
 		int optionSize=optList.size();
 		if(optionSize==0)
 		{
 			
-			List<WebElement> optList1=driver.findElements(By.xpath("//cdk-virtual-scroll-viewport//div/div//select-option"));
+			List<WebElement> optList1=driver.findElements(By.xpath("//select-option"));
 			
 			int optionSize1=optList1.size();
 			
@@ -1445,12 +1453,12 @@ public class Common_XPaths extends BasePage
 			
 			Thread.sleep(1000);
 
-			driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div["+randomOpt+"]//select-option")).click();
+			driver.findElement(By.xpath("(//select-option)["+randomOpt+"]")).click();
 		
 		}
 		else if(optionSize==1)
 		{
-			driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div["+optionSize+"]//select-option")).click();
+			driver.findElement(By.xpath("(//select-option)["+optionSize+"]")).click();
 		
 		}
 		else if(optionSize<=10)
@@ -1460,7 +1468,7 @@ public class Common_XPaths extends BasePage
 		
 		Thread.sleep(1000);
 
-		driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div["+randomOpt+"]//select-option")).click();
+		driver.findElement(By.xpath("(//select-option)["+randomOpt+"]")).click();
 		}
 		else
 		{
@@ -1468,11 +1476,11 @@ public class Common_XPaths extends BasePage
 			
 			Thread.sleep(1000);
 
-			driver.findElement(By.xpath("//cdk-virtual-scroll-viewport//div/div["+randomOpt+"]//select-option")).click();
+			driver.findElement(By.xpath("(//select-option)["+randomOpt+"]")).click();
 			
 		}
 		
-		List<WebElement> ModifyWithList1=driver.findElements(By.xpath("//div[@class='option-list']/div/select-option"));
+		List<WebElement> ModifyWithList1=driver.findElements(By.xpath("//select-option"));
 
 		if(ModifyWithList1.size()!=0)
 		{

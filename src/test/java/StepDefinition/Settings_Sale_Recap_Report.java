@@ -36,7 +36,7 @@ public class Settings_Sale_Recap_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Payment Method page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"salesRecapReport");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id2")+"salesRecapReport");
 	}
 	@Given("Verifying the Settings - Sale Recap Report Settings Header Page")
 	public void verifyingTheSettingsSaleRecapReportSettingsHeaderPage() throws Exception {

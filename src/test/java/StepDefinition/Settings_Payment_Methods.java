@@ -37,7 +37,7 @@ public class Settings_Payment_Methods
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Payment Method page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"paymentMethods");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"paymentMethods");
 	}
 	@Given("Verifying the Settings - Payment Methods Settings Header Page")
 	public void verifyingTheSettingsPaymentMethodsSettingsHeaderPage() throws Exception {

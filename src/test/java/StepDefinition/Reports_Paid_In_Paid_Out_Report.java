@@ -43,7 +43,7 @@ public class Reports_Paid_In_Paid_Out_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Paid In / Paid Out Report Page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"paidInOut");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"paidInOut");
 	}
 	@Given("Verifying the Paid In\\/Paid Out Report Header Page")
 	public void verifyingThePaidInPaidOutReportHeaderPage() throws Exception {

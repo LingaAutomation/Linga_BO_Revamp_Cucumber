@@ -30,6 +30,8 @@ public class Settings_RevenueCenter_Page extends BasePage
 //		super(driver, test);
 //		PageFactory.initElements(driver, this);
 //	}
+	
+	Common_XPaths cmp=new Common_XPaths();
 
 	@FindBy(xpath = "//button[@mattooltip='Settings']")
 	WebElement Settings;
@@ -38,19 +40,19 @@ public class Settings_RevenueCenter_Page extends BasePage
 	WebElement RevenueCenter;
 
 	@FindBy(xpath = "//button[contains(.,'NEW REVENUE CENTER')]")
-	WebElement NewRevenue_Button;
+	public WebElement New_Revenue_Button;
 
 	@FindBy(xpath = "//app-new-revenue-center/div/div/div/app-input/div/div/mat-form-field/div/div/div[4]/input")
 	WebElement Name;
 
-	@FindBy(xpath = "//app-auto-complete/div/mat-form-field/div/div/div[3]/div/div/input")
-	WebElement Node;
+	@FindBy(xpath = "//input[@aria-label='Select Nodes']")
+	public WebElement Select_NodesInputBx;
 
 	@FindBy(xpath = "//option-panel/div/div/select-option/div/mat-checkbox")
-	WebElement Select_All;
+	public WebElement Select_All;
 
 	@FindBy(xpath = "//option-panel/div/div/cdk-virtual-scroll-viewport/div/div[1]/select-option/div/mat-checkbox")
-	WebElement Node1;
+	public WebElement Node1;
 
 	@FindBy(xpath = "//option-panel/div/div/cdk-virtual-scroll-viewport/div/div[2]/select-option/div/mat-checkbox")
 	WebElement Node2;
@@ -93,6 +95,12 @@ public class Settings_RevenueCenter_Page extends BasePage
 	
 	@FindBy(xpath = "//span[.=' Cancel ']")
 	WebElement CancelBtn;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Nodes')]")
+	public WebElement Nodes_Column_Field;
+	
+	@FindBy(xpath = "//button[@alt='Close']")
+	public WebElement Close_Icon_InNodesDropDownIputBx;
 
 
 	public void Navigating_Settings()
@@ -106,7 +114,7 @@ public class Settings_RevenueCenter_Page extends BasePage
 	}
 	public void Clicking_NewRevenue() 
 	{
-		NewRevenue_Button.click();
+		New_Revenue_Button.click();
 	}
 	public void Entering_Name_Node() throws Exception 
 	{
@@ -114,14 +122,14 @@ public class Settings_RevenueCenter_Page extends BasePage
 		Thread.sleep(1000);
 		Name.sendKeys("Revenue");
 		Thread.sleep(1000);
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Node1.click();
 		Thread.sleep(2000);
 	}
 	public void Entering_Node_Only() throws Exception
 	{
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Node2.click();
 	}
@@ -136,7 +144,7 @@ public class Settings_RevenueCenter_Page extends BasePage
 		Name.clear();
 		Thread.sleep(1000);
 		Name.sendKeys("sa");
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Select_All.click();
 		Thread.sleep(1000);
@@ -147,7 +155,7 @@ public class Settings_RevenueCenter_Page extends BasePage
 		Name.clear();
 		Thread.sleep(1000);
 		Name.sendKeys("1234567890123456789012346");
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Select_All.click();
 		Thread.sleep(1000); 
@@ -157,7 +165,7 @@ public class Settings_RevenueCenter_Page extends BasePage
 		Name.clear();
 		Thread.sleep(1000);
 		Name.sendKeys("hat34");
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Select_All.click();
 		Thread.sleep(1000);  
@@ -167,7 +175,7 @@ public class Settings_RevenueCenter_Page extends BasePage
 		Name.clear();
 		Thread.sleep(1000);
 		Name.sendKeys("$%^&&*&%#");
-		Node.click();
+		Select_NodesInputBx.click();
 		Thread.sleep(1000);
 		Select_All.click();
 		Thread.sleep(1000);
@@ -393,5 +401,16 @@ public class Settings_RevenueCenter_Page extends BasePage
 	public void Save() 
 	{
 		save_button.click();
+	}
+	
+	public void Search_And_SignOut(String Node) throws Exception
+	{
+		Thread.sleep(1000);
+		cmp.SearchBox.clear();
+		Thread.sleep(500);
+		cmp.SearchBox.sendKeys(Node);
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(.,'"+Node+"')]/../../td//button[@aria-label='Sign Out']")).click();
 	}
 }

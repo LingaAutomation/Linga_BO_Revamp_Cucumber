@@ -42,7 +42,7 @@ public class Reports_SubCategory_Sale_Report
 		
 		Thread.sleep(5000);
 		//Load the SubCategory page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/subCategory");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/subCategory");
 
 	}
 	@Given("Verifying the SubCategory Sale Report Header Page")

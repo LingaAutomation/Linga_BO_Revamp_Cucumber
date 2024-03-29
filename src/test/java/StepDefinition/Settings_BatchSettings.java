@@ -34,7 +34,7 @@ public class Settings_BatchSettings
 	@Given("Open BatchSettings home page BaseURL and StoreID")
 	public void OpenBatchSettingsHomePage() throws Exception 
 	{
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"batchSettings");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"batchSettings");
 	}
 
 	@Given("Verifying the BatchSettings Header Page")

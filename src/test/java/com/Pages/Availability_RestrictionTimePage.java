@@ -40,6 +40,9 @@ public class Availability_RestrictionTimePage extends BasePage
 	@FindBy(xpath = "//div[contains(@class,'col radio-box-button')]/div[contains(.,'Always')]")
 	public WebElement Always_AvailabiltyBtn;
 	
+	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'All Days')]")
+	public WebElement All_Days_AvailabiltyBtn;
+	
 	@FindBy(xpath = "//div[contains(@class,'col radio-box-button')]/div[contains(.,'Days Of Week')]")
 	public WebElement DaysOfWeek_AvailabiltyBtn;
 	

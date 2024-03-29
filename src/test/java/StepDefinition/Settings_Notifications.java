@@ -192,7 +192,8 @@ public class Settings_Notifications {
 	@Then("I Verify Notification Settings SAVED Successfully")
 	public void iVerifyNotificationSettingsSAVEDSuccessfully() throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
-	    snp.IVerify_NotificationSettingsSavedSuccessfully();	}
+	    snp.IVerify_NotificationSettingsSavedSuccessfully();	
+	    }
 
 	@Given("I Click Discount Field Toggle as Yes")
 	public void iClickDiscountFieldToggleAsYes() throws InterruptedException {

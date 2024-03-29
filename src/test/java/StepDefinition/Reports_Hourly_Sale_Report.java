@@ -40,7 +40,7 @@ public class Reports_Hourly_Sale_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Hourly Sale page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/hourly");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/hourly");
 
 	}
 	@Given("Verifying the Hourly Sale Report Header Page")

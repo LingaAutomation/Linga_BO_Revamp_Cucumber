@@ -42,7 +42,7 @@ public class Reports_Department_Sale_Report
 		
 		Thread.sleep(5000);
 		//Load the Department page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/department");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/department");
 
 	}
 	

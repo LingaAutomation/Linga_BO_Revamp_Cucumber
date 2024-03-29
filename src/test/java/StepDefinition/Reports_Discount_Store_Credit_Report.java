@@ -44,7 +44,7 @@ public class Reports_Discount_Store_Credit_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Customer Preference Summarys report page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"discount/storecredit");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"discount/storecredit");
 	}
 	@Given("Verifying the Discount Store Credit Report Header Page")
 	public void verifyingTheDiscountStoreCreditReportHeaderPage() throws Exception {

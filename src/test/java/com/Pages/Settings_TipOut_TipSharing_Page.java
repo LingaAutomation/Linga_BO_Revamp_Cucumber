@@ -58,34 +58,35 @@ public class Settings_TipOut_TipSharing_Page extends BasePage
 	WebElement SaveBtn;
 	
 	@FindBy(xpath = "//div[contains(.,'TIP OUTS') and @class='mat-tab-label-content']")
-	WebElement TipOutsTab;
+	public WebElement TipOutsTab;
 	
 	@FindBy(xpath = "//div[contains(.,'TIP SHARING') and @class='mat-tab-label-content']")
-	WebElement TipSharingTab;
+	public WebElement TipSharingTab;
 	
 	@FindBy(xpath =  "//span[.='Tip out based on percentage of sales']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
+	public
 	WebElement TipOutBasedOnPercentageOfSales_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Tip out based on percentage of sales']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement TipOutBasedOnPercentageOfSales_YesBtn;
+	public WebElement TipOutBasedOnPercentageOfSales_YesBtn;
 	
 	@FindBy(xpath =  "//span[.='Tip Share Per Hour']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement TipSharePerHour_NoBtn;
+	public WebElement TipSharePerHour_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Tip Share Per Hour']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement TipSharePerHour_YesBtn;
+	public WebElement TipSharePerHour_YesBtn;
 	
 	@FindBy(xpath = "//button[contains(.,'TIP OUT')]")
-	WebElement AddTipOutBtn;
+	public WebElement AddTipOutBtn;
 	
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[6]/div/button")
-	WebElement Delete_btn_FirstRow;
+	public WebElement Delete_btn_FirstRow;
 	
 	@FindBy(xpath =  "//span[contains(.,'Rows per page:')]/../../div[2]/app-selectbox/div/mat-form-field/div")
-	WebElement rowsPerPage_btn;
+	public WebElement rowsPerPage_btn;
 	
 	@FindBy(xpath =  "//select-option[1]/div")
-	WebElement fiveRows_Option;
+	public WebElement fiveRows_Option;
 	
 	@FindBy(xpath =  "//select-option[2]/div")
 	WebElement tenRows_Option;
@@ -97,95 +98,97 @@ public class Settings_TipOut_TipSharing_Page extends BasePage
 	WebElement twentyRows_Option;
 		
 	@FindBy(xpath = "//input[@placeholder='Search']")
-	WebElement Search_option;
+	public WebElement Search_option;
 	
 	@FindBy(xpath =  "//span[contains(.,'keyboard_backspace')]")
 	WebElement Back_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Close')]/../../button")
-	WebElement Close_btn;
+	public WebElement Close_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Cancel')]/../../button[@type]")
-	WebElement Cancel_btn;
+	public WebElement Cancel_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Delete')]/../../button")
-	WebElement Delete_btn;
+	public WebElement Delete_btn;
 	
-	@FindBy(xpath =  "//span[contains(.,'Tip Out Name')]/../input")
-	WebElement TipOutNameInput;
+	@FindBy(xpath =  "//input[@aria-label='TipOut Name']")
+	public WebElement TipOutNameInput;
 	
 	@FindBy(xpath =  "//span[contains(.,'Role From')]/../input")
-	WebElement RoleFromInput;
+	public WebElement RoleFromInput;
 	
 	@FindBy(xpath =  "//span[contains(.,'Role To')]/../input")
-	WebElement RoleToInput;
+	public WebElement RoleToInput;
 		
-	@FindBy(xpath =  "//span[contains(.,'Select Departments')]/../div/div/input")
-	WebElement SelectDepartments;
+	@FindBy(xpath =  "//input[@aria-label='Select Departments']")
+	public WebElement SelectDepartments;
 		
 	@FindBy(xpath =  "//span[contains(.,'Percentage')]/../input")
-	WebElement Percentage;
+	public WebElement Percentage;
+	
+	//Settings_TipOut_TipSharing_Page
 	
 	@FindBy(xpath =  "//span[contains(.,'Percentage')]/../../../../../div/button[1]")
-	WebElement Percentage_Up;
+	public WebElement Percentage_Up;
 	
 	@FindBy(xpath =  "//span[contains(.,'Percentage')]/../../../../../div/button[2]")
-	WebElement Percentage_Down;
+	public WebElement Percentage_Down;
 	
 	@FindBy(xpath =  "//span[.='Manual Tip Sharing']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement ManualTipSharing_NoBtn;
+	public WebElement ManualTipSharing_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Manual Tip Sharing']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement ManualTipSharing_YesBtn;
+	public WebElement ManualTipSharing_YesBtn;
 		
-	@FindBy(xpath =  "//span[contains(.,'Choose Roles')]/../div/div/input")
-	WebElement ManualTipsharing_ChooseRoles;
+	@FindBy(xpath =  "//input[@aria-label='Choose Roles']")
+	public WebElement ManualTipsharing_ChooseRoles;
 	
 	@FindBy(xpath =  "//span[contains(.,' Manual Tip Sharing')]/../../div[3]/app-auto-complete")
-	WebElement ManualTipsharing_ChooseRoless;
+	public WebElement ManualTipsharing_ChooseRoless;
 	
 	@FindBy(xpath =  "//span[contains(.,' Automatic Tip Sharing')]/../../div[3]/app-auto-complete")
-	WebElement ManualTipsharing_ChooseRolesa;
+	public WebElement ManualTipsharing_ChooseRolesa;
 	
 	@FindBy(xpath =  "//button/span/mat-icon[.='close']")
-	WebElement Close_ChooseRoles;
+	public WebElement Close_ChooseRoles;
 	
 	@FindBy(xpath =  "//span[contains(.,' Include Below in Tip Share')]/../div/mat-checkbox")
-	WebElement IncludeBelowInTipShare;
+	public WebElement IncludeBelowInTipShare;
 	
 	//mat-chip/div/mat-icon[.='cancel']
 	
 	//div/mat-icon[.='close']
 	
 	@FindBy(xpath =  "//span[.='Automatic Tip Sharing']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement AutomaticTipSharing_NoBtn;
+	public WebElement AutomaticTipSharing_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Automatic Tip Sharing']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement AutomaticTipSharing_YesBtn;
+	public WebElement AutomaticTipSharing_YesBtn;
 	
 	@FindBy(xpath =  "//span[.='Tip Charge Deduction Before Tip Share']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[1]/button")
-	WebElement TipChargeDeductionBeforeTipShare_NoBtn;
+	public WebElement TipChargeDeductionBeforeTipShare_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Tip Charge Deduction Before Tip Share']/../..//div[2]/mat-button-toggle-group/mat-button-toggle[2]/button")
-	WebElement TipChargeDeductionBeforeTipShare_YesBtn;
+	public WebElement TipChargeDeductionBeforeTipShare_YesBtn;
 	
 	@FindBy(xpath =  "//span[contains(.,'TIP OUT NAME') and @class='header-title']")
-	WebElement TipOutName_Title;
+	public WebElement TipOutName_Title;
 	
 	@FindBy(xpath =  "//span[contains(.,'ROLE FROM') and @class='header-title']")
-	WebElement RoleFrom_Title;
+	public WebElement RoleFrom_Title;
 	
 	@FindBy(xpath =  "//span[contains(.,'ROLE TO') and @class='header-title']")
-	WebElement RoleTo_Title;
+	public WebElement RoleTo_Title;
 	
 	@FindBy(xpath =  "//span[contains(.,'DEPARTMENTS') and @class='header-title']")
-	WebElement Departments_Title;
+	public WebElement Departments_Title;
 	
 	@FindBy(xpath =  "//span[contains(.,'PERCENTAGE') and @class='header-title']")
-	WebElement Percentage_Title;
+	public WebElement Percentage_Title;
 	
 	@FindBy(xpath =  "//span[contains(.,'PERCENTAGE') and @class='header-title']")
-	WebElement Column_option;
+	public WebElement Column_option;
 	
 		
 	public void paginationValidation() throws Exception {
@@ -1354,6 +1357,30 @@ catch (Exception e) {
 		
 		Percentage.sendKeys("500");
 	}
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Online Pickup Tip ')]")
+	public WebElement Online_PickUp_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Online Pickup Tip ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Online_PickUp_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Declared Cash Tip ')]")
+	public WebElement Declared_CashTip_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Declared Cash Tip ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Declared_CashTip_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Gratuity ')]")
+	public WebElement Gratuity_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Gratuity ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Gratuity_Checkbox_SLD;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Driver Compensation ')]")
+	public WebElement Driver_Compensation_Checkbox;
+	
+	@FindBy(xpath = "//mat-checkbox[contains(.,' Driver Compensation ')][contains(@class,'mat-checkbox-checked')]")
+	public WebElement Driver_Compensation_Checkbox_SLD;
 	
 }
 

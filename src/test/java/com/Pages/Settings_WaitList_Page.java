@@ -36,26 +36,27 @@ public class Settings_WaitList_Page extends BasePage
 	@FindBy(xpath = "//span[.='Wait List']")
 	WebElement waitlist;
 	
-	@FindBy(xpath = "//button[.='WAIT LIST ']")
-	WebElement New_Waitlist_button;
+	@FindBy(xpath = "//button[contains(.,'WAIT LIST')]//i[contains(@class,'fas fa-plus')]/../../..")
+	public WebElement New_Wait_List_button;
 	
-	@FindBy(xpath = "//app-new-wait-list//form/div/div/div/div/div[1]/div/div/app-input/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Min_Seat;
+	@FindBy(xpath = "//input[@aria-label='Min Seats']")
+	public WebElement Min_SeatInputBx;
 	
-	@FindBy(xpath = "//app-new-wait-list//form/div/div/div/div/div[2]/div/div/app-input/div/div/mat-form-field/div/div/div[4]/input")
-	WebElement Max_Seat;
+	@FindBy(xpath = "//input[@aria-label='Max Seats']")
+	public WebElement Max_SeatInputBx;
 	
 	@FindBy(xpath = "//p[.='Enter more than 0 value']")
-	WebElement Min_Seat_Errmsg;
+	public WebElement Enter_morethen_0_ValueErrmsg;
+	
 	
 	@FindBy(xpath = "//div[.='Please Enter maxSeat']")
-	WebElement Max_Seat_Errmsg;
+	public WebElement Max_Seat_Errmsg;
 	
-	@FindBy(xpath = "//app-selectbox[@name='hours']/div/mat-form-field/div/div/div[4]")
-	WebElement hours_dropdown;
+	@FindBy(xpath = "//input[@aria-label='Hours']")
+	public WebElement Hours_Dropdown;
 	
-	@FindBy(xpath = "//app-selectbox[@name='minutes']/div/mat-form-field/div/div/div[4]")
-	WebElement minutes_dropdown;
+	@FindBy(xpath = "//input[@aria-label='Minutes']")
+	public WebElement Minutes_Dropdown;
 	
 	@FindBy(xpath = "//select-option[contains(.,'00')]")
 	WebElement Time_Zero;
@@ -64,16 +65,16 @@ public class Settings_WaitList_Page extends BasePage
 	WebElement minutes;
 	
 	@FindBy(xpath = "//select-option[contains(.,'02')]")
-	WebElement Two_hours;
+	public WebElement Two_hours;
 	
 	@FindBy(xpath = "//select-option[contains(.,'01')]")
-	WebElement one_hour;
+	public WebElement one_hour;
 	
 	@FindBy(xpath = "//select-option[contains(.,'10')]")
-	WebElement Ten_minutes;
+	public WebElement Ten_minutes;
 	
 	@FindBy(xpath = "//select-option[contains(.,'05')]")
-	WebElement Five_minutes;
+	public WebElement Five_minutes;
 	
 	 @FindBy(xpath = "//input[contains(@data-placeholder,'Search')]")
 	 WebElement Search;
@@ -91,10 +92,10 @@ public class Settings_WaitList_Page extends BasePage
 	 WebElement Rows5;
 	 
 	 @FindBy(xpath = "//mat-icon[.='keyboard_arrow_right']")
-	 WebElement Right_Arrow;
+	 public WebElement Right_Arrow;
 	 
 	 @FindBy(xpath = "//mat-icon[.='keyboard_arrow_left']")
-	 WebElement Left_Arrow;
+	 public WebElement Left_Arrow;
 	 
 	 @FindBy(xpath = "//span[.=' Min Seat ']")
 	 WebElement Min_Seat_button;
@@ -105,14 +106,17 @@ public class Settings_WaitList_Page extends BasePage
 	 @FindBy(xpath = "//span[.=' Occupied Time ']")
 	 WebElement occupied_time;
 	 
-	 @FindBy(xpath = "//div[.='REASONS']")
-	 WebElement reason;
+	 @FindBy(xpath = "//span[contains(@class,'segment-button')][.='WAIT LIST']")
+	 public WebElement Wait_List_Tab;
 	 
-	 @FindBy(xpath = "//button[.=' NEW REASON ']")
-	 WebElement New_Reason;
+	 @FindBy(xpath = "//span[contains(@class,'segment-button')][.='REASONS']")
+	 public WebElement Reasons_Tab;
 	 
-	 @FindBy(xpath = "//app-input[@type='textarea']/div/div/mat-form-field/div/div/div[4]/textarea")
-	 WebElement Reason_Textbox;
+	 @FindBy(xpath = "//button[contains(.,'NEW REASON')]")
+	 public WebElement New_ReasonBtn;
+	 
+	 @FindBy(xpath = "//textarea[@aria-label='Reason']")
+	 public WebElement Reason_Textbox;
 	 
 	 @FindBy(xpath = "//p[@class='color-red']")
 	 WebElement Reason_Error;
@@ -142,7 +146,25 @@ public class Settings_WaitList_Page extends BasePage
 		WebElement twentyRows_Option;
 		
 		@FindBy(xpath =  "//p[.='Name already exist ']")
-		WebElement NameAlredyExist;
+		public WebElement NameAlredyExist;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Min Seat')]")
+		public WebElement Min_Seat_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Max Seat')]")
+		public WebElement Max_Seat_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Occupied Time')]")
+		public WebElement Occupied_Time_Column_Field;
+		
+		@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Reasons')]")
+		public WebElement Reasons_Column_Field;
+		
+		@FindBy(xpath = "//p[contains(.,'Min Seats should be less than Max')]")
+		public WebElement Min_Seats_Should_Lessthan_Max_ErrorMsg;
+		
+		@FindBy(xpath = "//p[contains(.,'Max Seats should be greater than Min')]")
+		public WebElement Max_Seats_Should_Greaterthan_Min_ErrorMsg;
 	
 	public void Click_Settings() 
 	{
@@ -154,16 +176,16 @@ public class Settings_WaitList_Page extends BasePage
 	}
 	public void New_WaitList() 
 	{
-		New_Waitlist_button.click();
+		New_Wait_List_button.click();
 	}
 	public WebElement Max_Seat_Err()
 	{
 		return Max_Seat_Errmsg;
 	}
-	public WebElement Min_Seat_Err() 
-	{
-		return Min_Seat_Errmsg;
-	}
+//	public WebElement Min_Seat_Err() 
+//	{
+//		return Min_Seat_Errmsg;
+//	}
 	public WebElement Reason_ErrMsg() 
 	{
 		return Reason_Error;
@@ -182,75 +204,75 @@ public class Settings_WaitList_Page extends BasePage
 	}
 	public void Entering_Invalid_time() throws Exception 
 	{
-		Min_Seat.clear();
+		Min_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Min_Seat.sendKeys("9");
+		Min_SeatInputBx.sendKeys("9");
 		Thread.sleep(1000);
-		Max_Seat.clear();
+		Max_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Max_Seat.sendKeys("11");
+		Max_SeatInputBx.sendKeys("11");
 		Thread.sleep(1000);
-		hours_dropdown.click();
+		Hours_Dropdown.click();
 		Thread.sleep(1000);
 		Time_Zero.click();
 		Thread.sleep(1000);
-		minutes_dropdown.click();
+		Minutes_Dropdown.click();
 		Thread.sleep(1000);
 		Time_Zero.click();
 		
 	}
 	public void Entering_More_Min_Time() throws Exception 
 	{
-		Min_Seat.clear();
+		Min_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Min_Seat.sendKeys("9");
+		Min_SeatInputBx.sendKeys("9");
 		Thread.sleep(1000);
-		Max_Seat.clear();
+		Max_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Max_Seat.sendKeys("7");
+		Max_SeatInputBx.sendKeys("7");
 		Thread.sleep(1000);
-		hours_dropdown.click();
+		Hours_Dropdown.click();
 		Thread.sleep(1000);
 		Two_hours.click();
 		Thread.sleep(1000);
-		minutes_dropdown.click();
+		Minutes_Dropdown.click();
 		Thread.sleep(1000);
 		Ten_minutes.click();
 	}
 	public void Entering_Duplicate_Seat() throws Exception
 	{
 
-		Min_Seat.clear();
+		Min_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Min_Seat.sendKeys("5");
+		Min_SeatInputBx.sendKeys("5");
 		Thread.sleep(1000);
-		Max_Seat.clear();
+		Max_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Max_Seat.sendKeys("5");
+		Max_SeatInputBx.sendKeys("5");
 		Thread.sleep(1000);
-		hours_dropdown.click();
+		Hours_Dropdown.click();
 		Thread.sleep(1000);
 		Two_hours.click();
 		Thread.sleep(1000);
-		minutes_dropdown.click();
+		Minutes_Dropdown.click();
 		Thread.sleep(1000);
 		Ten_minutes.click();
 	}
 	public void WaitList() throws Exception
 	{
-		Min_Seat.clear();
+		Min_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Min_Seat.sendKeys("3345");
+		Min_SeatInputBx.sendKeys("3345");
 		Thread.sleep(1000);
-		Max_Seat.clear();
+		Max_SeatInputBx.clear();
 		Thread.sleep(1000);
-		Max_Seat.sendKeys("3346");
+		Max_SeatInputBx.sendKeys("3346");
 		Thread.sleep(1000);
-		hours_dropdown.click();
+		Hours_Dropdown.click();
 		Thread.sleep(1000);
 		one_hour.click();
 		Thread.sleep(1000);
-		minutes_dropdown.click();
+		Minutes_Dropdown.click();
 		Thread.sleep(1000);
 		Five_minutes.click();
 	}
@@ -635,13 +657,13 @@ public class Settings_WaitList_Page extends BasePage
 	 public void clicking_Reason() throws Exception
 	 {
 		 Thread.sleep(5000);for(int i =1; i<=20;i++) {driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);}Thread.sleep(5000);
-		reason.click();
+		Reasons_Tab.click();
 	 }
 	 public String sas;
 	 public void New_Reason() 
 	 {
 		 sas = driver.findElement(By.xpath("//data-grid-row/div/div/span")).getText().trim();
-		 New_Reason.click();
+		 New_ReasonBtn.click();
 	 }
 	 public void Entering_Existing_Reason() throws Exception 
 	 {

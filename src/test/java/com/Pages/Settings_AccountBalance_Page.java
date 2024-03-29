@@ -36,55 +36,55 @@ public class Settings_AccountBalance_Page extends BasePage
 	WebElement AccBalance;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Paid Out')]/../../../input")
-	WebElement paid_out;
+	public WebElement paid_out;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'CC Tip Reduction')]/../../../input")
-	WebElement cc_tip;
+	public WebElement cc_tip;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Refund')]/../../../input")
-	WebElement refund;
+	public WebElement refund;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Deposit')]/../../../input")
-	WebElement deposite;
+	public WebElement deposite;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Over / Shortage')]/../../../input")
-	WebElement ovr_shortage;
+	public WebElement ovr_shortage;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Sales Open Items')]/../../../input")
-	WebElement sales_opn_itm;
+	public WebElement sales_opn_itm;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Combo Discounts')]/../../../input")
-	WebElement combo_dis;
+	public WebElement combo_dis;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Comp Discounts')]/../../../input")
-	WebElement comp_dis;
+	public WebElement comp_dis;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Delivery Charge Cost')]/../../../input")
-	WebElement delevry_charge;
+	public WebElement delevry_charge;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'HA and GC Recharge')]/../../../input")
-	WebElement HA_GC;
+	public WebElement HA_GC;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Driver Tip')]/../../../input")
-	WebElement Drivr_tip;
+	public WebElement Drivr_tip;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Tip / Gratuity')]/../../../input")
-	WebElement gratiuty_tip;
+	public WebElement gratiuty_tip;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Promo Discounts')]/../../../input")
-	WebElement promo_dis;
+	public WebElement promo_dis;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Donation Discounts')]/../../../input")
-	WebElement donation_dis;
+	public WebElement donation_dis;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Loyalty Discounts')]/../../../input")
-	WebElement loyality_dis;
+	public WebElement loyality_dis;
 	
 	@FindBy(xpath = "//button/span[.=' SAVE ']")
-	WebElement update_btn;
+	public WebElement update_btn;
 	
 	@FindBy(xpath = "//div[contains(@class,'message')]/span")
-	WebElement AlertMessageTitle;
+	public WebElement AlertMessageTitle;
 	
 	public void Click_Settings() {
 		Settings.click();

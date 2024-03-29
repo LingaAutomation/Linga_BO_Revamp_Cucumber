@@ -41,7 +41,7 @@ public class Settings_Receipt_Printers
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Receipt Printer page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"receiptPrinters");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"receiptPrinters");
 	}
 	@Given("Verifying the Receipt Printer Header Page")
 	public void verifyingTheReceiptPrinterHeaderPage() throws Exception {

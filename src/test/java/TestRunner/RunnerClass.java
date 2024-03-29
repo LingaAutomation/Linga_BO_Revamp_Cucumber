@@ -13,10 +13,10 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		"de.monochromata.cucumber.report.PrettyReports:target/cucumber-html-reports", 
 //		"html:test-output","json:target/json_output/cucumber.json",
 //		"html:target/cucumber-html-report"
-		}, dryRun = true,snippets = CAMELCASE
-		, tags = "@EmailReceiptTemplate"
+		}, dryRun = false,snippets = CAMELCASE
+		, tags = "@WaitList"
 		)
-
+ 
 //@Product/Items01
 //Strict Removed from Cucumber-7.0.0. So that, strict=true or false won't work and Strict default as "true" from 7.0.0
 

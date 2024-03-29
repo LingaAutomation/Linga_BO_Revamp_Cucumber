@@ -45,7 +45,7 @@ public class Reports_Menu_Item_Sale_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Menu Item sales report page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/menuItem");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/menuItem");
 	}
 	@Given("Verifying the Menu Item Sale Report Header Page")
 	public void verifyingTheMenuItemSaleReportHeaderPage() throws Exception {

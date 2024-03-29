@@ -45,7 +45,7 @@ public class Settings_Kitchen_Printers
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Kitchen Printer page
-		driver.get(Utility.getProperty("baseURL")+"settings/"+"kitchenPrinters");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+"settings/"+"kitchenPrinters");
 	}
 	@Given("Verifying the Kitchen Printer Header Page")
 	public void verifyingTheKitchenPrinterHeaderPage() throws Exception {

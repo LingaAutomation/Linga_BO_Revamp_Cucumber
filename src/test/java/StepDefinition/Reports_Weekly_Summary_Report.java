@@ -43,7 +43,7 @@ public class Reports_Weekly_Summary_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Menu Item sales report page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/weekly");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/weekly");
 	}
 	@Given("Verifying the Weekly Summary Report Header Page")
 	public void verifyingTheWeeklySummaryReportHeaderPage() throws Exception {

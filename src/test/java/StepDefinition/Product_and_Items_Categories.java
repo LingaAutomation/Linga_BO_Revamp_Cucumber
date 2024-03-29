@@ -661,6 +661,7 @@ public class Product_and_Items_Categories
 	@Then("I Enable the Restriction Time Toggle")
 	public void iEnableTheRestrictionTimeToggle() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 	    al.Enable_Restriction_Time_Toggle();
 	}
 	@Then("I Select the Start Time in Restriction Time")

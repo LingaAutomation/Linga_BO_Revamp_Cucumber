@@ -32,68 +32,68 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 //		PageFactory.initElements(driver, this);
 //	}
 	
-	@FindBy(xpath = "//div[@class='settings']/button")
-	WebElement Settings;
+	@FindBy(xpath = "//div[@class='settings']/button") 
+	public WebElement Settings;
 	
 	@FindBy(xpath = "//h3[contains(.,'Settings')]")
-	WebElement Settings_Heading;
+	public WebElement Settings_Heading;
 	
 	@FindBy(xpath = "//h3[contains(.,'Printer Rerouting')]")
-	WebElement PrinterRerouting_Heading;
+	public WebElement PrinterRerouting_Heading;
 	
-	@FindBy(xpath = "//button[contains(.,'REROUTE BY NODE ')]")
-	WebElement AddRerouteBtn;
+	@FindBy(xpath = "//button[contains(.,'REROUTE BY NODE')]")
+	public WebElement Add_Reroute_By_NodeBtn;
 	
 	@FindBy(xpath = "(//button[contains(.,'REROUTE BY NODE')])[2]")
-	WebElement RerouteByNodeTab;
+	public WebElement RerouteByNodeTab;
 	
 	@FindBy(xpath = "//button[contains(.,'REROUTE BY ROLE')]")
-	WebElement RerouteByRoleTab;
+	public WebElement RerouteByRoleTab;
 	
-	@FindBy(xpath = "(//button[contains(.,'REROUTE BY ROLE')])[1]")
-	WebElement AddRerouteRoleBtn;
+	@FindBy(xpath = "//button[contains(.,'REROUTE BY ROLE')]")
+	public WebElement Add_Reroute_By_RoleBtn;
 	
 	@FindBy(xpath = "//span[contains(.,'Node') and @class='header-title']")
-	WebElement Node_TableHeading;
+	public WebElement Node_TableHeading;
 	
 	@FindBy(xpath = "//span[contains(.,'Role') and @class='header-title']")
-	WebElement Role_TableHeading;
+	public WebElement Role_TableHeading;
 	
 	@FindBy(xpath = "//span[contains(.,'From Printer') and @class='header-title']")
-	WebElement FromPrinter_TableHeading;
+	public WebElement FromPrinter_TableHeading;
 	
 	@FindBy(xpath = "//span[contains(.,'To Printer') and @class='header-title']")
-	WebElement ToPrinter_TableHeading;
+	public WebElement ToPrinter_TableHeading;
 	
 	@FindBy(xpath = "//div[contains(.,'Action') and contains(@class,'data-grid-header ')]")
-	WebElement Action_TableHeading;
+	public WebElement Action_TableHeading;
 	
 	@FindBy(xpath = "//span[contains(.,'COLUMNS')]/../../button")
-	WebElement Column_option;
+	public WebElement Column_option;
 		
 	@FindBy(xpath = "//input[@placeholder='Search']")
-	WebElement Search_option;
+	public WebElement Search_option;
 	
 	@FindBy(xpath =  "//span[contains(.,'keyboard_backspace')]")
-	WebElement Back_btn;
+	public WebElement Back_btn;
 
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[4]/div[2]/button")
-	WebElement Delete_btn_FirstRow;
+	public WebElement Delete_btn_FirstRow;
 	
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[4]/div[1]/button")
-	WebElement Edit_btn_FirstRow;
+	public WebElement Edit_btn_FirstRow;
 	
 	@FindBy(xpath =  "//span[contains(.,'Close')]/../../button")
-	WebElement Close_btn;
+	public WebElement Close_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Cancel')]/../../button[@type]")
-	WebElement Cancel_btn;
+	public WebElement Cancel_btn;
 	
 	@FindBy(xpath =  "//span[contains(.,'Delete')]/../../button")
-	WebElement Delete_btn;
+	public WebElement Delete_btn;
 		
 	@FindBy(xpath =  "//div/span[.='Printer Rerouting']")
-	WebElement PrinterRerouting;
+	public WebElement PrinterRerouting;
 	
 	@FindBy(xpath =  "//span[contains(.,'Rows per page:')]/../../div[2]/app-selectbox/div/mat-form-field/div")
 	WebElement rowsPerPage_btn;
@@ -111,52 +111,52 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 	WebElement twentyRows_Option;
 	
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[1]/span")
-	WebElement FirstRow_Node_OR_Role;
+	public WebElement FirstRow_Node_OR_Role;
 	
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[2]/span")
-	WebElement FirstRow_FromPrinter;
+	public WebElement FirstRow_FromPrinter;
 	
 	@FindBy(xpath =  "//data-grid/div/div/div[1]/div[1]/data-grid-row/div/div[3]/span")
-	WebElement FirstRow_ToPrinter;
+	public WebElement FirstRow_ToPrinter;
 	
 	@FindBy(xpath =  "//h3[.=' Re-Route by Node ']")
-	WebElement RerouteByNode_Heading;
+	public WebElement RerouteByNode_Heading;
 
 	@FindBy(xpath =  "//h3[.=' Re-Route by Role ']")
-	WebElement RerouteByRole_Heading;
+	public WebElement RerouteByRole_Heading;
 	
-	@FindBy(xpath =  "//span[contains(.,'Node')]/../input")
-	WebElement NodeInput;
+	@FindBy(xpath =  "//input[@aria-label='Node']")
+	public WebElement Node_InputBx;
 	
-	@FindBy(xpath =  "//span[contains(.,'Role')]/../input")
-	WebElement RoleInput;
+	@FindBy(xpath =  "//input[@aria-label='Role']")
+	public WebElement Role_InputBx;
 
-	@FindBy(xpath =  "//span[contains(.,'From Printer')]/../input")
-	WebElement FromPrinterInput;
+	@FindBy(xpath =  "//input[@aria-label='From Printer']")
+	public WebElement From_PrinterInputBx;
 	
-	@FindBy(xpath =  "//span[contains(.,'To Printer')]/../input")
-	WebElement ToPrinterInput;
+	@FindBy(xpath =  "//input[@aria-label='To Printer']")
+	public WebElement To_PrinterInputBx;
 	
 	@FindBy(xpath =  "(//input[@placeholder='Search'])[2]")
-	WebElement SearchForReroute;
+	public WebElement SearchForReroute;
 	
 	@FindBy(xpath =  "//app-radio-box-button/div/div/div")
-	WebElement Availability_Date_Range;
+	public WebElement Availability_Date_Range;
 		
 	@FindBy(xpath =  "//span[.='Restriction Days']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[1]")
-	WebElement RestrictionDays_NoBtn;
+	public WebElement RestrictionDays_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Restriction Days']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[2]")
-	WebElement RestrictionDays_YesBtn;
+	public WebElement RestrictionDays_YesBtn;
 	
 	@FindBy(xpath =  "//span[.='Restriction Time']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[1]")
-	WebElement RestrictionTime_NoBtn;
+	public WebElement RestrictionTime_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Restriction Time']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[2]")
-	WebElement RestrictionTime_YesBtn;
+	public WebElement RestrictionTime_YesBtn;
 		
 	@FindBy(xpath =  "//span[.='Restriction Months']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[1]")
-	WebElement RestrictionMonths_NoBtn;
+	public WebElement RestrictionMonths_NoBtn;
 	
 	@FindBy(xpath =  "//span[.='Restriction Months']/../../div[2]/app-toggle/div/mat-button-toggle-group/mat-button-toggle[2]")
 	WebElement RestrictionMonths_YesBtn;
@@ -192,7 +192,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 	WebElement CloseBtn;
 	
 	@FindBy(xpath =  "//app-radio-box-button/div/div/div[.='All Days']")
-	WebElement AllDays;
+	public WebElement AllDays;
 	
 	@FindBy(xpath =  "//app-radio-box-button/div/div/div[.='Days Of Week']")
 	WebElement DaysOfWeek;
@@ -240,6 +240,23 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 	@FindBy(xpath =  "//button[@disabled='true' and contains(.,'Save')]")
 	WebElement SaveBtnDisabled;
 	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Role')]")
+	public WebElement Role_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'Node')]")
+	public WebElement Node_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'From Printer')]")
+	public WebElement From_Printer_Column_Field;
+	
+	@FindBy(xpath = "//th[@role='columnheader'][contains(.,'To Printer')]")
+	public WebElement To_Printer_Column_Field;
+	
+	@FindBy(xpath = "//div[contains(@class,'error-text')][contains(.,'From and To printers should not be same')]")
+	public WebElement From_To_Printer_Same_ErrorMsg;
+	
+	@FindBy(xpath = "//div[@class='radio-box'][contains(.,'All Days')]")
+	public WebElement All_Days_AvailabilityRadioBx;
 	
 	
 	public void AddRerouteByNode_AllDays_NoRestrictionTime() throws Exception {
@@ -258,7 +275,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(2000);
 		
@@ -267,7 +284,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		Thread.sleep(2000);
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(2000);
 		
@@ -276,7 +293,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(2000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(2000);
 		
@@ -287,7 +304,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			test.log(LogStatus.FAIL, "Reroute By Node heading is not displayed when user click the Add Reroute By node button");
 		}
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -297,7 +314,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -306,7 +323,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -323,7 +340,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			test.log(LogStatus.FAIL, "From and To printers should not be same field validations is not displayed when user choose the Same Printers");
 		}
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -391,13 +408,13 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(2000);
 		
 		Thread.sleep(2000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -407,7 +424,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -416,7 +433,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -494,11 +511,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -508,7 +525,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -518,7 +535,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -605,11 +622,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(2000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -619,7 +636,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -628,7 +645,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -730,11 +747,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -744,7 +761,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -753,7 +770,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -861,11 +878,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 				
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -875,7 +892,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -884,7 +901,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -994,11 +1011,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1008,7 +1025,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1017,7 +1034,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -1141,11 +1158,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 				
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1155,7 +1172,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1164,7 +1181,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -1316,11 +1333,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 		
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1330,7 +1347,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1339,7 +1356,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 		
 		//click the input node
@@ -1419,11 +1436,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 				
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1433,7 +1450,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1442,7 +1459,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -1547,11 +1564,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 				
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1561,7 +1578,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1570,7 +1587,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -1716,11 +1733,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 		
 		//Click the Add Reroute By Node button
-		AddRerouteBtn.click();
+		Add_Reroute_By_NodeBtn.click();
 		
 		Thread.sleep(4000);
 				
-		NodeInput.click();
+		Node_InputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1730,7 +1747,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 		
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 		
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1739,7 +1756,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 		FirstOption.click();
 		
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 				
 		//click the input node
@@ -1908,7 +1925,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(2000);
 
@@ -1917,7 +1934,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		Thread.sleep(2000);
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(2000);
 
@@ -1926,7 +1943,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(2000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(2000);
 
@@ -1937,7 +1954,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			test.log(LogStatus.FAIL, "Reroute By Role heading is not displayed when user click the Add Reroute By node button");
 		}
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -1947,7 +1964,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -1956,7 +1973,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -1973,7 +1990,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			test.log(LogStatus.FAIL, "From and To printers should not be same field validations is not displayed when user choose the Same Printers");
 		}
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2041,13 +2058,13 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(2000);
 
 		Thread.sleep(2000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2057,7 +2074,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2066,7 +2083,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2144,11 +2161,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2158,7 +2175,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2168,7 +2185,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2257,11 +2274,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(2000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2271,7 +2288,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2280,7 +2297,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2383,11 +2400,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2397,7 +2414,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2406,7 +2423,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2500,11 +2517,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2514,7 +2531,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2523,7 +2540,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2633,11 +2650,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2647,7 +2664,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2656,7 +2673,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2767,11 +2784,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2781,7 +2798,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2790,7 +2807,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -2940,11 +2957,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -2954,7 +2971,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -2963,7 +2980,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -3044,11 +3061,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -3058,7 +3075,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -3067,7 +3084,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -3171,11 +3188,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -3185,7 +3202,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -3194,7 +3211,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -3341,11 +3358,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		Thread.sleep(1000);
 
 		//Click the Add Reroute By Node button
-		AddRerouteRoleBtn.click();
+		Add_Reroute_By_RoleBtn.click();
 
 		Thread.sleep(4000);
 
-		RoleInput.click();
+		Role_InputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s1);
@@ -3355,7 +3372,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		FirstOption.click();
 		Thread.sleep(500);
 
-		FromPrinterInput.click();
+		From_PrinterInputBx.click();
 
 		//click the input node
 		SearchForReroute.sendKeys(s2);
@@ -3364,7 +3381,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 		FirstOption.click();
 
-		ToPrinterInput.click();
+		To_PrinterInputBx.click();
 		Thread.sleep(500);
 
 		//click the input node
@@ -3523,7 +3540,7 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			test.log(LogStatus.FAIL, "Printing Rerouting heading is not displayed in Printing Rerouting page");
 		}
 		
-		if(AddRerouteBtn.isDisplayed()) {
+		if(Add_Reroute_By_NodeBtn.isDisplayed()) {
 			test.log(LogStatus.PASS, "Add Reroute button is displayed in Printing Rerouting page");
 		}
 		else {
@@ -3865,11 +3882,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 			Thread.sleep(1000);
 
 			//Click the Add Reroute By Node button
-			//AddRerouteRoleBtn.click();
+			//Add_Reroute_By_RoleBtn.click();
 
 			Thread.sleep(4000);
 
-			RoleInput.click();
+			Role_InputBx.click();
 			
 
 			//click the input node
@@ -3877,13 +3894,13 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 
 			Thread.sleep(500);
 
-			FromPrinterInput.click();
+			From_PrinterInputBx.click();
 
 			Thread.sleep(500);
 
 			FirstOption.click();
 
-			ToPrinterInput.click();
+			To_PrinterInputBx.click();
 			Thread.sleep(500);
 
 			SecondOption.click();
@@ -3919,24 +3936,24 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		{
 
 			//Click the Add Reroute By Node button
-			AddRerouteBtn.click();
+			Add_Reroute_By_NodeBtn.click();
 			
 			Thread.sleep(4000);
 					
-			NodeInput.click();
+			Node_InputBx.click();
 			
 			//click the input node
 			FirstOption.click();
 
 			Thread.sleep(500);
 
-			FromPrinterInput.click();
+			From_PrinterInputBx.click();
 
 			Thread.sleep(500);
 
 			FirstOption.click();
 
-			ToPrinterInput.click();
+			To_PrinterInputBx.click();
 			Thread.sleep(500);
 
 			SecondOption.click();
@@ -4059,6 +4076,11 @@ public class Settings_Printer_Rerouting_Page extends BasePage
 		
 	}
 
+	@FindBy(xpath = "//button[contains(.,'REROUTE BY NODE')][contains(@class,'segment-button')]")
+	public WebElement Reroute_By_NodeTab;
+	
+	@FindBy(xpath = "//button[contains(.,'REROUTE BY ROLE')][contains(@class,'segment-button')]")
+	public WebElement Reroute_By_RoleTab;
 
 }
 

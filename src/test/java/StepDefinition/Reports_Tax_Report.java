@@ -39,7 +39,7 @@ public class Reports_Tax_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Daily page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"taxReport");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"taxReport");
 	}
 	@Given("Verifying the Tax Report Header Page")
 	public void verifyingTheTaxReportHeaderPage() throws Exception {

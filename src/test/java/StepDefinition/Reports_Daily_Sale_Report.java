@@ -41,7 +41,7 @@ public class Reports_Daily_Sale_Report
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
 		//Load the Daily page
-		driver.get(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/dailySale");
+		lgpg.Open_URL(Utility.getProperty("baseURL")+Utility.getProperty("store_Id3")+"salesReports/dailySale");
 	}
 	@Given("Verifying the Daily Sale Report Header Page")
 	public void verifyingTheDailySaleReportHeaderPage() throws Exception {
