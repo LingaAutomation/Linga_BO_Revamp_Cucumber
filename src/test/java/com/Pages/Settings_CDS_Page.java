@@ -276,6 +276,41 @@ public class Settings_CDS_Page extends BasePage
 			Thread.sleep(3000);
 		}
 	}
+	
+public void CheckField_Displayed(WebElement Ele, String Str, String Msg, String Msg1) {
+		
+		if (Ele.getText().equals(Str)) {
+			
+			test.log(LogStatus.PASS, Str+Msg);
+			
+			ut.PassedCaptureScreenshotAsBASE64();
+			
+		} else 
+		{
+			test.log(LogStatus.FAIL, Str+Msg1);
+			ut.FailedCaptureScreenshotAsBASE64();
+		}
+	}
+public void Verify_Save_Button_Disabled(WebElement Ele, String Msg, String Msg1) throws Exception
+{
+
+	 if(Ele.isDisplayed())
+	    {
+		 
+		 
+	    	test.log(LogStatus.PASS, Msg);
+	    	
+	    	ut.PassedCaptureScreenshotAsBASE64();
+	    }
+	    else
+	    {
+	    	test.log(LogStatus.FAIL, Msg1);
+	    	
+	    	ut.FailedCaptureScreenshotAsBASE64();
+	    	
+	    	Assert.assertEquals(true, Ele.isDisplayed());}
+	    }
+
 
 }
 		

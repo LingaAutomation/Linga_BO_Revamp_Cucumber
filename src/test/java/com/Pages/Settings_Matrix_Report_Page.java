@@ -49,8 +49,8 @@ public class Settings_Matrix_Report_Page extends BasePage
 	@FindBy(xpath = "//div[.=' Enter valid amount ']")
 	WebElement Amount_Err;
 	
-	@FindBy(xpath = "//p[contains(.,'Percentage should be between (0-100)')]")
-	WebElement per_Err;
+	@FindBy(xpath = "//p[contains(.,'Percentage should be between 0-100')]")
+	public WebElement Percentage_Should_Betweek_0_100_ErrorMsg;
 	
 	@FindBy(xpath = "//span[contains(.,'UPDATE')]/../../button[@disabled]")
 	WebElement Update_But;
@@ -300,10 +300,10 @@ public class Settings_Matrix_Report_Page extends BasePage
 	{
 		 return Amount_Err;
 	}
-	public WebElement Percentage_Error_Msg()
-	{
-		return per_Err;
-	}
+//	public WebElement Percentage_Error_Msg()
+//	{
+//		return per_Err;
+//	}
 	
 	public void Update() 
 	{

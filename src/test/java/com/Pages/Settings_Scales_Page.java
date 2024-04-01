@@ -52,22 +52,22 @@ public class Settings_Scales_Page extends BasePage
 	WebElement Column_option;
 	
 	@FindBy(xpath = "//span[contains(.,'NEW SCALE BARCODE')]/../../button")
-	WebElement NewScaleBarCode_Btn;
+	public WebElement NewScaleBarCode_Btn;
 	
-	@FindBy(xpath = "//div/data-grid-row/div/div/div/span[contains(.,'Name')]")
-	WebElement NameColumn;
+	@FindBy(xpath = "//table/thead//th[1]")
+	public WebElement NameColumn;
 	
-	@FindBy(xpath = "//div/data-grid-row/div/div/div/span[contains(.,'Prefix Variable Type')]")
-	WebElement PrefixVariableTypeColumn;
+	@FindBy(xpath = "//table/thead//th[2]")
+	public WebElement PrefixVariableTypeColumn;
 	
-	@FindBy(xpath = "//div/data-grid-row/div/div/div/span[contains(.,'PLU Code')]")
-	WebElement PLUCodeColumn;
+	@FindBy(xpath = "//table/thead//th[3]")
+	public WebElement PLUCodeColumn;
 	
-	@FindBy(xpath = "//div/data-grid-row/div/div/div/span[contains(.,'Price Details')]")
-	WebElement PriceDetailsColumn;
+	@FindBy(xpath = "//table/thead//th[4]")
+	public WebElement PriceDetailsColumn;
 	
-	@FindBy(xpath = "//div/data-grid-row/div/div/div/span[contains(.,'Weight Details')]")
-	WebElement WeightDetailsColumn;
+	@FindBy(xpath = "//table/thead//th[5]")
+	public WebElement WeightDetailsColumn;
 	
 	@FindBy(xpath = "//div/data-grid-row/div/div/div[contains(.,'Actions')]")
 	WebElement ActionsColumn;
@@ -76,88 +76,88 @@ public class Settings_Scales_Page extends BasePage
 	WebElement NewScaleBarCode_Heading;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Variable Type Name')]/../../../input")
-	WebElement VariableTypeName_Field;
+	public WebElement VariableTypeName_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Prefix/Variable Type')]/../../../input")
-	WebElement PrefixVariableType_Field;
+	public WebElement PrefixVariableType_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU Start Position')]/../../../input")
-	WebElement PLUStartPosition_Field;
+	public WebElement PLUStartPosition_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU No. of Digits')]/../../../input")
-	WebElement PLUNumOfDigits_Field;
+	public WebElement PLUNumOfDigits_Field;
 	
 	@FindBy(xpath = "//span[contains(.,'Set Scale By:')]")
-	WebElement SetScaleBy_Field;
+	public WebElement SetScaleBy_Field;
 	
 	@FindBy(xpath = "//span[contains(.,'Price')]/../../../mat-radio-button[1]")
-	WebElement Price_Field_NewBarCode;
+	public WebElement Price_Field_NewBarCode;
 	
 	@FindBy(xpath = "//span[contains(.,'Price')]/../../../mat-radio-button[2]")
-	WebElement Weight_Field_NewBarCode;
+	public WebElement Weight_Field_NewBarCode;
 	//span[contains(.,'Weight')]/../../label/span[2]
 	@FindBy(xpath = "//app-new-scale-barcode/div/div[4]/div")
-	WebElement PriceORWeight_InputField_NewBarCode;
+	public WebElement PriceORWeight_InputField_NewBarCode;
 	
 	@FindBy(xpath = "//span[contains(.,'Cancel')]/../../button")
-	WebElement CancelBtn_NewBarCode;
+	public WebElement CancelBtn_NewBarCode;
 	
 	@FindBy(xpath = "//span[contains(.,'Save')]/../../button[@disabled='true']")
-	WebElement SaveBtnDisabled_NewBarCode;
+	public WebElement SaveBtnDisabled_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price Start Position')]/../../../input")
-	WebElement PriceStartPosition_Field;
+	public WebElement PriceStartPosition_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price No. of Digits')]/../../../input")
-	WebElement PriceNumOfDigits_Field;
+	public WebElement PriceNumOfDigits_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price Start Position')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfPriceStartPosition_NewBarCode;
+	public WebElement UpArrowOfPriceStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price Start Position')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfPriceStartPosition_NewBarCode;
+	public WebElement DownArrowOfPriceStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price No. of Digits')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfPriceNumberOfDigits_NewBarCode;
+	public WebElement UpArrowOfPriceNumberOfDigits_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Price No. of Digits')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfPriceNumberOfDigits_NewBarCode;
+	public WebElement DownArrowOfPriceNumberOfDigits_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight Start Position')]/../../../input")
-	WebElement WeightStartPosition_Field;
+	public WebElement WeightStartPosition_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight No. of Digits')]/../../../input")
-	WebElement WeightNumOfDigits_Field;
+	public WebElement WeightNumOfDigits_Field;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight Start Position')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfWeightStartPosition_NewBarCode;
+	public WebElement UpArrowOfWeightStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight Start Position')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfWeightStartPosition_NewBarCode;
+	public WebElement DownArrowOfWeightStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight No. of Digits')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfWeightNumberOfDigits_NewBarCode;
+	public WebElement UpArrowOfWeightNumberOfDigits_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'Weight No. of Digits')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfWeightNumberOfDigits_NewBarCode;
+	public WebElement DownArrowOfWeightNumberOfDigits_NewBarCode;
 	
 	@FindBy(xpath = "//span[contains(.,'Save')]/../../button")
-	WebElement SaveBtn_NewBarCode;
+	public WebElement SaveBtn_NewBarCode;
 	
 	@FindBy(xpath =  "//div[@class='message mx-2']/span")
 	WebElement successMessage;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU Start Position')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfPLUStartPosition_NewBarCode;
+	public WebElement UpArrowOfPLUStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU Start Position')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfPLUStartPosition_NewBarCode;
+	public WebElement DownArrowOfPLUStartPosition_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU No. of Digits')]/../../../../../../../div/button[1]")
-	WebElement UpArrowOfPLUNumberOfDigits_NewBarCode;
+	public WebElement UpArrowOfPLUNumberOfDigits_NewBarCode;
 	
 	@FindBy(xpath = "//mat-label[contains(.,'PLU No. of Digits')]/../../../../../../../div/button[2]")
-	WebElement DownArrowOfPLUNumberOfDigits_NewBarCode;
+	public WebElement DownArrowOfPLUNumberOfDigits_NewBarCode;
 		
 	@FindBy(xpath =  "//span[contains(.,'keyboard_backspace')]")
 	WebElement Back_btn;
