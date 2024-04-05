@@ -10,6 +10,7 @@ import com.Pages.Driver_Manager;
 import com.Pages.LoginPage;
 import com.Pages.ReportsPage;
 import com.Pages.Settings_Delivary_Settings_Page;
+import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -27,7 +28,7 @@ public class Settings_DeliverySettings
 	public String Min;
 	public String MinAfterIncrease;
 	public String MinAfterDecrease;
-	WebDriver driver=new Driver_Manager().getDriver();
+	SelfHealingDriver driver=new Driver_Manager().getDriver();
 	ExtentReports rep=new Driver_Manager().getRep(); 
 	ExtentTest test=new Driver_Manager().test;
 

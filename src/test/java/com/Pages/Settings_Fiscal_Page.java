@@ -44,61 +44,61 @@ public class Settings_Fiscal_Page extends BasePage
 	WebElement Settings_Heading;
 	
 	@FindBy(xpath = "//div[contains(.,'FISCAL LIST') and contains(@class,'mat-tab-label-content')]")
-	WebElement FiscalList_Heading;
+	public WebElement FiscalList_Heading;
 	
 	@FindBy(xpath = "//button[contains(.,'NEW FISCAL SETTINGS')]")
-	WebElement NewFiscalSettingsButton;
+	public WebElement New_Fiscal_Settings_Button;
 	
 	@FindBy(xpath = "//h3[contains(.,'New Fiscal Settings')]")
-	WebElement NewFiscal_Heading;
+	public WebElement NewFiscal_Heading;
 	
 	@FindBy(xpath = "//h3[contains(.,'Update Fiscal Settings')]")
-	WebElement UpdateFiscal_Heading;
+	public WebElement UpdateFiscal_Heading;
 	
 	@FindBy(xpath = "//label[contains(.,'Select Country')]/../../input")
-	WebElement SelectCountry;
+	public WebElement Select_CountryInputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'VKN')]/../../input")
-	WebElement VKN;
+	@FindBy(xpath = "//input[@aria-label='VKN']")
+	public WebElement VKN_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'SCL No')]/../../input")
-	WebElement SCL_No;
+	@FindBy(xpath = "//input[@aria-label='SCL No.']")
+	public WebElement SCL_No_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Tax Office Name')]/../../input")
-	WebElement TaxOfficeName;
+	@FindBy(xpath = "//input[@aria-label='Tax Office Name']")
+	public WebElement Tax_Office_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Street Name')]/../../input")
-	WebElement Street_Name;
+	@FindBy(xpath = "//input[@aria-label='Street Name']")
+	public WebElement Street_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Building Name')]/../../input")
-	WebElement BuildingName;
+	@FindBy(xpath = "//input[@aria-label='Building Name']")
+	public WebElement Building_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'City Subdivision')]/../../input")
-	WebElement CitySubdivision;
+	@FindBy(xpath = "//input[@aria-label='City Subdivision Name']")
+	public WebElement City_Subdivision_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'City Name')]/../../input")
-	WebElement CityName;
+	@FindBy(xpath = "//input[@aria-label='City Name']")
+	public WebElement City_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Postal Zone')]/../../input")
-	WebElement PostalZone;
+	@FindBy(xpath = "//input[@aria-label='Postal Zone']")
+	public WebElement Postal_Zone_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Region')]/../../input")
-	WebElement Region;
+	@FindBy(xpath = "//input[@aria-label='Region']")
+	public WebElement Region_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'District')]/../../input")
-	WebElement District;
+	@FindBy(xpath = "//input[@aria-label='District']")
+	public WebElement District_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Country Name')]/../../input")
-	WebElement CountryName;
+	@FindBy(xpath = "//input[@aria-label='Country Name']")
+	public WebElement Country_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Select Provider')]/../../input")
-	WebElement SelectProvider;
+	@FindBy(xpath = "//input[@aria-label='Select Provider']")
+	public WebElement Select_Provider_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'User Name')]/../../input")
-	WebElement UserName;
+	@FindBy(xpath = "//input[@aria-label='User Name']")
+	public WebElement User_Name_InputBx;
 	
-	@FindBy(xpath = "//label[contains(.,'Password')]/../../input")
-	WebElement Password;
+	@FindBy(xpath = "//input[@aria-label='Password']")
+	public WebElement Password_InputBx;
 	
 	@FindBy(xpath = "//button[contains(.,'Cancel')]")
 	WebElement Cancel;
@@ -122,28 +122,28 @@ public class Settings_Fiscal_Page extends BasePage
 	WebElement UpdateDisabled;
 	
 	@FindBy(xpath = "//th[contains(.,'Country')]")
-	WebElement Country_Column;
+	public WebElement Country_Column;
 	
 	@FindBy(xpath = "//th[contains(.,'Provider')]")
-	WebElement Provider_Column;
+	public WebElement Provider_Column;
 	
 	@FindBy(xpath = "//th[contains(.,'VKN Type')]")
-	WebElement VKN_Type_Column;
+	public WebElement VKN_Type_Column;
 	
 	@FindBy(xpath = "//th[contains(.,'SCL No.')]")
-	WebElement SCL_No_Column;
+	public WebElement SCL_No_Column;
 	
 	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Check ID')]")
-	WebElement CheckID_Column;
+	public WebElement CheckID_Column;
 	
 	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Date')]")
-	WebElement Date_Column;
+	public WebElement Date_Column;
 	
 	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Total')]")
-	WebElement Total_Column;
+	public WebElement Total_Column;
 	
 	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Send')]")
-	WebElement Send_Column;
+	public WebElement Send_Column;
 	
 	@FindBy(xpath = "//input[@data-placeholder='Search']")
 	WebElement Search;
@@ -166,6 +166,11 @@ public class Settings_Fiscal_Page extends BasePage
 	@FindBy(xpath =  "//div[contains(@class,'action-col')]/div/button")
 	WebElement DeleteBtn1;
 	
+	@FindBy(xpath = "//button[contains(@class,'segment-button')][contains(.,'FISCAL LIST')]")
+	public WebElement Fiscal_SettingsTab;
+	
+	@FindBy(xpath = "//mat-hint/mat-hint[contains(.,'SCL No. already exists')]")
+	public WebElement SCL_No_Already_Exist_ErrorMsg;
 	
 	public void verifyFiscalPage() throws Exception {
 		try {
@@ -196,7 +201,7 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 
 		try {
-			if(NewFiscalSettingsButton.isDisplayed()) {
+			if(New_Fiscal_Settings_Button.isDisplayed()) {
 				test.log(LogStatus.PASS, "New Fiscal Settings button is displayed successfully");
 			}
 		}catch(Exception s) {
@@ -287,7 +292,7 @@ public class Settings_Fiscal_Page extends BasePage
 		Thread.sleep(2000);
 		
 		//Click the new fiscal settings
-		NewFiscalSettingsButton.click();
+		New_Fiscal_Settings_Button.click();
 		
 		//Check weather the save button is disabled or not
 		Thread.sleep(500);
@@ -306,7 +311,7 @@ public class Settings_Fiscal_Page extends BasePage
 		Thread.sleep(2000);
 		
 		//Click the new fiscal settings
-		NewFiscalSettingsButton.click();
+		New_Fiscal_Settings_Button.click();
 		
 		//check the new fiscal settings heading availability 
 		Thread.sleep(1500);
@@ -321,7 +326,7 @@ public class Settings_Fiscal_Page extends BasePage
 		
 		//click the select country option
 		Thread.sleep(1000);
-		SelectCountry.click();
+		Select_CountryInputBx.click();
 		Thread.sleep(1000);
 		
 //		//get the list of countries
@@ -340,10 +345,10 @@ public class Settings_Fiscal_Page extends BasePage
 			
 		Thread.sleep(2000);
 		//enter the value in VKN field
-		VKN.sendKeys("aeiouaeiou");
+		VKN_InputBx.sendKeys("aeiouaeiou");
 		
 		//get the value of VKN field
-		String s = VKN.getAttribute("value");
+		String s = VKN_InputBx.getAttribute("value");
 		
 		//verify the entered value is available or not
 		if(s.equals("aeiouaeiou")) {
@@ -355,10 +360,10 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		
 		//enter the numeric value in VKN field
-		VKN.sendKeys(RandomStringUtils.randomNumeric(15));
+		VKN_InputBx.sendKeys(RandomStringUtils.randomNumeric(15));
 		
 		//get the count of VKN field value
-		int s1 = VKN.getAttribute("value").length();
+		int s1 = VKN_InputBx.getAttribute("value").length();
 		
 		//verify the length of the string in VKN field
 		if(s1 == 15) {
@@ -367,7 +372,7 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		else if(s1 == 10) {
 			test.log(LogStatus.PASS, "VKN field accepts only 10 digits");
-			VKN_No = VKN.getAttribute("value");
+			VKN_No = VKN_InputBx.getAttribute("value");
 		}
 		else if(s1 < 10) {
 			test.log(LogStatus.FAIL, "VKN field accepts less than 10 digits and the count is "+s1);
@@ -375,9 +380,9 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		
 		//enter the value in SCL field
-		SCL_No.sendKeys("aeiouaeiou");
+		SCL_No_InputBx.sendKeys("aeiouaeiou");
 		
-		String sa = SCL_No.getAttribute("value");
+		String sa = SCL_No_InputBx.getAttribute("value");
 		
 		if(sa.equals("aeiouaeiou")) {
 			test.log(LogStatus.FAIL, "SCL No field accepts albhapetic characters");
@@ -387,9 +392,9 @@ public class Settings_Fiscal_Page extends BasePage
 			test.log(LogStatus.PASS, "SCL No field not accepts albhapetic characters");
 		}
 		
-		SCL_No.sendKeys(RandomStringUtils.randomNumeric(25));
+		SCL_No_InputBx.sendKeys(RandomStringUtils.randomNumeric(25));
 		
-		int sa1 = SCL_No.getAttribute("value").length();
+		int sa1 = SCL_No_InputBx.getAttribute("value").length();
 		
 		if(sa1 == 25) {
 			test.log(LogStatus.FAIL, "SCL No field accepts more than 20 digits and the count is "+sa1);
@@ -403,9 +408,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		TaxOfficeName.sendKeys(RandomStringUtils.randomAlphanumeric(55));
+		Tax_Office_Name_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(55));
 		
-		int sb1 = TaxOfficeName.getAttribute("value").length();
+		int sb1 = Tax_Office_Name_InputBx.getAttribute("value").length();
 		
 		if(sb1 == 55) {
 			test.log(LogStatus.FAIL, "Tax Office Name field accepts more than 50 Charactors and the count is "+sb1);
@@ -420,9 +425,9 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		
 		
-		Street_Name.sendKeys(RandomStringUtils.randomAlphanumeric(105));
+		Street_Name_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(105));
 		
-		int sc1 = Street_Name.getAttribute("value").length();
+		int sc1 = Street_Name_InputBx.getAttribute("value").length();
 		
 		if(sc1 == 105) {
 			test.log(LogStatus.FAIL, "Street Name field accepts more than 100 Charactors and the count is "+sc1);
@@ -436,9 +441,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		BuildingName.sendKeys(RandomStringUtils.randomAlphanumeric(55));
+		Building_Name_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(55));
 		
-		int sd1 = BuildingName.getAttribute("value").length();
+		int sd1 = Building_Name_InputBx.getAttribute("value").length();
 		
 		if(sd1 == 55) {
 			test.log(LogStatus.FAIL, "Building Name field accepts more than 50 Charactors and the count is "+sd1);
@@ -452,9 +457,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		CitySubdivision.sendKeys(RandomStringUtils.randomAlphanumeric(55));
+		City_Subdivision_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(55));
 		
-		int se1 = CitySubdivision.getAttribute("value").length();
+		int se1 = City_Subdivision_InputBx.getAttribute("value").length();
 		
 		if(se1 == 55) {
 			test.log(LogStatus.FAIL, "City Subdivision field accepts more than 50 Charactors and the count is "+se1);
@@ -468,9 +473,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		CityName.sendKeys(RandomStringUtils.randomAlphanumeric(25));
+		City_Name_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(25));
 		
-		int sf1 = CityName.getAttribute("value").length();
+		int sf1 = City_Name_InputBx.getAttribute("value").length();
 		
 		if(sf1 == 25) {
 			test.log(LogStatus.FAIL, "City Name field accepts more than 20 Charactors and the count is "+sf1);
@@ -485,9 +490,9 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		
 		
-		PostalZone.sendKeys(RandomStringUtils.randomAlphanumeric(25));
+		Postal_Zone_InputBx.sendKeys(RandomStringUtils.randomAlphanumeric(25));
 		
-		int sf2 = PostalZone.getAttribute("value").length();
+		int sf2 = Postal_Zone_InputBx.getAttribute("value").length();
 		
 		if(sf2 == 25) {
 			test.log(LogStatus.FAIL, "Postal Zone field accepts more than 20 Charactors and the count is "+sf2);
@@ -501,9 +506,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		Region.sendKeys(RandomStringUtils.randomAlphabetic(25));
+		Region_InputBx.sendKeys(RandomStringUtils.randomAlphabetic(25));
 		
-		int sf3 = Region.getAttribute("value").length();
+		int sf3 = Region_InputBx.getAttribute("value").length();
 		
 		if(sf3 == 25) {
 			test.log(LogStatus.FAIL, "Region field accepts more than 20 Charactors and the count is "+sf3);
@@ -517,9 +522,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		District.sendKeys(RandomStringUtils.randomAlphabetic(25));
+		District_InputBx.sendKeys(RandomStringUtils.randomAlphabetic(25));
 		
-		int sf4 = District.getAttribute("value").length();
+		int sf4 = District_InputBx.getAttribute("value").length();
 		
 		if(sf4 == 25) {
 			test.log(LogStatus.FAIL, "District field accepts more 20 Charactors and the count is "+sf4);
@@ -533,9 +538,9 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		CountryName.sendKeys(RandomStringUtils.randomAlphabetic(25));
+		Country_Name_InputBx.sendKeys(RandomStringUtils.randomAlphabetic(25));
 		
-		int sf5 = CountryName.getAttribute("value").length();
+		int sf5 = Country_Name_InputBx.getAttribute("value").length();
 		
 		if(sf5 == 25) {
 			test.log(LogStatus.FAIL, "Country Name field accepts more than 20 Charactors and the count is "+sf5);
@@ -550,7 +555,7 @@ public class Settings_Fiscal_Page extends BasePage
 		}
 		
 		Thread.sleep(1000);
-		SelectProvider.click();
+		Select_Provider_InputBx.click();
 		Thread.sleep(1000);
 //		List<WebElement> sp =driver.findElements(By.xpath("//select-option"));
 //		
@@ -628,13 +633,13 @@ public class Settings_Fiscal_Page extends BasePage
 			ut.FailedCaptureScreenshotAsBASE64();
 		}
 		
-		VKN.click();
+		VKN_InputBx.click();
 		
 		for(int i = 1; i <=10;i++) {
-			VKN.sendKeys(Keys.ARROW_RIGHT);
-		}VKN.sendKeys(Keys.BACK_SPACE);
+			VKN_InputBx.sendKeys(Keys.ARROW_RIGHT);
+		}VKN_InputBx.sendKeys(Keys.BACK_SPACE);
 		
-		VKN.sendKeys("1");
+		VKN_InputBx.sendKeys("1");
 		
 		Thread.sleep(2000);
 		

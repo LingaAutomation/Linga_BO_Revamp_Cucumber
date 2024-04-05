@@ -559,14 +559,15 @@ public class Settings_Payroll_Report_Settings
 
 	}
 	@Given("I Enter the Duration above {int}")
-	public void iEnterTheDurationAbove(Integer int1) {
+	public void iEnterTheDurationAbove(Integer int1) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    cmp.Enter_Text(prr.Duration_InputBx, "101", "Duration entered above 100");
 	}
 	@Then("Check Duration Minimum {int} mins and Maximum {int} mins Error is Displayed")
 	public void checkDurationMinimumMinsAndMaximumMinsErrorIsDisplayed(Integer int1, Integer int2) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-	    cmp.Enter_Text(prr.Duration_InputBx, "101", "Duration entered above 100");
+//	    cmp.Enter_Text(prr.Duration_InputBx, "101", "Duration entered above 100");
+		cmp.Check_Element_or_Text_Displayed(prr.Duration_Min1_Max100_ErrorMsg, "Duration Min 1 & Max 100 Error");
 	}
 	@Given("I Select Apply To as Specific Roles")
 	public void iSelectApplyToAsSpecificRoles() {

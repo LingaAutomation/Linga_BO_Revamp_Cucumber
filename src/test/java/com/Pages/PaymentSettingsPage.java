@@ -33,9 +33,9 @@ public class PaymentSettingsPage extends BasePage
 //	public ExtentTest test;
 	
 	
-	WebDriver driver=new Driver_Manager().getDriver();
-	ExtentReports rep=new Driver_Manager().getRep(); 
-	ExtentTest test=new Driver_Manager().test;
+//	SelfHealingDriver driver=new Driver_Manager().getDriver();
+//	ExtentReports rep=new Driver_Manager().getRep(); 
+//	ExtentTest test=new Driver_Manager().test;
 	
 	LoginPage lgpg=new LoginPage(); 
 	

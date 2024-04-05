@@ -16,6 +16,7 @@ import com.Pages.ReportsPage;
 import com.Pages.ServingSizeLevelsPage;
 import com.Pages.SubCategoriesPage;
 import com.Pages.UpchargesPage;
+import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -28,7 +29,7 @@ import io.cucumber.java.en.When;
 public class Reports_Employee_Labor {
 
 	
-	WebDriver driver=new Driver_Manager().getDriver();
+	SelfHealingDriver driver=new Driver_Manager().getDriver();
 	ExtentReports rep=new Driver_Manager().getRep(); 
 	ExtentTest test=new Driver_Manager().test;
 	

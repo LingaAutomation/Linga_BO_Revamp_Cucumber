@@ -17,9 +17,9 @@ import Utility.Utility;
 public class Settings_AdditionalSettingsPage extends BasePage
 {
 
-	WebDriver driver=new Driver_Manager().getDriver();
-	ExtentReports rep=new Driver_Manager().getRep(); 
-	ExtentTest test=new Driver_Manager().test;
+//	SelfHealingDriver driver=new Driver_Manager().getDriver();
+//	ExtentReports rep=new Driver_Manager().getRep(); 
+//	ExtentTest test=new Driver_Manager().test;
 	
 	LoginPage lgpg=new LoginPage(); 
 	

@@ -18,6 +18,7 @@ import com.Pages.Settings_KDS_ConfigurationPage;
 import com.Pages.Settings_NotificationsPage;
 import com.Pages.SubCategoriesPage;
 import com.Pages.UpchargesPage;
+import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -31,7 +32,7 @@ import io.cucumber.java.en.When;
 public class Settings_Notifications {
 
 	
-	WebDriver driver=new Driver_Manager().getDriver();
+	SelfHealingDriver driver=new Driver_Manager().getDriver();
 	ExtentReports rep=new Driver_Manager().getRep(); 
 	ExtentTest test=new Driver_Manager().test;
 	

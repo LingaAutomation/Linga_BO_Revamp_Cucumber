@@ -42,7 +42,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Settings_Additional_Settings 
 {
 
-	WebDriver driver=new Driver_Manager().getDriver();
+	SelfHealingDriver driver=new Driver_Manager().getDriver();
 	ExtentReports rep=new Driver_Manager().getRep(); 
 	ExtentTest test=new Driver_Manager().test;
 	

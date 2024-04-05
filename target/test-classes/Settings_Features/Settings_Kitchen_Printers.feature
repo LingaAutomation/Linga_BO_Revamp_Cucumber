@@ -397,6 +397,16 @@ Then Check Print Included Modifier In Kitchen Toggle is Disabled
 Then Check Serving Size in Front of Menu in KOT Toggle is Disabled
 And I Select Printers Tab
 
+Scenario: Verify whether able to Creating Duplicate Kitchen Printer
+Given Click the New Kitchen Printer button
+And I Select Printer Type as Printer
+And I Select Printer Model
+And I Enter the Kitchen Printer Name
+And I Enter the Kitchen Printer IP Address
+And I Click the Save button 
+Then Verify whether the Duplicate Kitchen Printer is Saved or Not
+
+
 Scenario: Verify whether Unable to Deleted the Kitchen Printer Clicking Cancel/No button
 And I Select Printers Tab
 Given I Search the Kitchen Printer and Click the Delete button
@@ -408,14 +418,6 @@ Given I Search the Kitchen Printer and Click the Delete button
 And I Click the Delete button
 Then I Verifying the Kitchen Printer Deleted or Not
 
-Scenario: Verify whether able to Creating Duplicate Kitchen Printer
-Given Click the New Kitchen Printer button
-And I Select Printer Type as Printer
-And I Select Printer Model
-And I Enter the Kitchen Printer Name
-And I Enter the Kitchen Printer IP Address
-And I Click the Save button 
-Then Verify whether the Duplicate Kitchen Printer is Saved or Not
 
 Scenario: Verify whether the available Kitchen Printer is Displayed or Not
 Then Verify the Available Kitchen Printer is Displayed or Not

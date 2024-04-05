@@ -8,6 +8,7 @@ import com.Pages.Common_XPaths;
 import com.Pages.Driver_Manager;
 import com.Pages.LoginPage;
 import com.Pages.Settings_AccountBalance_Page;
+import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -19,7 +20,7 @@ import io.cucumber.java.en.Then;
 
 public class Settings_Account_Balance
 {
-	WebDriver driver=new Driver_Manager().getDriver();
+	SelfHealingDriver driver=new Driver_Manager().getDriver();
 	ExtentReports rep=new Driver_Manager().getRep(); 
 	ExtentTest test=new Driver_Manager().test;
 

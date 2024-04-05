@@ -1716,6 +1716,16 @@ public class Common_XPaths extends BasePage
 		System.out.println(Msg);
 	}
 	
+	public void Enter_Text_withSize(WebElement ele,String Text, int Msg) throws Exception
+	{
+		Thread.sleep(1000);
+		ele.clear();
+		Thread.sleep(1000);
+		ele.sendKeys(Text);
+		
+		System.out.println(Msg);
+	}
+	
 	public void Enable_Toggle(WebElement Toggle, String Message)
 	{
 		if(Toggle.isSelected())

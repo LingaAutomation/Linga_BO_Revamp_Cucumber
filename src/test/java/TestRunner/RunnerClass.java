@@ -14,7 +14,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 //		"html:test-output","json:target/json_output/cucumber.json",
 //		"html:target/cucumber-html-report"
 		}, dryRun = false,snippets = CAMELCASE
-		, tags = "@MatrixReport"
+		, tags = "@Fiscal_Settings"
 		)
  
 //@Product/Items01

@@ -3794,8 +3794,273 @@ public class ReportsPage extends BasePage
 			}
 
 
-
-
-
 		
+		//////////////// Transactions Report //////////////////////
+		
+		
+		@FindBy(xpath = "//input[@placeholder='Tender Option']")
+    	public WebElement Tender_Dropdown;
+    	
+    	@FindBy(xpath = "//input[@placeholder=' Tender Name']")
+    	public WebElement TenderName_Dropdown;
+    	
+    	@FindBy(xpath = "//input[@placeholder='Tender Name']")
+    	public WebElement TenderNameDropDown_VoidTransaction;
+    	
+    	@FindBy(xpath = "//input[@placeholder='Card Type']")
+    	public WebElement CardType_Dropdown;
+    	
+    	@FindBy(xpath = "//input[@aria-label='Sale Close Date']")
+        public WebElement SaleCloseDate_Dropdown;
+    	
+    	@FindBy(xpath = "//input[@aria-label='Transaction Date']")
+    	public WebElement TransactionDate_Dropdown;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Sale Close Date ']")
+    	public WebElement SaleCloseDateColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Transaction Date ']")
+    	public WebElement TransactionDateColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Payment No ']")
+    	public WebElement PaymentNoColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Employee Name ']")
+    	public WebElement EmployeeNameColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Tender Name ']")
+    	public WebElement TenderNameColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Card Type ']")
+    	public WebElement CardTypeColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Card Number (Last 4-digits) ']")
+    	public WebElement CardNumberLast4digits;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Auth Code ']")
+    	public WebElement AuthCodeColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Status ']")
+    	public WebElement StatusColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' CC Tip Charge ']")
+    	public WebElement CCTipChargeColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Amount ']")
+    	public WebElement AmountColumn;
+    	
+    	@FindBy(xpath = "//table//th/div[.=' Tip ']")
+    	public WebElement TipColumn;
+
+
+    	 @FindBy(xpath = "//input[@aria-label='Check Number']")
+         public WebElement CheckNumber_InputBox;
+         
+         @FindBy(xpath = "//date-picker[1]//mat-form-field/div/div[1]/div[4]//mat-datepicker-toggle//button")
+         public WebElement Ordered_DateInputBox;
+         
+         @FindBy(xpath = "//date-picker[2]//mat-form-field/div/div[1]/div[4]//mat-datepicker-toggle//button")
+         public WebElement Delivered_DateInputBox;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Paid Amount ')]")
+         public WebElement PaidAmount_Field;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Balance Amount ')]")
+         public WebElement BalanceAmount_Field;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Ordered Date ')]")
+         public WebElement OrderedDate_Field;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Delivery Date ')]")
+         public WebElement DeliveryDate_Field;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Status ')]")
+         public WebElement Status_Field;
+         
+         @FindBy(xpath = "//data-grid-row//span[contains(.,' Check Number ')]")
+         public WebElement Check_NumberField_FutureOrder;
+         
+         
+         public String Dual_Price_InSaleSummary;
+
+     	public String Dual_Price_InSaleSummary()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//tbody/tr"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		System.out.println(Tax_Rows_Size);
+
+     		String value = driver.findElement(By.xpath("//tbody/tr["+Tax_Rows_Size+"]/td[5]")).getText();
+     		if(value.isEmpty())
+     		{
+     			String DualPrice = driver.findElement(By.xpath("//tbody/tr["+Tax_Rows_Size+"]/td[7]")).getText();
+     			Dual_Price_InSaleSummary = DualPrice;
+     		}
+     		return Dual_Price_InSaleSummary;
+
+
+     	}
+     	
+     	public String Dual_Price_InDailySummary;
+
+     	public String Dual_Price_InDailySummary()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//tbody/tr"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		System.out.println(Tax_Rows_Size);
+
+     		String value = driver.findElement(By.xpath("//tbody/tr["+Tax_Rows_Size+"]/td[8]")).getText();
+     		if(value.isEmpty())
+     		{
+     			String DualPrice = driver.findElement(By.xpath("//tbody/tr["+Tax_Rows_Size+"]/td[9]")).getText();
+     			Dual_Price_InDailySummary = DualPrice;
+     		}
+     		return Dual_Price_InDailySummary;
+
+
+     	}
+
+
+     	public String Dual_Price_InCashierOut;
+
+     	public String Dual_Price_InCashierOut()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//div[.=' TAXES ']/..//td[contains(.,'Total Tax')]/../preceding-sibling::tr"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		//		 System.out.println(Tax_Rows_Size);
+
+
+     		String Value = driver.findElement(By.xpath("//div[.=' TAXES ']/..//tr["+(Tax_Rows_Size)+"]/td[3]")).getText();
+     		if(!Value.isEmpty())
+     		{
+     			String DualPrice = driver.findElement(By.xpath("//div[.=' TAXES ']/..//tr["+(Tax_Rows_Size)+"]/td[4]")).getText();
+     			Dual_Price_InCashierOut = DualPrice;
+     		}
+     		return Dual_Price_InCashierOut;
+
+
+     	}
+     	
+     	public String Dual_Price_In_ER_CashierOut;
+
+     	public String Dual_Price_In_ER_CashierOut()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//div[.=' Taxes ']/..//td[contains(.,'Total Tax')]/../preceding-sibling::tr"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		//		 System.out.println(Tax_Rows_Size);
+
+
+     		String Value = driver.findElement(By.xpath("//div[.=' Taxes ']/..//tr["+(Tax_Rows_Size)+"]/td[3]")).getText();
+     		if(!Value.isEmpty())
+     		{
+     			String DualPrice = driver.findElement(By.xpath("//div[.=' Taxes ']/..//tr["+(Tax_Rows_Size)+"]/td[4]")).getText();
+     			Dual_Price_In_ER_CashierOut = DualPrice;
+     		}
+     		return Dual_Price_In_ER_CashierOut;
+
+
+     	}
+
+     	public String Dual_Price_InWeekly_Summary;
+
+     	public String Dual_Price_InWeekly_Summary()
+     	{
+     		List<WebElement> Tax_Total_column = driver.findElements(By.xpath("(//table/tbody//th)[3]/../following-sibling::tr[1]/td"));
+     		int Tax_column_Size = Tax_Total_column.size();
+     		System.out.println(Tax_column_Size);
+
+
+     		String Value = driver.findElement(By.xpath("(//table/tbody//th)[3]/../following-sibling::tr[1]/td[1]")).getText();
+     		if(Value.contains("Dual"))
+     		{
+     			String DualPrice = driver.findElement(By.xpath("(//table/tbody//th)[3]/../following-sibling::tr[1]/td["+Tax_column_Size+"]")).getText();
+     			Dual_Price_InWeekly_Summary = DualPrice;
+     		}
+     		return Dual_Price_InWeekly_Summary;
+
+
+     	}
+     	
+     	
+     	public String Dual_Price_In_Dashboard_Summary;
+
+     	public String Dual_Price_In_Dashboard_Summary()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//div[.='Total Tax Collected']/../../preceding-sibling::div"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		//		 System.out.println(Tax_Rows_Size);
+
+
+     		String Value = driver.findElement(By.xpath("(//div[.='Total Tax Collected']/../../preceding-sibling::div)["+(Tax_Rows_Size)+"]//div[3]")).getText();
+     		if(!Value.isEmpty())
+     		{
+     			String DualPrice = driver.findElement(By.xpath("(//div[.='Total Tax Collected']/../../preceding-sibling::div)["+(Tax_Rows_Size)+"]//div[4]")).getText();
+     			Dual_Price_In_Dashboard_Summary = DualPrice;
+     		}
+     		return Dual_Price_In_Dashboard_Summary;
+
+
+     	}
+     	
+     	public String Dual_Price_In_Account_Balance;
+
+     	public String Dual_Price_In_Account_Balance()
+     	{
+     		List<WebElement> Tax_Total_Rows = driver.findElements(By.xpath("//tbody/tr//../preceding-sibling::tr"));
+     		int Tax_Rows_Size = Tax_Total_Rows.size();
+     		System.out.println(Tax_Rows_Size);
+
+
+     		String Value = driver.findElement(By.xpath("//tbody/tr["+(Tax_Rows_Size)+"]/td[4]")).getText();
+     		if(Value.equals("0.00"))
+     		{
+     			String DualPrice = driver.findElement(By.xpath("//tbody/tr["+(Tax_Rows_Size)+"]/td[5]")).getText();
+     			Dual_Price_In_Account_Balance = DualPrice;
+     		}
+     		return Dual_Price_In_Account_Balance;
+
+
+     	}
+		
+    	//Online Sales
+        @FindBy(xpath = "//input[@aria-label='Source']")
+		public WebElement Source_Filed;
+        
+        @FindBy(xpath = "//input[@aria-label='Order Type']")
+        public WebElement Order_Type;
+        
+        @FindBy(xpath = "//input[@aria-label='Payment Type']")
+        public WebElement Payment_Type;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Check Number ')]")
+        public WebElement Check_Number_Field;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Order Ref. No. ')]")
+        public WebElement Order_RefNo;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Customer ')]")
+        public WebElement Customer;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Transaction Date ')]")
+        public WebElement TransactionDate;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Source ')]")
+        public WebElement Source;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Created By ')]")
+        public WebElement CreatedBy;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Order Type ')]")
+        public WebElement OrderType;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Payment Type ')]")
+        public WebElement PaymentType;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' CC ServiceCharge ')]")
+        public WebElement CC_ServiceCharge;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Driver Tip ')]")
+        public WebElement DriverTip;
+        
+        @FindBy(xpath = "//th[@role='columnheader'][contains(.,' Gross Receipt ')]")
+        public WebElement GrossReceipt;
 }

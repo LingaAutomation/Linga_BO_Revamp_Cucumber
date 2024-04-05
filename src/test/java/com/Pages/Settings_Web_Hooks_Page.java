@@ -34,43 +34,43 @@ public class Settings_Web_Hooks_Page extends BasePage
     WebElement WebHooks;
     
     @FindBy(xpath = "//span[.='Request Header']/../../div[2]/app-input/div/div/mat-form-field/div/div/div[4]/input")
-    WebElement apiKeyTextbox ;
+    public WebElement apiKeyTextbox ;
     
     @FindBy(xpath = "//span[.='Request Header']/../../div[3]/app-input/div/div/mat-form-field/div/div/div[4]/input")
-    WebElement ValueTextbox;
+    public WebElement ValueTextbox;
     
     @FindBy(xpath = "//span[.='Close Order Web Hooks']/../../../div[2]/app-input/div/div/mat-form-field/div/div/div[4]/textarea")
-    WebElement CloseOrderText;
+    public WebElement CloseOrderText;
     
     @FindBy(xpath = "//span[.='Close Order Web Hooks Is Active']/../..//button[.='No']")
-    WebElement Close_Order_NoToggle;
+    public WebElement Close_Order_NoToggle;
     
     @FindBy(xpath = "//span[.='Close Order Web Hooks Is Active']/../..//button[.='Yes']")
-    WebElement Close_Order_YesToggle;
+    public WebElement Close_Order_YesToggle;
     
     @FindBy(xpath = "//span[.='Open Order Web Hooks']/../../../div[2]/app-input/div/div/mat-form-field/div/div/div[4]/textarea")
-    WebElement OpenOrderText;
+    public WebElement OpenOrderText;
     
     @FindBy(xpath = "//span[.='Open Order Web Hooks Is Active']/../..//button[.='Yes']")
-    WebElement Open_Order_YesToggle;
+    public WebElement Open_Order_YesToggle;
     
     @FindBy(xpath = "//span[.='Open Order Web Hooks Is Active']/../..//button[.='No']")
-    WebElement Open_Order_NoToggle;
+    public WebElement Open_Order_NoToggle;
     
     @FindBy(xpath = "//span[.='Update Order Web Hooks']/../../../div[2]/app-input/div/div/mat-form-field/div/div/div[4]/textarea")
-    WebElement UpdateOrderText;
+    public WebElement UpdateOrderText;
     
     @FindBy(xpath = "//span[.='Update Order Web Hooks Is Active']/../..//button[.='Yes']")
-    WebElement Update_Order_YesToggle;
+    public WebElement Update_Order_YesToggle;
     
     @FindBy(xpath = "//span[.='Update Order Web Hooks Is Active']/../..//button[.='No']")
-    WebElement Update_Order_NoToggle;
+    public WebElement Update_Order_NoToggle;
     
     @FindBy(xpath = "//span[.='3rd Order Web Hooks Is Active']/../..//button[.='Yes']")
-    WebElement Third_Order_YesToggle;
+    public WebElement Third_Order_YesToggle;
     
     @FindBy(xpath = "//span[.='3rd Order Web Hooks Is Active']/../..//button[.='No']")
-    WebElement Third_Order_NoToggle;
+    public WebElement Third_Order_NoToggle;
     
     @FindBy(xpath = "//button[.='UPDATE']")
     WebElement update;
