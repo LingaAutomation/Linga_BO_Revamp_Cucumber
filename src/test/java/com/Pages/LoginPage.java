@@ -208,6 +208,7 @@ public class LoginPage extends BasePage
 	
 	public void Open_URL(String URL)
 	{
+		driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
 		
 		System.out.println(driver.getCurrentUrl());
 		if(!driver.getCurrentUrl().equals(URL))

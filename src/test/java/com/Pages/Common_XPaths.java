@@ -1507,6 +1507,7 @@ public class Common_XPaths extends BasePage
 		Thread.sleep(1000);
 		ele.click();
 		
+		Thread.sleep(1000);
 		SearchBox_DropDown.clear();
 		SearchBox_DropDown.sendKeys(Option);
 		

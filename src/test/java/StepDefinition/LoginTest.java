@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.Pages.Common_XPaths;
 import com.Pages.LoginPage;
 import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -68,8 +69,13 @@ public class LoginTest
 		Thread.sleep(1000);
 		a.VerifyLoginPageHeader();
 		
+		Common_XPaths cmp=new Common_XPaths();
+		
+		cmp.Close_Online_Help_ChatBox();
+		
 		Thread.sleep(2000);
 		a.Login(Utility.getProperty("userName"), Utility.getProperty("password"));
+		
 		
 	}
 	

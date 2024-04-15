@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"classpath:Settings_Features"}//"src/test/resources",
+@CucumberOptions(features={"classpath:Reports_Features"}//"src/test/resources",
 	,glue={"StepDefinition"},monochrome=true,
 	plugin= {"pretty", 
 		"html:target/cucumber/report.html",
@@ -14,7 +14,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 //		"html:test-output","json:target/json_output/cucumber.json",
 //		"html:target/cucumber-html-report"
 		}, dryRun = false,snippets = CAMELCASE
-		, tags = "@Fiscal_Settings"
+		, tags = "@Void_Employee_Report"
 		)
  
 //@Product/Items01
@@ -23,4 +23,3 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 public class RunnerClass {
 
 }
- 

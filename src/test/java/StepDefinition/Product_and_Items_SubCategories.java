@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -20,6 +22,7 @@ import com.Pages.ServingSizeLevelsPage;
 import com.Pages.SubCategoriesPage;
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.jdi.light.asserts.core.SoftAssert;
+import com.google.inject.Key;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -595,6 +598,20 @@ public void iSearchTheSelectedCategoryInSubCategoryHomePage() throws Exception {
 @Given("I Click the Apply button")
 public void iClickTheApplyButton() throws Exception {
     // Write code here that turns the phrase above into concrete actions
+//	Robot rd=new Robot();
+//	rd.keyPress(KeyEvent.VK_KP_UP);
+//	rd.keyPress(KeyEvent.VK_KP_UP);
+//	driver.findElement(By.tagName("html")).sendKeys(Keys.PAGE_UP);
+//	for(int i=1;i<=3;i++)
+//	{
+//		Thread.sleep(1000);
+////		driver.findElement(By.tagName("html")).click();
+//		driver.findElement(By.tagName("html")).sendKeys(Keys.UP);
+////		rd.keyPress(KeyEvent.VK_KP_UP);
+////		rd.keyPress(KeyEvent.VK_KP_UP);
+//	}
+	
+
     rp.Click_ApplyButton();
 }
 @Then("Check the Selected Category listing out the Created Sub-Category is Displayed")

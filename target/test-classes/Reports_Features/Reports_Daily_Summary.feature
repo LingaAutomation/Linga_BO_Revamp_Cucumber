@@ -7,7 +7,6 @@ Feature: Reports - Daily Summary Report
 Background: Open the Daily Summary Report Home Page
 Given Open the Reports - Daily Summary Report home page BaseURL and storeID
 
-
 Scenario: Verify whether the Reports - Daily Summary Report Header is Displayed
 Given Verifying the Daily Summary Report Header Page
 
@@ -19,13 +18,35 @@ Scenario: Check the Available Fields in Daily Summary Report
 Then Check Select Department Field is Displayed
 Then Check Select Tax Field is Displayed
 Then Check Time Period is Displayed
-Then Check Name Field in Table is Displayed
-Then Check Sale Amount Field in Table is Displayed
-Then Check Quantity Field in Table is Displayed
+Then Check Date Field in Table is Displayed
+Then Check G/L Department Field in Table is Displayed
+Then Check Gross Sales Field in Table is Displayed
+Then Check Comps Field in Table is Displayed
+Then Check Promo Field in Table is Displayed
+Then Check Loyalty Field in Table is Displayed
+Then Check Donation Field in Table is Displayed
+Then Check Net Sales Field in Table is Displayed
 Then Check Tax Field in Table is Displayed
-Then Check Discount Field in Table is Displayed
-Then Check %of Sale Field in Table is Displayed
+Then Check Grand Sales Field in Table is Displayed
 Then Check Export Field is Displayed
+
+Scenario: Verify whether the Daily Summary Reports Available for Selected Department
+And I Select the Time Period as Last Month
+And I Click the Apply button
+And I Select the Department in Report
+And I Select the Tax as All
+And I Select the Time Period as Date Range
+And I Click the Apply button
+Then Verify Daily Summary Report Available for Selected Department or Not
+
+Scenario: Verify whether the Daily Summary Reports Available for Selected Tax
+And I Select the Time Period as Last Month
+And I Click the Apply button
+And I Select the Department as All
+And I Select the Tax in Report
+And I Select the Time Period as Date Range
+And I Click the Apply button
+Then Verify Daily Summary Report Available for Selected Tax or Not
 
 Scenario: Verify whether the Daily Summary Reports Available for Today
 And I Select the Department as All
@@ -103,4 +124,16 @@ And I Select the Tax as All
 And I Select the Time Period as Date Range
 And I Click the Apply button
 Then Verify Daily Summary Report Available for Date Range or Not
+And I Take the Gross Sales, Net Sales, Tax, Grand Sales values from Daily Summary
 
+Scenario: Verify whether the Gross Sales value is Equal with Sale Recap Report
+#And I Navigate to Sale Recap Report Page
+And Open the Reports - Sale Recap Sale Report home page BaseURL and storeID
+And I Select Sale Recap Type as Time Period
+And I Select the Time Period as Date Range
+#And I Select the Employee as All
+And I Click the Apply button
+Then Check the Daily Summary Gross Sales value is Equal with Sale Recap Gross Sales value
+Then Check the Daily Summary Net Sales value is Equal with Sale Recap Net Sales value
+Then Check the Daily Summary Tax value is Equal with Sale Recap Tax value
+Then Check the Daily Summary Grand Sales value is Equal with Sale Recap Grand Sales value
