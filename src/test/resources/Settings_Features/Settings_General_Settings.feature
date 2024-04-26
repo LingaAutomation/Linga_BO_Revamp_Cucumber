@@ -1,5 +1,7 @@
 @Settings
 @General_Settings
+@Settings01
+
 
 Feature: Settings - General Settings
 	I Verifying the Settings - General Settings

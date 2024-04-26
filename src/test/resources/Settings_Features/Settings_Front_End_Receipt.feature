@@ -1,5 +1,6 @@
 @Settings
 @Front_End_Receipt
+@Settings01
 
 Feature: Settings - Front End Receipt Settings
 	I Verifying the Settings - Front End Receipt Settings

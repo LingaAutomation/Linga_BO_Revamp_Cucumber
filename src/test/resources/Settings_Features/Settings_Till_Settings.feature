@@ -1,5 +1,6 @@
 @Settings
 @Till_Settings
+@Settings01
 
 Feature: Settings - Till Settings
 	I Verifying the Settings - Till Settings

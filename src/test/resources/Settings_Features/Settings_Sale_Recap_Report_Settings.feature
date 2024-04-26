@@ -1,5 +1,6 @@
 @Settings
 @Sale_Recap_Report_Settings
+@Settings01
 
 Feature: Settings - Sale Recap Report Settings
 	I Verifying the Settings - Sale Recap Report Settings

@@ -1,5 +1,6 @@
 @Settings
 @Label_Printers
+@Settings01
 
 Feature: Settings - Label Printers
 I am verify the Settings-Label Printer module by Add/Edit/Delete/Activate/Duplicate

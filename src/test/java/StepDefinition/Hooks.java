@@ -1,5 +1,6 @@
 package StepDefinition;
 import java.sql.DriverManager;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FilenameUtils;
@@ -7,9 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.Pages.BasePage;
 import com.Pages.Driver_Manager;
 import com.Pages.LoginPage;
 import com.base.LoginActions.Base_DriverManagerClass;
@@ -29,7 +32,7 @@ import io.cucumber.java.BeforeAll;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.cucumber.java.Scenario;
 import io.cucumber.messages.types.Feature;
-public class Hooks 
+public class Hooks //extends BasePage
 {
 	public static SelfHealingDriver driver;//=new Driver_Manager().getDriver();
 	
@@ -91,6 +94,9 @@ public class Hooks
 //	 		this.FeatureName=FeatureName;
 //	 		FeatureName=scenario.getId().split(";")[0].replace("-"," ");
 //	 		FeatureName =  FeatureName.substring(0, 1).toUpperCase() + FeatureName.substring(1);
+	 		
+
+	 		
 	 		String featureName = FilenameUtils.getBaseName(scenario.getUri().toString());
 	 		this.FeatureName=featureName;
 	 		
@@ -99,7 +105,7 @@ public class Hooks
 	 		
 	 		System.out.println("Running Feature name : "+FeatureName);
 	 		
-	 		System.out.println("Before Hook Started...!");
+	 		System.out.println("Before Hook Started...!"); 
 	 		
 	 		ScenarioName=scenario.getName();
 	 		new Driver_Manager().test.log(LogStatus.INFO, ScenarioName);
@@ -109,6 +115,8 @@ public class Hooks
 	 			ChromeOptions options=new ChromeOptions();
 				
 				options.setHeadless(false);
+//		  		options.addArguments("headless=false");
+
 				
 				WebDriver delegate=new ChromeDriver();
 //				this.driver.getDelegate();
@@ -126,22 +134,52 @@ public class Hooks
 						a.Login();
 	 		}
 	 		
-	 		try
-	 		{
-	 		if(lgpg.LoginBtn.isDisplayed())
-	 		{
-	 			System.out.println("Session Expired & Application Closed...!");
-	 			Thread.sleep(2000);
-	 			driver.navigate().refresh();
-	 			Thread.sleep(10000);
-				a.Login();
-	 			
-	 		}
-	 		}
-	 		catch(Exception h) 
-	 		{
-	 			
-	 		}
+	 		
+//	 			try
+//		 		{
+//		 		if(driver.getTitle().equalsIgnoreCase("Linga rOS"))
+	 				List<WebElement> LoginBtn=driver.findElements(By.xpath("//button[contains(.,'Log In')]"));
+	 				
+	 				System.out.println("Login button available size is : "+LoginBtn.size());
+//		 		if(lgpg.LoginBtn.isDisplayed()) 
+	 			if(LoginBtn.size()>0)
+		 		{
+		 			System.out.println("Session Expired & Application Closed...!");
+		 			Thread.sleep(3000);
+		 			driver.navigate().refresh();
+		 			System.out.println("Page Refreshed...!");
+//		 			driver.navigate().back();
+//		 			Thread.sleep(2000);
+//		 			driver.navigate().forward();
+		 			Thread.sleep(10000);
+		 			System.out.println("Re-login started...!");
+					a.Login();
+		 		}
+	 			else
+	 			{
+	 				System.out.println("----Executing without Logging Out----");
+	 			}
+//		 		}
+//		 		catch(Exception h) 
+//		 		{
+//		 			
+//		 		}
+//	 		try
+//	 		{
+//	 		if(driver.getCurrentUrl().trim().equals(Utility.getProperty("appURL")))
+//	 		{
+//	 			System.out.println("Session Expired & Application Closed...!");
+//	 			Thread.sleep(2000);
+//	 			driver.navigate().refresh();
+//	 			Thread.sleep(10000);
+//				a.Login();
+//	 			
+//	 		}
+//	 		}
+//	 		catch(Exception h) 
+//	 		{
+//	 			
+//	 		}
 	 		
 //	 		try
 //	 		{
@@ -182,7 +220,10 @@ public class Hooks
 				
 //				 ExtentTestManager.getTest().addScreenCaptureFromBase64String(ut.getBase64Screenshot());
 //				scenario.attach(scnsht, s, scenario.getName());
-				scenario.attach(s, scnsht, scenario.getName());
+//				scenario.attach(s, scnsht, scenario.getName()); //BASE64 image not visible in Cucumber Report
+				
+				byte[] screenshot = ((TakesScreenshot)driver.getDelegate()).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", scenario.getName());
 			
 			}
 		}

@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>20 Mar 2024, 01:35</td>
+      <td>18 Apr 2024, 14:33</td>
     </tr>
   </tbody>
 </table>
@@ -127,9 +127,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@RetailTest39</td>
-          <td >0</td>
+          <td      class="passed"    >2</td>
           <td      class="failed"    >1</td>
-          <td     class="skipped"   >2</td>
+          <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">3</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="34797804300">34.797</td>
+          <td class="duration" data-value="21924843300">21.924</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -184,7 +184,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">34.797</span>
+  <span class="lead-duration duration">21.924</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -222,7 +222,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">StepDefinition.Hooks.Start_Scenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">30.550</span>
+  <span class="lead-duration duration">30.524</span>
 
           </div>
 
@@ -255,11 +255,65 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Given failed">
+<div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
   <span class="name">I Search the Retail Item and Click the Delete button</span>
 
-  <span class="lead-duration duration">34.797</span>
+  <span class="lead-duration duration">18.787</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">I Click the Cancel button in Pop Up</span>
+
+  <span class="lead-duration duration">0.050</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Verify the Cancelled Retail Item Deleted/Inactivated or not</span>
+
+  <span class="lead-duration duration">3.086</span>
 
 </div>
 
@@ -271,99 +325,29 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>org.openqa.selenium.NoSuchElementException:</a>
+          <a>java.lang.IllegalArgumentException:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody/tr[6]/td[2]&quot;}
-  (Session info: chrome=122.0.6261.129)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1c3296c04d22f70b381b15f7459489b8, findElement {using=xpath, value=//tbody/tr[6]/td[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\raja.s\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51437}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51437/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1c3296c04d22f70b381b15f7459489b8
-	at jdk.internal.reflect.GeneratedConstructorAccessor30.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at com.epam.healenium.processor.FindElementProcessor.execute(FindElementProcessor.java:23)
-	at com.epam.healenium.processor.BaseProcessor.process(BaseProcessor.java:42)
-	at com.epam.healenium.handlers.proxy.BaseHandler.findElement(BaseHandler.java:63)
-	at com.epam.healenium.handlers.proxy.SelfHealingProxyInvocationHandler.invoke(SelfHealingProxyInvocationHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy29.findElement(Unknown Source)
-	at com.Pages.ProductItems_Menu_RetailPage.SearchAndClickDeleteRetailItem(ProductItems_Menu_RetailPage.java:4485)
-	at StepDefinition.Product_and_Items_Retail_Items.iSearchTheRetailItemAndClickTheDeleteButton(Product_and_Items_Retail_Items.java:579)
-	at &#10045;.I Search the Retail Item and Click the Delete button(classpath:Product_and_Items_Features/Product_Items_Retail_Items.feature:808)
+        <pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.epam.healenium.handlers.proxy.WebElementProxyHandler.invoke(WebElementProxyHandler.java:68)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
+	at com.Pages.Common_XPaths.Verify_Search(Common_XPaths.java:858)
+	at com.Pages.ProductItems_Menu_RetailPage.verifyTheCancelledRetailItemDeletedInactivatedOrNot(ProductItems_Menu_RetailPage.java:4267)
+	at StepDefinition.Product_and_Items_Retail_Items.verifyTheCancelledRetailItemDeletedInactivatedOrNot(Product_and_Items_Retail_Items.java:589)
+	at &#10045;.Verify the Cancelled Retail Item Deleted/Inactivated or not(classpath:Product_and_Items_Features/Product_Items_Retail_Items.feature:810)
 </pre>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">I Click the Cancel button in Pop Up</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">Verify the Cancelled Retail Item Deleted/Inactivated or not</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
 
 
 
@@ -401,7 +385,7 @@ Session ID: 1c3296c04d22f70b381b15f7459489b8
             <span class="keyword indention">After</span>
               <span class="location name">StepDefinition.Hooks.TestFail(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.295</span>
+  <span class="lead-duration duration">2.349</span>
 
           </div>
 
@@ -414,12 +398,14 @@ Session ID: 1c3296c04d22f70b381b15f7459489b8
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Verify whether able to Inactivate the Retail Item Clicking Cancel/No button</a>
-      <a href="embeddings/embedding_-1459280761.unknown" download target="_blank">
+      <a href="embeddings/embedding_-117294228.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
-        <pre class="embedding-content">This file cannot be displayed. Use download button to get the content as file.</pre>
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-117294228.png">
+      </div>
     </div>
   </div>
   </div>

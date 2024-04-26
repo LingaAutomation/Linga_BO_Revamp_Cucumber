@@ -1,5 +1,6 @@
 @Settings
 @Printer_Rerouting
+@Settings01
 
 Feature: Settings - Printer Rerouting Settings
 	I Verifying the Settings - Printer Rerouting Settings

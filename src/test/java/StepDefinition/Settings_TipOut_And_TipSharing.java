@@ -2,6 +2,7 @@ package StepDefinition;
 
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.maven.surefire.shared.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
@@ -23,7 +24,6 @@ import Utility.Utility;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.netty.util.internal.ThreadLocalRandom;
 
 public class Settings_TipOut_And_TipSharing
 {

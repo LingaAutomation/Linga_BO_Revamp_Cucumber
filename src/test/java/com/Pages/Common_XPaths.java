@@ -1511,6 +1511,7 @@ public class Common_XPaths extends BasePage
 		SearchBox_DropDown.clear();
 		SearchBox_DropDown.sendKeys(Option);
 		
+		Thread.sleep(1000);
 		First_Option_inDropDown.click();
 		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//select-option[contains(.,'"+Option+"')]")).click();
@@ -1926,20 +1927,24 @@ public class Common_XPaths extends BasePage
 	
 	public void Close_Online_Help_ChatBox() throws Exception
 	{
-		Thread.sleep(1000);
-		Actions ac=new Actions(driver);
-		ac.moveToElement(Chat_Box_Popup).build().perform();
+	
 		
 		try
 		{
+			
+			Thread.sleep(3000);
+			Actions ac=new Actions(driver);
+			ac.moveToElement(Chat_Box_Popup).build().perform();
 			Thread.sleep(2000);
-		if(Chat_Box_Popup.getText().equalsIgnoreCase("How may I help you today?"))
+//		if(Chat_Box_Popup.getText().equalsIgnoreCase("How may I help you today?"))
+		if(Chat_Box_Popup.isDisplayed())
 		{
 			Thread.sleep(2000);
 			Close_Online_ChatBtn.click();
 		}
 		}
 		catch(Exception k)
+//		else
 		{
 			System.out.println("Online Chat Box not displayed");
 		}

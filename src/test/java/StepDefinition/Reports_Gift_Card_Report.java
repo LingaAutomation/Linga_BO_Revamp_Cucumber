@@ -135,7 +135,12 @@ public class Reports_Gift_Card_Report
 	@Given("I Clear the Card Number")
 	public void iClearTheCardNumber() {
 	    // Write code here that turns the phrase above into concrete actions
-	    repts.Card_NumberInputBx.click();
+		for(int i=1;i<=3;i++)
+		{
+			driver.findElement(By.tagName("html")).click();
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
+		}
+	    repts.Card_NumberInputBx.clear();
 	}
 	@Given("I Select the Activity Type as Adjustment")
 	public void iSelectTheActivityTypeAsAdjustment() throws Exception {
@@ -145,6 +150,11 @@ public class Reports_Gift_Card_Report
 	@Given("I Select the Sold In as All")
 	public void iSelectTheSoldInAsAll() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i=1;i<=3;i++)
+		{
+			driver.findElement(By.tagName("html")).click();
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
+		}
 	    cmp.Click_DropDown_withSearch_Selection(repts.Sold_In_InputBx, "All", "Sold In selected as All");
 	}
 	@Then("Verify Gift Card Report Available for Selected Adjustment Activity Type or Not")
@@ -297,11 +307,21 @@ public class Reports_Gift_Card_Report
 	@Given("I Select the Activity Type as All")
 	public void iSelectTheActivityTypeAsAll() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i=1;i<=3;i++)
+		{
+			driver.findElement(By.tagName("html")).click();
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
+		}
 	    cmp.Click_DropDown_withSearch_Selection(repts.Activity_Type_InputBx, "All", "Activity Type selected as All");
 	}
 	@Given("I Select the Employee")
 	public void iSelectTheEmployee() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		for(int i=1;i<=3;i++)
+		{
+			driver.findElement(By.tagName("html")).click();
+			driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_UP);
+		}
 	    cmp.Click_DropDown_withSearch(repts.Employee_InputBx, "Employee selected");
 	    
 	    String Emp=repts.Employee_InputBx.getAttribute("value");

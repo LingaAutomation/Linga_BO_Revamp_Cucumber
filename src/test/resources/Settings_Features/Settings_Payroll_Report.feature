@@ -1,5 +1,6 @@
 @Settings
 @Payroll_Report
+@Settings01
 
 Feature: Settings - Payroll Report
 I am verify the Settings - Payroll Report module by Add/Edit/Delete/Activate/Duplicate

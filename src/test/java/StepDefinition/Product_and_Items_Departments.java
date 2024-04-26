@@ -480,7 +480,7 @@ public class Product_and_Items_Departments
 		//cmp=new Common_XPaths();
 		//dpg=new DepartmentPage(driver, test);
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		//Click Cancel button
 		cmp.Click_CancelButton();
 		

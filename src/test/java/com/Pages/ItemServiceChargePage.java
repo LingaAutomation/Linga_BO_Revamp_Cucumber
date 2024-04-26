@@ -2,6 +2,7 @@ package com.Pages;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.epam.healenium.SelfHealingDriver;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
-import io.netty.util.internal.ThreadLocalRandom;
 
 public class ItemServiceChargePage extends BasePage
 {

@@ -1,5 +1,6 @@
 @Settings
 @Kitchen_Printers
+@Settings01
 
 Feature: Settings - Kitchen Printers
 I am verify the Settings-Kitchen Printer module by Add/Edit/Delete/Activate/Duplicate

@@ -1,5 +1,6 @@
 @Settings
 @RevenueCenter
+@Settings01
 
 Feature: Settings - Revenue Center
 I am verify the Settings-Revenue Center module by Add/Edit/Delete/Activate/Duplicate

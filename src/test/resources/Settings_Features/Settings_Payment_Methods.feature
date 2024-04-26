@@ -1,5 +1,6 @@
 @Settings
 @Payment_Methods_Settings
+@Settings01
 
 Feature: Settings - Payment Methods Settings
 	I Verifying the Settings - Payment Methods Settings

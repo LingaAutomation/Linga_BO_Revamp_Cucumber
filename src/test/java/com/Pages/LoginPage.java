@@ -139,7 +139,7 @@ public class LoginPage extends BasePage
 	
 	public void Login(String username,String password) throws Exception
 	{
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		
 		Username.sendKeys(username);
 		
@@ -208,7 +208,23 @@ public class LoginPage extends BasePage
 	
 	public void Open_URL(String URL)
 	{
-		driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
+//		driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
+		
+//		try
+//		{
+//			
+//			if(LoginBtn.isDisplayed())
+//		 		{
+//		 			System.out.println("Session Expired & Application Closed...!");
+//		 			Thread.sleep(3000);
+//		 			driver.navigate().refresh();
+//		 			Thread.sleep(10000);
+//		 			Login(Utility.getProperty("userName"), Utility.getProperty("password"));		 		}
+//		 		}
+//		 		catch(Exception h) 
+//		 		{}
+		 			
+		 	
 		
 		System.out.println(driver.getCurrentUrl());
 		if(!driver.getCurrentUrl().equals(URL))

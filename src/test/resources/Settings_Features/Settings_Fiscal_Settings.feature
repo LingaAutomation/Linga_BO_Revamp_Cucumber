@@ -1,5 +1,6 @@
 @Settings
 @Fiscal_Settings
+@Settings01
 
 Feature: Settings - Fiscal Settings
 I am verify the Settings-Fiscal module by Add/Edit/Delete/Activate/Duplicate
@@ -20,6 +21,7 @@ And Verify the Ascending and Descending Order
 Scenario: Verify the New Fiscal Page header
 Given Click the New Fiscal Settings button
 When Verify the New Fiscal Settings Header
+And I Click the Cancel button
 
 Scenario: Verify whether the All Fields are available in Fiscal Settings
 And I Select Settings Tab
@@ -125,8 +127,6 @@ Given Click the New Fiscal Settings button
 And I Enter Country Name more than 20 Digits
 Then Check Country Name Field Accepts More than 20 Digits or Not
 And I Click the Cancel button
-
-
 
 Scenario: Verify we can able to Save Fiscal Settings without Entering VKN
 Given Click the New Fiscal Settings button

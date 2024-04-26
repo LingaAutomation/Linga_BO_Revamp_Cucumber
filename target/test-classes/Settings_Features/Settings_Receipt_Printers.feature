@@ -1,5 +1,6 @@
 @Settings
 @Receipt_Printers
+@Settings01
 
 Feature: Settings - Receipt Printers
 I am verify the Settings-Receipt Printer module by Add/Edit/Delete/Activate/Duplicate

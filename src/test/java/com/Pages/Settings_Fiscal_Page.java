@@ -133,16 +133,16 @@ public class Settings_Fiscal_Page extends BasePage
 	@FindBy(xpath = "//th[contains(.,'SCL No.')]")
 	public WebElement SCL_No_Column;
 	
-	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Check ID')]")
+	@FindBy(xpath = "//th[contains(.,'Check ID')]")
 	public WebElement CheckID_Column;
 	
-	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Date')]")
+	@FindBy(xpath = "//th[contains(.,'Date')]")
 	public WebElement Date_Column;
 	
-	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Total')]")
+	@FindBy(xpath = "//th[contains(.,'Total')]")
 	public WebElement Total_Column;
 	
-	@FindBy(xpath = "//div[contains(@class,'grid-column')]/span[contains(.,'Send')]")
+	@FindBy(xpath = "//th[contains(.,'Send')]")
 	public WebElement Send_Column;
 	
 	@FindBy(xpath = "//input[@data-placeholder='Search']")

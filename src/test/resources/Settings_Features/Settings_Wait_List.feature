@@ -1,5 +1,6 @@
 @Settings
 @WaitList
+@Settings01
 
 Feature: Settings - Wait List
 I am verify the Settings-Wait List module by Add/Edit/Delete/Activate/Duplicate
@@ -20,6 +21,7 @@ Given I can do the Pagination
 Scenario: Verify the New Wait List Page header
 Given Click the New Wait List button
 When Verify the New Wait List Header
+And I Click the Cancel button
 
 Scenario: Verify whether the All Fields are available in Wait List Settings
 And I Select Wait List Tab

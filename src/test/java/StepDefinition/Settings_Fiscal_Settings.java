@@ -57,7 +57,16 @@ public class Settings_Fiscal_Settings
 	@Given("Click the New Fiscal Settings button")
 	public void clickTheNewFiscalSettingsButton() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
-	    Thread.sleep(1000);
+		
+		try
+		{
+			if(cmp.CancelBtn.isDisplayed())
+			{
+				cmp.CancelBtn.click();
+			}
+		}
+		catch(Exception l) {}
+	    Thread.sleep(3000);
 	    fs.New_Fiscal_Settings_Button.click();
 	}
 	@When("Verify the New Fiscal Settings Header")
@@ -554,6 +563,14 @@ public class Settings_Fiscal_Settings
 	@Given("I Search and Edit the Fiscal Settings")
 	public void iSearchAndEditTheFiscalSettings() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		try
+		{
+			if(cmp.CancelBtn.isDisplayed())
+			{
+				cmp.CancelBtn.click();
+			}
+		}
+		catch(Exception l) {}
 	    cmp.SearchAndClickEdit(Utility.getProperty("Fiscal_SCL_No"));
 	}
 	@When("Verify the Update Fiscal Settings Header")

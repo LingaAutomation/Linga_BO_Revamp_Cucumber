@@ -52,6 +52,7 @@ public class Driver_Manager {
 		  		ChromeOptions options=new ChromeOptions();
 		  		
 		  		options.setHeadless(false);
+//		  		options.addArguments("--headless=new");
 		  		
 		  		WebDriver delegate=new ChromeDriver();
 		  		
